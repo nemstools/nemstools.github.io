@@ -1,0 +1,148 @@
+// Specification: Opt_EntData 0.7b
+// Written by: Anders Jenbo
+// Version: 0.7b
+// Created: August 8, 2004
+// Last updated: September 5, 2004
+
+// Updated by: Ryan Gregg
+// Date: September 5, 2004
+// Thanks to: Matt 'Bluefang' Turnbull
+// Added Texture Data option.
+// Changed Settings filter to setting_*.db.
+
+// Updated by: Ryan Gregg
+// Date: August 10, 2004
+// Fixed Opt_EntData's command line.
+
+// Updated by: Ryan Gregg
+// Date: August 9, 2004
+// Changed the switch for Keep Properties from -nolghts to -nostrip.
+// Renamed No Linemod option to No Line Mod.
+// Added No Log option.
+// Repositioned Additional Parameters to its standard position.
+// Spell checked all hints and improved their wording and punctuation.
+// Updated Opt_EntData link.
+
+Include		"Templates.bci"
+
+Batch
+{
+  Name		"Opt_EntData"
+  Priority	"1"
+  Links		"Opt_EntData,http://www.chatbear.com/board.plm?a=viewthread&t=52%2c1080647136%2c18491&id=634830&b=590&v=flatold&s=0"
+  Stages	"Opt_EntData"
+  Filter	"Entity Files (*.ent)|*.ent"
+  Template	"@echo off\n"_
+  		"\"${StagePath=Opt_EntData}\" \"${FilePath}\\${FileName}\" ${StageParam=Opt_EntData}\n"_
+  		"${LogViewerRun}\n"
+}
+
+//
+// Opt_EntData
+//
+Stage
+{
+  Name		"Opt_EntData"
+  Title		"Optimize Entity Data"
+  Type		"Program"
+  Filter	"Opt_EntData (opt_entdata.exe)|opt_entdata.exe"
+
+
+  CheckBox
+  {
+    Name	"No Line Mod"
+    Checked	"True"
+    Param	"-nolinemod"
+    Hint	"\tThis is an option for those having problems with other programs that may need access to a map's entdata.\n\n"_
+		"\tIt also makes debugging scripted events difficult so it is recommended only for release versions of a map.\n\n"_
+		"\tRunning Opt_EntData twice on the same ENT file with out this option will delete all entity data except for the worldspawn (first line) and can prevent RESGen from running properly."
+  }
+
+  CheckBox
+  {
+    Name	"Run RipEnt"
+    Checked	"True"
+    Param	"-ripent"
+    Hint	"\tOpt_EntData requires Ripent to import and export entity data to and from the BSP.\n\n"_
+		"\tThis option should always be checked unless you know what you are doing."
+  }
+
+  CheckBox
+  {
+    Name	"Simplify"
+    Param	"-simplify"
+    Hint	"\tSimplify takes names of entities and replaces them with a (in theory) shorter one.\n\n"_
+		"\tIt makes debugging scripted events difficult so it is recommended only for release versions of a map.\n\n"_
+		"\tWhen (if ever) asked for a log file from opt_entdata (or screen output) then -verbose is a recommended option to use.\n\n"_
+		"\tSometimes simplify may overwrite a name it shouldn't.  Consider, for example, an entity named spawnflags or something similar. Now let us assume simplify picks that up as a name and replaces it with a name of abc. Messy eh?"
+  }
+
+  CheckBox
+  {
+    Name	"Keep Misc"
+    Param	"-nomiscents"
+    Hint	"\tThis option prevents opt_entdata from removing the info_null, info_texlights and info_compile_parameters from the BSP.\n\n"_
+		"\tIf you seem to be getting errors around the \"Removing misc ents..\" message then try using this option."
+  }
+
+  CheckBox
+  {
+    Name	"Keep Lights"
+    Param	"-nolights"
+    Hint	"\tThis disables the removal of lights and (most) optimizations made on them.\n\n"_
+		"\tThis option has a MAJOR impact on the effectiveness of opt_entdata. Use with caution."
+  }
+
+  CheckBox
+  {
+    Name	"Keep Properties"
+    Param	"-nostrip"
+    Hint	"\tThis option is frequently the cause of in game problems concerning entities.\n\n"_
+		"\tThis option has a MAJOR impact on the effectiveness of opt_entdata. Use with caution."
+  }
+
+  CheckBox
+  {
+    Name	"No Log"
+    Param	"-nolog"
+    Hint	"\tDon't use the compile LOG files.\n\n"_
+    		"\tThis option disables the use of the LOG files which are normally written to whenever opt_entdata runs. Regardless of -nolog's presence, logging will be disabled if opt_entdata can't locate your map's LOG file."
+  }
+
+  CheckBox
+  {
+    Name	"Verbose"
+    Param	"-verbose"
+    Hint	"\tThe verbose option enables extra output information while the program is running.\n\n"_
+		"\tIf you observe strange problems verbose mode may show you where they occur.\n\n"_
+		"\tWhen (if ever) asked for a log file from opt_entdata (or screen output) then -verbose is a recommended option to use."
+  }
+
+  TextBox
+  {
+    Name	"Texture Data"
+    Param	"-texdata"
+    Type	"Integer"
+    Default	"4096"
+    Min		"2048"
+    Hint	"\tAlter maximum texture memory limit (in kb).\n\n"_
+    		"\tHalflife was built with a 2Mb texture limit, as was Opposing Force. The ZHLT default limit is 4Mb. Even 4Mb can be a bit much, when combined with model textures, skies, hud graphics, and more. This is especially true of people with older cards (Voodoo 1 and 2's, etc)."
+  }
+
+  FileBox
+  {
+    Name	"Settings"
+    Param	"-settings"
+    FullPath	"False"
+    Filter	"Setting File (setting_*.db)|setting_*.db"
+    Hint	"\tYou only need specify this if you don't want to use the setting_default."
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}

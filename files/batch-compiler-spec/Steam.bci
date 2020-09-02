@@ -1,0 +1,138 @@
+// Specification: Steam
+// Written by: Ryan Gregg
+// Version: 1.1.1.1
+// Created: August 4, 2004
+// Last updated: October 25, 2005
+
+// Updated by: Ryan Gregg
+// Date: October 25, 2005
+// Added Day od Defeat: Source to Game ComboBox.
+
+// Updated by: Ryan Gregg
+// Date: September 4, 2005
+// Added Half-Life: Blue Shift to Game ComboBox.
+
+// Updated by: Ryan Gregg
+// Date: November 19, 2004
+// Added Half-Life 2 and Half-Life: Source to Game ComboBox.
+
+// Updated by: Ryan Gregg
+// Date: October 15, 2004
+// Added Counter-Strke: Source to Game ComboBox.
+
+// Updated by: Ryan Gregg
+// Date: September 23, 2004
+// Improved options hints.
+
+// Updated by: Ryan Gregg
+// Date: September 7, 2004
+// Changed default MOD from nsp to ns.
+
+// Updated by: Ryan Gregg
+// Date: August 9, 2004
+// Thanks to: Anders Jenbo
+// Corected Startup State.
+// Removed Colors.
+
+
+Batch
+{
+  Name		"Steam"
+  Priority	"1"
+  Links		"Steam,http://www.steampowered.com/|"_
+  		"Valve,http://www.valvesoftware.com/"
+  Stages	"Steam"
+  Filter	"BSP Files (*.bsp)|*.bsp"
+  ShellExecute	"True"
+  Template	"\"${StagePath=Steam}\" ${StageParam=Steam}"
+}
+
+//
+// Steam
+//
+Stage
+{
+  Name		"Steam"
+  Title		"Steam"
+  Type		"Program"
+  Filter	"Steam (steam.exe)|steam.exe"
+
+  CheckBox
+  {
+    Name	"Developer"
+    Param	"-dev"
+    Hint	"\tStart Steam in developer mode (cheats)."
+  }
+
+  CheckBox
+  {
+    Name	"Run Map"
+    Param	"+map ${FileName}"
+    Bold	"True"
+    Checked	"True"
+    Hint	"\tStart Steam with the map you selected as the input file."
+  }
+
+  TextBox
+  {
+    Name	"MOD"
+    Param	"-game"
+    Bold	"True"
+    Type	"String"
+    Index	"1"
+    Hint	"\tThe MOD to start Steam in.\n\n"_
+		"\tTo launch a third party MOD you must first select Half-Life as you Game, next you must enter the name of the third party MOD you wish to launch here.  For example the value \"ns\" would be for the third party MOD Natural Selection, \"ts\" would be for the third party MOD The Specialists."
+  }
+
+  TextBox
+  {
+    Name	"Particles"
+    Param	"-particles"
+    Type	"Integer"
+    Default	"65536"
+    Min		"1"
+    Hint	"\tThe number of particles to search for leaks with."
+  }
+
+  ComboBox
+  {
+    Name	"Game"
+    Param	"-applaunch"
+    Bold	"True"
+    Checked	"True"
+    Index	"0"		// Index of 0 means this will always be the first parameter.
+    Default	"Half-Life"
+    Options	"Condition Zero,80|Condition Zero Deleted Scenes,100|Counter-Strike,10|Counter-Strike: Source,240|Day of Defeat,30|Day of Defeat: Source,300|Deathmatch Classic,40|Dedicated Server,5|Half-Life,70|Half-Life 2,220|Half-Life 2: Deathmatch,320|Half-Life: Blue Shift,130|Half-Life: Source,280|Opposing Force,50|Ricochet,60|Team Fortress Classic,20"
+    Hint	"\tStart Steam with the selected game.\n\n"_
+		"\tTo launch an official game or MOD you would use this option."
+  }
+
+  ComboBox
+  {
+    Name	"Render Mode"
+    Default	"Direct 3D"
+    Options	"Direct 3D,-d3d|Open GL,-gl|Software,-soft"
+    Hint	"\tStart Half-Life in the selected rendermode."
+  }
+
+  ComboBox
+  {
+    Name	"Startup State"
+    Default	"Fullscreen"
+    Options	"Fullscreen,-full|Window,-window"
+    Hint	"\tStart Half-Life with the selected window state."
+  }
+
+  Space
+  {
+    Size	"3"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}

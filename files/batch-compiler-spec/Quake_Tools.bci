@@ -1,0 +1,409 @@
+// Specification: Quake Tools
+// Written by: Ryan Gregg
+// Version: 2.8
+// Created: August 4, 2004
+// Last updated: August 4, 2004
+
+Include		"Templates.bci"
+
+Batch
+{
+  Name		"Quake Tools"
+  Priority	"2"
+  Filter	"Map Files (*.map)|*.map"
+  Stages	"CSG|BSP|VIS|RAD|Shared"
+  Template	"@echo off\n"_
+  		"\"${StagePath=CSG}\" ${StageParam=CSG} \"${FilePath}\\${FileName}\"\n"_
+  		"\"${StagePath=BSP}\" ${StageParam=BSP} \"${FilePath}\\${FileName}\"\n"_
+  		"\"${StagePath=VIS}\" ${StageParam=VIS} \"${FilePath}\\${FileName}\"\n"_
+  		"\"${StagePath=RAD}\" ${StageParam=RAD} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"CSG"
+  Priority	"1"
+  Stages	"CSG|Shared"
+  Filter	"Map Files (*.map)|*.map"
+  Template	"@echo off\n"_
+  		"\"${StagePath=CSG}\" ${StageParam=CSG} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"BSP"
+  Priority	"1"
+  Stages	"BSP|Shared"
+  Filter	"Map Files (*.map)|*.map"
+  Template	"@echo off\n"_
+  		"\"${StagePath=BSP}\" ${StageParam=BSP} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"VIS"
+  Priority	"1"
+  Stages	"VIS|Shared"
+  Filter	"Map Files (*.map)|*.map"
+  Template	"@echo off\n"_
+  		"\"${StagePath=VIS}\" ${StageParam=VIS} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"RAD"
+  Priority	"1"
+  Stages	"RAD|Shared"
+  Filter	"Map Files (*.map)|*.map"
+  Template	"@echo off\n"_
+  		"\"${StagePath=RAD}\" ${StageParam=RAD} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+//
+// CSG
+//
+Stage
+{
+  Name		"CSG"
+  Title		"Constructive Solid Geometry"
+  Type		"Program"
+  Filter	"QCSG (qcsg.exe)|qcsg.exe"
+
+  CheckBox
+  {
+    Name	"No WAD Textures"
+    Param	"-nowadtextures"
+    Bold	"True"
+    Hint	"Include all used textures into bsp."_
+    		"This option is obsolete by -wadinclude and is only left in to retain some backwards compatibility."
+  }
+
+  CheckBox
+  {
+    Name	"Entities Only"
+    Param	"-onlyents"
+    Hint	"Do an entity update from .map to .bsp."_
+    		"This option will take the entities from the .map file and update them into the bsp file. For the most part, entities can only be edited. Adding or removing any can reorder the other entities which frequently break brush based entities, especially triggers."
+  }
+
+  CheckBox
+  {
+    Name	"GL View"
+    Param	"-glview"
+    Hint	"Create <mapname>.gl file."_
+    		"Creates a <mapname>.gl file, which contains the number of planes, the number of points in each plane, the points used to define each plane, and the total light on that plane."
+  }
+
+  Space
+  {
+    Size	"7"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"Add additional parameters here as you would a command line."
+  }
+}
+
+//
+// BSP
+//
+Stage
+{
+  Name		"BSP"
+  Title		"Binary Space Partition"
+  Type		"Program"
+  Filter	"QBSP (qbps2.exe)|qbsp2.exe"
+
+  CheckBox
+  {
+    Name	"Leak Only"
+    Param	"-leakonly"
+    Hint	"Run BSP only enough to check for leaks."_
+    		"If you already know a map has a leak, this is a good option to just save some time in hlbsp and just generate the pts file."
+  }
+
+  CheckBox
+  {
+    Name	"Not T-Junction"
+    Param	"-notjunc"
+    Hint	"Don't break edges on t-junctions (not for final runs)."_
+    		"This is a development/debugging option that should not be set in normal use."
+  }
+
+  TextBox
+  {
+    Name	"Subdivide"
+    Param	"-subdivide"
+    Type	"Single"
+    Default	"240.0"
+    Min		"64.0"
+    Max		"240.0"
+    Hint	"Sets the face subdivide size."_
+    		"Faces in Half-life are subdivided by this value (in units). The default and maximum are both 240, and it should never need to be set lower (as it just increases r_speeds)."
+  }
+  
+  Space
+  {
+    Size	"7"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"Add additional parameters here as you would a command line."
+  }
+}
+
+//
+// VIS
+//
+Stage
+{
+  Name		"VIS"
+  Title		"Visibility Index Set"
+  Type		"Program"
+  Filter	"VIS (vis.exe)|vis.exe"
+
+  CheckBox
+  {
+    Name	"Fast"
+    Param	"-fast"
+    Bold	"true"
+    Hint	"Fast vis."_
+    		"A fast vis is handy for running around in a developed map without dropping polygons. However, r_speeds will usually be pretty bad, as well as epoly counts. The map can still be lit with hlrad, however its quality and compile time will both suffer as a result. Maps should regularly be compiled without fast vis, as fast vis can mask a sudden increase in normal vis compile time."
+  }
+
+  Space
+  {
+    Size	"9"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"Add additional parameters here as you would a command line."
+  }
+}
+
+//
+// RAD
+//
+Stage
+{
+  Name		"RAD"
+  Title		"Radiosity"
+  Type		"Program"
+  Filter	"QRAD (qrad.exe)|qrad.exe"
+
+  CheckBox
+  {
+    Name	"Extra"
+    Param	"-extra"
+    Bold	"True"
+    Hint	"Turns on 9 point oversampling for lighting, making it look much better."
+  }
+
+  CheckBox
+  {
+    Name	"No Texture Scale"
+    Param	"-notexscale"
+    Hint	"Do not scale radiosity patches with texture scale."_
+    		"By default, hlrad will take the texture scale and apply it to the chopping grid which is projected onto it. This option turns that off, and almost always increases the number of patches in a map as most maps have many walls scaled up to 2 and 3."
+  }
+
+  CheckBox
+  {
+    Name	"Dump Light Patches"
+    Param	"-dump"
+    Hint	"Dumps light patches to a file for hlrad debugging info This is a developer option for zhlt, to dump out the patch data generated by the chopping/subdividing and make sure it looks alright."
+  }
+
+  CheckBox
+  {
+    Name	"Incremental"
+    Param	"-inc"
+    Hint	"Use or create an incremental transfer list file."_
+    		"This is a handy option for tweaking lighting, especially on slow or lower memory machines. BuildVisLeafs, MakeScales, and SwapTransfers can be skipped entirely on subsequent runs of hlrad. Note that geometry must not change, but lighting can."
+  }
+
+  Space
+  {
+    Size	"6"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"Add additional parameters here as you would a command line."
+  }
+
+  TextBox
+  {
+    Name	"Bounce"
+    Param	"-bounce"
+    Bold	"True"
+    Type	"Integer"
+    Default	"1"
+    Min		"0"
+    Hint	"Set number of radiosity bounces."_
+    		"This option sets the number of times light bounces in the radiosity pass. By the time the code gets to this point, all the data is precomputed, and extra bounces are very fast. It will make the shadows less harsh using more bounces, but can help light up dark areas much more naturally."
+  }
+
+  TextBox
+  {
+    Name	"Smooth"
+    Param	"-smooth"
+    Bold	"True"
+    Type	"Single"
+    Default	"50.0"
+    Min		"0.0"
+    Max		"180.0"
+    Hint	"Set smoothing threshold for blending (in degrees)."_
+    		"By default hlrad uses Phong shading on all faces. If the angle between two edges is less than this value, it will be shaded with the Phong smoothing code, otherwise it won't."
+  }
+
+  TextBox
+  {
+    Name	"Chop"
+    Param	"-chop"
+    Type	"Single"
+    Default	"64.0"
+    Min		"1.0"
+    Hint	"Set radiosity patch size for normal textures."_
+    		"Each face in the world has a grid projected onto it, and chopped up into a rather coarse set of sample points. These points are patches, and are what hlrad uses to do the bounced lighting calculations. A higher chop sacrifices quality for both speed and memory consumption of hlrad. A lower chop increases the quality at the expense of speed and memory usage."
+  }
+
+  TextBox
+  {
+    Name	"Coring"
+    Param	"-coring"
+    Type	"Single"
+    Default	"1.0"
+    Min		"0.0"
+    Hint	"Set lighting threshold before blackness on switchable light surfaces."_
+    		"This value controls how much light it takes before a surface will be lit with a non-black value."
+  }
+
+  TextBox
+  {
+    Name	"Max Light"
+    Param	"-maxlight"
+    Type	"Single"
+    Default	"2.0"
+    Min		"0.0"
+    Max		"2.0"
+    Hint	"Overexpose textures."_
+    		"Allows for the overexposure of textures for more realistic lighting. Less than 2 produces duller lighting, but the textures don't \"blow out\" as much."
+  }
+
+  TextBox
+  {
+    Name	"Scale"
+    Param	"-scale"
+    Type	"Single"
+    Default	"1.0"
+    Min		"0.0"
+    Hint	"Set global light scaling value."_
+    		"This option scales the final light values right after the direct lighting layer is added to the radiosity bounced lighting layer. Low values make the world darker, higher values make it brighter."
+  }
+
+  TextBox
+  {
+    Name	"Gamma"
+    Param	"-gamma"
+    Type	"Single"
+    Default	"0.5"
+    Min		"0.0"
+    Hint	"Set global gamma value."_
+    		"This option also occurs after the direct and radiosity layers are added together, and a global gamma correction is calculated and applied to the lighting before it is finalized."
+  }
+
+  TextBox
+  {
+    Name	"Sky"
+    Param	"-sky"
+    Type	"Single"
+    Default	"1.0"
+    Min		"0.0"
+    Hint	"Set ambient sunlight contribution in the shade outside."_
+    		"Many faces have line of sight to sky, but fall in the shadow of some other object. This option affects how much of the normal sky lighting is put into the shadows. A setting of '1' (the default) will result in a full hemisphere of the sky contributing about 1/4 of the direct component. Set to '0' for direct lighting only. Set to a value greater than '1' for a more diffuse (cloudy, overcast) sky appearance."
+  }
+
+  Space
+  {
+    Size	"3"
+  }
+
+  ComboBox
+  {
+    Name	"Messages"
+    Default	"Normal"
+    Options	"Terse,-terse|Normal,|Verbose,-verbose"
+    Hint	"Set the message mode to run QRAD in."_
+    		"Terse runs with the minimum amount of information output during compiling, normal runs without any special messages and verbose runs with the maximum amount of information output during compiling. Many of the tools have 'minor warnings' and informative messages which are displayed when verbose mode is set."
+  }
+
+  ColorBox
+  {
+    Name	"Ambient Light"
+    Param	"-ambient"
+    Type	"Single"
+    Default	"0 0 0"
+    Hint	"Set ambient world light."_
+    		"This option sets a minimum light value to every face so that nothing comes out pitch black."
+  }
+
+  FileBox
+  {
+    Name	"Lights File"
+    Param	"-lights"
+    FullPath	"True"
+    Bold	"true"
+    Filter	"Radiosity Files (*.rad)|*.rad|Text Files (*.txt)|*.txt"
+    Hint	"Manually specify a lights.rad file to use."_
+    		"The .rad file will be used in addition to the defaults of lights.rad and mapname.rad."
+  }
+}
+
+Stage
+{
+  Name		"Shared"
+  Title		"Shared Parameters"
+  Type		"ParameterList"
+
+  CheckBox
+  {
+    Name	"Verbose"
+    Param	"-v"
+    Stages	"CSG|BSP|VIS|RAD"
+    Hint	"Compile with verbose messages."_
+    		"Many of the tools have 'minor warnings' and informative messages which are displayed when verbose mode is set."
+  }
+
+  TextBox
+  {
+    Name	"Threads"
+    Param	"-threads"
+    Stages	"CSG|BSP|VIS|RAD"
+    Type	"Integer"
+    Default	"1"
+    Min		"1"
+    Hint	"Manually specify the number of threads to run."_
+    		"This option is generally only necessary on the non-windows versions of the tools, where there is not a standard way to detect the number of processors in the system and auto-set the value. It can be manually set on windows machines, primarily if you wish to use fewer threads than processors."
+  }
+}

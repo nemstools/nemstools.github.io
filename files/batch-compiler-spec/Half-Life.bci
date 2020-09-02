@@ -1,0 +1,174 @@
+// Specification: Half-Life
+// Written by: Ryan Gregg
+// Version: 1.1.1.0
+// Created: August 4, 2004
+// Last updated: August 4, 2004
+
+Batch
+{
+  Name		"HL"
+  Priority	"1"
+  Links		"Valve,http://www.valvesoftware.com/"
+  Stages	"HL"
+  Filter	"BSP Files (*.bsp)|*.bsp"
+  ShellExecute	"True"
+  Template	"\"${StagePath=hl}\" ${StageParam=hl}"
+}
+
+//
+// HL
+//
+Stage
+{
+  Name		"HL"
+  Title		"Half-Life"
+  Type		"Program"
+  Filter	"Half-Life (hl.exe)|hl.exe|Counter-Strike (cstrike.exe)|cstrike.exe"
+
+  CheckBox
+  {
+    Name	"Run Map"
+    Param	"+map ${FileName}"
+    Checked	"True"
+    Bold	"True"
+    Hint	"\tThe map to start Half-Life with."
+  }
+
+  CheckBox
+  {
+    Name	"Enable Console"
+    Param	"-console"
+    Bold	"True"
+    Hint	"\tStart Half-Life with console enabled."
+  }
+
+  CheckBox
+  {
+    Name	"To Console"
+    Param	"-toconsole"
+    Hint	"\tLoad Half-Life straight to console screen."
+  }
+
+  CheckBox
+  {
+    Name	"Developer"
+    Param	"-dev"
+    Hint	"\tStart Half-Life in developer mode (cheats)."
+  }
+
+  CheckBox
+  {
+    Name	"Safe Mode"
+    Param	"-safe"
+    Hint	"\tStart Half-Life in safe mode (no acceleration)."
+  }
+
+  CheckBox
+  {
+    Name	"Numeric Ping"
+    Param	"-numericping"
+    Hint	"\tDisplay server listing with ping times instead of Green dots."
+  }
+
+  CheckBox
+  {
+    Name	"Minimum Memory"
+    Param	"-minmemory"
+    Hint	"\tStart Half-Life with minimum memory."
+  }
+
+  CheckBox
+  {
+    Name	"No Intro"
+    Param	"-nointro"
+    Hint	"\tSkip starting intro."
+  }
+
+  CheckBox
+  {
+    Name	"No Joystick"
+    Param	"-nojoy"
+    Hint	"\tDisable joystick initialization (saves a bit of memory)."
+  }
+
+  Space
+  {
+    Size	"1"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+
+  CheckBox
+  {
+    Name	"No IP"
+    Param	"-noip"
+    Hint	"\tDon't let Half-Life try to connect to the internet."
+  }
+
+  CheckBox
+  {
+    Name	"No IPX"
+    Param	"-noipx"
+    Hint	"\tDisable IPX (recommended if you do not use IPX communication)."
+  }
+
+  TextBox
+  {
+    Name	"MOD"
+    Param	"-game"
+    Bold	"True"
+    Type	"String"
+    Default	"cstrike"
+    Hint	"\tThe MOD to start Half-Life in."
+  }
+
+  TextBox
+  {
+    Name	"Heap Size"
+    Param	"-heapsize"
+    Type	"Integer"
+    Default	"65536"
+    Min		"16384"
+    Hint	"\tThe amount of memory to allocate for Half-Life."
+  }
+
+  TextBox
+  {
+    Name	"Particles"
+    Param	"-particles"
+    Type	"Integer"
+    Default	"65536"
+    Min		"1"
+    Hint	"\tThe number of particles to search for leaks with."
+  }
+
+  ComboBox
+  {
+    Name	"Render Mode"
+    Default	"Direct 3D"
+    Options	"Direct 3D,-d3d|Software,-soft|Open GL,-gl"
+    Hint	"\tStart Half-Life in the following rendermode."
+  }
+
+  ComboBox
+  {
+    Name	"Colors"
+    Default	"32bit"
+    Options	"32bit,-32bpp|16bit,-32bpp"
+    Hint	"\tStart Half-Life in 32 or 16 bit colors."
+  }
+
+  ComboBox
+  {
+    Name	"Startup State"
+    Default	"Fullscreen"
+    Options	"Fullscreen,-full|Windowed,-win"
+    Hint	"\tStart Half-Life with the following window state."
+  }
+}

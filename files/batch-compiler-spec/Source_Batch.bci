@@ -1,0 +1,155 @@
+// Specification: Source Batch
+// Written by: Ryan Gregg
+// Version: N/A
+// Created: November 5, 2004
+// Last updated: December 1, 2004
+
+// Updated by: Ryan Gregg
+// Date: December 1, 2004
+// Added Batch Batch.
+// Added Ouput variable.
+
+Variable
+{
+  Name		"Output"
+  Type		"Folder"
+  Optional	"False"
+  Hint		"File output directory."
+}
+
+Batch
+{
+  Name		"Batch"
+  Priority	"1"
+  Stages	"Batch"
+  Template	"@echo off\n"_
+  		"${StageCmd=Batch}\n"
+}
+
+//
+// Batch
+//
+Stage
+{
+  Name		"Batch"
+  Title		"Batch Operations"
+  Type		"CommandList"
+
+  //
+  // Recommended File Deletions
+  //
+
+  LabelBox
+  {
+    Name	"Recommended File Deletions:"
+    Bold	"True"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .PRT After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.prt\" goto nodelprt\n"_
+    		"del \"${FilePath}\\${FileName}.prt\"\n"_
+    		"echo ${FilePath}\\${FileName}.prt deleted.\n"_
+    		":nodelprt"
+  }
+
+  Space
+  {
+    Size	"9"
+  }
+
+  //
+  // Recommended File Functions
+  //
+
+  LabelBox
+  {
+    Name	"Recommended File Functions:"
+    Bold	"True"
+  }
+
+  CheckBox
+  {
+    Name	"Copy .BSP After Compile"
+    Bold	"True"
+    Param	"if not exist \"${FilePath}\\${FileName}.bsp\" goto nocopybsp\n"_
+    		"copy \"${FilePath}\\${FileName}.bsp\" \"${Output}\"\n"_
+    		"echo ${FileName}.bsp copied to ${Output}.\n"_
+    		":nocopybsp"
+    Hint	"\tCopy your .BSP file to your map destination folder."
+  }
+
+  CheckBox
+  {
+    Name	"Copy .LIN After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.lin\" goto nocopylin\n"_
+    		"copy \"${FilePath}\\${FileName}.lin\" \"${Output}\"\n"_
+    		"echo ${FileName}.lin copied to ${Output}.\n"_
+    		":nocopylin"
+    Hint	"\tCopy your .LIN file to your map destination folder."
+  }
+
+  Space
+  {
+    Size	"8"
+  }
+
+  //
+  // Unrecommended File Deletions
+  //
+
+  LabelBox
+  {
+    Name	"Unrecommended File Deletions:"
+    Bold	"True"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .BSP After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.bsp\" goto nodelbsp\n"_
+    		"del \"${FilePath}\\${FileName}.bsp\"\n"_
+    		"echo ${FilePath}\\${FileName}.bsp deleted.\n"_
+    		":nodelbsp"
+    Hint	"\tNote: If you delete this file without copying it you won't be able to play your bsp file."
+  }
+
+  CheckBox
+  {
+    Name	"Delete .GL After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.gl\" goto nodelgl\n"_
+    		"del \"${FilePath}\\${FileName}.gl\"\n"_
+    		"echo ${FilePath}\\${FileName}.gl deleted.\n"_
+    		":nodelgl"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .LIN After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.lin\" goto nodellin\n"_
+    		"del \"${FilePath}\\${FileName}.lin\"\n"_
+    		"echo ${FilePath}\\${FileName}.lin deleted.\n"_
+    		":nodellin"
+    Hint	"\tNote: If you delete this file without copying it you won't be able to view the compiler's lin file."
+  }
+
+  CheckBox
+  {
+    Name	"Delete .LOG After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.log\" goto nodellog\n"_
+    		"del \"${FilePath}\\${FileName}.log\"\n"_
+    		"echo ${FilePath}\\${FileName}.log deleted.\n"_
+    		":nodellog"
+    Hint	"\tNote: If you delete this file you won't be able to view the compiler's log file."
+  }
+
+  CheckBox
+  {
+    Name	"Delete .VMF After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.vmf\" goto nodelvmf\n"_
+    		"del \"${FilePath}\\${FileName}.vmf\"\n"_
+    		"echo ${FilePath}\\${FileName}.vmf deleted.\n"_
+    		":nodelvmf"
+  }
+}

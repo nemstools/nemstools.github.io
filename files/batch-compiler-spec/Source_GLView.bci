@@ -1,0 +1,61 @@
+// Specification: GLView
+// Written by: Ryan Gregg
+// Version: N/A
+// Created: December 3, 2004
+// Last updated: N/A
+
+
+Batch
+{
+  Name		"GLView"
+  Priority	"1"
+  Links		"Source SDK,http://www.valve-erc.com/srcsdk/"
+  Stages	"GLView"
+  Filter	"GL Files (*.gl)|*.gl"
+  ShellExecute	"True"
+  Template	"\"${StagePath=GLView}\" ${StageParam=GLView} \"${FilePath}\\${FileName}.gl\""
+}
+
+//
+// GLView
+//
+Stage
+{
+  Name		"GLView"
+  Title		"GLView"
+  Type		"Program"
+  Filter	"GLView (glview.exe)|glview.exe"
+
+  CheckBox
+  {
+    Name	"Portal"
+    Param	"-portal"
+    Hint	"\tRead portal file."
+  }
+
+  CheckBox
+  {
+    Name	"Portal Highlight"
+    Param	"-portalhighlight"
+    Hint	"\tHighlight portals."
+  }
+  CheckBox
+  {
+    Name	"Displacement"
+    Param	"-disp"
+    Hint	"\t???"
+  }
+
+  Space
+  {
+    Size	"7"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}

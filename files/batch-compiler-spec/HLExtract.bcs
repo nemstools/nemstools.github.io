@@ -1,0 +1,124 @@
+// Specification: HLExtract
+// Written by: Ryan Gregg
+// Version: 1.1.3
+// Created: September 19, 2004
+// Last updated: September 19, 2004
+
+Variable
+{
+  Name		"Output"
+  Type		"Folder"
+  Optional	"False"
+  Hint		"File output directory."
+}
+
+Batch
+{
+  Name		"HLExtract"
+  Priority	"1"
+  Stages	"HLExtract"
+  Filter	"Package Files (*.bsp;*.gcf;*.pak;*.wad)|*.bsp;*.gcf;*.pak;*.wad|BSP Files (*.bsp)|*.bsp|GCF Files (*.gcf)|*.gcf|PAK Files (*.pak)|*.pak|WAD Files (*.wad)|*.wad"
+  Template	"@echo off\n"_
+  		"\"${StagePath=HLExtract}\" -p \"${FilePath}\\${FileName}.${FileExt}\" -d \"${Output}\" ${StageParam=HLExtract}"
+}
+
+//
+// HLExtract
+//
+Stage
+{
+  Name		"HLExtract"
+  Title		"Half-Life Extract"
+  Type		"Program"
+  Filter	"HLExtract (hlextract.exe)|hlextract.exe"
+
+  CheckBox
+  {
+    Name	"Console"
+    Param	"-c"
+    Hint	"\tUse the interactive console."
+  }
+
+  CheckBox
+  {
+    Name	"Silent"
+    Param	"-s"
+    Hint	"\tDisplay error messages only (not success messages)."
+  }
+
+  CheckBox
+  {
+    Name	"File Mapping"
+    Param	"-m"
+    Checked	"True"
+    Hint	"\tUse Windows file mapping.\n\n"_
+		"\tThis can be more effecient and memory usage friendly but can also fail on systems with primitive file mapping."
+  }
+
+  CheckBox
+  {
+    Name	"Volatile Access"
+    Param	"-v"
+    Hint	"\tAllow for volatile access.\n\n"_
+		"\tThis will allow HLLib to open files that Steam already has open but can make HLLib unstable."
+  }
+
+  TextBox
+  {
+    Name	"Extract"
+    Param	"-e"
+    Size	"2"
+    Type	"String"
+    Hint	"\tSpecify an item to extract in the format \"root\\folder\\file.ext\" or \"root\\folder\"."
+  }
+
+  TextBox
+  {
+    Name	"Extract"
+    Param	"-e"
+    Size	"2"
+    Type	"String"
+    Hint	"\tSpecify an item to extract in the format \"root\\folder\\file.ext\" or \"root\\folder\"."
+  }
+
+  TextBox
+  {
+    Name	"Extract"
+    Param	"-e"
+    Size	"2"
+    Type	"String"
+    Hint	"\tSpecify an item to extract in the format \"root\\folder\\file.ext\" or \"root\\folder\"."
+  }
+
+  TextBox
+  {
+    Name	"Extract"
+    Param	"-e"
+    Size	"2"
+    Type	"String"
+    Hint	"\tSpecify an item to extract in the format \"root\\folder\\file.ext\" or \"root\\folder\"."
+  }
+
+  TextBox
+  {
+    Name	"Extract"
+    Param	"-e"
+    Size	"2"
+    Type	"String"
+    Hint	"\tSpecify an item to extract in the format \"root\\folder\\file.ext\" or \"root\\folder\"."
+  }
+
+  Space
+  {
+    Size	"1"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Quote	"False"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}

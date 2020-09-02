@@ -1,0 +1,17 @@
+// Written by: Ryan Gregg
+// Created: December 5, 2004
+
+Once
+
+Define		"Splash"	"echo ###################################################\n"_
+				"echo #                 Batch  Compiler                 #\n"_
+				"echo ###################################################\n"_
+				"echo ###################################################\n"_
+				"echo #  Please report bugs to: ryansgregg@hotmail.com  #\n"_
+				"echo ###################################################\n"_
+				"echo.\n"_
+				"echo Written At: ${Date} ${Time}\n"_
+				"echo BC Version: ${Version}\n"_
+				"echo.\n"
+
+Define		"LogViewerRun"	"if exist \"${FilePath}\\${FileName}.log\" \"${LogViewerPath}\" \"${FilePath}\\${FileName}.log\""

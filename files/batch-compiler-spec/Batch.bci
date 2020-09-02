@@ -1,0 +1,296 @@
+// Specification: Batch
+// Written by: Ryan Gregg
+// Version: N/A
+// Created: August 4, 2004
+// Last updated: October 17, 2004
+
+// Updated by: Ryan Gregg
+// Date: October 17, 2004
+// Added Batch Batch.
+
+// Updated by: Ryan Gregg
+// Date: September 5, 2004
+// Thanks to: Matt 'Bluefang' Turnbull
+// Added Delete .INC After Compile
+// Moved Delete .ERR After Compile
+// Fixed Delete .ENT.BAK After Compile
+
+// Updated by: Ryan Gregg
+// Date: August 9, 2004
+// Thanks to: Anders Jenbo
+// Added Delete .ENT.BAK After Compile
+
+Variable
+{
+  Name		"Output"
+  Type		"Folder"
+  Optional	"False"
+  Hint		"File output directory."
+}
+
+Batch
+{
+  Name		"Batch"
+  Priority	"1"
+  Stages	"Batch"
+  Template	"@echo off\n"_
+  		"${StageCmd=Batch}\n"
+}
+
+//
+// Batch
+//
+Stage
+{
+  Name		"Batch"
+  Title		"Batch Operations"
+  Type		"CommandList"
+
+  //
+  // Recommended File Deletions
+  //
+
+  LabelBox
+  {
+    Name	"Recommended File Deletions:"
+    Bold	"True"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .WIC After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.wic\" goto nodelwic\n"_
+    		"del \"${FilePath}\\${FileName}.wic\"\n"_
+    		"echo ${FilePath}\\${FileName}.wic deleted.\n"_
+    		":nodelwic"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .LIN After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.lin\" goto nodellin\n"_
+    		"del \"${FilePath}\\${FileName}.lin\"\n"_
+    		"echo ${FilePath}\\${FileName}.lin deleted.\n"_
+    		":nodellin"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .P0 After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.p0\" goto nodelp0\n"_
+    		"del \"${FilePath}\\${FileName}.p0\"\n"_
+    		"echo ${FilePath}\\${FileName}.p0 deleted.\n"_
+    		":nodelp0"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .P1 After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.p1\" goto nodelp1\n"_
+    		"del \"${FilePath}\\${FileName}.p1\"\n"_
+    		"echo ${FilePath}\\${FileName}.p1 deleted.\n"_
+    		":nodelp1"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .P2 After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.p2\" goto nodelp2\n"_
+    		"del \"${FilePath}\\${FileName}.p2\"\n"_
+    		"echo ${FilePath}\\${FileName}.p2 deleted.\n"_
+    		":nodelp2"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .P3 After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.p3\" goto nodelp3\n"_
+    		"del \"${FilePath}\\${FileName}.p3\"\n"_
+    		"echo ${FilePath}\\${FileName}.p3 deleted.\n"_
+    		":nodelp3"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .PRT After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.prt\" goto nodelprt\n"_
+    		"del \"${FilePath}\\${FileName}.prt\"\n"_
+    		"echo ${FilePath}\\${FileName}.prt deleted.\n"_
+    		":nodelprt"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .ERR After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.err\" goto nodelerr\n"_
+    		"del \"${FilePath}\\${FileName}.err\"\n"_
+    		"echo ${FilePath}\\${FileName}.err deleted.\n"_
+    		":nodelerr"
+    Hint	"Note: If you delete this file you won't be able to view the compiler's error file."
+  }
+
+  CheckBox
+  {
+    Name	"Delete .ENT.BAK After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.ent.bak\" goto nodelentbac\n"_
+    		"del \"${FilePath}\\${FileName}.ent.bak\"\n"_
+    		"echo ${FilePath}\\${FileName}.ent.bak deleted.\n"_
+    		":nodelentbac"
+  }
+
+  Space
+  {
+    Size	"1"
+  }
+
+  //
+  // Recommended File Functions
+  //
+
+  LabelBox
+  {
+    Name	"Recommended File Functions:"
+    Bold	"True"
+  }
+
+  CheckBox
+  {
+    Name	"Copy .BSP After Compile"
+    Bold	"True"
+    Param	"if not exist \"${FilePath}\\${FileName}.bsp\" goto nocopybsp\n"_
+    		"copy \"${FilePath}\\${FileName}.bsp\" \"${Output}\"\n"_
+    		"echo ${FileName}.bsp copied to ${Output}.\n"_
+    		":nocopybsp"
+    Hint	"Copy your .BSP file to your map destination folder."
+  }
+
+  CheckBox
+  {
+    Name	"Copy .RES After Compile"
+    Bold	"True"
+    Param	"if not exist \"${FilePath}\\${FileName}.res\" goto nocopyres\n"_
+    		"copy \"${FilePath}\\${FileName}.res\" \"${Output}\"\n"_
+    		"echo ${FileName}.res copied to ${Output}.\n"_
+    		":nocopyres"
+    Hint	"Copy your .RES file to your map destination folder."
+  }
+
+  CheckBox
+  {
+    Name	"Copy .PTS After Compile"
+    Bold	"True"
+    Param	"if not exist \"${FilePath}\\${FileName}.pts\" goto nocopypts\n"_
+    		"copy \"${FilePath}\\${FileName}.pts\" \"${Output}\"\n"_
+    		"echo ${FileName}.pts copied to ${Output}.\n"_
+    		":nocopypts"
+    Hint	"Copy your .PTS file to your map destination folder."
+  }
+
+  Space
+  {
+    Size	"7"
+  }
+
+  //
+  // Unrecommended File Deletions
+  //
+
+  LabelBox
+  {
+    Name	"Unrecommended File Deletions:"
+    Bold	"True"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .LOG After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.log\" goto nodellog\n"_
+    		"del \"${FilePath}\\${FileName}.log\"\n"_
+    		"echo ${FilePath}\\${FileName}.log deleted.\n"_
+    		":nodellog"
+    Hint	"Note: If you delete this file you won't be able to view the compiler's log file."
+  }
+
+  CheckBox
+  {
+    Name	"Delete .PTS After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.pts\" goto nodelpts\n"_
+    		"del \"${FilePath}\\${FileName}.pts\"\n"_
+    		"echo ${FilePath}\\${FileName}.pts deleted.\n"_
+    		":nodelpts"
+    Hint	"Note: If you delete this file without copying it you won't be able to view the compiler's pts file."
+  }
+
+  CheckBox
+  {
+    Name	"Delete .MAP After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.map\" goto nodelmap\n"_
+    		"del \"${FilePath}\\${FileName}.map\"\n"_
+    		"echo ${FilePath}\\${FileName}.map deleted.\n"_
+    		":nodelmap"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .MAX After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.max\" goto nodelmax\n"_
+    		"del \"${FilePath}\\${FileName}.max\"\n"_
+    		"echo ${FilePath}\\${FileName}.max deleted.\n"_
+    		":nodelmax"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .RMF After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.rmf\" goto nodelrmf\n"_
+    		"del \"${FilePath}\\${FileName}.rmf\"\n"_
+    		"echo ${FilePath}\\${FileName}.rmf deleted.\n"_
+    		":nodelrmf"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .RMX After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.rmx\" goto nodelrmx\n"_
+    		"del \"${FilePath}\\${FileName}.rmx\"\n"_
+    		"echo ${FilePath}\\${FileName}.rmx deleted.\n"_
+    		":nodelrmx"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .BSP After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.bsp\" goto nodelbsp\n"_
+    		"del \"${FilePath}\\${FileName}.bsp\"\n"_
+    		"echo ${FilePath}\\${FileName}.bsp deleted.\n"_
+    		":nodelbsp"
+    Hint	"Note: If you delete this file without copying it you won't be able to play your bsp file."
+  }
+
+  CheckBox
+  {
+    Name	"Delete .RES After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.res\" goto nodelres\n"_
+    		"del \"${FilePath}\\${FileName}.res\"\n"_
+    		"echo ${FilePath}\\${FileName}.res deleted.\n"_
+    		":nodelres"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .ENT After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.ent\" goto nodelent\n"_
+    		"del \"${FilePath}\\${FileName}.ent\"\n"_
+    		"echo ${FilePath}\\${FileName}.ent deleted.\n"_
+    		":nodelent"
+  }
+
+  CheckBox
+  {
+    Name	"Delete .INC After Compile"
+    Param	"if not exist \"${FilePath}\\${FileName}.inc\" goto nodelinc\n"_
+    		"del \"${FilePath}\\${FileName}.inc\"\n"_
+    		"echo ${FilePath}\\${FileName}.inc deleted.\n"_
+    		":nodelinc"
+  }
+}

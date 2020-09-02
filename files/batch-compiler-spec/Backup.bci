@@ -1,0 +1,74 @@
+// Specification: Backup
+// Written by: Ryan Gregg
+// Version: 2.0
+// Created: August 4, 2004
+// Last updated: August 4, 2004
+
+Batch
+{
+  Name		"Backup"
+  Priority	"1"
+  Links		"Backup,http://collective.valve-erc.com/index.php?go=mapbackup"
+  Stages	"Backup"
+  Filter	"Supported Files|*.map;*.rmf;*.bsp|MAP Files (*.map)|*.map|RMF Files (*.rmf)|*.rmf|BSP Files (*.bsp)|*.bsp"
+  Template	"@echo off\n"_
+  		"\"${StagePath=Backup}\" ${StageParam=Backup} \"${FilePath}\\${FileName}\"\n"
+}
+
+//
+// Backup
+//
+Stage
+{
+  Name		"Backup"
+  Type		"Program"
+  Filter	"MAPBACKUP (mapbackup.exe)|mapbackup.exe"
+
+  CheckBox
+  {
+    Name	"Sub-Directory Save"
+    Param	"-dir"
+    Hint	"\tPlace backups of all files inside \filename\.\n\n"_
+    		"\tBy default, an incremental backup will be created of your mapfile (mapname0000.map, mapname0001.map, etc) in the same directory everytime you compile. This switch will override that behaviour and create a sub-directory using the map file name."
+  }
+
+  TextBox
+  {
+    Name	"Maximum Backup Files"
+    Param	"-max"
+    Type	"Integer"
+    Default	"64"
+    Min		"0"
+    Max		"64"
+    Hint	"\tSpecify a maximum number of backup files to create.\n\n"_
+    		"\tOnce the maximum number of backups is reached (defined by -max), the program starts overwriting at 1 and counts up again."
+  }
+
+  TextBox
+  {
+    Name	"Extension"
+    Param	"-ext"
+    Type	"String"
+    Hint	"\tForce a specific extension for all backup files."
+  }
+
+  FolderBox
+  {
+    Name	"Backup Path"
+    Param	"-out"
+    Hint	"\tForce a specific backup directory path (negates -ext and -dir)."
+  }
+
+  Space
+  {
+    Size	"6"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}

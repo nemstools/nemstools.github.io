@@ -1,0 +1,57 @@
+// Specification: Source Tools Advanced
+// Written by: Ryan Gregg
+// Version: N/A
+// Created: December 3, 2004
+// Last updated: April 27, 2005
+
+// Updated by: Ryan Gregg
+// Date: April 27, 2005
+// Added CST link.
+
+Include		"Source Tools.bci"
+Include		"Source Batch.bci"
+Include		"Source GLView.bci"
+Include		"Steam.bci"
+Include		"Templates.bci"
+
+Batch
+{
+  Name		"Source Tools Normal"
+  Priority	"3"
+  Links		"Custom Source Tools,http://www.zhlt.tk/|"_
+  		"Source SDK,http://www.valve-erc.com/srcsdk/|"_
+  		"Steam,http://www.steampowered.com/|"_
+  		"Valve,http://www.valvesoftware.com/"
+  Filter	"Supported Files|*.vmf;*.bsp;*.gl|VMF Files (*.vmf)|*.vmf|BSP Files (*.bsp)|*.bsp|GL Files (*.gl)|*.gl"
+  Stages	"BSP|VIS|RAD|Shared|ZIP|Batch|GLView|Steam"
+  LogFile	"${FilePath}\\${FileName}.log"
+  Template	"@echo off\n"_
+  		"set VPROJECT=${ValveProject}\n"_
+		"cd ${BinRoot}\n"_
+
+		"${Splash}"_
+
+  		"\"${StagePath=BSP}\" ${StageParam=BSP} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=VIS}\" ${StageParam=VIS} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=RAD}\" ${StageParam=RAD} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=ZIP}\" ${StageParam=ZIP}\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+
+
+  		"\"${StagePath=GLView}\" ${StageParam=GLView} \"${FilePath}\\${FileName}.gl\"\n"_
+
+  		"${StageCmd=Batch}\n"_
+  		"\"${StagePath=Steam}\" ${StageParam=Steam}\n"_
+		"goto succeeded\n"_
+
+		":failed\n"_
+  		"echo.\n"_
+		"echo There was a problem compiling your map, check your ${FileName}.log file for errors.\n"_
+		":succeeded\n"_
+  		"echo.\n"_
+
+  		"${LogViewerRun}\n"
+}

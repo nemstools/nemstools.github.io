@@ -1,0 +1,130 @@
+// Specification: Mapster
+// Written by: Ryan Gregg
+// Version: 3.0
+// Created: August 4, 2004
+// Last updated: August 4, 2004
+
+Batch
+{
+  Name		"Mapster"
+  Priority	"1"
+  Links		"Mapster,http://countermap.counter-strike.net/Mapster/"
+  Stages	"Mapster"
+  Filter	"Map Files (*.map)|*.map"
+  Template	"@echo off\n"_
+  		"\"${StagePath=Mapster}\" ${StageParam=Mapster} \"${FilePath}\\${FileName}\"\n"
+}
+
+//
+// Mapster
+//
+Stage
+{
+  Name		"Mapster"
+  Type		"Program"
+  Filter	"Mapster (mapster.exe)|mapster.exe;mapster2.exe;mapster3.exe|All Executables (*.exe)|*.exe"
+
+  ComboBox
+  {
+    Name	"Vis Type"
+    Bold	"True"
+    Default	"Normal"
+    Options	"Normal,|Full,-full"
+    Hint	"\tRun as normal or full VIS.\n\n"_
+    		"\tFull vis enables extra calculations during vis, which help reduce the number of vis errors in a map over a normal vis. The speed hit is approximately 30% over a normal vis. r_speeds will generally be the same, though lower in some areas, and higher in others (primarily due to vis errors being fixed)."
+  }
+
+  CheckBox
+  {
+    Name	"Server"
+    Param	"-server"
+    Bold	"True"
+    Hint	"\tRun as the NetVIS server."
+  }
+
+  CheckBox
+  {
+    Name	"Trace"
+    Param	"-trace"
+    Bold	"true"
+    Hint	"\tTrace NetVis's output.\n\n"_
+    		"\tThe mapster console will not show all the data that NetVis outputs by default, this command allows it to."
+  }
+
+  TextBox
+  {
+    Name	"Port"
+    Param	"-port"
+    Type	"Integer"
+    Default	"21212"
+    Min		"0"
+    Max		"65535"
+    Hint	"\tThe socket or port."
+  }
+
+  TextBox
+  {
+    Name	"Rate"
+    Param	"-rate"
+    Type	"Integer"
+    Default	"60"
+    Min		"1"
+    Hint	"\tChange the status display update rate. (In seconds.)\n\n"_
+    		"\tEvery time this interval is hit your console is updated with a progress report listing all the clients and their progress as well as an overall percentage."
+  }
+
+  TextBox
+  {
+    Name	"Host IP"
+    Param	"-hostip"
+    Type	"String"
+    Hint	"\tManually Specify IP address.\n\n"_
+    		"\tMapster will attempt to determine your IP address automatically, but sometimes is unable to do so. If so, you will see an error message on your screen about this."
+  }
+
+  TextBox
+  {
+    Name	"Host Name"
+    Param	"-name"
+    Type	"String"
+    Hint	"\tName to identify your server or client by.\n\n"_
+    		"\tIf you set your name with this command, it will be saved in the Mapster Registry database and displayed on the Status Page."
+  }
+
+  TextBox
+  {
+    Name	"Host Location"
+    Param	"-location"
+    Type	"string"
+    Hint	"\tYour location for others to see.\n\n"_
+    		"\tIf you set your name with this command, it will be saved in the Mapster Registry database and displayed on the Status Page."
+  }
+
+  ComboBox
+  {
+    Name	"Connection"
+    Param	"-connection"
+    Bold	"True"
+    Default	"Low"
+    Options	"Low,L|Medium,M|High,H"
+    Hint	"\tYour connection type for others to see.\n\n"_
+    		"\tIf you are compiling maps (being a server) you should use this command with the arguments \"L\", \"M\", or \"H\" to indicate your connection speed, where L = low speed (fast dialup or slow cable modem), M = medium speed (cable modem or DSL), and H = high speed (fast DSL, T1 or better, etc.). This information is used by Mapster to decide how fast to send you client connections if you are running a Netvis server. The slower your speed, the more Mapster will space out connections to your map job."
+  }
+
+  FolderBox
+  {
+    Name	"Zoners Path"
+    Param	"-zpath"
+    Size	"3"
+    Hint	"\tPath to Zoners.\n\n"_
+    		"\tIf you have installed Mapster in your zoners folder, you will not need to use this command. However if you have installed Mapster in another directory, you will need to use this command to set the full path to your zoners directory."
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}

@@ -1,0 +1,772 @@
+// Specification: Source Tools
+// Written by: Ryan Gregg
+// Version: N/A
+// Created: November 5, 2004
+// Last updated: January 22, 2006
+
+// Updated by: Ryan Gregg
+// Date: January 22, 2006
+// Added Virtual Displacment Physics and Min Luxel Scale options to BSP.
+// Added Chop, Max Chop, Soft Sun and Lightmap Type options to RAD.
+// Added Full Mini Dump option to Shared.
+
+// Updated by: Ryan Gregg
+// Date: May 28, 2005
+// Updated VIS and RAD filters.
+
+// Updated by: Ryan Gregg
+// Date: April 27, 2005
+// Added CST tools to each stage's filter.
+// Added CST link.
+
+// Updated by: Ryan Gregg
+// Date: Febuary 23, 2005
+// Updated all tools to refelect changes to the SDK.
+
+// Updated by: Ryan Gregg
+// Date: December 1, 2004
+// Added BinRoot and ValveProject variables.
+
+Include		"Templates.bci"
+
+Variable
+{
+  Name		"BinRoot"
+  Type		"Folder"
+  Optional	"True"
+  Hint		"SDK bin directory.\n...\\Steam\\SteamApps\\<User Name>\\sourcesdk\\bin\\"
+}
+
+Variable
+{
+  Name		"ValveProject"
+  Type		"Folder"
+  Optional	"True"
+  Hint		"The directory your gameinfo.txt is located in."
+}
+
+Batch
+{
+  Name		"Source Tools"
+  Priority	"2"
+  Links		"Custom Source Tools,http://www.zhlt.tk/|"_
+  		"Source SDK,http://www.valve-erc.com/srcsdk/"
+  Filter	"Supported Files|*.vmf;*.bsp|VMF Files (*.vmf)|*.vmf|BSP Files (*.bsp)|*.bsp"
+  Stages	"BSP|VIS|RAD|Shared|ZIP"
+  Template	"@echo off\n"_
+  		"set VPROJECT=${ValveProject}\n"_
+		"cd ${BinRoot}\n"_
+
+  		"\"${StagePath=BSP}\" ${StageParam=BSP} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=VIS}\" ${StageParam=VIS} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=RAD}\" ${StageParam=RAD} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=ZIP}\" ${StageParam=ZIP}\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+
+		"goto succeeded\n"_
+
+		":failed\n"_
+  		"echo.\n"_
+		"echo There was a problem compiling your map, check your ${FileName}.log file for errors.\n"_
+		":succeeded\n"_
+  		"echo.\n"_
+
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"BSP"
+  Priority	"1"
+  Stages	"BSP|Shared"
+  Filter	"VMF Files (*.vmf)|*.vmf"
+  Template	"@echo off\n"_
+  		"set VPROJECT=${ValveProject}\n"_
+		"cd ${BinRoot}\n"_
+  		"\"${StagePath=BSP}\" ${StageParam=BSP} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"VIS"
+  Priority	"1"
+  Stages	"VIS|Shared"
+  Filter	"VMF Files (*.vmf)|*.vmf"
+  Template	"@echo off\n"_
+  		"set VPROJECT=${ValveProject}\n"_
+		"cd ${BinRoot}\n"_
+  		"\"${StagePath=VIS}\" ${StageParam=VIS} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"RAD"
+  Priority	"1"
+  Stages	"RAD|Shared"
+  Filter	"VMF Files (*.vmf)|*.vmf"
+  Template	"@echo off\n"_
+  		"set VPROJECT=${ValveProject}\n"_
+		"cd ${BinRoot}\n"_
+  		"\"${StagePath=RAD}\" ${StageParam=RAD} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"ZIP"
+  Priority	"1"
+  Stages	"ZIP"
+  Filter	"VMF Files (*.vmf)|*.vmf"
+  Template	"@echo off\n"_
+  		"set VPROJECT=${ValveProject}\n"_
+		"cd ${BinRoot}\n"_
+  		"\"${StagePath=ZIP}\" ${StageParam=ZIP}\n"
+}
+
+//
+// BSP
+//
+Stage
+{
+  Name		"BSP"
+  Title		"Binary Space Partition"
+  Type		"Program"
+  Filter	"VBSP (vbsp.exe)|vbsp.exe|CSTBSP (cstbsp.exe)|cstbsp.exe"
+
+  CheckBox
+  {
+    Name	"Bump All"
+    Param	"-bumpall"
+    Hint	"\tForce all surfaces to be bump mapped."
+  }
+
+  CheckBox
+  {
+    Name	"Dump Collision Data"
+    Param	"-dumpcollide"
+    Hint	"\tWrite files with collision info."
+  }
+
+  CheckBox
+  {
+    Name	"Dump Static Props"
+    Param	"-dumpstaticprop"
+    Hint	"\tDump static props to staticprop*.txt."
+  }
+
+  CheckBox
+  {
+    Name	"Full Detail"
+    Param	"-fulldetail"
+    Hint	"\tMark all detail geometry as normal geometry (so all detail geometry will affect visibility)."
+  }
+
+  CheckBox
+  {
+    Name	"GLView"
+    Bold	"True"
+    Param	"-glview"
+    Hint	"\tWrites .gl files in the current directory that can be viewed with glview.exe. If you use -tmpout, it will write the files into the \\tmp folder."
+  }
+
+  CheckBox
+  {
+    Name	"Keep Stale Zip"
+    Param	"-keepstalezip"
+    Hint	"\tKeep the BSP's zip files intact but regenerate everything else."
+  }
+
+  CheckBox
+  {
+    Name	"Leak Test"
+    Param	"-leaktest"
+    Hint	"\tStop processing the map if a leak is detected. Whether or not this flag is set, a leak file will be written out at <vmf filename>.lin, and it can be imported into Hammer."
+  }
+
+  CheckBox
+  {
+    Name	"Light If Missing"
+    Param	"-lightifmissing"
+    Hint	"\tForce lightmaps to be generated for all surfaces even if they don't need lightmaps."
+  }
+
+
+  CheckBox
+  {
+    Name	"No Detail"
+    Param	"-nodetail"
+    Bold	"True"
+    Hint	"\tGet rid of all detail geometry. The geometry left over is what affects visibility."
+  }
+
+  CheckBox
+  {
+    Name	"No Linux Data"
+    Param	"-nolinuxdata"
+    Hint	"\tBy default, BSP writes physics data for linux servers. This parameter disables writing linux physics data into the map."
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Quote	"False"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+
+  CheckBox
+  {
+    Name	"No Water"
+    Param	"-nowater"
+    Bold	"True"
+    Hint	"\tGet rid of water brushes."
+  }
+
+  CheckBox
+  {
+    Name	"No CSG"
+    Param	"-nocsg"
+    Hint	"\tDon't chop out intersecting brush areas."
+  }
+
+  /*CheckBox
+  {
+    Name	"No Linux Data"
+    Param	"-nolinuxdata"
+    Hint	"\tForce it to not write physics data for linux multiplayer servers, even if there are multiplayer entities in the map."
+  }*/
+
+  CheckBox
+  {
+    Name	"No Merge"
+    Param	"-nomerge"
+    Hint	"\tDon't merge together chopped faces on nodes."
+  }
+
+  CheckBox
+  {
+    Name	"No Merge Water"
+    Param	"-nomergewater"
+    Hint	"\tDon't merge together chopped faces on water."
+  }
+
+  CheckBox
+  {
+    Name	"No Opt"
+    Param	"-noopt"
+    Hint	"\tBy default, vbsp removes the 'outer shell' of the map, which are all the faces you can't see because you can never get outside the map. -noopt disables this behaviour."
+  }
+
+  CheckBox
+  {
+    Name	"No Prune"
+    Param	"-noprune"
+    Hint	"\tDon't prune neighboring solid nodes."
+  }
+
+  CheckBox
+  {
+    Name	"No Share"
+    Param	"-noshare"
+    Hint	"\tEmit unique face edges instead of sharing them."
+  }
+
+  CheckBox
+  {
+    Name	"No Subdivide"
+    Param	"-nosubdiv"
+    Hint	"\tDon't subdivide faces for lightmapping."
+  }
+
+  CheckBox
+  {
+    Name	"No T-Junction"
+    Param	"-notjunc"
+    Hint	"\tDon't fixup t-junctions."
+  }
+
+  CheckBox
+  {
+    Name	"No Weld"
+    Param	"-noweld"
+    Hint	"\tDon't join face vertices together."
+  }
+
+  Space
+  {
+    Size	"1"
+  }
+
+  CheckBox
+  {
+    Name	"Snap Axial"
+    Param	"-snapaxial"
+    Hint	"\tSnap axial planes to integer coordinates."
+  }
+
+  CheckBox
+  {
+    Name	"Only Entites"
+    Param	"-onlyents"
+    Bold	"True"
+    Hint	"\tThis option causes vbsp only import the entities from the .vmf file. -onlyents won't reimport brush models."
+  }
+
+  CheckBox
+  {
+    Name	"Only Props"
+    Param	"-onlyprops"
+    Bold	"True"
+    Hint	"\tOnly update the static props and detail props."
+  }
+
+  CheckBox
+  {
+    Name	"Verbose Entities"
+    Param	"-verboseentities"
+    Hint	"\tIf -verbose is on, this disables verbose output for submodels."
+  }
+
+  CheckBox
+  {
+    Name	"Virtual Displacement Physics"
+    Param	"-virtualdispphysics"
+    Hint	"\tUse virtual (not precomputed) displacement collision models."
+  }
+
+  TextBox
+  {
+    Name	"Block"
+    Param	"-Block"
+    Type	"String"
+    Quote	"False"
+    Default	"0.0 0.0"
+    Hint	"\tControl the grid size mins that vbsp chops the level on."
+  }
+
+  TextBox
+  {
+    Name	"Blocks"
+    Param	"-Blocks"
+    Type	"String"
+    Quote	"False"
+    Default	"0.0 0.0 0.0 0.0"
+    Hint	"\tEnter the mins and maxs for the grid size vbsp uses."
+  }
+
+  TextBox
+  {
+    Name	"Luxel Scale"
+    Param	"-luxelscale"
+    Type	"Single"
+    Default	"1.0"
+    Min		"0.0"
+    Max		"100.0"
+    Hint	"\tScale all lightmaps by this amount."
+  }
+
+  TextBox
+  {
+    Name	"Micro"
+    Param	"-micro"
+    Type	"Single"
+    Default	"1.0"
+    Min		"0.0"
+    Hint	"\tvbsp will warn when brushes are output with a volume less than this number."
+  }
+
+  TextBox
+  {
+    Name	"Min Luxel Scale"
+    Param	"-minluxelscale"
+    Type	"Single"
+    Default	"1.0"
+    Min		"0.0"
+    Max		"100.0"
+    Hint	"\tNo luxel scale will be lower than this amount."
+  }
+}
+
+//
+// VIS
+//
+Stage
+{
+  Name		"VIS"
+  Title		"Visibility Index Set"
+  Type		"Program"
+  Filter	"VVIS (vvis.exe)|vvis.exe|CSTVIS (cstvis.exe;cstvis_launcher.exe)|cstvis.exe;cstvis_launcher.exe"
+
+  CheckBox
+  {
+    Name	"No Sort"
+    param	"-nosort"
+    Hint	"\tDon't sort portals (sorting is an optimization)."
+  }
+
+  TextBox
+  {
+    Name	"Radius Override"
+    param	"-radius_override"
+    Type	"Single"
+    Default	"0.0"
+    Min		"0.0"
+    Hint	"\tForce a VIS radius."
+  }
+
+  ComboBox
+  {
+    Name	"VIS Type"
+    Bold	"True"
+    Default	"Normal"
+    Options	"Fast,-fast|Normal,"
+    Hint	"\tRun as fast or normal.\n\n"_
+		"\tFast VIS only does a first quick pass on VIS calculations."
+  }
+
+  Space
+  {
+    Size	"7"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Quote	"False"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}
+
+//
+// RAD
+//
+Stage
+{
+  Name		"RAD"
+  Title		"Radiosity"
+  Type		"Program"
+  Filter	"VRAD (vrad.exe)|vrad.exe|CSTRAD (cstrad.exe;cstrad_launcher.exe)|cstrad.exe;cstrad_launcher.exe"
+
+  CheckBox
+  {
+    Name	"Center Samples"
+    param	"-centersamples"
+    Hint	"\tMove sample centers."
+  }
+
+  CheckBox
+  {
+    Name	"Direct Lightmap"
+    param	"-dlightmap"
+    Hint	"\tForce direct lighting into different lightmap than radiosity."
+  }
+
+  CheckBox
+  {
+    Name	"Debug Extra"
+    param	"-debugextra"
+    Hint	"\tPlaces debugging data in lightmaps to visualize supersampling."
+  }
+
+  CheckBox
+  {
+    Name	"Dump"
+    param	"-dump"
+    Hint	"\tWrite debugging .txt files."
+  }
+
+  CheckBox
+  {
+    Name	"Dump Normals"
+    param	"-dumpnormals"
+    Hint	"\tWrite normals to debug files."
+  }
+
+  CheckBox
+  {
+    Name	"Log Hash"
+    param	"-loghash "
+    Hint	"\tLog the sample hash table to samplehash.txt."
+  }
+
+  CheckBox
+  {
+    Name	"No Detail Light"
+    param	"-nodetaillight"
+    Hint	"\tDon't light detail props."
+  }
+
+  CheckBox
+  {
+    Name	"No Extra"
+    param	"-noextra"
+    Bold	"true"
+    Hint	"\tDisable supersampling."
+  }
+
+  CheckBox
+  {
+    Name	"Only Detail"
+    param	"-onlydetail"
+    Hint	"\tOnly light detail props and per-leaf lighting."
+  }
+
+  /*CheckBox
+  {
+    Name	"Red Error"
+    param	"-rederror"
+    Hint	"\tShow errors in red."
+  }*/
+
+  CheckBox
+  {
+    Name	"Stop On Exit"
+    param	"-stoponexit"
+    Hint	"\tWait for a keypress on exit."
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Quote	"False"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+
+  TextBox
+  {
+    Name	"Chop"
+    Param	"-chop"
+    Type	"Single"
+    Default	"64.0"
+    Min		"1.0"
+    Hint	"\tSmallest number of luxel widths for a bounce patch, used on edges."
+  }
+
+  TextBox
+  {
+    Name	"Bounce"
+    Param	"-bounce"
+    Bold	"True"
+    Type	"Integer"
+    Default	"100"
+    Min		"0"
+    Hint	"\tSet max number of bounces."
+  }
+
+  TextBox
+  {
+    Name	"Luxel Density"
+    Param	"-luxeldensity"
+    Type	"Single"
+    Default	"1.0"
+    Min		"0.0"
+    Max		"1.0"
+    Hint	"\tRescale all luxels by the specified amount."
+  }
+
+  TextBox
+  {
+    Name	"Max Chop"
+    Param	"-maxchop"
+    Type	"Single"
+    Default	"64.0"
+    Min		"2.0"
+    Hint	"\tCoarsest allowed number of luxel widths for a patch, used in face interiors."
+  }
+
+  TextBox
+  {
+    Name	"Max Disp Sample Size"
+    Param	"-maxdispsamplesize"
+    Type	"Single"
+    Default	"512.0"
+    Min		"0.0"
+    Hint	"\tSet max displacement sample size."
+  }
+
+  TextBox
+  {
+    Name	"Smooth"
+    Param	"-smooth"
+    Type	"Single"
+    Default	"45.0"
+    Min		"0.0"
+    Max		"360.0"
+    Hint	"\tSet the threshold for smoothing groups, in degrees."
+  }
+
+  TextBox
+  {
+    Name	"Soft Sun"
+    Param	"-softsun"
+    Type	"Single"
+    Default	"0.0"
+    Min		"0.0"
+    Max		"360.0"
+    Hint	"\tTreat the sun as an area light source of the specified size in degrees.\n\n"_
+		"\tProduces soft shadows.  Recommended values are between 0 and 5 degrees."
+  }
+
+  ComboBox
+  {
+    Name	"Lightmap Type"
+    Bold	"True"
+    Default	"LDR"
+    Options	"LDR,-ldr|HDR,-hdr|Both,-both"
+    Hint	"\tThe type of lightmaps to generate.\n\n"_
+		"\tThe Source Engine supports two independent sets of lightmaps, one for HDR (High Dynamic Range) lighting and one for LDR (Low Dynamic Range) lighting. LDR lighting is the same static lighting from HL2. With LDR lighting, we often have to supplement dark areas with additional point and texture lights to help make these areas visible. Now, with HDR, we can simply use auto-exposure to enhance most of these dark areas without the \"fake\" lights. The one drawback to having two sets of lightmaps is the increased BSP file size, which in some cases may more than double.\n\n"_
+		"\tChoosing LDR generates LDR lightmaps only, choosing HDR generate HDR lightmaps only and choosing Both generates LDR and HDR lightmaps."
+  }
+
+  ComboBox
+  {
+    Name	"RAD Type"
+    Bold	"True"
+    Default	"Normal"
+    Options	"Fast,-fast|Normal,|Final,-final"
+    Hint	"\tRun as fast or normal.\n\n"_
+		"\tFast RAD does quick and dirty lighting calculations.\n\n"_
+		"\tFinal RAD increases the quality of skylight and indirect light by spending more CPU time firing rays.  Final RAD can dramatically increase the compile time for RAD, and so it is mainly intended for final map compiles. The biggest quality impact of this option is the reduction of lighting artifacts that are commonly found in indoor spaces lit primarily from light_environment."
+  }
+
+  FileBox
+  {
+    Name	"Lights File"
+    Param	"-lights"
+    FullPath	"True"
+    Bold	"True"
+    Filter	"Radiosity Files (*.rad)|*.rad|Text Files (*.txt)|*.txt"
+    Hint	"\tLoad a lights file in addition to lights.rad and the level lights file."
+  }
+}
+
+//
+// ZIP
+//
+Stage
+{
+  Name		"ZIP"
+  Title		"BSP ZIP"
+  Type		"Program"
+  Filter	"BSPZIP (bspzip.exe)|bspzip.exe"
+
+  ComboBox
+  {
+    Name	"Operation"
+    Checked	"True"
+    Default	"Add"
+    Options	"Add,-addlist \"${FilePath}\\${FileName}.bsp\" \"${FilePath}\\${FileName}.lst\" \"${FilePath}\\${FileName}.bsp\"|Extract,-extract \"${FilePath}\\${FileName}.bsp\" \"${FilePath}\\${FileName}.zip\"|List,-dir \"${FilePath}\\${FileName}.bsp\""
+    Hint	"\tAdd files to, extract files from or list the files in the BSP's embedded ZIP file.\n\n"_
+    		"\tWhen adding files a <filename>.lst file must exist in your input file's folder.  This file contains pairs in the format ZIP path Local path separated by new line characters.  For example, to add the material walls/stonewall our <filename>.lst file would contain:\n\n"_
+		"\tmaterials/walls/stonewall.vmt\n"_
+		"\tC:\\materials\\walls\\stonewall.vmt\n"_
+		"\tmaterials/walls/stonewall.vtf\n"_
+		"\tC:\\materials\\walls\\stonewall.vtf"
+  }
+
+  Space
+  {
+    Size	"9"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Quote	"False"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}
+
+//
+// Shared
+//
+Stage
+{
+  Name		"Shared"
+  Title		"Shared Parameters"
+  Type		"ParameterList"
+
+  CheckBox
+  {
+    Name	"Full Mini Dumps"
+    param	"-fullminidumps"
+    Stages	"BSP|VIS|RAD"
+    Hint	"\tWrite large minidumps on crash."
+  }
+
+  CheckBox
+  {
+    Name	"No VConfig"
+    param	"-novconfig"
+    Stages	"BSP|VIS|RAD"
+    Hint	"\tDon't bring up graphical UI on VPROJECT errors."
+  }
+
+  CheckBox
+  {
+    Name	"MPI"
+    param	"-mpi"
+    Stages	"VIS|RAD"
+    Hint	"\tUse VMPI to distribute computations."
+  }
+
+  CheckBox
+  {
+    Name	"Verbose"
+    param	"-verbose"
+    Stages	"BSP|VIS|RAD"
+    Hint	"\tCompile with verbose messages."
+  }
+
+  TextBox
+  {
+    Name	"MPI Password"
+    Param	"-mpi_pw"
+    Stages	"VIS|RAD"
+    Type	"String"
+    Hint	"\tUse a password to choose a specific set of VMPI workers."
+  }
+
+  TextBox
+  {
+    Name	"Threads"
+    Param	"-threads"
+    Stages	"BSP|VIS|RAD"
+    Type	"Integer"
+    Default	"1"
+    Min		"1"
+    Hint	"\tControl the number of threads vbsp uses (defaults to the # of processors on your machine)."
+  }
+
+  ComboBox
+  {
+    Name	"Priority"
+    Stages	"BSP|VIS|RAD"
+    Default	"Normal"
+    Options	"Low,-low|Normal,"
+    Hint	"\tRun program an altered priority level.\n\n"_
+    		"\tSetting the priority of the compile tools to -low is very handy, as you can multitask and do other things without really feeling the drain of the compile programs on the system, provided there is enough memory for the tools and the other programs you use."
+  }
+
+  FolderBox
+  {
+    Name	"Game"
+    Param	"-game"
+    Stages	"BSP|VIS|RAD"
+    Bold	"True"
+    Hint	"\tOverride the VPROJECT environment variable.\n\n"_
+    		"\tShould point to the folder your gameinfo.txt is located in."
+  }
+}

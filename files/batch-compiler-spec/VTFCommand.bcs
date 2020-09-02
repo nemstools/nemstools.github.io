@@ -1,0 +1,463 @@
+// Specification: VTFCmd
+// Written by: Ryan Gregg
+// Version: 1.0.3
+// Created: April 17, 2005
+// Last updated: May 6, 2005
+
+// Updated by: Ryan Gregg
+// Date: May 6, 2005
+// Added -nwrap option.
+
+Batch
+{
+  Name		"VTFCmd"
+  Priority	"1"
+  Stages	"VTF|VMT|Misc"
+  Filter	"Supported Files (*.bmp;*.dds;*.gif;*.jpg;*.jpeg;*.png;*.tga)|*.bmp;*.dds;*.gif;*.jpg;*.jpeg;*.png;*.tga|BMP Files (*.bmp)|*.bmp|DDS Files (*.dds)|*.dds|GIF Files (*.gif)|*.gif|JPEG Files (*.jpg;*.jpeg)|*.jpg;*.jpeg|PNG Files (*.png)|*.png|TGA Files (*.tga)|*.tga|All Files (*.*)|*.*"
+  Template	"@echo off\n"_
+  		"\"${StagePath=VTF}\" -file \"${FilePath}\\${FileName}.${FileExt}\" ${StageParam=VTF} ${StageParam=VMT} ${StageParam=Misc}"
+}
+
+//
+// VTF
+//
+Stage
+{
+  Name		"VTF"
+  Title		"VTF Options"
+  Type		"Program"
+  Filter	"VTFCmd (vtfcmd.exe)|vtfcmd.exe"
+
+  CheckBox
+  {
+    Name	"Gamma Correct"
+    Param	"-gamma"
+    Hint	"\tGamma correct input file."
+  }
+
+  CheckBox
+  {
+    Name	"No Reflectivity"
+    Param	"-noreflectivity"
+    Hint	"\tDon't calculate reflectivity."
+  }
+
+  CheckBox
+  {
+    Name	"No Thumbnail"
+    Param	"-nothumbnail"
+    Hint	"\tDon't generate thumbnail image."
+  }
+
+  CheckBox
+  {
+    Name	"Normal Map"
+    Param	"-normal"
+    Hint	"\tConvert input file to normal map."
+  }
+
+  CheckBox
+  {
+    Name	"Normal Wrap"
+    Param	"-nwrap"
+    Hint	"\tWrap the normal map (for tiled textures)."
+  }
+
+  CheckBox
+  {
+    Name	"Resize"
+    Param	"-resize"
+    Checked	"True"
+    Hint	"\tResize input file to be a power of two."
+  }
+
+  TextBox
+  {
+    Name	"Bumpmap Scale"
+    Param	"-bumpscale"
+    Type	"Single"
+    Default	"1.0"
+    Min		"0.0"
+    Hint	"\tEngine bumpmapping scale to use."
+  }
+
+
+  TextBox
+  {
+    Name	"Gamma Correction"
+    Param	"-gcorrection"
+    Type	"Single"
+    Default	"2.0"
+    Min		"0.0"
+    Hint	"\tSpecify the gamma correction to apply."
+  }
+
+  TextBox
+  {
+    Name	"Normal Scale"
+    Param	"-nscale"
+    Type	"Single"
+    Default	"2.0"
+    Min		"0.0"
+    Hint	"\tSpecify the normal map scale to use."
+  }
+
+  Space
+  {
+    Size	"1"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Quote	"False"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+
+  ComboBox
+  {
+    Name	"Flag"
+    Param	"-flag"
+    Default	"Anisotropic"
+    Options	"Point Sample,POINTSAMPLE|Trilinear,TRILINEAR|Clamp S,CLAMPS|Clamp T,CLAMPT|Anisotropic,ANISOTROPIC|Hint DXT5,HINT_DXT5|Normal,NORMAL|No Mipmaps,NOMIP|No LOD,NOLOD|Min Mipmap,MINMIP|Procedural,PROCEDURAL|Render Target,RENDERTARGET|Depth Render Target,DEPTHRENDERTARGET|No Debug Overide,NODEBUGOVERRIDE|Single Copy,SINGLECOPY|One Over Mipmap Level In Alpha,ONEOVERMIPLEVELINALPHA|Premultiply Color By One Over Mipmap Level,PREMULTCOLORBYONEOVERMIPLEVEL|Normal To DuDv,NORMALTODUDV|Alpha Test Mipmap Generation,ALPHATESTMIPGENERATION|No Depth Buffer,NODEPTHBUFFER|Nice Filtered,NICEFILTERED"
+    Hint	"\tSpecify a flag to set in the output texture."
+  }
+
+  ComboBox
+  {
+    Name	"Flag"
+    Param	"-flag"
+    Default	"Clamp S"
+    Options	"Point Sample,POINTSAMPLE|Trilinear,TRILINEAR|Clamp S,CLAMPS|Clamp T,CLAMPT|Anisotropic,ANISOTROPIC|Hint DXT5,HINT_DXT5|Normal,NORMAL|No Mipmaps,NOMIP|No LOD,NOLOD|Min Mipmap,MINMIP|Procedural,PROCEDURAL|Render Target,RENDERTARGET|Depth Render Target,DEPTHRENDERTARGET|No Debug Overide,NODEBUGOVERRIDE|Single Copy,SINGLECOPY|One Over Mipmap Level In Alpha,ONEOVERMIPLEVELINALPHA|Premultiply Color By One Over Mipmap Level,PREMULTCOLORBYONEOVERMIPLEVEL|Normal To DuDv,NORMALTODUDV|Alpha Test Mipmap Generation,ALPHATESTMIPGENERATION|No Depth Buffer,NODEPTHBUFFER|Nice Filtered,NICEFILTERED"
+    Hint	"\tSpecify a flag to set in the output texture."
+  }
+
+  ComboBox
+  {
+    Name	"Flag"
+    Param	"-flag"
+    Default	"Clamp T"
+    Options	"Point Sample,POINTSAMPLE|Trilinear,TRILINEAR|Clamp S,CLAMPS|Clamp T,CLAMPT|Anisotropic,ANISOTROPIC|Hint DXT5,HINT_DXT5|Normal,NORMAL|No Mipmaps,NOMIP|No LOD,NOLOD|Min Mipmap,MINMIP|Procedural,PROCEDURAL|Render Target,RENDERTARGET|Depth Render Target,DEPTHRENDERTARGET|No Debug Overide,NODEBUGOVERRIDE|Single Copy,SINGLECOPY|One Over Mipmap Level In Alpha,ONEOVERMIPLEVELINALPHA|Premultiply Color By One Over Mipmap Level,PREMULTCOLORBYONEOVERMIPLEVEL|Normal To DuDv,NORMALTODUDV|Alpha Test Mipmap Generation,ALPHATESTMIPGENERATION|No Depth Buffer,NODEPTHBUFFER|Nice Filtered,NICEFILTERED"
+    Hint	"\tSpecify a flag to set in the output texture."
+  }
+
+  ComboBox
+  {
+    Name	"Flag"
+    Param	"-flag"
+    Default	"Nice Filtered"
+    Options	"Point Sample,POINTSAMPLE|Trilinear,TRILINEAR|Clamp S,CLAMPS|Clamp T,CLAMPT|Anisotropic,ANISOTROPIC|Hint DXT5,HINT_DXT5|Normal,NORMAL|No Mipmaps,NOMIP|No LOD,NOLOD|Min Mipmap,MINMIP|Procedural,PROCEDURAL|Render Target,RENDERTARGET|Depth Render Target,DEPTHRENDERTARGET|No Debug Overide,NODEBUGOVERRIDE|Single Copy,SINGLECOPY|One Over Mipmap Level In Alpha,ONEOVERMIPLEVELINALPHA|Premultiply Color By One Over Mipmap Level,PREMULTCOLORBYONEOVERMIPLEVEL|Normal To DuDv,NORMALTODUDV|Alpha Test Mipmap Generation,ALPHATESTMIPGENERATION|No Depth Buffer,NODEPTHBUFFER|Nice Filtered,NICEFILTERED"
+    Hint	"\tSpecify a flag to set in the output texture."
+  }
+
+  ComboBox
+  {
+    Name	"Flag"
+    Param	"-flag"
+    Default	"No Debug Overide"
+    Options	"Point Sample,POINTSAMPLE|Trilinear,TRILINEAR|Clamp S,CLAMPS|Clamp T,CLAMPT|Anisotropic,ANISOTROPIC|Hint DXT5,HINT_DXT5|Normal,NORMAL|No Mipmaps,NOMIP|No LOD,NOLOD|Min Mipmap,MINMIP|Procedural,PROCEDURAL|Render Target,RENDERTARGET|Depth Render Target,DEPTHRENDERTARGET|No Debug Overide,NODEBUGOVERRIDE|Single Copy,SINGLECOPY|One Over Mipmap Level In Alpha,ONEOVERMIPLEVELINALPHA|Premultiply Color By One Over Mipmap Level,PREMULTCOLORBYONEOVERMIPLEVEL|Normal To DuDv,NORMALTODUDV|Alpha Test Mipmap Generation,ALPHATESTMIPGENERATION|No Depth Buffer,NODEPTHBUFFER|Nice Filtered,NICEFILTERED"
+    Hint	"\tSpecify a flag to set in the output texture."
+  }
+
+  ComboBox
+  {
+    Name	"Flag"
+    Param	"-flag"
+    Default	"No Mipmaps"
+    Options	"Point Sample,POINTSAMPLE|Trilinear,TRILINEAR|Clamp S,CLAMPS|Clamp T,CLAMPT|Anisotropic,ANISOTROPIC|Hint DXT5,HINT_DXT5|Normal,NORMAL|No Mipmaps,NOMIP|No LOD,NOLOD|Min Mipmap,MINMIP|Procedural,PROCEDURAL|Render Target,RENDERTARGET|Depth Render Target,DEPTHRENDERTARGET|No Debug Overide,NODEBUGOVERRIDE|Single Copy,SINGLECOPY|One Over Mipmap Level In Alpha,ONEOVERMIPLEVELINALPHA|Premultiply Color By One Over Mipmap Level,PREMULTCOLORBYONEOVERMIPLEVEL|Normal To DuDv,NORMALTODUDV|Alpha Test Mipmap Generation,ALPHATESTMIPGENERATION|No Depth Buffer,NODEPTHBUFFER|Nice Filtered,NICEFILTERED"
+    Hint	"\tSpecify a flag to set in the output texture."
+  }
+
+  ComboBox
+  {
+    Name	"Flag"
+    Param	"-flag"
+    Default	"No LOD"
+    Options	"Point Sample,POINTSAMPLE|Trilinear,TRILINEAR|Clamp S,CLAMPS|Clamp T,CLAMPT|Anisotropic,ANISOTROPIC|Hint DXT5,HINT_DXT5|Normal,NORMAL|No Mipmaps,NOMIP|No LOD,NOLOD|Min Mipmap,MINMIP|Procedural,PROCEDURAL|Render Target,RENDERTARGET|Depth Render Target,DEPTHRENDERTARGET|No Debug Overide,NODEBUGOVERRIDE|Single Copy,SINGLECOPY|One Over Mipmap Level In Alpha,ONEOVERMIPLEVELINALPHA|Premultiply Color By One Over Mipmap Level,PREMULTCOLORBYONEOVERMIPLEVEL|Normal To DuDv,NORMALTODUDV|Alpha Test Mipmap Generation,ALPHATESTMIPGENERATION|No Depth Buffer,NODEPTHBUFFER|Nice Filtered,NICEFILTERED"
+    Hint	"\tSpecify a flag to set in the output texture."
+  }
+
+  ComboBox
+  {
+    Name	"Flag"
+    Param	"-flag"
+    Default	"Normal"
+    Options	"Point Sample,POINTSAMPLE|Trilinear,TRILINEAR|Clamp S,CLAMPS|Clamp T,CLAMPT|Anisotropic,ANISOTROPIC|Hint DXT5,HINT_DXT5|Normal,NORMAL|No Mipmaps,NOMIP|No LOD,NOLOD|Min Mipmap,MINMIP|Procedural,PROCEDURAL|Render Target,RENDERTARGET|Depth Render Target,DEPTHRENDERTARGET|No Debug Overide,NODEBUGOVERRIDE|Single Copy,SINGLECOPY|One Over Mipmap Level In Alpha,ONEOVERMIPLEVELINALPHA|Premultiply Color By One Over Mipmap Level,PREMULTCOLORBYONEOVERMIPLEVEL|Normal To DuDv,NORMALTODUDV|Alpha Test Mipmap Generation,ALPHATESTMIPGENERATION|No Depth Buffer,NODEPTHBUFFER|Nice Filtered,NICEFILTERED"
+    Hint	"\tSpecify a flag to set in the output texture."
+  }
+
+  ComboBox
+  {
+    Name	"Flag"
+    Param	"-flag"
+    Default	"Point Sample"
+    Options	"Point Sample,POINTSAMPLE|Trilinear,TRILINEAR|Clamp S,CLAMPS|Clamp T,CLAMPT|Anisotropic,ANISOTROPIC|Hint DXT5,HINT_DXT5|Normal,NORMAL|No Mipmaps,NOMIP|No LOD,NOLOD|Min Mipmap,MINMIP|Procedural,PROCEDURAL|Render Target,RENDERTARGET|Depth Render Target,DEPTHRENDERTARGET|No Debug Overide,NODEBUGOVERRIDE|Single Copy,SINGLECOPY|One Over Mipmap Level In Alpha,ONEOVERMIPLEVELINALPHA|Premultiply Color By One Over Mipmap Level,PREMULTCOLORBYONEOVERMIPLEVEL|Normal To DuDv,NORMALTODUDV|Alpha Test Mipmap Generation,ALPHATESTMIPGENERATION|No Depth Buffer,NODEPTHBUFFER|Nice Filtered,NICEFILTERED"
+    Hint	"\tSpecify a flag to set in the output texture."
+  }
+
+  ComboBox
+  {
+    Name	"Flag"
+    Param	"-flag"
+    Default	"Trilinear"
+    Options	"Point Sample,POINTSAMPLE|Trilinear,TRILINEAR|Clamp S,CLAMPS|Clamp T,CLAMPT|Anisotropic,ANISOTROPIC|Hint DXT5,HINT_DXT5|Normal,NORMAL|No Mipmaps,NOMIP|No LOD,NOLOD|Min Mipmap,MINMIP|Procedural,PROCEDURAL|Render Target,RENDERTARGET|Depth Render Target,DEPTHRENDERTARGET|No Debug Overide,NODEBUGOVERRIDE|Single Copy,SINGLECOPY|One Over Mipmap Level In Alpha,ONEOVERMIPLEVELINALPHA|Premultiply Color By One Over Mipmap Level,PREMULTCOLORBYONEOVERMIPLEVEL|Normal To DuDv,NORMALTODUDV|Alpha Test Mipmap Generation,ALPHATESTMIPGENERATION|No Depth Buffer,NODEPTHBUFFER|Nice Filtered,NICEFILTERED"
+    Hint	"\tSpecify a flag to set in the output texture."
+  }
+
+  Space
+  {
+    Size	"1"
+  }
+
+  ComboBox
+  {
+    Name	"Format"
+    Param	"-format"
+    Default	"RGBA8888"
+    Options	"RGBA8888,RGBA8888|ABGR8888,ABGR8888|RGB888,RGB888|BGR888,BGR888|RGB565,RGB565|I8,I8|IA88,IA88|A8,A8|RGB888 (Bluescreen),RGB888_BLUESCREEN|BGR888 (Bluescreen),BGR888_BLUESCREEN|ARGB8888,ARGB8888|BGRA8888,BGRA8888|DXT1,DXT1|DXT3,DXT3|DXT5,DXT5|BGRX8888,BGRX8888|BGR565,BGR565|BGRX5551,BGRX5551|BGRA4444,BGRA4444|DXT1 (One Bit Alpha),DXT1_ONEBITALPHA|BGRA5551,BGRA5551|UV88,UV88|UVWQ8888,UVWQ8888|RGBA16161616 (Float),RGBA16161616F|RGBA16161616,RGBA16161616|UVLX8888,UVLX8888"
+    Hint	"\tSpecify the output texture format."
+  }
+
+  ComboBox
+  {
+    Name	"Normal Alpha"
+    Param	"-nalpha"
+    Default	"White"
+    Options	"No Change,NOCHANGE|Height,HEIGHT|Black,BLACK|White,WHITE"
+    Hint	"\tSpecify what to do with the alpha channel after generating normal maps."
+  }
+
+  ComboBox
+  {
+    Name	"Normal Height"
+    Param	"-nheight"
+    Default	"Average RGB"
+    Options	"Red,RED|Green,GREEN|Blue,BLUE|Alpha,ALPHA|Average RGB,AVERAGERGB|Biased RGB,BIASEDRGB|Max RGB,MAXRGB|Colorspace,COLORSPACE"
+    Hint	"\tSpecify the height source to use when generating normal maps."
+  }
+
+  ComboBox
+  {
+    Name	"Normal Kernel"
+    Param	"-nkernel"
+    Default	"3x3"
+    Options	"4x,4X|3x3,3X3|5x5,5X5|7x7,7X7|9x9,9X9|DuDv,DUDV|Q8W8V8U8,Q8W8V8U8"
+    Hint	"\tSpecify the filter to use when generating normal maps."
+  }
+
+  ComboBox
+  {
+    Name	"Mipmap Filter"
+    Param	"-mfilter"
+    Default	"Box"
+    Options	"Point,POINT|Box,BOX|Triangle,TRIANGLE|Quadratic,QUADRATIC|Cubic,CUBIC|Catrom,CATROM|Mitchell,MITCHELL|Gaussian,GAUSSIAN|SinC,SINC|Bessel,BESSEL|Hanning,HANNING|Hamming,HAMMING|Blackman,BLACKMAN|Kaiser,KAISER"
+    Hint	"\tSpecify the mipmap filter to use when generating mipmaps."
+  }
+
+  ComboBox
+  {
+    Name	"Mipmap Sharpen"
+    Param	"-msharpen"
+    Default	"Sharpen Soft"
+    Options	"None,NONE|Negative,NEGATIVE|Lighter,LIGHTER|Darker,DARKER|Contrast More,CONTRASTMORE|Contrast Less,CONTRASTLESS|Smoothen,SMOOTHEN|Sharpen Soft,SHARPENSOFT|Sharpen Medium,SHARPENMEDIUM|Sharpen Strong,SHARPENSTRONG|Find Edges,FINDEDGES|Contour,CONTOUR|Edge Detect,EDGEDETECT|Edge Detect Soft,EDGEDETECTSOFT|Emboss,EMBOSS|Mean Removal,MEANREMOVAL|Unsharp,UNSHARP|XSharpen,XSHARPEN|Wrap Sharp,WARPSHARP"
+    Hint	"\tSpecify the mipmap sharpen filter to use when generating mipmaps."
+  }
+
+  ComboBox
+  {
+    Name	"Resize Filter"
+    Param	"-rfilter"
+    Default	"Triangle"
+    Options	"Point,POINT|Box,BOX|Triangle,TRIANGLE|Quadratic,QUADRATIC|Cubic,CUBIC|Catrom,CATROM|Mitchell,MITCHELL|Gaussian,GAUSSIAN|SinC,SINC|Bessel,BESSEL|Hanning,HANNING|Hamming,HAMMING|Blackman,BLACKMAN|Kaiser,KAISER"
+    Hint	"\tSpecify the resize filter to use when resizing images."
+  }
+
+  ComboBox
+  {
+    Name	"Resize Method"
+    Param	"-rmethod"
+    Default	"Nearest"
+    Options	"Nearest,NEAREST|Biggest,BIGGEST|Smallest,SMALLEST"
+    Hint	"\tSpecify the resize method to use when resizing images.\n\n"_
+    		"\tThis determines what power of two to resize the image to."
+  }
+
+  ComboBox
+  {
+    Name	"Resize Sharpen"
+    Param	"-rsharpen"
+    Default	"None"
+    Options	"None,NONE|Negative,NEGATIVE|Lighter,LIGHTER|Darker,DARKER|Contrast More,CONTRASTMORE|Contrast Less,CONTRASTLESS|Smoothen,SMOOTHEN|Sharpen Soft,SHARPENSOFT|Sharpen Medium,SHARPENMEDIUM|Sharpen Strong,SHARPENSTRONG|Find Edges,FINDEDGES|Contour,CONTOUR|Edge Detect,EDGEDETECT|Edge Detect Soft,EDGEDETECTSOFT|Emboss,EMBOSS|Mean Removal,MEANREMOVAL|Unsharp,UNSHARP|XSharpen,XSHARPEN|Wrap Sharp,WARPSHARP"
+    Hint	"\tSpecify the resize sharpen filter to use when resizing images."
+  }
+}
+
+//
+// VMT
+//
+Stage
+{
+  Name		"VMT"
+  Title		"VMT Options"
+  Type		"ParameterList"
+
+  TextBox
+  {
+    Name	"Parameter"
+    Param	"-param"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tThe parameter consists of a string argument followed by a string or numeric value.  Strings should be in double quotes.  For example, to make a material translucent, you would type the following: \"$translucent\" 1.\n"
+  }
+
+  TextBox
+  {
+    Name	"Parameter"
+    Param	"-param"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tThe parameter consists of a string argument followed by a string or numeric value.  Strings should be in double quotes.  For example, to make a material translucent, you would type the following: \"$translucent\" 1.\n"
+  }
+
+  TextBox
+  {
+    Name	"Parameter"
+    Param	"-param"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tThe parameter consists of a string argument followed by a string or numeric value.  Strings should be in double quotes.  For example, to make a material translucent, you would type the following: \"$translucent\" 1.\n"
+  }
+
+  TextBox
+  {
+    Name	"Parameter"
+    Param	"-param"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tThe parameter consists of a string argument followed by a string or numeric value.  Strings should be in double quotes.  For example, to make a material translucent, you would type the following: \"$translucent\" 1.\n"
+  }
+
+  TextBox
+  {
+    Name	"Parameter"
+    Param	"-param"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tThe parameter consists of a string argument followed by a string or numeric value.  Strings should be in double quotes.  For example, to make a material translucent, you would type the following: \"$translucent\" 1.\n"
+  }
+
+  TextBox
+  {
+    Name	"Parameter"
+    Param	"-param"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tThe parameter consists of a string argument followed by a string or numeric value.  Strings should be in double quotes.  For example, to make a material translucent, you would type the following: \"$translucent\" 1.\n"
+  }
+
+  TextBox
+  {
+    Name	"Parameter"
+    Param	"-param"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tThe parameter consists of a string argument followed by a string or numeric value.  Strings should be in double quotes.  For example, to make a material translucent, you would type the following: \"$translucent\" 1.\n"
+  }
+
+  TextBox
+  {
+    Name	"Parameter"
+    Param	"-param"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tThe parameter consists of a string argument followed by a string or numeric value.  Strings should be in double quotes.  For example, to make a material translucent, you would type the following: \"$translucent\" 1.\n"
+  }
+
+  TextBox
+  {
+    Name	"Parameter"
+    Param	"-param"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tThe parameter consists of a string argument followed by a string or numeric value.  Strings should be in double quotes.  For example, to make a material translucent, you would type the following: \"$translucent\" 1.\n"
+  }
+
+  TextBox
+  {
+    Name	"Custom Shader"
+    Param	"-shader"
+    Size	"2"
+    Type	"String"
+    Hint	"\tHave VTFCmd create a .vmt for the new material with the shader specified.  Not to be used with the Standard Shader option."
+  }
+
+  ComboBox
+  {
+    Name	"Standard Shader"
+    Param	"-shader"
+    Size	"2"
+    Default	"Lightmapped Generic"
+    Options	"Cable,Cable|Decal,Decal|Decal Modulate,DecalModulate|Lightmapped Generic,LightmappedGeneric|Modulate,Modulate|Monitor Screen,MonitorScreen|Predator,Predator|Refract,Refract|Shattered Glass,ShatteredGlass|Sprite,Sprite|Unlit Generic,UnlitGeneric|Vertex Lit Generic,VertexlitGeneric|Water,Water"
+    Hint	"\tHave VTFCmd create a .vmt for the new material with the shader specified.  Not to be used with the Custom Shader option."
+  }
+}
+
+//
+// Misc
+//
+Stage
+{
+  Name		"Misc"
+  Title		"Miscellaneous Options"
+  Type		"ParameterList"
+
+  CheckBox
+  {
+    Name	"Silent"
+    Param	"-silent"
+    Hint	"\tDon't display any console output."
+  }
+
+  TextBox
+  {
+    Name	"Postfix"
+    Param	"-postfix"
+    Type	"String"
+    Hint	"\tOutput file postfix."
+  }
+
+  TextBox
+  {
+    Name	"Prefix"
+    Param	"-prefix"
+    Type	"String"
+    Hint	"\tOutput file prefix."
+  }
+
+  FolderBox
+  {
+    Name	"Output Folder"
+    Param	"-output"
+    Hint	"\tPut the output texture in the specified folder, otherwise put it in the same folder as the input folder."
+  }
+}

@@ -1,0 +1,83 @@
+// Specification: Zoners Tools Advanced
+// Written by: Ryan Gregg
+// Version: N/A
+// Created: August 4, 2004
+// Last updated: Febuary 25, 2005
+
+// Updated by: Ryan Gregg
+// Date: Febuary 25, 2005
+// Updated ZHLT link.
+
+// Updated by: Ryan Gregg
+// Date: September 13, 2004
+// Improved game execution.
+
+// Updated by: Ryan Gregg
+// Date: August 10, 2004
+// Fixed Opt_EntData's command line.
+
+// Updated by: Ryan Gregg
+// Date: August 9, 2004
+// Added Opt_EntData stage.
+
+Include		"HLFix.bci"
+Include		"Backup.bci"
+Include		"Zoners Tools P Series.bci"
+Include		"Opt_EntData.bci"
+Include		"RESGen.bci"
+Include		"Batch.bci"
+Include		"Half-Life.bci"
+Include		"Steam.bci"
+Include		"Templates.bci"
+
+Batch
+{
+  Name		"Zoners Tools Advanced"
+  Priority	"3"
+  Links		"HLFix,http://extension.ws/hlfix/|"_
+  		"Backup,http://collective.valve-erc.com/index.php?go=mapbackup|"_
+  		"Zoners Tools,http://www.zhlt.info/|"_
+  		"Opt_EntData,http://www.chatbear.com/board.plm?a=viewthread&t=52%2c1080647136%2c18491&id=634830&b=590&v=flatold&s=0|"_
+  		"RESGen,http://www.unitedadmins.com/resgen.php|"_
+  		"Steam,http://www.steampowered.com/|"_
+  		"Valve,http://www.valvesoftware.com/"
+  Filter	"Supported Files|*.map;*.rmf;*.bsp|MAP Files (*.map)|*.map|RMF Files (*.rmf)|*.rmf|BSP Files (*.bsp)|*.bsp"
+  Stages	"HLFix|Backup|CSG|BSP|VIS|RAD|RAD2|RipEnt|Shared|Opt_EntData|RESGen|Batch|HL|Steam"
+  LogFile	"${FilePath}\\${FileName}.log"
+  Template	"@echo off\n"_
+  		"set WADROOT=${WADRoot}\n"_
+
+		"${Splash}"_
+
+  		"\"${StagePath=HLFix}\" ${StageParam=HLFix} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=Backup}\" ${StageParam=Backup} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=CSG}\" ${StageParam=CSG} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=BSP}\" ${StageParam=BSP} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=VIS}\" ${StageParam=VIS} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=RAD}\" ${StageParam=RAD} ${StageParam=RAD2} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=RipEnt}\" ${StageParam=RipEnt} \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=Opt_EntData}\" \"${FilePath}\\${FileName}\" ${StageParam=Opt_EntData}\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+  		"\"${StagePath=RESGen}\" -k ${StageParam=RESGen} -f \"${FilePath}\\${FileName}\"\n"_
+		"if ERRORLEVEL 1 goto failed\n"_
+
+  		"${StageCmd=Batch}\n"_
+  		"\"${StagePath=hl}\" ${StageParam=hl}\n"_
+  		"\"${StagePath=Steam}\" ${StageParam=Steam}\n"_
+		"goto succeeded\n"_
+
+		":failed\n"_
+  		"echo.\n"_
+		"echo There was a problem compiling your map, check your ${FileName}.log file for errors.\n"_
+		":succeeded\n"_
+  		"echo.\n"_
+
+  		"${LogViewerRun}\n"
+}

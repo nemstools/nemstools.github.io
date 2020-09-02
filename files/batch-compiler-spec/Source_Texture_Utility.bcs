@@ -1,0 +1,147 @@
+// Specification: VTex
+// Written by: Ryan Gregg
+// Version: N/A
+// Created: April 7, 2004
+// Last updated: N/A
+
+Include		"Templates.bci"
+
+Variable
+{
+  Name		"ValveProject"
+  Type		"Folder"
+  Optional	"True"
+  Hint		"The directory your gameinfo.txt is located in."
+}
+
+Batch
+{
+  Name		"VTex"
+  Priority	"1"
+  Links		"Source SDK,http://www.valve-erc.com/srcsdk/"
+  Filter	"TGA Files (*.tga)|*.tga"
+  Stages	"VTex"
+  Template	"@echo off\n"_
+  		"set VPROJECT=${ValveProject}\n"_
+
+		"${Splash}"_
+
+  		"\"${StagePath=VTex}\" -nopause ${StageParam=VTex} \"${FileName}.${FileExt}\"\n"
+}
+
+//
+// VTex
+//
+Stage
+{
+  Name		"VTex"
+  Title		"VTex"
+  Type		"Program"
+  Filter	"VTex (vtex.exe)|vtex.exe"
+
+  CheckBox
+  {
+    Name	"Make Directory"
+    Bold	"True"
+    Param	"-mkdir"
+    Hint	"\tMake the destination directory if it does not exist.\n\n"_
+		"\tFor example, if you had a .tga in your .../sourcesdk_content/hl2/materialsrc/sample/sample_material.tga folder, -mkdir would create a new directory called \"sample\" in your .../Half-Life 2/hl2/materials directory, if it didn't already exist, and then place the compiled .vtf file in that new location. If the directory already exists, the -mkdir parameter is ignored."
+  }
+
+  CheckBox
+  {
+    Name	"Quiet"
+    Param	"-quiet"
+    Hint	"\tDon't display any console output."
+  }
+
+  TextBox
+  {
+    Name	"VMT Parameter"
+    Param	"-vmtparam"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tIf a .vmt already exists in the same location, any new parameters will not be added. For example, to make a material translucent, you would type the following: \"$translucent 1\" (without quotes).\n"
+  }
+
+  TextBox
+  {
+    Name	"VMT Parameter"
+    Param	"-vmtparam"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tIf a .vmt already exists in the same location, any new parameters will not be added. For example, to make a material translucent, you would type the following: \"$translucent 1\" (without quotes).\n"
+  }
+
+  TextBox
+  {
+    Name	"VMT Parameter"
+    Param	"-vmtparam"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tIf a .vmt already exists in the same location, any new parameters will not be added. For example, to make a material translucent, you would type the following: \"$translucent 1\" (without quotes).\n"
+  }
+
+  TextBox
+  {
+    Name	"VMT Parameter"
+    Param	"-vmtparam"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tIf a .vmt already exists in the same location, any new parameters will not be added. For example, to make a material translucent, you would type the following: \"$translucent 1\" (without quotes).\n"
+  }
+
+  TextBox
+  {
+    Name	"VMT Parameter"
+    Param	"-vmtparam"
+    Size	"2"
+    Type	"String"
+    Quote	"False"
+    Hint	"\tAdd additional material parameters to the created .vmt file.\n\n"_
+		"\tIf a .vmt already exists in the same location, any new parameters will not be added. For example, to make a material translucent, you would type the following: \"$translucent 1\" (without quotes).\n"
+  }
+
+  TextBox
+  {
+    Name	"Custom Shader"
+    Param	"-shader"
+    Size	"2"
+    Type	"String"
+    Hint	"\tHave VTex create a .vmt for the new material with the shader specified.\n\n"_
+		"\tNot to be used with the Standard Shader option."
+  }
+
+  ComboBox
+  {
+    Name	"Standard Shader"
+    Param	"-shader"
+    Size	"2"
+    Default	"Lightmapped Generic"
+    Options	"Cable,Cable|Decal,Decal|Decal Modulate,DecalModulate|Lightmapped Generic,LightmappedGeneric|Modulate,Modulate|Monitor Screen,MonitorScreen|Predator,Predator|Refract,Refract|Shattered Glass,ShatteredGlass|Sprite,Sprite|Unlit Generic,UnlitGeneric|Vertex Lit Generic,VertexlitGeneric|Water,Water"
+    Hint	"\tHave VTex create a .vmt for the new material with the shader specified.\n\n"_
+		"\tNot to be used with the Custom Shader option."
+  }
+
+  Space
+  {
+    Size	"1"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Quote	"False"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}

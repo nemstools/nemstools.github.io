@@ -1,0 +1,171 @@
+// Specification: RESGen
+// Written by: Ryan Gregg
+// Version: 2.0b3
+// Created: August 4, 2004
+// Last updated: August 4, 2004
+
+Batch
+{
+  Name		"RESGen"
+  Priority	"1"
+  Links		"RESGen,http://www.unitedadmins.com/resgen.php"
+  Stages	"RESGen"
+  Filter	"BSP Files (*.bsp)|*.bsp"
+  Template	"@echo off\n"_
+  		"\"${StagePath=RESGen}\" -k ${StageParam=RESGen} -f \"${FilePath}\\${FileName}\"\n"
+}
+
+//
+// RESGen
+//
+Stage
+{
+  Name		"RESGen"
+  Title		"Resource Generator"
+  Type		"Program"
+  Filter	"RESGen (RESGen.exe)|RESGen.exe"
+
+  CheckBox
+  {
+    Name	"Minimal Output"
+    Param	"-v"
+    Hint	"\tMakes RESGen only give minimal output.\n\n"_
+    		"\tIt's recommended you use this if you want to create res files as fast as possible. RESGen will still report any error."
+  }
+
+  CheckBox
+  {
+    Name	"No Status Line"
+    Param	"-s"
+    Hint	"\tRESGen will not display it's status line.\n\n"_
+    		"\tThis might considerably speed up res file generation, especially on smaller maps."
+  }
+
+  CheckBox
+  {
+    Name	"No Folder Info"
+    Param	"-i"
+    Hint	"\tRESGen will only report the base folder it's searching, but not the subfolders. Useful with -r option."
+  }
+
+  CheckBox
+  {
+    Name	"No Resource Info"
+    Param	"-j"
+    Hint	"\tResources found while building the resource list will not be displayed. Useful with -e option."
+  }
+
+  CheckBox
+  {
+    Name	"No Lowercase"
+    Param	"-l"
+    Hint	"\tTurns off converting all res file entries to lowercase.\n\n"_
+    		"\tRESGen converts all res file entries to lowercase since this is the default for Half-Life files. It has to do this because a lot of resource files in maps don't have the proper case that matches the actual resources. Only use this option if you know what you are doing."
+  }
+
+  CheckBox
+  {
+    Name	"Overwrite .RES Files"
+    Param	"-o"
+    Checked	"True"
+    Hint	"\tIf a res file already exists it will be overwritten."
+  }
+
+  CheckBox
+  {
+    Name	"Don't Check .PAK"
+    Param	"-p"
+    Hint	"\tPrevents RESGen from using the contents of any pakfile for resource verification.\n\n"_
+    		"\tThus, any resource that is available, but in a pakfile is excluded from the res file. This option is only useful when the -e option is also used. Please note that if a map comes with it's own pakfile, using this option will generate a res file that is incomplete."
+  }
+
+  Space
+  {
+    Size	"3"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+
+  FolderBox
+  {
+    Name	"Folder"
+    Param	"-d"
+    Hint	"\tSpecify a folder that will be searched for bsp files."
+  }
+
+  FolderBox
+  {
+    Name	"Recursive Folder"
+    Param	"-r"
+    Hint	"\tSpecify a folder that will be searched for bsp files.  The folder's sub folders will also be searched."
+  }
+
+  FolderBox
+  {
+    Name	"MOD Folder"
+    Param	"-e"
+    Hint	"\tMakes RESGen verify that all resources in the res file actually exist.\n\n"_
+    		"\tResources that can't be found will be excluded from the res file. RESGen expects modpath to point to a valid mod directory structure. If the modpath isn't the valve folder, RESGen will try to find the valve folder too, so a complete resource list can be established."
+  }
+
+  FileBox
+  {
+    Name	"RFA File"
+    Param	"-a"
+    FullPath	"True"
+    Filter	"RFA Files (*.rfa)|*.rfa|Text Files (*.txt)|*.txt"
+    Hint	"\tThe contents of the rfa file will be added to the end of the res file.\n\n"_
+    		"\tThis is useful when adding custom resources, like the StatsMe sound pack. The .rfa file extension is optional."
+  }
+
+  Space
+  {
+    Size	"7"
+  }
+
+  FileBox
+  {
+    Name	"Exclude .BSP"
+    Param	"-x"
+    FullPath	"True"
+    Filter	"BSP Files (*.bsp)|*.bsp"
+    Hint	"\tExclude this map from res file generation.\n\n"_
+    		"\tOnly works on maps found with -d or -r options. The .bsp file extension is optional."
+  }
+
+  FileBox
+  {
+    Name	"Exclude .BSP"
+    Param	"-x"
+    FullPath	"True"
+    Filter	"BSP Files (*.bsp)|*.bsp"
+    Hint	"\tExclude this map from res file generation.\n\n"_
+    		"\tOnly works on maps found with -d or -r options. The .bsp file extension is optional."
+  }
+
+  FileBox
+  {
+    Name	"Exclude .BSP"
+    Param	"-x"
+    FullPath	"True"
+    Filter	"BSP Files (*.bsp)|*.bsp"
+    Hint	"\tExclude this map from res file generation.\n\n"_
+    		"\tOnly works on maps found with -d or -r options. The .bsp file extension is optional."
+  }
+
+  FileBox
+  {
+    Name	"Exclude .BSP"
+    Param	"-x"
+    FullPath	"True"
+    Filter	"BSP Files (*.bsp)|*.bsp"
+    Hint	"\tExclude this map from res file generation.\n\n"_
+    		"\tOnly works on maps found with -d or -r options. The .bsp file extension is optional."
+  }
+}

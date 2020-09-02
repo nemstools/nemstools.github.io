@@ -1,0 +1,894 @@
+// Specification: Zoners Tools
+// Written by: Ryan Gregg
+// Version: 2.5.3
+// Created: August 4, 2004
+// Last updated: August 9, 2004
+
+// Updated by: Ryan Gregg
+// Date: August 9, 2004
+// Thanks to: Anders Jenbo
+// Moved RAD's Sparse and No Visibility Matrix options to a ComboBox.
+// Moved RipEnt's Import and Export options to a ComboBox.
+// Reorganized options to match Zoners Tools P Series.
+
+// Updated by: Ryan Gregg
+// Date: August 6, 2004
+// Added Zoners Tools Link.
+
+Include		"Templates.bci"
+
+Variable
+{
+  Name		"WADRoot"
+  Type		"Folder"
+  Optional	"True"
+  Hint		"Wad root directory."
+}
+
+Batch
+{
+  Name		"Zoners Tools"
+  Priority	"2"
+  Links		"Zoners Tools,http://dev.valve-erc.com/index.php?go=zhlt"
+  Filter	"Supported Files|*.map;*.bsp|MAP Files (*.map)|*.map|BSP Files (*.bsp)|*.bsp"
+  Stages	"CSG|BSP|VIS|NetVIS|RAD|RipEnt|Shared"
+  Template	"@echo off\n"_
+  		"set WADROOT=${WADRoot}\n"_
+  		"\"${StagePath=CSG}\" ${StageParam=CSG} \"${FilePath}\\${FileName}\"\n"_
+  		"\"${StagePath=BSP}\" ${StageParam=BSP} \"${FilePath}\\${FileName}\"\n"_
+  		"\"${StagePath=VIS}\" ${StageParam=VIS} \"${FilePath}\\${FileName}\"\n"_
+  		"\"${StagePath=NetVIS}\" ${StageParam=NetVIS} \"${FilePath}\\${FileName}\"\n"_
+  		"\"${StagePath=RAD}\" ${StageParam=RAD} \"${FilePath}\\${FileName}\"\n"_
+  		"\"${StagePath=RipEnt}\" ${StageParam=RipEnt} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"CSG"
+  Priority	"1"
+  Stages	"CSG|Shared"
+  Filter	"Map Files (*.map)|*.map"
+  Template	"@echo off\n"_
+  		"set WADROOT=${WADRoot}\n"_
+  		"\"${StagePath=CSG}\" ${StageParam=CSG} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"BSP"
+  Priority	"1"
+  Stages	"BSP|Shared"
+  Filter	"Map Files (*.map)|*.map"
+  Template	"@echo off\n"_
+  		"set WADROOT=${WADRoot}\n"_
+  		"\"${StagePath=BSP}\" ${StageParam=BSP} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"VIS"
+  Priority	"1"
+  Stages	"VIS|Shared"
+  Filter	"Map Files (*.map)|*.map"
+  Template	"@echo off\n"_
+  		"set WADROOT=${WADRoot}\n"_
+  		"\"${StagePath=VIS}\" ${StageParam=VIS} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"NetVIS"
+  Priority	"1"
+  Stages	"NetVIS|Shared"
+  Filter	"Map Files (*.map)|*.map"
+  Template	"@echo off\n"_
+  		"set WADROOT=${WADRoot}\n"_
+  		"\"${StagePath=NetVIS}\" ${StageParam=NetVIS} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"RAD"
+  Priority	"1"
+  Stages	"RAD|Shared"
+  Filter	"Map Files (*.map)|*.map"
+  Template	"@echo off\n"_
+  		"set WADROOT=${WADRoot}\n"_
+  		"\"${StagePath=RAD}\" ${StageParam=RAD} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+Batch
+{
+  Name		"RipEnt"
+  Priority	"1"
+  Stages	"RipEnt|Shared"
+  Filter	"BSP Files (*.bsp)|*.bsp"
+  Template	"@echo off\n"_
+  		"\"${StagePath=RipEnt}\" ${StageParam=RipEnt} \"${FilePath}\\${FileName}\"\n"_
+  		"${LogViewerRun}\n"
+}
+
+
+//
+// CSG
+//
+Stage
+{
+  Name		"CSG"
+  Title		"Constructive Solid Geometry"
+  Type		"Program"
+  Filter	"HLCSG (hlcsg.exe)|hlcsg.exe"
+
+  CheckBox
+  {
+    Name	"No Clip"
+    Param	"-noclip"
+    Stages	"BSP"
+    Hint	"\tDon't create clipping hull.\n\n"_
+    		"\tHalf-life like Quake 1, has 4 hulls, 1 visual hull and 3 collision hulls. This option disables generation of the collision hulls for a small savings in compile time. Note that the world will not be solid at all (everything will fall into the void) with this option set."
+  }
+
+  CheckBox
+  {
+    Name	"No Sky Clip"
+    Param	"-noskyclip"
+    Hint	"\tDisable automatic clipping of SKY brushes.\n\n"_
+    		"\tBy default hlcsg will CLIP all SKY brushes, as well as remove all non-sky faces on the 'inside' of a sky brush (which eases up vis time, and improves some time and memory usage in rad as well)."
+  }
+
+  CheckBox
+  {
+    Name	"No WAD Textures"
+    Param	"-nowadtextures"
+    Hint	"\tInclude all used textures into bsp.\n\n"_
+    		"\tThis option is obsolete by -wadinclude and is only left in to retain some backwards compatibility as it making the bsp unnecessarily big by including textures from the default wad's."
+  }
+
+  CheckBox
+  {
+    Name	"Entities Only"
+    Param	"-onlyents"
+    Hint	"\tDo an entity update from .map to .bsp.\n\n"_
+    		"\tThis option will take the entities from the .map file and update them into the bsp file. For the most part, entities can only be edited. Adding or removing any can reorder the other entities which frequently break brush based entities, especially triggers."
+  }
+
+  TextBox
+  {
+    Name	"Brush Union"
+    Param	"-brushunion"
+    Type	"Single"
+    Default	"95.0"
+    Min		"0.0"
+    Max		"100.0"
+    Hint	"\tThreshold to warn about overlapping brushes.\n\n"_
+    		"\tThis option is a mapper debugging feature. The value passed in is a percentage (0 to 100) of overlap of two brushes before a warning is printed. Starting with a high value (95+) is a good idea, as going too low to start can print hundreds or thousands of messages. The brush numbers of the intersecting brushes and the percentage in which they intersect each other is displayed for each occurrence. This option is off by default as it dramatically slows down hlcsg to do these calculations."
+  }
+
+  TextBox
+  {
+    Name	"Tiny"
+    Param	"-tiny"
+    Type	"Single"
+    Default	"0.5"
+    Min		"0.0"
+    Hint	"\tMinimum brush face surface area before it is discarded.\n\n"_
+    		"\tTiny brush faces are outright removed. The current cut-off is 0.5 square units. It is dangerous to drop faces in this manner, as the BSP tree for the world can be unusable, or generate leaf portal errors or hall-of-mirrors vis errors."
+  }
+
+  FileBox
+  {
+    Name	"Hull File"
+    Param	"-hullfile"
+    FullPath	"True"
+    Filter	"Hull Files (*.hull)|*.hull|Text Files (*.txt)|*.txt"
+    Hint	"\tLoad a custom hullfile.\n\n"_
+    		"\tLoads a custom set of hulls for the collision hull generation. The file is composed of 3 lines of 3 whitespace delimited numbers. Each line is an X Y Z size of the bounding box it is for. Only specific mod authors and their mapping teams should ever worry about this feature."
+  }
+
+  Space
+  {
+    Size	"3"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+
+  FileBox
+  {
+    Name	"WAD File"
+    Param	"-wadinclude"
+    FullPath	"False"
+    Filter	"WAD Files (*.wad)|*.wad"
+    Hint	"\tPlace textures used by the wad file specified into the bsp.\n\n"_
+    		"\tThis option will cause csg to include used textures from the named wadfile into the bsp. It does partial name matching, is not case sensitive, and can also match directory names. If multiple includes need to be done, -wadinclude must be specified multiple times, once for each include. Only textures actually used in the map are included into the bsp."
+  }
+
+  FileBox
+  {
+    Name	"WAD File"
+    Param	"-wadinclude"
+    FullPath	"False"
+    Filter	"WAD Files (*.wad)|*.wad"
+    Hint	"\tPlace textures used by the wad file specified into the bsp.\n\n"_
+    		"\tThis option will cause csg to include used textures from the named wadfile into the bsp. It does partial name matching, is not case sensitive, and can also match directory names. If multiple includes need to be done, -wadinclude must be specified multiple times, once for each include. Only textures actually used in the map are included into the bsp."
+  }
+
+  FileBox
+  {
+    Name	"WAD File"
+    Param	"-wadinclude"
+    FullPath	"False"
+    Filter	"WAD Files (*.wad)|*.wad"
+    Hint	"\tPlace textures used by the wad file specified into the bsp.\n\n"_
+    		"\tThis option will cause csg to include used textures from the named wadfile into the bsp. It does partial name matching, is not case sensitive, and can also match directory names. If multiple includes need to be done, -wadinclude must be specified multiple times, once for each include. Only textures actually used in the map are included into the bsp."
+  }
+
+  FileBox
+  {
+    Name	"WAD File"
+    Param	"-wadinclude"
+    FullPath	"False"
+    Filter	"WAD Files (*.wad)|*.wad"
+    Hint	"\tPlace textures used by the wad file specified into the bsp.\n\n"_
+    		"\tThis option will cause csg to include used textures from the named wadfile into the bsp. It does partial name matching, is not case sensitive, and can also match directory names. If multiple includes need to be done, -wadinclude must be specified multiple times, once for each include. Only textures actually used in the map are included into the bsp."
+  }
+
+  FileBox
+  {
+    Name	"WAD File"
+    Param	"-wadinclude"
+    FullPath	"False"
+    Filter	"WAD Files (*.wad)|*.wad"
+    Hint	"\tPlace textures used by the wad file specified into the bsp.\n\n"_
+    		"\tThis option will cause csg to include used textures from the named wadfile into the bsp. It does partial name matching, is not case sensitive, and can also match directory names. If multiple includes need to be done, -wadinclude must be specified multiple times, once for each include. Only textures actually used in the map are included into the bsp."
+  }
+
+  FileBox
+  {
+    Name	"WAD File"
+    Param	"-wadinclude"
+    FullPath	"False"
+    Filter	"WAD Files (*.wad)|*.wad"
+    Hint	"\tPlace textures used by the wad file specified into the bsp.\n\n"_
+    		"\tThis option will cause csg to include used textures from the named wadfile into the bsp. It does partial name matching, is not case sensitive, and can also match directory names. If multiple includes need to be done, -wadinclude must be specified multiple times, once for each include. Only textures actually used in the map are included into the bsp."
+  }
+
+  FileBox
+  {
+    Name	"WAD File"
+    Param	"-wadinclude"
+    FullPath	"False"
+    Filter	"WAD Files (*.wad)|*.wad"
+    Hint	"\tPlace textures used by the wad file specified into the bsp.\n\n"_
+    		"\tThis option will cause csg to include used textures from the named wadfile into the bsp. It does partial name matching, is not case sensitive, and can also match directory names. If multiple includes need to be done, -wadinclude must be specified multiple times, once for each include. Only textures actually used in the map are included into the bsp."
+  }
+
+  FolderBox
+  {
+    Name	"WAD Path"
+    Param	"-wadinclude"
+    Hint	"\tPlace textures used by wad files in the folder specified into the bsp.\n\n"_
+    		"\tThis option will cause csg to include used textures from the named wadfile into the bsp. It does partial name matching, is not case sensitive, and can also match directory names. If multiple includes need to be done, -wadinclude must be specified multiple times, once for each include. Only textures actually used in the map are included into the bsp."
+  }
+
+  FolderBox
+  {
+    Name	"WAD Path"
+    Param	"-wadinclude"
+    Hint	"\tPlace textures used by wad files in the folder specified into the bsp.\n\n"_
+    		"\tThis option will cause csg to include used textures from the named wadfile into the bsp. It does partial name matching, is not case sensitive, and can also match directory names. If multiple includes need to be done, -wadinclude must be specified multiple times, once for each include. Only textures actually used in the map are included into the bsp."
+  }
+}
+
+//
+// BSP
+//
+Stage
+{
+  Name		"BSP"
+  Title		"Binary Space Partition"
+  Type		"Program"
+  Filter	"HLBSP (hlbsp.exe)|hlbsp.exe"
+
+  CheckBox
+  {
+    Name	"Leak Only"
+    Param	"-leakonly"
+    Hint	"\tRun BSP only enough to check for leaks.\n\n"_
+    		"\tIf you already know a map has a leak, this is a good option to just save some time in hlbsp and just generate the pts file."
+  }
+
+  CheckBox
+  {
+    Name	"No Fill"
+    Param	"-nofill"
+    Hint	"\tDon't fill outside (will mask leaks) (not for final runs).\n\n"_
+    		"\tThis step causes filling to not be performed, which will cause all the faces on the outside of the map to not be discarded. It is probably a bad idea to rad a map that has been compiled this way, though vis should run normally."
+  }
+
+  CheckBox
+  {
+    Name	"No T-Junction"
+    Param	"-notjunc"
+    Hint	"\tDon't break edges on t-junctions (not for final runs).\n\n"_
+    		"\tThis is a development/debugging option that should not be set in normal use."
+  }
+
+  TextBox
+  {
+    Name	"Max Node Size"
+    Param	"-maxnodesize"
+    Bold	"True"
+    Type	"Single"
+    Default	"1024.0"
+    Min		"64.0"
+    Max		"8192.0"
+    Hint	"\tSets the maximum portal node size.\n\n"_
+    		"\tThis option tweaks the maximum size of a portal node. Setting it smaller will bsp the world into smaller chunks at the cost of higher r_speeds, but it can pay itself back in many cases with making vis either faster, or more accurate, or both."
+  }
+
+  TextBox
+  {
+    Name	"Subdivide"
+    Param	"-subdivide"
+    Type	"Single"
+    Default	"240.0"
+    Min		"64.0"
+    Max		"240.0"
+    Hint	"\tSets the face subdivide size.\n\n"_
+    		"\tFaces in Half-life are subdivided by this value (in units). Setting this to high might cause bad surface extents when running rad. It should never be set lower then 240 as this just increases the r_speeds."
+  }
+  
+  Space
+  {
+    Size	"5"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}
+
+//
+// VIS
+//
+Stage
+{
+  Name		"VIS"
+  Title		"Visibility Index Set"
+  Type		"Program"
+  Filter	"HLVIS (hlvis.exe)|hlvis.exe"
+
+  ComboBox
+  {
+    Name	"Vis Type"
+    Bold	"True"
+    Default	"Normal"
+    Options	"Fast,-fast|Normal,|Full,-full"
+    Hint	"\tRun as fast or normal or full VIS.\n"_
+    		"\tFull vis enables extra calculations during vis, which help reduce the number of vis errors in a map over a normal vis. The speed hit is approximately 30% over a normal vis. r_speeds will generally be the same, though lower in some areas, and higher in others (primarily due to vis errors being fixed).\n\n"_
+		"\tFast vis is handy for running around in a developed map without dropping polygons. However, r_speeds will usually be pretty bad, as well as epoly counts. The map can still be lit with hlrad, however its quality and compile time will both suffer as a result. Maps should regularly be compiled without fast vis, as fast vis can mask a sudden increase in normal vis compile time."
+  }
+
+  Space
+  {
+    Size	"9"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}
+
+//
+// NetVIS
+//
+Stage
+{
+  Name		"NetVIS"
+  Title		"Network Visibility Index Set"
+  Type		"Program"
+  Filter	"NetVIS (netvis.exe)|netvis.exe"
+
+  ComboBox
+  {
+    Name	"Vis Type"
+    Bold	"True"
+    Default	"Normal"
+    Options	"Normal,|Full,-full"
+    Hint	"\tRun as normal or full VIS.\n"_
+    		"\tFull vis enables extra calculations during vis, which help reduce the number of vis errors in a map over a normal vis. The speed hit is approximately 30% over a normal vis. r_speeds will generally be the same, though lower in some areas, and higher in others (primarily due to vis errors being fixed)."
+  }
+
+  CheckBox
+  {
+    Name	"Server"
+    Param	"-server"
+    Bold	"True"
+    Hint	"\tRun as the NetVIS server."
+  }
+
+  TextBox
+  {
+    Name	"Connect"
+    Param	"-connect"
+    Bold	"True"
+    Type	"String"
+    Hint	"\tHosts computer name, domain name, or ip address.\n\n"_
+    		"\tConnect to a NetVIS server and assist compiling."
+  }
+
+  TextBox
+  {
+    Name	"Port"
+    Param	"-port"
+    Type	"Integer"
+    Default	"21212"
+    Min		"0"
+    Max		"65535"
+    Hint	"\tThe socket or port."
+  }
+
+  TextBox
+  {
+    Name	"Rate"
+    Param	"-rate"
+    Type	"Integer"
+    Default	"60"
+    Min		"1"
+    Hint	"\tChange the status display update rate. (In seconds.)\n\n"_
+    		"\tEvery time this interval is hit your console is updated with a progress report listing all the clients and their progress as well as an overall percentage."
+  }
+
+  Space
+  {
+    Size	"5"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}
+
+//
+// RAD
+//
+
+Stage
+{
+  Name		"RAD"
+  Title		"Radiosity"
+  Type		"Program"
+  Filter	"HLRAD (hlrad.exe)|hlrad.exe"
+
+  CheckBox
+  {
+    Name	"Circus"
+    Param	"-circus"
+    Hint	"\tEnable 'circus' mode for locating unlit lightmaps.\n\n"_
+    		"\tThis is a debugging option, which will cause all black pixels in any lightmap to be set to a random fullbright color. It only looks at the direct lighting to make this determination, and ignores any bounced radiosity data for making this determination."
+  }
+
+  CheckBox 
+  {
+    Name	"Dump Light Patches"
+    Param	"-dump"
+    Hint	"\tDumps light patches to a file for hlrad debugging info This is a developer option for zhlt, to dump out the patch data generated by the chopping/subdividing and make sure it looks alright."
+  }
+
+  /*CheckBox
+  {
+    Name	"Extra"
+    Param	"-extra"
+    Bold	"True"
+    Hint	"\tTurns on 9 point oversampling for lighting, making it look much better."
+  }*/
+
+  CheckBox
+  {
+    Name	"Incremental"
+    Param	"-incremental"
+    Hint	"\tUse or create an incremental transfer list file.\n\n"_
+    		"\tThis is a handy option for tweaking lighting, especially on slow or lower memory machines. BuildVisLeafs, MakeScales, and SwapTransfers can be skipped entirely on subsequent runs of hlrad. Note that geometry must not change, but lighting can."
+  }
+
+  CheckBox
+  {
+    Name	"No Linear Interpolation"
+    Param	"-nolerp"
+    Hint	"\tDisable three multi-point interpolation for radiosity patch blending, use nearest point sample instead."
+  }
+
+  /*CheckBox
+  {
+    Name	"No Visibility Matrix"
+    Param	"-nomatrix"
+    Hint	"\tDisable usage of vismatrix entirely.\n\n"_
+    		"\tAs the sparse code does some compression, it requires a lot of thread synchronization and does not scale well past 2 CPU's. The -nomatrix switch was added to address this. However, the addition of 'opaque brush entities' starting with ZHLT 2.2 hurts the -nomatrix method's performance quite a bit. There is no vismatrix in this method at all, so it essentially reduces the memory requirements to zero for that structure."
+  }*/
+
+  CheckBox
+  {
+    Name	"No Opaque Entities"
+    Param	"-nopaque"
+    Bold	"True"
+    Hint	"\tDisable all entities using zhlt_lightflags 2 to block light. Using opaque entities slows rad down, and using this option is useful for doing quicker non-final lighting compiles."
+  }
+
+  CheckBox
+  {
+    Name	"No Sky Fix"
+    Param	"-noskyfix"
+    Hint	"\tDisable light_environment being global ZHLT 2.1 added a simpler more manageable system for light_environments. The new behavior is that a map only needs a single light_environment entity to light up all sky everywhere. The placement of the entity no longer matters. The -noskyfix option turns this feature off and enables the original code which requires multiple light_environments to properly light up an outdoor area."
+  }
+
+  CheckBox
+  {
+    Name	"No Texture Scale"
+    Param	"-notexscale"
+    Hint	"\tDo not scale radiosity patches with texture scale.\n\n"_
+    		"\tBy default, hlrad will take the texture scale and apply it to the chopping grid which is projected onto it. This option turns that off, and almost always increases the number of patches in a map as most maps have many walls scaled up to 2 and 3."
+  }
+
+  CheckBox
+  {
+    Name	"Sparse"
+    Param	"-sparse"
+    Bold	"True"
+    Hint	"\tEnable low memory vismatrix algorithm.\n\n"_
+    		"\tThe original vismatrix algorithm was limited to 65535 patches due to its design. Its memory usage also grew exponentially with the number of patches (patches * patches / 16 bytes). This option enables a compressed vismatrix, which at the cost of extra CPU time, breaks the 65535 limit, and also uses about 10% of the memory the vismatrix would."
+  }
+
+  TextBox
+  {
+    Name	"Bounce"
+    Param	"-bounce"
+    Bold	"True"
+    Type	"Integer"
+    Default	"1"
+    Min		"0"
+    Hint	"\tSet number of radiosity bounces.\n\n"_
+    		"\tThis option sets the number of times light bounces in the radiosity pass. By the time the code gets to this point, all the data is precomputed, and extra bounces are very fast. It will make the shadows less harsh using more bounces, but can help light up dark areas much more naturally."
+  }
+
+  TextBox
+  {
+    Name	"Chop"
+    Param	"-chop"
+    Type	"Single"
+    Default	"64.0"
+    Min		"1.0"
+    Hint	"\tSet radiosity patch size for normal textures.\n\n"_
+    		"\tEach face in the world has a grid projected onto it, and chopped up into a rather coarse set of sample points. These points are patches, and are what hlrad uses to do the bounced lighting calculations. A higher chop sacrifices quality for both speed and memory consumption of hlrad. A lower chop increases the quality at the expense of speed and memory usage."
+  }
+
+  TextBox 
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+
+  TextBox
+  {
+    Name	"Coring"
+    Param	"-coring"
+    Type	"Single"
+    Default	"1.0"
+    Min		"0.0"
+    Hint	"\tSet lighting threshold before blackness.\n\n"_
+    		"\tThis value controls how much light it takes before a surface will be lit with a non-black value."
+  }
+
+  TextBox
+  {
+    Name	"Direct Light"
+    Param	"-dlight"
+    Type	"Single"
+    Default	"25.0"
+    Min		"0.0"
+    Hint	"\tSet direct lighting threshold.\n\n"_
+    		"\tThis option is similar to -maxlight, except that it re-normalizes the direct lighting values instead of clipping them if they are too high."
+  }
+
+  TextBox
+  {
+    Name	"Direct Scale"
+    Param	"-dscale"
+    Bold	"True"
+    Type	"Single"
+    Default	"2.0"
+    Min		"0.0"
+    Hint	"\tSet direct lighting scale.\n\n"_
+    		"\tDue to a bug in the original version of qrad, the direct lighting layer was added into the final lighting twice. The correct thing to do is only have it in there once, but at the time too many maps had been created with this assumption and it was left in there. This has been corrected as a command line switch, to scale the direct lighting by.\n\n"_
+    		"\tUsing the value of '1' would generate the most correct looking maps. Using a value of '0' will remove the direct lighting completely. Using larger values, like '3' or '4', cause extremely harsh direct lighting relation to shadows."
+  }
+
+  TextBox
+  {
+    Name	"Fade"
+    Param	"-fade"
+    Type	"Single"
+    Default	"1.0"
+    Min		"0.0"
+    Hint	"\tSet global fade (larger values shorter lights).\n\n"_
+    		"\tThis value adds in an artificial factor into the normal (1 / dist * dist) inverse square falloff calculations, by multiplying the denominator of the scale by the fade value. Point lights can set their own individual fade and falloff values, which override any global setting on the command line. These calculations only affect the direct lighting layer, as the radiosity pass always uses plain inverse square falloff."
+  }
+
+  TextBox
+  {
+    Name	"Gamma"
+    Param	"-gamma"
+    Type	"Single"
+    Default	"0.5"
+    Min		"0.0"
+    Hint	"\tSet global gamma value.\n\n"_
+    		"\tThis option also occurs after the direct and radiosity layers are added together, and a global gamma correction is calculated and applied to the lighting before it is finalized."
+  }
+
+  TextBox
+  {
+    Name	"Max Light"
+    Param	"-maxlight"
+    Type	"Integer"
+    Default	"255"
+    Min		"0"
+    Hint	"\tSet maximum light intensity value.\n\n"_
+    		"\tThis option can be used to cap the bright spots, if you want a map to come out darker overall."
+  }
+
+  TextBox
+  {
+    Name	"Scale"
+    Param	"-scale"
+    Type	"Single"
+    Default	"1.0"
+    Min		"0.0"
+    Hint	"\tSet global light scaling value.\n\n"_
+    		"\tThis option scales the final light values right after the direct lighting layer is added to the radiosity bounced lighting layer. Low values make the world darker, higher values make it brighter."
+  }
+
+  TextBox
+  {
+    Name	"Sky"
+    Param	"-sky"
+    Type	"Single"
+    Default	"0.5"
+    Min		"0.0"
+    Hint	"\tSet ambient sunlight contribution in the shade outside.\n\n"_
+    		"\tMany faces have line of sight to sky, but fall in the shadow of some other object. This option affects how much of the normal sky lighting is put into the shadows."
+  }
+
+  TextBox 
+  {
+    Name	"Smooth"
+    Param	"-smooth"
+    Bold	"True"
+    Type	"Single"
+    Default	"50.0"
+    Min		"0.0"
+    Max		"180.0"
+    Hint	"\tSet smoothing threshold for blending (in degrees).\n\n"_
+    		"\tBy default hlrad uses Phong shading on all faces. If the angle between two edges is less than this value, it will be shaded with the Phong smoothing code, otherwise it won't."
+  }
+
+  TextBox
+  {
+    Name	"Texture Chop"
+    Param	"-texchop"
+    Type	"Single"
+    Default	"32.0"
+    Min		"1.0"
+    Hint	"\tSet radiosity patch size for texture light faces.\n\n"_
+    		"\tTexture light faces are chopped with a different granularity than the normal faces, primarily so that the lighting looks good. Generally it should be half of the chop value. Adding -extra to hlrad will automatically divide this value by 2 at runtime."
+  }
+
+  Space
+  {
+    Size	"1"
+  }
+
+  ComboBox
+  {
+    Name	"Fall Off Mode"
+    Param	"-falloff"
+    Default	"Inverse Square"
+    Options	"Inverse Linear,1|Inverse Square,2"
+    Hint	"\tSet global falloff mode.\n\n"_
+    		"\tThis option can change the normal inverse square falloff of lighting in the direct lighting layer with inverse falloff."
+  }
+
+  ComboBox
+  {
+    Name	"VIS Matrix"
+    Bold	"True"
+    Default	"Legacy"
+    Options	"Legacy,|Sparse,-sparse|Disable,-nomatrix"
+    Hint	"\tThe original vismatrix algorithm was limited to 65535 patches due to its design. Its memory usage also grew exponentially with the number of patches (patches * patches / 16 bytes).\n\n"_
+		"\tSparse enables a compressed vismatrix, which at the cost of extra CPU time, breaks the 65535 limit, and also uses about 10% of the memory the original vismatrix would, but as it does some compression, it requires a lot of thread synchronization and does not scale well past 2 CPU's.\n\n"_
+    		"\tDisabling the Vis matrix essentially reduces the memory requirements to zero for that structure. However, the addition of \"opaque brush entities\" starting with ZHLT 2.2 hurts this method's performance quite a bit."
+  }
+
+  ColorBox
+  {
+    Name	"Ambient Light"
+    Param	"-ambient"
+    Type	"Single"
+    Default	"0 0 0"
+    Hint	"\tSet ambient world light.\n\n"_
+    		"\tThis option sets a minimum light value to every face so that nothing comes out pitch black."
+  }
+
+  FileBox
+  {
+    Name	"Lights File"
+    Param	"-lights"
+    FullPath	"True"
+    Bold	"True"
+    Filter	"Radiosity Files (*.rad)|*.rad|Text Files (*.txt)|*.txt"
+    Hint	"\tManually specify a lights.rad file to use.\n\n"_
+    		"\tThe .rad file will be used in addition to the defaults of lights.rad and mapname.rad."
+  }
+}
+
+//
+// RipEnt
+//
+Stage
+{
+  Name		"RipEnt"
+  Title		"Rip Entities"
+  Type		"Program"
+  Filter	"RipEnts (ripent.exe)|ripent.exe"
+
+  ComboBox
+  {
+    Name	"Operation"
+    Checked	"True"
+    Default	"Export"
+    Options	"Import,-import|Export,-export"
+    Hint	"\tImport an entity list into a BSP or export an entity list from a BSP.\n\n"_
+    		"\tAn entity list is a mapname.ent file which lists all the entities in the BSP in MAP format which you can edit in a text editor."
+  }
+
+  Space
+  {
+    Size	"9"
+  }
+
+  TextBox
+  {
+    Name	"Additional Parameters"
+    Type	"String"
+    Size	"3"
+    Hint	"\tAdd additional parameters here as you would a command line."
+  }
+}
+
+//
+// Shared
+//
+Stage
+{
+  Name		"Shared"
+  Title		"Shared Parameters"
+  Type		"ParameterList"
+
+  CheckBox
+  {
+    Name	"Chart"
+    param	"-chart"
+    Bold	"True"
+    Stages	"CSG|BSP|VIS|NetVIS|RAD"
+    Hint	"\tDisplay BSP statistics.\n\n"_
+    		"\tThis option will cause the program to print out the bsp statistics right before it writes out the bsp. It is most handy to do -chart with hlrad and hlvis at the end of the compiles. The ripent program will always displays the chart."
+  }
+
+  CheckBox
+  {
+    Name	"Estimate"
+    param	"-estimate"
+    Bold	"True"
+    Stages	"CSG|BSP|VIS|NetVIS|RAD"
+    Hint	"\tDisplay estimated time during compile.\n\n"_
+    		"\tThis option replaces the 10...20... style progress indicators with a estimate bar with some estimated completion times, as well as the exact number of the current job and how many jobs there are to do. The three different times remaining factor in varying amounts of historical data to guess how much longer it will take to run. It is good for a ballpark figure, but frequently not much more accurate than that."
+  }
+
+  CheckBox
+  {
+    Name	"No Info"
+    param	"-noinfo"
+    Bold	"True"
+    Stages	"CSG|BSP|VIS|NetVIS|RAD"
+    Hint	"\tDo not show tool configuration information.\n\n"_
+    		"\tBy default every tool shows its current settings and their default. This sometimes causes problems with other programs and is unnecessary as it already can be seen in the command line."
+  }
+
+  CheckBox 
+  {
+    Name	"No Log"
+    param	"-nolog"
+    Stages	"CSG|BSP|VIS|NetVIS|RAD"
+    Hint	"\tDon't generate the compile logfiles.\n\n"_
+    		"\tThis option just disables the generation of the .log and .err files which are normally generated whenever the compile tools run."
+  }
+
+  CheckBox
+  {
+    Name	"Verbose"
+    param	"-verbose"
+    Stages	"CSG|BSP|VIS|NetVIS|RAD"//, Opt_EntData"
+    Hint	"\tCompile with verbose messages.\n\n"_
+    		"\tMany of the tools have 'minor warnings' and informative messages which are displayed when verbose mode is set. As the ZHLT 2.x series develops, many of the developer specific settings are being moved to developer messages, while the mapper related messages will remain as verbose messages."
+  }
+
+  TextBox
+  {
+    Name	"Texture Data"
+    Param	"-texdata"
+    Bold	"True"
+    Stages	"CSG|BSP|VIS|NetVIS|RAD|RipEnt"
+    Type	"Integer"
+    Default	"4096"
+    Min		"2048"
+    Hint	"\tAlter maximum texture memory limit (in kb).\n\n"_
+    		"\tHalflife was built with a 2Mb texture limit, as was Opposing Force. The ZHLT default limit is 4Mb. Even 4Mb can be a bit much, when combined with model textures, skies, hud graphics, and more. This is especially true of people with older cards (Voodoo 1 and 2's, etc)."
+  }
+
+  TextBox
+  {
+    Name	"Threads"
+    Param	"-threads"
+    Stages	"CSG|BSP|VIS|NetVIS|RAD"
+    Type	"Integer"
+    Default	"1"
+    Min		"1"
+    Hint	"\tManually specify the number of threads to run.\n\n"_
+    		"\tThis option is generally only necessary on the non-windows versions of the tools, where there is not a standard way to detect the number of processors in the system and auto-set the value. It can be manually set on windows machines, primarily if you wish to use fewer threads than processors."
+  }
+
+  ComboBox
+  {
+    Name	"Developer"
+    Param	"-dev"
+    Stages	"CSG|BSP|VIS|NetVIS|RAD"
+    Default	"Error"
+    Options	"Off,0|Error,1|Warning,2|Info,3|Fluff,4|Spam,5|MegaSpam,6"
+    Hint	"\tCompile with developer messages.\n\n"_
+    		"\tInternal ZHLT debugging messages have been slowly added to the tools. This variable sets the 'level' to display. In order (starting with 0 and going up) : Off, Error, Warning, Info, Fluff, Spam, MegaSpam. Generally this option should never be used except at request, to diagnose a compile problem on an end-users machine."
+  }
+
+  ComboBox
+  {
+    Name	"Priority"
+    Stages	"CSG|BSP|VIS|NetVIS|RAD"
+    Default	"Normal"
+    Options	"Low,-low|Normal,|High,-high"
+    Hint	"\tRun program an altered priority level.\n\n"_
+    		"\tSetting the priority of the compile tools to -low is very handy, as you can multitask and do other things without really feeling the drain of the compile programs on the system, provided there is enough memory for the tools and the other programs you use."
+  }
+}
