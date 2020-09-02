@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nem's Tools [Home - News]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://google.com'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p142"
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=142#p142">Creating
+                    A Preset (Source)</a> - <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Feb 10th, 2005 - 2:14:25 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">
+                <p>If you are coming from the <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=141#p141">Batch
+                    Compiler Setup</a> tutorial then you should already be prepared to start a new preset; otherwise, if
+                  you have not set Batch Compiler up, please see the <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=141p141">Batch
+                    Compiler Setup</a> tutorial.</p>
+
+                <p>To make sure that Batch Compiler is ready to create a new preset, go to the <b>File</b> menu and
+                  select <b>New Preset</b>. Your screen should look like this (note it may differ if you are using a
+                  different specification file):</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup9.png" width="790"
+                    height="605" alt=""></center>
+
+                <p>We are going to create a typical "Fast" preset that would be used on test BSP builds to quickly
+                  preview a BSP. The switches mentioned in this tutorial are not the only switches that can be used for
+                  a "Fast" compile. As you gain experience you will learn how to make use of the other switches to
+                  tailor your map to your liking. They are, however, common switches for a "Fast" compile.</p>
+
+                <p>The first stage we are going to look at is the BSP stage. Click the <b>BSP</b> tab. This tab doesn't
+                  have any options that will greatly speed up the compiling process so leave everything as it is, but
+                  feel free to examine the options.</p>
+
+                <p>The next stage we are going to look at is the VIS stage. Click the <b>VIS</b> tab. Next check the
+                  <b>VIS Type</b> checkbox and select a <b>VIS Type</b> of <b>Fast</b>. Your screen should look like
+                  this when you're done:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup10.png" width="790"
+                    height="605" alt=""></center>
+
+                <p>The next stage we are going to look at is the RAD stage. Click the <b>RAD</b> tab. Next check the
+                  <b>RAD Type</b> checkbox and select a <b>RAD Type</b> of <b>Fast</b>. Your screen should look like
+                  this when you're done:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup11.png" width="790"
+                    height="605" alt=""></center>
+
+                <p>The next stage we are going to look at is the Shared stage. Click the <b>Shared</b> tab. This stage
+                  has special switches that are common to all of the Source Tools stages and so changing a value here
+                  applies this change to all of these stages. If you are going to be working on your computer while your
+                  map compiles you might want to set the <b>Priority</b> option to <b>Low</b>, otherwise leave this
+                  stage alone. Your screen may look like this when you're done:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup12.png" width="790"
+                    height="605" alt=""></center>
+
+                <p>The next stage we are going to look at is the Batch stage. Click the <b>Batch</b> tab. This stage
+                  contains options that are not associated with the Source Tools, but actual batch file commands. I am
+                  going to check all the recommended file deletions to remove intermediate files used to compile the
+                  BSP, and the BSP and LIN recommended file functions so my BSP and LIN files will be copied to my
+                  output folder (as specified on the Options form). Your screen should look like this when you're done:
+                </p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup13.png" width="790"
+                    height="605" alt=""></center>
+
+                <p>Finally, lets look at the Steam stage. Click the <b>Steam</b> tab. This stage will already be
+                  partially set up for you (<b>Run Map</b> and <b>Game</b> should be checked). Select the <b>Game</b>
+                  you want to launch Steam to from the <b>Game</b> combobox. Your screen should look like this when
+                  you're done:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup14.png" width="790"
+                    height="605" alt=""></center>
+
+                <p>Almost done, only two more steps to go... On the side of your screen you'll notice an additional
+                  listbox labelled <b>Stages</b>. In the listbox select the stages you wish to run. This tutorial is
+                  setup to run BSP, VIS, RAD, Batch, and Steam and thus I have them all selected as shown below:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup15.png" width="790"
+                    height="605" alt=""></center>
+
+                <p>Last but not least, we need to specify a VMF file before we can start compiling it. Under the
+                  <b>File</b> menu select <b>Open File</b>. Then browse to and select a VMF file to compile. You'll
+                  notice that the <b>Run</b> buttons are now enabled and this is your sign that you are ready to compile
+                  your map. You screen should look like this when you are ready:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup16.png" width="790"
+                    height="605" alt=""></center>
+
+                <p>To compile your map simply press the <b>Run</b> button, an MS DOS window will pop up and your map
+                  will commence compiling. Note: the Steam service must be running before you can compile your map.
+                  <b><span class="warning">If the compiling tools (not Batch Compiler) report any errors, please see <a
+                        href="https://web.archive.org/web/20170915123238/http://www.interlopers.net/errors/">this
+                        site</a>.</span></b></p>
+
+                <p>Now that you have set up a "Fast" compiler preset, let's add it to your <b>Presets</b> menu for easy
+                  access. Please continue to the <a href="Adding_Preset_Quick_Launch_Buttons_(Source).html">next
+                    page</a>.</p>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left">Modified: Apr 16th, 2006 - 3:08:13 pm</span><span
+                  class="right">[ 29711 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c1375"
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=1383">nitros2005uk</a></span><span
+                  class="right">Posted: Feb 27th, 2005 - 7:40:46 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">i have lots of problems with hammer <img src="../../images/emotes/sad.gif" width="32"
+                  height="32" alt="sad"></div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">2.</span> <a name="c1563"
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=1542">amckern</a></span><span
+                  class="right">Posted: Jun 3rd, 2005 - 7:44:09 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">http://ammahls.com/cst/seting_up_cst.htm <img src="../../images/emotes/bored.gif"
+                  width="32" height="32" alt="bored">
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">3.</span> <a name="c1567"
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Jun 4th, 2005 - 11:20:30 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">A 404 page? Cool flash animation...<br>
+                <br>
+                <img src="../../images/emotes/miam.gif" width="32" height="32" alt="miam">
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">4.</span> <a name="c2684"
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=2992">mistamoronic</a></span><span
+                  class="right">Posted: Oct 19th, 2007 - 8:03:35 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">ummm how do i know when the batch compiler is done compiling?<img
+                  src="../../images/emotes/exhausted.gif" width="32" height="32" alt="exhausted"></div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">5.</span> <a name="c2836"
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=3228">TehVice</a></span><span
+                  class="right">Posted: Apr 12th, 2008 - 10:02:57 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Is there any reason as to why there isn't an option to run the map in Day of Defeat:
+                Source?</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">6.</span> <a name="c2838"
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Modified: Apr 25th, 2008 - 1:19:22 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Are sure you're using one of the source specifications? You may also want to double
+                check that everything is up to date by running an automatic update from the help menu.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">7.</span> <a name="c3006"
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=3476">Seemon</a></span><span
+                  class="right">Posted: Oct 18th, 2008 - 9:26:46 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I've set up Batch Compiler now with the fast preset etc and selected the map to
+                compile and pressed "Run". The Dos window opens and closes almost directly afterwards.<br>
+                <br>
+                I figured the compile was complete and went into CS:S to create server to have a looksy, but the map
+                wasn't there.<br>
+                <br>
+                So for some reason, it's not actually compiling?<br>
+                <br>
+                <br>
+                Any help?</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">8.</span> <a name="c3136"
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=3607">Katara</a></span><span
+                  class="right">Posted: Feb 27th, 2009 - 6:24:00 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">How can you specify the .LIN file output folder. Because when I check my general
+                output folder there isnt one.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">9.</span> <a name="c3205"
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=3782">Rooster</a></span><span
+                  class="right">Posted: Jun 20th, 2009 - 5:02:19 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I have a question about launching a game that is not on the list under the Steam tab.
+                I am working on a map for Insurgency so after I compile the map to test it, I would like it to fire off
+                Insurgency. Anyone help me out with this?</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">10.</span> <a name="c3918"
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=12800">Afftamat</a></span><span
+                  class="right">Posted: Jul 8th, 2014 - 10:57:29 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I downloaded and updated this great tool, but got an error when selecting a
+                specification:<br>
+                <br>
+                Error (16): Error parsing include file Source Tools.bci.<br>
+                Error (389): Error parsing attribute "Min", invalid attribute string "0.0".<br>
+                <br>
+                If you encounter this error, open file "Source Tools.bci" with a text editor and remove decimals from
+                all Min and Max values in all TextBox blocks.<br>
+                <br>
+                Min "0.0"<br>
+                Max "100.0"<br>
+                <br>
+                should be<br>
+                <br>
+                Min "0"<br>
+                Max "100"<br>
+                <br>
+                Hope this hepls.</div>
+            </div><br>
+            <div class="info center">You must be logged in to post a comment.<br>New users can register <a
+                href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=142&amp;o=0&amp;action=addauthor">here</a>.
+            </div>
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">Batch Compiler</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?p=2">About</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?p=3">Download</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?p=5">Revision
+                    History</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?p=4">Specification
+                    Files</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?p=7">FAQ</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?p=6">Tutorials</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=142&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=142&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=142&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4040">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=13286">saqi55</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=13303">blank</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915123238/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 » 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,2714 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nem's Tools [Home - News]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://google.com'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p35"
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#p35">Batch
+                    Compiler Specification Files</a> - <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: May 26th, 2003 - 9:51:42 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">
+                <font size="4"><b>About:</b></font><br>
+
+                <p>Batch Compiler Specification (BCS) files are simple element orientated text files that are used to
+                  specify the batches, stages and options that can be used. They construct the objects on Batch
+                  Compiler's main form and specify the layout of the batch file Batch Compiler produces. In short, the
+                  define almost everything you see in Batch Compiler.</p>
+
+                <ul>
+                  <li> <a
+                      href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Batch">Batch
+                      Element</a></li>
+                  <li> <a
+                      href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Stage">Stage
+                      Element</a></li>
+                  <li> <a
+                      href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Control">Control
+                      Elements</a>
+                    <ul>
+                      <li> <a
+                          href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#LabelBox">LabelBox</a>
+                      </li>
+                      <li> <a
+                          href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Space">Space</a>
+                      </li>
+                      <li> <a
+                          href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Option">Option
+                          Elements</a>
+                        <ul>
+                          <li> <a
+                              href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#CheckBox">CheckBox</a>
+                          </li>
+                          <li> <a
+                              href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#TextBox">TextBox</a>
+                          </li>
+                          <li> <a
+                              href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#ComboBox">ComboBox</a>
+                          </li>
+                          <li> <a
+                              href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#FileBox">FileBox</a>
+                          </li>
+                          <li> <a
+                              href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#FolderBox">FolderBox</a>
+                          </li>
+                          <li> <a
+                              href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#ColorBox">ColorBox</a>
+                          </li>
+                          <li> <a
+                              href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Shared">Shared
+                              Options</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li> <a
+                      href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Directives">Directives</a>
+                    <ul>
+                      <li> <a
+                          href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Define">Define
+                          Directive</a></li>
+                      <li> <a
+                          href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Include">Include
+                          Directive</a></li>
+                      <li> <a
+                          href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Once">Once
+                          Directive</a></li>
+                    </ul>
+                  </li>
+                  <li> <a
+                      href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Naming">Naming
+                      Conventions</a></li>
+                  <li> <a
+                      href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Comment">Comment
+                      Syntax</a></li>
+                  <li> <a
+                      href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35#Error">Error
+                      Messages</a></li>
+                </ul>
+
+                <a name="Batch">
+                  <font size="4"><b>The Batch Element:</b></font>
+                </a><br>
+
+                <p>Specification files are made up of two main sections, a <b>Batch</b> section that specifies the batch
+                  files Batch Compiler produces, and <b>Stage</b> section that specifies the stages these batch files
+                  use. There is no set order in which they must appear, but general place the <b>Batch</b> sections at
+                  the top of the specification file (as a convention). The following is the main <b>Batch</b> section
+                  from the "Zoners Tools" specification file that comes with Batch Compiler:</p>
+
+                <div class="vbcode">
+                  Batch
+                  {
+                  Name "Zoners Tools"
+                  Priority "2"
+                  Links "Zoners Tools,http://dev.valve-erc.com/index.php?go=zhlt"
+                  Filter "Supported Files|*.map;*.bsp|MAP Files (*.map)|*.map|BSP Files (*.bsp)|*.bsp"
+                  Stages "CSG|BSP|VIS|NetVIS|RAD|RipEnt|Shared"
+                  LogFile "${FilePath}\\${FileName}.log"
+                  Template "@echo off\n"_
+                  "set WADROOT=${InputPath}\n"_
+                  "\"${StagePath=CSG}\" ${StageParam=CSG} \"${FilePath}\\${FileName}\"\n"_
+                  "\"${StagePath=BSP}\" ${StageParam=BSP} \"${FilePath}\\${FileName}\"\n"_
+                  "\"${StagePath=VIS}\" ${StageParam=VIS} \"${FilePath}\\${FileName}\"\n"_
+                  "\"${StagePath=NetVIS}\" ${StageParam=NetVIS} \"${FilePath}\\${FileName}\"\n"_
+                  "\"${StagePath=RAD}\" ${StageParam=RAD} \"${FilePath}\\${FileName}\"\n"_
+                  "\"${StagePath=RipEnt}\" ${StageParam=RipEnt} \"${FilePath}\\${FileName}\"\n"
+                  }
+                </div>
+
+                <p>This is a good example of a batch section because it shows all the various aspects of Batch
+                  Compiler's elements and attributes. The general format for all of the various elements and attributes
+                  in a specification file is as follows:</p>
+
+                <div class="vbcode">
+                  Element
+                  {
+                  Attribute1 "Value1"
+                  Attribute2 "Value2"
+                  Attribute3 "Value3"_
+                  "Value3 Continued"
+                  }
+                </div>
+
+                <p>All attribute values, wheather they are numeric or strings, are written in quotes. If an attribute's
+                  value is long you can split it into two or more strings by placing a underscore ("_") charactor in
+                  between each string as showen above. Attributes can also contain escape sequences to represent
+                  characters you can't easily type. These escape sequences are modeled after the C language escape
+                  sequences and are as follows:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="150">
+                          <center>Escape Sequence</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Character</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          \t
+                        </td>
+                        <td class="value1" valign="top">
+                          Tab
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          \n
+                        </td>
+                        <td class="value1" valign="top">
+                          New Line
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          \\
+                        </td>
+                        <td class="value1" valign="top">
+                          Backslash
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          \"
+                        </td>
+                        <td class="value1" valign="top">
+                          Quote
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <p>The quote escape sequence can be very usefull for adding quotes to your attribute's value without
+                  confusing the parser. For example the string <i>Ryan "The Yellow Dart" Gregg</i> would be written as
+                  <i>"Ryan \"The Yellow Dart\" Gregg"</i>.</p>
+
+                <p>The various attributes that the <b>Batch</b> element can take are as follows:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="100">
+                          <center>Attribute</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Type</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Default</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Filter
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          All Files (*.*)|*.*
+                        </td>
+                        <td class="value1" valign="top">
+                          The file filter to use when browsing for files on the main form in the standard windows
+                          format.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Links
+                        </td>
+                        <td class="value1" valign="top">
+                          List
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          A list of web site links associated with the batch. The format is <i>"Link1 Name,Link1
+                            URL|Link2 Name,Link2 URL"</i>.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          LogFile
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The template for the log file path.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Name
+                        </td>
+                        <td class="value1" valign="top">
+                          ID
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The name of the batch. Must be unique.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Priority
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          0
+                        </td>
+                        <td class="value1" valign="top">
+                          The priority of the batch. The batch with the highest priority will be the batch that Batch
+                          Compiler loads.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ShellExecute
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          If true, the batch will be run through the shell and not a batch file. The batch must be no
+                          longer than one line and only one command if this is true.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Stages
+                        </td>
+                        <td class="value1" valign="top">
+                          List
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          A list of all the stages the batch uses in the order they will be run (and appear in Batch
+                          Compiler).
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Template
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The template for the batch.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+                <br>
+
+                <p>The <b>Template</b> attribute of the <b>Batch</b> element is simply a batch script mixed in with
+                  variables.</p>
+
+                <b>Variables:</b><br>
+
+                <p>Batch Compiler defines the following variables that can be used anywhere in your <b>Template</b>:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="150">
+                          <center>Variable</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${Date}
+                        </td>
+                        <td class="value1" valign="top">
+                          The current date in short format.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${FileExt}
+                        </td>
+                        <td class="value1" valign="top">
+                          The input file's extension. For example, the extension of <i>C:\test.map</i> would be
+                          <i>map</i>.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${FileName}
+                        </td>
+                        <td class="value1" valign="top">
+                          The input file's Name. For example, the name of <i>C:\test.map</i> would be <i>test</i>.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${FilePath}
+                        </td>
+                        <td class="value1" valign="top">
+                          The input file's Path. For example, the path of <i>C:\test.map</i> would be <i>C:\</i>.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${InputPath}
+                        </td>
+                        <td class="value1" valign="top">
+                          The input path (as set in the options form.)
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${LogViewerPath}
+                        </td>
+                        <td class="value1" valign="top">
+                          The full path to the log viewer (as set in the options form).
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${OutputPath}
+                        </td>
+                        <td class="value1" valign="top">
+                          The output path (as set in the options form.)
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${StageCmd=XXX}
+                        </td>
+                        <td class="value1" valign="top">
+                          The command list of a stage generated by Batch Compiler where XXX is the stage you want the
+                          command list for.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${StageParam=XXX}
+                        </td>
+                        <td class="value1" valign="top">
+                          The parameter list of a stage generated by Batch Compiler where XXX is the stage you want the
+                          parameter list for.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${StagePath=XXX}
+                        </td>
+                        <td class="value1" valign="top">
+                          The full path of a stage where XXX is the stage you want the full path for.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${StageTitle=XXX}
+                        </td>
+                        <td class="value1" valign="top">
+                          The ftitle of a stage where XXX is the stage you want the title for.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${Time}
+                        </td>
+                        <td class="value1" valign="top">
+                          The current time in short format.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${Version}
+                        </td>
+                        <td class="value1" valign="top">
+                          The version of Batch Compiler you are using.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <p>It should be noted that when <b>StagePath</b> or <b>StageParam</b> occurs on a line, that line will
+                  not be part of the batch if the stage is a program and it is not checked to run in Batch Compiler.</p>
+
+                <a name="Stage">
+                  <font size="4"><b>The Stage Element:</b></font>
+                </a><br>
+
+                <p>The <b>Stage</b> element is used to specify the programs that are used to make up a <b>Batch</b>.
+                  Each <b>Stage</b> makes up a tab in Batch Compiler. Here is a sample <b>Stage</b>:</p>
+
+                <div class="vbcode">
+                  Stage
+                  {
+                  Name "VIS"
+                  Title "Visibility Index Set"
+                  Type "Program"
+                  Filter "HLVIS (hlvis.exe)|hlvis.exe"
+
+                  ComboBox
+                  {
+                  Name "Vis Type"
+                  Bold "True"
+                  Default "Normal"
+                  Options "Fast,-fast|Normal,|Full,-full"
+                  Hint "\tRun as fast or normal or full VIS."
+                  }
+
+                  Space
+                  {
+                  Size "9"
+                  }
+
+                  TextBox
+                  {
+                  Name "Additional Parameters"
+                  Type "String"
+                  Size "3"
+                  Hint "\tAdd additional parameters here as you would a command line."
+                  }
+                  }
+                </div>
+
+                <p>This example illustrates how the <b>Stage</b> element is made up of other elements such as ComboBoxes
+                  and TextBoxes. The various attributes that the <b>Stage</b> element can take are as follows:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="100">
+                          <center>Attribute</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Type</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Default</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Filter
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          Applications (*.exe)|*.exe
+                        </td>
+                        <td class="value1" valign="top">
+                          The file filter to use when browsing for the stage's program in the standard windows format.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Groups
+                        </td>
+                        <td class="value1" valign="top">
+                          List
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The list of all the element groups in the sage. You must list these if you wish to access
+                          individual element groups.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Name
+                        </td>
+                        <td class="value1" valign="top">
+                          ID
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The name of the stage. Must be unique.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Title
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The title of the stage.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Type
+                        </td>
+                        <td class="value1" valign="top">
+                          Enumeration
+                        </td>
+                        <td class="value1" valign="top">
+                          Program
+                        </td>
+                        <td class="value1" valign="top">
+                          The type of stage the stage is. Options are <i>Program</i>, <i>ParameterList</i> and
+                          <i>CommandList</i>.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <br>
+
+                <a name="Control">
+                  <font size="4"><b>Control Elements:</b></font>
+                </a><br>
+
+                <p>The <b>Stage</b> element is also made up of additional control elements which are used to define the
+                  objects on the tab and the parameters of the program. Batch Compiler defines for the following control
+                  elements: <b>LabelBox</b>, <b>Space</b>, <b>CheckBox</b>, <b>TextBox</b>, <b>ComboBox</b>,
+                  <b>FileBox</b>, <b>FolderBox</b> and the <b>ColorBox</b> control element.</p>
+
+                <p>These control elements are placed on the tabs in a grid like manor. Each tab is divided into 11x3
+                  (33) grid boxes, each of which a control element can be added to. The position of the control elements
+                  is determined automatically by the order of their creation, starting from the top left then making
+                  their way down each column until it is full.</p>
+
+                <a name="LabelBox">
+                  <font size="4"><b>The LabelBox:</b></font>
+                </a><br>
+
+                <p>The <b>LabelBox</b> is a simple control element that is used to provide headings for other control
+                  elements. An example <b>LabelBox</b> element is as follows:</p>
+
+                <div class="vbcode">
+                  LabelBox
+                  {
+                  Name "Recommended File Deletions:"
+                  Bold "True"
+                  }
+                </div>
+
+                <p>The attributes that the <b>LabelBox</b> element defines are as follows:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="100">
+                          <center>Attribute</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Type</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Default</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Bold
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's bold state.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Name
+                        </td>
+                        <td class="value1" valign="top">
+                          ID
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The name of the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Size
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          1
+                        </td>
+                        <td class="value1" valign="top">
+                          The width of the element in grid blocks.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <br>
+
+                <a name="Space">
+                  <font size="4"><b>The Space:</b></font>
+                </a><br>
+
+                <p>The <b>Space</b> is a simple control element that is used to provide vitrical spacing between control
+                  elements. An example <b>Space</b> element is as follows:</p>
+
+                <div class="vbcode">
+                  Space
+                  {
+                  Size "3"
+                  }
+                </div>
+
+                <p>The attributes that the <b>Space</b> element defines are as follows:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="100">
+                          <center>Attribute</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Type</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Default</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Size
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          1
+                        </td>
+                        <td class="value1" valign="top">
+                          The height of the element in grid blocks.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <p>When Batch Compiler encounters a <b>Space</b> element it simply moves ahead the specified number of
+                  spaces (grid blocks) as if a sub class had been placed there. It is important to note that if you use
+                  a 'Width' value greater then 1 for any of the sub classes, you'll need to use the 'Spaces' field to
+                  prevent other sub classes from being placed on top of the wide sub class by jumping over any
+                  additional grid blocks it takes up.</p>
+
+                <a name="Option">
+                  <font size="4"><b>Option Elements:</b></font>
+                </a><br>
+
+                <p>Option elements are used to define parameters and batch commands for use in your <b>Batch</b>. If
+                  your <b>Stage</b> is of type <i>Program</i> or <i>ParameterList</i> the option created will be in the
+                  format <i>parameter value</i>. If your <b>Stage</b> is of type <i>CommandList</i> the option created
+                  will be in the format <i>parameter\n</i>.</p>
+
+                <p>All option elements allow you to create variable switches by using any of the following variables as
+                  part of their parameter:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="150">
+                          <center>Variable</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${Date}
+                        </td>
+                        <td class="value1" valign="top">
+                          The current date in short format.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${FileExt}
+                        </td>
+                        <td class="value1" valign="top">
+                          The input file's extension. For example, the extension of <i>C:\test.map</i> would be
+                          <i>map</i>.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${FileName}
+                        </td>
+                        <td class="value1" valign="top">
+                          The input file's Name. For example, the name of <i>C:\test.map</i> would be <i>test</i>.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${FilePath}
+                        </td>
+                        <td class="value1" valign="top">
+                          The input file's Path. For example, the path of <i>C:\test.map</i> would be <i>C:\</i>.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${InputPath}
+                        </td>
+                        <td class="value1" valign="top">
+                          The input path (as set in the options form.)
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${LogViewerPath}
+                        </td>
+                        <td class="value1" valign="top">
+                          The full path to the log viewer (as set in the options form).
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${OutputPath}
+                        </td>
+                        <td class="value1" valign="top">
+                          The output path (as set in the options form.)
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${Time}
+                        </td>
+                        <td class="value1" valign="top">
+                          The current time in short format.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${Version}
+                        </td>
+                        <td class="value1" valign="top">
+                          The version of Batch Compiler you are using.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <p>Options that are part of a <b>Stage</b> of type <i>CommandList</i> (excluding <b>CheckBox's</b>) can
+                  use the following additional variables:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="150">
+                          <center>Variable</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          ${Value}
+                        </td>
+                        <td class="value1" valign="top">
+                          The value of the option.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <p>The bellow example uses variables to delete an intermittent file. The parameter looks as follows:</p>
+
+                <div class="vbcode">
+                  CheckBox
+                  {
+                  Name "Delete .WIC After Compile"
+                  Param "if not exist \"${FilePath}\\${FileName}.wic\" goto nodelwic\n"_
+                  "del \"${FilePath}\\${FileName}.wic\"\n"_
+                  "echo ${FilePath}\\${FileName}.wic deleted.\n"_
+                  ":nodelwic"
+                  }
+                </div>
+
+                <br>
+
+                <a name="CheckBox">
+                  <font size="4"><b>The CheckBox:</b></font>
+                </a><br>
+
+                <p>The <b>CheckBox</b> is a common control element that defines a single valueless switch. An example
+                  <b>CheckBox</b> element is as follows:</p>
+
+                <div class="vbcode">
+                  CheckBox
+                  {
+                  Name "No WAD Textures"
+                  Param "-nowadtextures"
+                  Hint "\tInclude all used textures into bsp."
+                  }
+                </div>
+
+                <p>The attributes that the <b>CheckBox</b> element defines are as follows:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="100">
+                          <center>Attribute</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Type</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Default</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Bold
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's bold state.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Checked
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's checked state. If true the element will be checked by default.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Group
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The group the element belongs to.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Hint
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The hint that is displayed when you hover your mouse over the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Index
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The index of the element in the parameter list.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Name
+                        </td>
+                        <td class="value1" valign="top">
+                          ID
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The name of the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Param
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The switch to use for the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Size
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          1
+                        </td>
+                        <td class="value1" valign="top">
+                          The width of the element in grid blocks.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Stages
+                        </td>
+                        <td class="value1" valign="top">
+                          List
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          A list of stages that share the element.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <br>
+
+                <a name="TextBox">
+                  <font size="4"><b>The TextBox:</b></font>
+                </a><br>
+
+                <p>The <b>TextBox</b> is a common control element that defines a single switch with a value. An example
+                  <b>TextBox</b> element is as follows:</p>
+
+                <div class="vbcode">
+                  TextBox
+                  {
+                  Name "Max Node Size"
+                  Param "-maxnodesize"
+                  Bold "True"
+                  Type "Single"
+                  Default "1024.0"
+                  Min "64.0"
+                  Max "8192.0"
+                  Hint "\tSets the maximum portal node size."
+                  }
+                </div>
+
+                <p>The attributes that the <b>TextBox</b> element defines are as follows:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="100">
+                          <center>Attribute</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Type</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Default</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Bold
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's bold state.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Checked
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's checked state. If true the element will be checked by default.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Default
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The default value for the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Group
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The group the element belongs to.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Hint
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The hint that is displayed when you hover your mouse over the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Index
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The index of the element in the parameter list.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Max
+                        </td>
+                        <td class="value1" valign="top">
+                          Variable
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          If the element is a numeric type, the maximum value it can take.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Min
+                        </td>
+                        <td class="value1" valign="top">
+                          Variable
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          If the element is a numeric type, the minimum value it can take.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Name
+                        </td>
+                        <td class="value1" valign="top">
+                          ID
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The name of the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Param
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The switch to use for the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Quote
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          True
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's quote state. If true values with white space in them will be surounded in
+                          quotes.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Size
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          1
+                        </td>
+                        <td class="value1" valign="top">
+                          The width of the element in grid blocks.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Stages
+                        </td>
+                        <td class="value1" valign="top">
+                          List
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          A list of stages that share the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Type
+                        </td>
+                        <td class="value1" valign="top">
+                          Enumeration
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          The type of value the element can take. Options are <i>String</i>, <i>Integer</i> and
+                          <i>Single</i>.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <br>
+
+                <a name="ComboBox">
+                  <font size="4"><b>The ComboBox:</b></font>
+                </a><br>
+
+                <p>The <b>ComboBox</b> is a common control element that defines a single switch with multipule fixed
+                  values. An example <b>ComboBox</b> element is as follows:</p>
+
+                <div class="vbcode">
+                  ComboBox
+                  {
+                  Name "Max Node Size"
+                  Param "-maxnodesize"
+                  Bold "True"
+                  Type "Single"
+                  Default "1024.0"
+                  Min "64.0"
+                  Max "8192.0"
+                  Hint "\tSets the maximum portal node size."
+                  }
+                </div>
+
+                <p>The attributes that the <b>ComboBox</b> element defines are as follows:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="100">
+                          <center>Attribute</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Type</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Default</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Bold
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's bold state.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Checked
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's checked state. If true the element will be checked by default.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Default
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The name of the default option for the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Group
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The group the element belongs to.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Hint
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The hint that is displayed when you hover your mouse over the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Index
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The index of the element in the parameter list.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Name
+                        </td>
+                        <td class="value1" valign="top">
+                          ID
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The name of the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Options
+                        </td>
+                        <td class="value1" valign="top">
+                          List
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          A list of options that the element can take. The format is <i>"Option1 Name,Option1
+                            Value|Option2 Name,Option2 Value"</i>.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Param
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The switch to use for the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Quote
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          True
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's quote state. If true values with white space in them will be surounded in
+                          quotes.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Size
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          1
+                        </td>
+                        <td class="value1" valign="top">
+                          The width of the element in grid blocks.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Stages
+                        </td>
+                        <td class="value1" valign="top">
+                          List
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          A list of stages that share the element.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <p>The <b>ComboBox</b> can also be a useful element for switching between multiple valueless switches.
+                  For example, you can only start Half-Life in fullscreen or windowed mode, so if you wanted to switch
+                  between the two you would do the following:</p>
+
+                <div class="vbcode">
+                  ComboBox
+                  {
+                  Name "Startup State"
+                  Default "Fullscreen"
+                  Options "Fullscreen,-full|Windowed,-win"
+                  Hint "\tStart Half-Life with the following window state."
+                  }
+                </div>
+
+                <br>
+
+                <a name="FileBox">
+                  <font size="4"><b>The FileBox:</b></font>
+                </a><br>
+
+                <p>The <b>FileBox</b> is a control element that defines a single switch that takes a file as a value. An
+                  example <b>FileBox</b> element is as follows:</p>
+
+                <div class="vbcode">
+                  FileBox
+                  {
+                  Name "WAD File"
+                  Param "-wadinclude"
+                  FullPath "True"
+                  Filter "WAD Files (*.wad)|*.wad"
+                  Hint "\tPlace textures used by the wad file specified into the bsp."
+                  }
+                </div>
+
+                <p>The attributes that the <b>FileBox</b> element defines are as follows:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="100">
+                          <center>Attribute</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Type</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Default</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Bold
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's bold state.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Checked
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's checked state. If true the element will be checked by default.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Default
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The default file name.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Filter
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          All Files (*.*)|*.*
+                        </td>
+                        <td class="value1" valign="top">
+                          The file filter to use when browsing for files in the standard windows format.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          FullPath
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          True
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's full path state. If true the path and file name of the file will be used, if
+                          false only the file name will be used.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Group
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The group the element belongs to.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Hint
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The hint that is displayed when you hover your mouse over the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Index
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The index of the element in the parameter list.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Name
+                        </td>
+                        <td class="value1" valign="top">
+                          ID
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The name of the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Param
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The switch to use for the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Quote
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          True
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's quote state. If true values with white space in them will be surounded in
+                          quotes.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Size
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          1
+                        </td>
+                        <td class="value1" valign="top">
+                          The width of the element in grid blocks.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Stages
+                        </td>
+                        <td class="value1" valign="top">
+                          List
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          A list of stages that share the element.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <br>
+
+                <a name="FolderBox">
+                  <font size="4"><b>The FolderBox:</b></font>
+                </a><br>
+
+                <p>The <b>FolderBox</b> is a control element that defines a single switch that takes a folder as a
+                  value. An example <b>FolderBox</b> element is as follows:</p>
+
+                <div class="vbcode">
+                  FolderBox
+                  {
+                  Name "Folder"
+                  Param "-folder"
+
+                  Hint "\tSpecify a folder that will be searched for bsp files."
+                  }
+                </div>
+
+                <p>The attributes that the <b>FolderBox</b> element defines are as follows:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="100">
+                          <center>Attribute</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Type</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Default</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Bold
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's bold state.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Checked
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's checked state. If true the element will be checked by default.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Group
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The group the element belongs to.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Hint
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The hint that is displayed when you hover your mouse over the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Index
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The index of the element in the parameter list.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Name
+                        </td>
+                        <td class="value1" valign="top">
+                          ID
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The name of the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Param
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The switch to use for the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Quote
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          True
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's quote state. If true values with white space in them will be surounded in
+                          quotes.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Size
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          1
+                        </td>
+                        <td class="value1" valign="top">
+                          The width of the element in grid blocks.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Stages
+                        </td>
+                        <td class="value1" valign="top">
+                          List
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          A list of stages that share the element.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <br>
+
+                <a name="ColorBox">
+                  <font size="4"><b>The ColorBox:</b></font>
+                </a><br>
+
+                <p>The <b>ColorBox</b> is a control element that defines a single switch that takes a color as a value.
+                  An example <b>ColorBox</b> element is as follows:</p>
+
+                <div class="vbcode">
+                  ColorBox
+                  {
+                  Name "Ambient Light"
+                  Param "-ambient"
+                  Type "Single"
+                  Default "0 0 0"
+                  Hint "\tSet ambient world light."
+                  }
+                </div>
+
+                <p>The attributes that the <b>ColorBox</b> element defines are as follows:</p>
+
+                <center>
+                  <table class="authortable">
+                    <tbody>
+                      <tr>
+                        <td class="title" width="100">
+                          <center>Attribute</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Type</center>
+                        </td>
+                        <td class="title" width="100">
+                          <center>Default</center>
+                        </td>
+                        <td class="title" width="*">
+                          <center>Value</center>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Bold
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's bold state.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Checked
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's checked state. If true the element will be checked by default.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Default
+                        </td>
+                        <td class="value1" valign="top">
+                          Color
+                        </td>
+                        <td class="value1" valign="top">
+                          0 0 0
+                        </td>
+                        <td class="value1" valign="top">
+                          The default color in <i>R G B</i> mode. The color can be defined as a Integer or a Single.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Group
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The group the element belongs to.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Hint
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The hint that is displayed when you hover your mouse over the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Index
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The index of the element in the parameter list.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Name
+                        </td>
+                        <td class="value1" valign="top">
+                          ID
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The name of the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Param
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          The switch to use for the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Quote
+                        </td>
+                        <td class="value1" valign="top">
+                          Boolean
+
+                        </td>
+                        <td class="value1" valign="top">
+                          False
+                        </td>
+                        <td class="value1" valign="top">
+                          The element's quote state. If true values with white space in them will be surounded in
+                          quotes.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Size
+                        </td>
+                        <td class="value1" valign="top">
+                          Integer
+                        </td>
+                        <td class="value1" valign="top">
+                          1
+                        </td>
+                        <td class="value1" valign="top">
+                          The width of the element in grid blocks.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Stages
+                        </td>
+                        <td class="value1" valign="top">
+                          List
+                        </td>
+                        <td class="value1" valign="top">
+                          N/A
+                        </td>
+                        <td class="value1" valign="top">
+                          A list of stages that share the element.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="argument" valign="top">
+                          Type
+                        </td>
+                        <td class="value1" valign="top">
+                          Enumeration
+                        </td>
+                        <td class="value1" valign="top">
+                          String
+                        </td>
+                        <td class="value1" valign="top">
+                          The type of value the color is defined with. Options are <i>Integer</i> and <i>Single</i>.
+                          Integer values range from 0 to 255 and Single values range from 0.0 to 1.0.
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <br>
+
+                <a name="Shared">
+                  <font size="4"><b>Shared Options:</b></font>
+                </a><br>
+
+                <p>In some cases you have an option element that you want to include in multiple <b>Stages</b>. These
+                  are called shared options. (An example of one of these would be the -texdata option in Zoners Tools,
+                  you want this to be added to all <b>Stages</b>). This can be done with any option element through the
+                  use of the <i>Stages</i> attribute. In the <i>Stages</i> attribute list all the <b>Stages</b> that you
+                  want the option element to be used with. An example shared option is as follows:</p>
+
+                <div class="vbcode">
+                  TextBox
+                  {
+                  Name "Texture Data"
+                  Param "-texdata"
+                  Bold "True"
+                  Stages "CSG|BSP|VIS|NetVIS|RAD|RipEnt"
+                  Type "Integer"
+
+                  Default "4096"
+                  Min "2048"
+                  Hint "\tAlter maximum texture memory limit (in kb)."
+                  }
+                </div>
+
+                <p>Note that shared options only appear in the <b>Stage</b> you create them in, but their options are
+                  added to the parameter list of all the <i>Program</i> and <i>ParameterList</i> <b>Stages</b> they are
+                  shared with.</p>
+
+                <a name="Directives">
+                  <font size="4"><b>Directives:</b></font>
+                </a><br>
+
+                <p>Directives are special commands that tell the parser how to parse the specification file. The three
+                  directives available are <b>Define</b>, <b>Include</b> and <b>Once</b>.</p>
+
+                <a name="Define">
+                  <font size="4"><b>Define Directive:</b></font>
+                </a><br>
+
+                <p>The <b>Define</b> directive allows you to define custom variables that can be used anywhere you can
+                  use the variables that the <b>Define</b> is composed of. An example of the <b>Define</b> directive is
+                  as follows:</p>
+
+                <div class="vbcode">
+                  Define "DateTime" "${Date} {$Time}"
+                  Define "Author" "Ryan \"Nemesis\" Gregg"
+                </div>
+
+                <p>This defines a new variable, <i>${DateTime}</i>, that you can use anywhere in place of <i>${Date}
+                    ${Time}</i>. This also defines a new variable, <i>${Author}</i>, which you can use any where in
+                  place of <i>Ryan "Nemesis" Gregg</i>. For example: <i>echo ${Author}</i>.</p>
+
+                <a name="Include">
+                  <font size="4"><b>Include Directive:</b></font>
+                </a><br>
+
+                <p>The <b>Include</b> directive allows you to include <b>Batches</b> and <b>Stages</b> defined in
+                  another specification file in the current specification file. When you include a specification file it
+                  is parsed separately from the specification file you included it from. This means the specification
+                  file you include must be a complete standalone specification file. You cannot include a specification
+                  file from within a <b>Batch</b> or <b>Stage</b> element. An example of the <b>Include</b> directive is
+                  as follows:</p>
+
+                <div class="vbcode">
+                  Include "Batch.bci"
+                </div>
+
+                <br>
+
+                <a name="Once">
+                  <font size="4"><b>Once Directive:</b></font>
+                </a><br>
+
+                <p>If you <b>Include</b> a specification file more than once you will run into errors because you will
+                  be declaring the elements in that specification file more than once. As a work around you can use the
+                  <b>Once</b> directive to indicate that the specification file is only to be parsed once. The
+                  <b>Once</b> directive should only be used at the top of a specification file. An example of the
+                  <b>Once</b> directive is as follows:</p>
+
+                <div class="vbcode">
+                  Once
+                </div>
+
+                <br>
+
+                <a name="Naming">
+                  <font size="4"><b>Naming Conventions:</b></font>
+                </a><br>
+
+                <p>As a convention, specification files that you wish to use with the <b>Include</b> directive but don't
+                  wish to allow users to use as standalone specifications should be given the .bci (Batch Compiler
+                  Include File) extension. Files that you wish to allow users to use as standalone specifications should
+                  be given the .bcs (Batch Compiler Specification File) extension.</p>
+
+                <a name="Comment">
+                  <font size="4"><b>Comment Syntax:</b></font>
+                </a><br>
+
+                <p>Comments can be added anywhere in specification files. Batch Compiler uses the standard C++ style
+                  comment syntax to allow for both line and block comments. An example of correct line comment syntax is
+                  as follows:</p>
+
+                <div class="vbcode">
+                  // This is a comment.
+                  // The Bold attribute has been commented out, Batch Compiler
+                  // will not parse it.
+                  CheckBox
+                  {
+                  Name "No WAD Textures"
+                  Param "-nowadtextures"
+                  //Bold "True"
+                  Hint "\tInclude all used textures into bsp."
+                  }
+                </div>
+
+                <p>An example of correct block comment syntax is as follows:</p>
+
+                <div class="vbcode">
+                  /*
+                  * This is a comment.
+                  * The Below CheckBox has been commented out, Batch Compiler
+                  * will not parse it.
+                  */
+
+                  /*CheckBox
+                  {
+                  Name "No WAD Textures"
+                  Param "-nowadtextures"
+                  Bold "True"
+                  Hint "\tInclude all used textures into bsp."
+                  }*/
+                </div>
+
+                <br>
+
+                <a name="Error">
+                  <font size="4"><b>Error Messages:</b></font>
+                </a><br>
+
+                <p>When Batch Compiler encounters an error parsing a specification file it outputs an error message in
+                  the format <i>Error (line): message</i>. The line number Batch Compiler reports isn't necessarily the
+                  line that the error occurred on, it is the line Batch Compiler is on when it determines that there is
+                  an error. This will typically be the line of the error or the line after the error but it could
+                  potentially be any line after the error. If Batch Compiler encounters an error within an include file
+                  Batch Compiler will stack the error messages with the lowest level include file on the bottom of the
+                  stack. Below is an example error message:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcspec1.gif" width="371" height="126"
+                    alt="Batch Compiler Error Message"></center>
+
+                <p>In the above error message we can see that on or below line 18 of the specification file we are
+                  loading there was an error parsing the include file <i>Zoners Tools P Series.bci</i>. We can also see
+                  that on or below line 118 of the include file Batch Compiler encountered an attribute that did not
+                  belong to an element. This attribute is most likely a misspelled <i>Hint</i> attribute.</p>
+
+                <font size="4"><b>Opening a Specification File in Batch Compiler:</b></font><br>
+
+                <p>When Batch Compiler starts up it automatically searches the <i>Batch Compiler\Specifications</i>
+                  directory for .bcs files to add to the <b>Specifications</b> menu. Because of this, all you have to do
+                  is save your new .bcs file to your <i>Batch Compiler\Specifications</i> directory, then once Batch
+                  Compiler has started, select it form the <b>Specifications</b> menu.</p>
+
+                <font size="4"><b>Batch Compiler Preset Files:</b></font><br>
+
+                <p>When Batch Compiler saves a preset (.bcp) file it dynamically builds a XML database off of your
+                  specification file's format. This allows Batch Compiler to load presets saved by any specification
+                  file even if the specification file has been altered since you last saved the preset.</p>
+
+                <font size="4"><b>Conclusion:</b></font><br>
+
+                <p>That pretty much concludes the Batch Compiler Specification file format. Hopefully now you will be
+                  able to customize your specification files to your liking or create additional specification files for
+                  other tools. Just one word of caution before you go editing specification files; when you do so,
+                  please save them under a different name, this will save you from possibly loosing them if you ever
+                  choose to download an update to Batch Compiler and it overwrites the changes you made to your
+                  specification files.</p>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left">Modified: Feb 9th, 2005 - 11:52:48 pm</span><span
+                  class="right">[ 14978 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c710"
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><span
+                  class="right">Modified: Jun 25th, 2004 - 3:38:07 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                i have made a spec file that among others applications supports steam, but i am having a problem as
+                steam requires the -applaunch tag to be the first that it gets, i would like to make it a ComboBox but
+                thees are add after all the CheckBox commands have been added so the only work around i have found is
+                making every game mode a CheckBox but thet files up a line just consisting of games when you can only
+                select one any way. could you either change it so that it adds the commands based on the order in the
+                bcs instead, or you could just make it add ComboBox before CheckBox <img
+                  src="../../images/emotes/bleeh.gif" width="32" height="32" alt="bleeh"> tho this would cause a problem
+                if the opposed satiation
+                accrued.<br>
+                <br>
+                another thing that would be nice to have would be if you could make the selection of a stage or option
+                wold force select/deselected a notes stage or option.<br>
+                <br>
+                other then that this tool has made me very <img src="../../images/emotes/happy.gif" width="32"
+                  height="32" alt="happy"><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">2.</span> <a name="c712"
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Jun 25th, 2004 - 4:33:27 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                I am aware of this problem, it is an issue with how Batch Compiler is coded and there is no easy fix. BC
+                v2.0.0 has been around for quite some time and it has become apparent to me that a rewrite (BC v3.0.0)
+                is necessary.<br>
+                <br>
+                When I first released Batch Compiler your only options as far as compiling was concerned was Q Tools or
+                Zoners Tools. Now there are so many different utilities and versions of these tools that defining them
+                all in one BCS file is no longer particle and is a pain to maintain, modularization is required. There
+                are also other smaller issues like the one you have observed.<br>
+                <br>
+                The next version of BC will has a very similar GUI but will be far more refined from a coding and
+                specification writing and maintenance viewpoint.<br>
+              </div>
+            </div><br>
+            <div class="info center">You must be logged in to post a comment.<br>New users can register <a
+                href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35&amp;o=0&amp;action=addauthor">here</a>.
+            </div>
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">Batch Compiler</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?p=2">About</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?p=3">Download</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?p=5">Revision
+                    History</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?p=4">Specification
+                    Files</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?p=7">FAQ</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?p=6">Tutorials</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=35&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4040">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=13286">saqi55</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=13303">blank</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915145632/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 » 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>

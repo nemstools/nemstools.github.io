@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nem's Tools [Home - News]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://google.com'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p58"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=58#p58">Cliffs
+                    II: Texturing Cliffs</a> - <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Jul 3rd, 2003 - 11:48:43 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">
+                <p>This tutorial covers some of the basic tools TG provides for texturing your terrain. It is a
+                  continuation of the <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=59#p59">Making
+                    Cliffs</a> tutorial and assumes you have a similar terrain to texture.</p>
+
+                <p>The terrain we generated in the previous tutorial consists of two basic layers, the cliffs and the
+                  paths between the cliffs. This is the perfect setup for the 'Texture Layering Tool'. Let's load it up.
+                  From the 'Tools' menu select 'Textures' then 'Set Texture Layers'. Your screen should look like this:
+                </p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff12.gif" width="424"
+                    height="312" alt=""></center>
+
+                <p>First off we need to set the lower and upper bound for the path layer. For the 'Lower Bound' select
+                  something that falls below the 'Min' value, for the 'Upper Bound' select something approximately one
+                  third up from the 'Min' value in relation to the 'Max' value. If you're a little confused about what
+                  values to use just use something you think will fall around the general range of the height of the
+                  path.</p>
+
+                <p>Next we need to select what texture we want to use in this layer, since this is the path layer I
+                  decided to use a grass texture. To browse through your currently loaded textures press the button with
+                  the two dots beside the 'Texture' field. A window will pop up and you can select a texture by double
+                  clicking it as shown below:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff13.gif" width="525"
+                    height="405" alt=""></center>
+
+                <p>Next you will need to select a 'Steep Texture' this is the texture that will be used on faces that
+                  have a greater incline then that of the 'Steep Angle' i.e. the cliffs. For this I have selected a rock
+                  texture. When you are satisfied with the path layer press the 'Add' button. Your screen should look
+                  something like:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff14.gif" width="424"
+                    height="312" alt=""></center>
+
+                <p>Next we need to add the cliff layer, for the 'Lower Bound' select the previous layer's 'Upper Bound'
+                  and for the 'Upper Bound' use a value greater then the 'Max' value. Once you have the bounds set you
+                  need to select a 'Texture' for the layer. For this use the same texture that you used for the previous
+                  layer's 'Steep Texture'. Once you are happy with the cliff layer press the 'Add' button to add it to
+                  our list of layers. It should all look something like:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff15.gif" width="424"
+                    height="312" alt=""></center>
+
+                <p>Finally press the 'Apply' button to retexture the terrain using your custom texture layers. Your end
+                  result should look something like this (if it doesn't you can go back and edit the texture layers you
+                  created until you get the desired texturing.):</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff16.gif" width="532"
+                    height="431" alt=""></center>
+
+                <p>Now while the 'Layer Texturing Tool' will do most of the texturing for you, you'll still notice that
+                  there will be a few quads textured without the correct texture as shown below:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff17.gif" width="532"
+                    height="431" alt=""></center>
+
+                <p>To fix this simply select the 'Paintbrush' tool from the 'Tools' menu and browse to the correct
+                  texture using the controls on the left of the form. Once you have the correct texture selected left
+                  click and drag your mouse over the terrain you wish to retexture. The end result should look something
+                  like:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff18.gif" width="532"
+                    height="431" alt=""></center>
+
+                <p>Now were going to want to increase the scale of the textures to help eliminate that ugly tiling
+                  effect. With the 'Paintbrush' tool move your mouse until its selection is over the grass textured
+                  quads. Next press 'M' on your keyboard to mark that quad as shown below:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff19.gif" width="532"
+                    height="431" alt=""></center>
+
+                <p>Next head over to the alignment tab on the left and jack the U and V scale up to about 4. This will
+                  change the scale of the selected quad as shown below:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff20.gif" width="532"
+                    height="431" alt=""></center>
+
+                <p>This is all very well and good but we want these settings to be applied to all of the grass textured
+                  quads. Fortunately for us there is a simple painless way to do this. With the scaled quad still marked
+                  select 'Tools' then 'Textures' and finally 'Wrap All From Marked'. Now all the grass textured quads
+                  should all be scaled and aligned to the marked quad as shown below:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff21.gif" width="532"
+                    height="431" alt=""></center>
+
+                <p>All that's left now is to repeat this process with the rock textured terrain. When all's said and
+                  done your end result should look something like:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff22.gif" width="532"
+                    height="431" alt=""></center>
+
+                <p>Last but not least we're going to export out terrain for use in Hammer. From the 'File'menu select
+                  'Export' then 'Export Options'. This will bring up the 'Terrain Generator Options' form and allow us
+                  to customize how the terrain is exported to the .RMF file. Select the below options:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff23.gif" width="344"
+                    height="400" alt=""></center>
+
+                <p>Finally from the 'File' menu select 'Export' and then '.RMF File' and export your terrain to
+                  somewhere on your disk (be sure to save it too so you can load it up and edit it later). We are now
+                  ready to prepare our terrain for Half-Life. Please continue to the <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=57#p57">next
+                    page</a>.</p>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left"></span><span class="right">[ 42321 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+            <div class="offsets">[ 1 <a
+                href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=58&amp;o=15#p58">2</a>
+              ]</div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c103"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=51">omnirage</a></span><span
+                  class="right">Posted: Jul 6th, 2003 - 4:09:39 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                Nice, finally know how to use the layer feature :)<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">2.</span> <a name="c124"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=150">Cambone</a></span><span
+                  class="right">Modified: Jul 12th, 2003 - 9:37:57 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                Thanks You for this great Application!<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">3.</span> <a name="c600"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=594">EdUdE</a></span><span
+                  class="right">Posted: May 7th, 2004 - 10:35:34 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                <img src="../../images/emotes/exhausted.gif" width="32" height="32" alt="exhausted"><br>
+                is there a way to make it so that there is null textures on the 90 degrees or which ones u cant see for
+                lag reduction?<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">4.</span> <a name="c602"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: May 8th, 2004 - 11:49:19 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                I'm sure you could use the Texture Layering Tool to accomplish that...<br>
+                <br>
+                <img src="../../images/emotes/miam.gif" width="32" height="32" alt="miam"><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">5.</span> <a name="c901"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=942">Nistelrooy</a></span><span
+                  class="right">Posted: Aug 30th, 2004 - 10:15:00 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                Excellent application!<br>
+                <br>
+                But i have a question: when i use the raise tool (or<br>
+                mountain tool), and then create a high textured mountain appears an ugly "texture clamping" effect in
+                the textures. This happens when quads are stretched too much in a high cliffs. So, how can i avoid this?
+                It could be possible to repeat the textures in those quads to eliminate this effect?<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">6.</span> <a name="c912"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Aug 30th, 2004 - 10:05:48 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                There is no automatic system for this; you'd have to manually adjust the texture on each face.<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">7.</span> <a name="c1388"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1341">sotang</a></span><span
+                  class="right">Modified: Mar 2nd, 2005 - 11:55:07 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I have used the "mark" and then U-V up to 4.00. I hit nothing else, and then I go to
+                Tools<br>
+                -&gt;Textures-&gt;Wrap All from Marked. I do this and nothing happens. I tried it with the rock wall
+                too, nothing. Is there something else I have to do? I still have the box checked when I'm doing it too.
+                It's just like you showed, but it won't work...<img src="../../images/emotes/exhausted.gif" width="32"
+                  height="32" alt="exhausted">. Lol gettin flustered with this. Oh well, it's an AWESOME
+                program anyway A++++++ good work Nem.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">8.</span> <a name="c1389"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Mar 3rd, 2005 - 1:27:34 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Because of the way the control works in Windows, you can't just type in 4, you have
+                to use the arrows (or type 4 then use the arrows).</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">9.</span> <a name="c1411"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1419">c0uchm0nster</a></span><span
+                  class="right">Posted: Mar 8th, 2005 - 4:56:28 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Trying to export to vmf I get:<br>
+                <br>
+                terrain size not divisible by displacement subdivision size<br>
+                terrain size should be a multiple of 4, 8 or 16 (and the appropriate displacement power selected)<br>
+                <br>
+                I've tried subdivision size 2, 3, and 4. Terrain size is 30, 30, 256<br>
+                <br>
+                X range: 7680<br>
+                Y range: 7680<br>
+                Z range: 1838<br>
+                multiply them is divisible by 4, 8, AND 16<br>
+                <br>
+                So I've tried every option and still get the error on export - any suggestions? Thanks</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">10.</span> <a name="c1412"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Mar 8th, 2005 - 5:22:16 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Sorry, to clarify, the amount of triangles on each axis should be divisible by 4, 8
+                or 16 (preferably one of the latter two), not the physical dimensions. For example, 32, 32, and 256
+                would work for all three.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">11.</span> <a name="c1414"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1419">c0uchm0nster</a></span><span
+                  class="right">Posted: Mar 8th, 2005 - 5:26:37 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">ah, thanks - you might want to change that in your tutorial on page 1 of the cliffs
+                stuff, as it suggests 30 30 256<br>
+                guess i've gotta start over <img src="../../images/emotes/sad.gif" width="32" height="32" alt="sad">
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">12.</span> <a name="c1416"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Mar 8th, 2005 - 5:43:56 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Well, keep in mind that this tutorial was designed for Half-Life, not Half-Life 2.
+                For Half-Life 2 I would suggest something more like 160, 160, 96. This will give you a very large
+                detailed terrain.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">13.</span> <a name="c1481"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1526">BTRY
+                    B 529th FA BN</a></span><span class="right">Posted: Apr 14th, 2005 - 7:30:19 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I see under 'Texture Browser' in pic 2 there are a few folders to choose textures
+                under 'WAD Files/terrain' like 'grass' 'dirt' etc etc. I am extremely new at this so I have to ask this
+                question. Where or how do i get texture folders like that? Do i need some sort of .wad viewer to sort
+                through textures and put them into a folder? or.... please help<br>
+                <br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">14.</span> <a name="c1482"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1528">Homer</a></span><span
+                  class="right">Modified: Apr 14th, 2005 - 10:12:39 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><span style="color: orange;">How do you set the Background image or SKY Image?<br>I
+                  would like to use an outside/myown background if that possable?<br><br>By the way this is a great
+                  tool.</span> <img src="../../images/emotes/happy.gif" width="32" height="32" alt="happy"></div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">15.</span> <a name="c1484"
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Apr 16th, 2005 - 1:15:04 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">The texture grouping is done by &lt;wadname&gt;.wdl files located in your ...\Terrain
+                Generator\config\wads folder. These are simple text files that are used to tell Terrain Generator how to
+                group textures, but are not necessary for viewing them.<br>
+                <br>
+                The background is set in the Options form under the Textures tab. There are six dialogs that allow you
+                to select each of the six faces in your skybox. Terrain Generator expects the textures to be in the
+                standard Half-Life format. They have no effect on the outcome of your terrain.</div>
+            </div><br>
+            <div class="offsets">[ 1 <a
+                href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=58&amp;o=15#p58">2</a>
+              ]</div><br>
+            <div class="info center">You must be logged in to post a comment.<br>New users can register <a
+                href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=58&amp;o=0&amp;action=addauthor">here</a>.
+            </div>
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">Terrain Generator</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?p=8">About</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?p=9">Download</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?p=11">Revision
+                    History</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?p=10">Requirements</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?p=13">FAQ</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?p=12">Tutorials</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?p=14">User
+                    Created Maps</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=58&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=58&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=58&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4040">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=13286">saqi55</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=13303">blank</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150412/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 » 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>

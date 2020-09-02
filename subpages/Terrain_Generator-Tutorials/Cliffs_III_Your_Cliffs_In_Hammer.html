@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nem's Tools [Home - News]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://google.com'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p57"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=57#p57">Cliffs
+                    III: Your Cliffs In Hammer</a> - <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Jul 3rd, 2003 - 11:35:08 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">
+                <p>This tutorial covers what to do with your Terrain Generator created terrain in Hammer. It is a
+                  continuation of the <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=58#p58">Texturing
+                    Cliffs</a> tutorial and assumes you have a .RMF of your terrain.</p>
+
+                <p>First things first, let's load up the terrain TG created in Hammer. You'll notice that everything is
+                  how it was in TG only now each quad has been replaced with two five face brushes. You'll also notice
+                  that TG has added some handy VIS Groups to your level, one for the sky brushes contained in the
+                  terrain, one for the hint brushes contained in the terrain (which are currently invisible) and one for
+                  the terrain itself. Your map should look something like:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff24.gif" width="534"
+                    height="462" alt=""></center>
+
+                <p>It also is important to note that because TG deals with quads, some for the new brushes may not be
+                  textured correctly as shown below:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff25.gif" width="534"
+                    height="462" alt=""></center>
+
+                <p>You'll want to clean these up.</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff26.gif" width="534"
+                    height="462" alt=""></center>
+
+                <p>Now we've come quite a way to completing our terrain, but there is still a fair bit of work left to
+                  be done. We have a massive world with a few thousand brushes and were going to want to remove as many
+                  brushes that aren't visible form the ground as we can to save both on r_speeds and .BSP limitations.
+                  The below picture illustrates just which brushes to target.</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff27.gif" width="534"
+                    height="462" alt=""></center>
+
+                <p>There isn't really any simple way to do this other then brush by brush deletion, whenever possible
+                  try to follow the contours of the terrain for a seamless as possible result as shown below:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff28.gif" width="534"
+                    height="462" alt=""></center>
+
+                <p>This is what my final terrain looked like:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff29.gif" width="534"
+                    height="462" alt=""></center>
+
+                <p>Notice how the center of the level has also been removed? This will allow us to block the line of
+                  sight from one side of the map to the other reducing r_speeds and compile times. Finally fill these
+                  gaps back up with sky brushes that extend all the way to the ceiling. And that's it, just add a light
+                  and a player start and you're ready to compile:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/tgcliff30.gif" width="534"
+                    height="462" alt=""></center>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left"></span><span class="right">[ 42492 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+            <div class="offsets">[ 1 <a
+                href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=57&amp;o=15#p57">2</a>
+              ]</div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c241"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=281">pebe</a></span><span
+                  class="right">Posted: Oct 11th, 2003 - 9:03:28 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                <img src="../../images/emotes/exhausted.gif" width="32" height="32" alt="exhausted"><br>
+                <br>
+                I can't get the sky things to work, i get LEAK everytime!<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">2.</span> <a name="c250"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=290">xante</a></span><span
+                  class="right">Posted: Oct 21st, 2003 - 11:39:55 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                Could you show a better picture of what to delete, the image for the brushs to delete is kinda small. A
+                quick flash animation or something would be very appreciated. :)<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">3.</span> <a name="c251"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Modified: Aug 6th, 2006 - 6:49:10 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">There is nothing really special about which brushes to delete, what you want to focus
+                on is the brushes that you can't see when you're on the ground (the ones that curve over the top of the
+                cliffs). You may find it easier to compile your map (without running VIS) to see which brushes to
+                delete.<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">4.</span> <a name="c580"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=580">Griffin</a></span><span
+                  class="right">Posted: Apr 27th, 2004 - 4:58:44 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                How do i get rid of the "hint" brushes besides deleting all 1000+ of them? i cant see my map<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">5.</span> <a name="c581"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Apr 27th, 2004 - 7:03:58 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                You can prevent TG from exporting them by going to the File-&gt;Export-&gt;Export Options form then to
+                the '.RMF' tab then by unchecking the 'Use Hints' option or you can simply hide the VIS group in
+                Hammer.<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">6.</span> <a name="c729"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=564">zooyorkbmxer</a></span><span
+                  class="right">Posted: Jun 30th, 2004 - 4:42:57 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                can u help me..<br>
+                whenever i put it into the hammer thing..<br>
+                i only get the wire frame.. none of the textures show up or anything<br>
+                help me pleez<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">7.</span> <a name="c763"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=747">I3urn</a></span><span
+                  class="right">Posted: Jul 12th, 2004 - 9:15:52 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                thats easy to fix just go to view and click 3d textured polygons then it will show the textures for the
+                last section that was used. <img src="../../images/emotes/happy.gif" width="32" height="32"
+                  alt="happy"><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">8.</span> <a name="c1193"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1155">ElvenTrumpeter36</a></span><span
+                  class="right">Posted: Nov 6th, 2004 - 10:32:19 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                Is there an easy way to make the sky fit the contour of all the brushes you delete? also, would it be
+                possible for you to post pictures that aren't quite so dark. it is pretty hard to see that you are
+                actually changing anything until the end<br>
+                <br>
+                thanks<img src="../../images/emotes/watermelon.gif" width="32" height="32" alt="watermelon"><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">9.</span> <a name="c1198"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Nov 7th, 2004 - 10:23:56 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                To be honest, there isn't any real easy way to make the sky fit the contour of the brushes.<br>
+                <br>
+                I did a search for the tutorial RMF to see if I could upload it but I couldn't find it. I may redo it if
+                I get a chance.<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">10.</span> <a name="c1265"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1255">JP__JP</a></span><span
+                  class="right">Posted: Nov 19th, 2004 - 2:26:47 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                always when i try to load my exported rmf into hammer, it locks up and says it's not responding<img
+                  src="../../images/emotes/yelling.gif" width="32" height="32" alt="yelling">. Does anyone know howto
+                fix it?<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">11.</span> <a name="c1266"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Nov 19th, 2004 - 2:57:51 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                What version of Hammer? The RMF TG exports is NOT for the Source Hammer editor (try a MAP file).<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">12.</span> <a name="c1319"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1328">sdfg</a></span><span
+                  class="right">Posted: Feb 11th, 2005 - 10:22:48 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Thanks Nem, great tool</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">13.</span> <a name="c1390"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1341">sotang</a></span><span
+                  class="right">Posted: Mar 4th, 2005 - 12:01:07 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hey Nem, got it working, thanks. Oh I have a question.. what textures are you using?
+                and how do you do the sky thing? I don't have a sky texture and I'm using the halflife.wad. Am I doing
+                something wrong? Also you could highlight a lot of the things at a time and delete them. Makes things
+                easier.. I reduced my map in about 5 minutes..... well anyway... could you explain the sky thing again
+                and what textures are you using? Thanks</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">14.</span> <a name="c1392"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Mar 4th, 2005 - 1:24:57 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">The textures are mostly from the various DOD .wad files.<br>
+                <br>
+                The sky can be set in the Options form. Go to the textures tab and specify the six files that make up
+                the skybox. This is a cosmetic option only.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">15.</span> <a name="c1397"
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1341">sotang</a></span><span
+                  class="right">Modified: Mar 5th, 2005 - 10:23:28 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">yeah, but I do not have a skybox texture.... it's not included in my halflife.wad. I
+                do not currently have any custom .wad's either... hmmm and I have two questions. How do I add a tree and
+                how do I get a forest type sky...? Thanks</div>
+            </div><br>
+            <div class="offsets">[ 1 <a
+                href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=57&amp;o=15#p57">2</a>
+              ]</div><br>
+            <div class="info center">You must be logged in to post a comment.<br>New users can register <a
+                href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=57&amp;o=0&amp;action=addauthor">here</a>.
+            </div>
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">Terrain Generator</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?p=8">About</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?p=9">Download</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?p=11">Revision
+                    History</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?p=10">Requirements</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?p=13">FAQ</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?p=12">Tutorials</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?p=14">User
+                    Created Maps</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=57&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=57&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=57&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4040">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=13286">saqi55</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=13303">blank</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915151505/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 » 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>

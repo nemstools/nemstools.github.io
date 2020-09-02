@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nem's Tools [Home - News]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://google.com'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p141"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=141#p141">Batch
+                    Compiler Setup (Source)</a> - <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Feb 10th, 2005 - 2:14:35 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">
+                <p>Just downloaded Batch Compiler and don't know what the hell to do with it? This little tutorial
+                  should cover everything you need to know from how to set it up to how to compile your first map.</p>
+
+                <p>First things first, if you don't already have the program head over to the <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?p=3">downloads</a>
+                  page, pick it up and install it. The installer is a standard Windows installer so I will leave that to
+                  your imagination.</p>
+
+                <p>Once you have installed Batch Compiler start the program up. <b><span class="warning">If you get an
+                      error when you run it then you need the .NET framework which is linked to on the <a
+                        href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?p=3">downloads</a>
+                      page.</span></b> Batch Compiler should look like this when you start it up:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup1.png" width="790"
+                    height="605" alt="Batch Compiler At Startup"></center>
+
+                <p>Now some of you may have noticed that there are no controls for compiling your map on the form. This
+                  is because Batch Compiler 3.0.0 (and up) work with Batch Compiler Specification (BCS) files. These
+                  wonderful dynamic configuration files allow you to use Batch Compiler to compile just about anything
+                  that makes use of a batch file, be it a Half-Life 2 map (which this tutorial works on), a map for
+                  another game, or even such things as applications.</p>
+
+                <p>Before we take a look at these specifications, it is a good idea to make sure they are all up to
+                  date. To do this, select <b>Check For Updates</b> from the <b>Help</b> menu. This will bring up a
+                  dialog which can be used to update all official specification files. Clicking <b>Update</b> will do
+                  just that. It is reccomended that you check for updates every so often to make sure you have the
+                  latest specification for the latest updates to the tools.</p>
+
+                <p>Six specifications come with Batch Compiler (they can be found under the <b>Specifications</b> menu).
+                  They are:</p>
+
+                <ul>
+                  <li><b>Quake Tools Legacy:</b> The original Quake Tools specification.</li>
+                  <li><b>Source Tools Advanced:</b> The advanced Source Tools specification. Recommended for experianced
+                    users.</li>
+                  <li><b>SourceTools Normal:</b> The standard Source Tools specification. Recommended for new users.
+                  </li>
+                  <li><b>Zoners Tools Advanced:</b> The advanced Zoners Tools specification. Recommended for experianced
+                    users.</li>
+                  <li><b>Zoners Tools Legacy:</b> The original Zoners Tools specification.</li>
+                  <li><b>Zoners Tools Normal:</b> The standard Zoners Tools specification. Recommended for new users.
+                  </li>
+                </ul>
+
+                <p>You're welcome to use any specification you wish, I would, however, recommend the Source Tools Normal
+                  specification because if you are reading this, you are probably a new user. You can always upgrade to
+                  the Source Tools Advanced specification latter. If you are reading this tutorial you are setting Batch
+                  Compiler up for Source mapping so make sure you pick one of the specifications that has the word
+                  <i>Source</i> in it. To load the specification simply click it in the <b>Specifications</b> menu. Your
+                  screen should look like this:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup2.png" width="790"
+                    height="605" alt="Source Tools Normal Specification"></center>
+
+                <p>Now that we have the specification open, we need to proceed to set Batch Compiler up to use it. In
+                  the <b>Options</b> menu click the <b>Setup</b> button. Your screen should look like this:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup3.png" width="304"
+                    height="376" alt="Options Form - General Tab"></center>
+
+                <p>The <b>General</b> tab contains information specific to the editor itself. Its options are:</p>
+
+                <ul>
+                  <li><b>Opacity:</b> Set the opacity of the program (make it see through).</li>
+                  <li><b>Log Viewer:</b> Set the program Batch Compiler uses to view LOG files.</li>
+                  <li><b>Recent Files:</b> Set the number of recent files to store, this is used for both BCP and MAP
+                    files.</li>
+                  <li><b>Associate With:</b> Press the <i>BCP Files</i> button to associate BCP files with the editor.
+                    When associated, double clicking a BCP (Batch Compiler Preset) file will launch Batch Compiler with
+                    that preset loaded.</li>
+                </ul>
+
+                <p>When you first start Batch Compiler, Batch Compiler will try to find NotePad using system path
+                  variables and set it as your <b>Log Viewer</b>. If your <b>Log Viewer</b> is not set you will have to
+                  manually browse for an appropriate application. Some appropriate standard windows applications include
+                  NotePad and WordPad.</p>
+
+                <p>Once you are happy with your settings in the <b>General</b> tab, move over to the <b>Stage Paths</b>
+                  tab. Your screen should look like this:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup4.png" width="304"
+                    height="376" alt="Options Form - Stage Paths Tab"></center>
+
+                <p>The <b>Stage Paths</b> tab allows you to set the paths to all the tools used in your current
+                  specification. To begin specifying the paths select the BSP tool from the list of tools on your
+                  screen. Once selected the bottom text box on the form changes its caption to read <b>BSP Path</b>, its
+                  browse button also becomes active as shown below:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup5.png" width="304"
+                    height="376" alt="Options Form - Stage Paths Tab"></center>
+
+                <p>Now simply press the browse button (the button with the three dots) and browse to the file located on
+                  your hard drive. This file is part of the Source SDK and can be found in the folder
+                  ...\Steam\SteamApps\address@host.com\sourcesdk\bin. Continue this process for all the reaming tools.
+                  Your screen should look something like this:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup6.png" width="304"
+                    height="376" alt="Options Form - Stage Paths Tab"></center>
+
+                <p>Once you are happy with your settings in the <b>Stage Paths</b> tab, move over to the
+                  <b>Variables</b> tab. Your screen should look like this:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup7.png" width="304"
+                    height="376" alt="Options Form - Variables Tab"></center>
+
+                <p>The <b>Variables</b> tab allows you to set the paths to various other resources used in your current
+                  specification. These paths are set in a similar mannor to those of the <b>Stage Paths</b> tab and
+                  should be set as follows:</p>
+
+                <p><b>BinRoot:</b> (Source SDK bin directory.)</p>
+
+                <ul>
+                  <li><b>All MODs:</b> ...\Steam\SteamApps\address@host.com\sourcesdk\bin</li>
+                </ul>
+
+                <p><b>ValveProject:</b> (GameInfo.txt directory.)</p>
+
+                <ul>
+                  <li><b>Half-Life 2:</b> ...\Steam\SteamApps\address@host.com\half-life 2\hl2</li>
+                  <li><b>Half-Life 2: Deathmatch:</b> ...\Steam\SteamApps\address@host.com\half-life 2 deathmatch\hl2mp
+                  </li>
+                  <li><b>Counter-Strike: Source:</b> ...\Steam\SteamApps\address@host.com\counter-strike source\cstrike
+                  </li>
+                  <li><b>Day of Defeat: Source:</b> ...\Steam\SteamApps\address@host.com\day of defeat source\dod</li>
+                </ul>
+
+                <p><b>Output:</b> (BSP output directory.)</p>
+
+                <ul>
+                  <li><b>Half-Life 2:</b> ...\Steam\SteamApps\address@host.com\half-life 2\hl2\maps</li>
+                  <li><b>Half-Life 2: Deathmatch:</b> ...\Steam\SteamApps\address@host.com\half-life 2
+                    deathmatch\hl2mp\maps</li>
+                  <li><b>Counter-Strike: Source:</b> ...\Steam\SteamApps\address@host.com\counter-strike
+                    source\cstrike\maps</li>
+                  <li><b>Day of Defeat: Source:</b> ...\Steam\SteamApps\address@host.com\day of defeat source\dod\maps
+                  </li>
+                </ul>
+
+                <p>Your form should look something like this when you're all done:</p>
+
+                <center><img src="../../images/subpages/Batch_Compiler-Tutorials/bcsourcesetup8.png" width="304"
+                    height="376" alt="Options Form - Variables Tab"></center>
+
+                <p>Once you are happy with your paths click the <b>OK</b> button to return to Batch Compiler's main
+                  screen. We are now going to go through the steps for creating a generic "Fast" compile preset which
+                  you can use for all your maps. Please continue to the <a href="Creating_A_Preset_(Source).html">next
+                    page</a>.</p>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left">Modified: Nov 5th, 2006 - 8:51:31 pm</span><span
+                  class="right">[ 41366 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c2590"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=2875">jamie1993</a></span><span
+                  class="right">Posted: Aug 1st, 2007 - 1:10:25 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Yea where do we get source tools and shit<img src="../../images/emotes/bored.gif"
+                  width="32" height="32" alt="bored">
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">2.</span> <a name="c2593"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Aug 1st, 2007 - 1:13:09 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I'm not sure what you mean... <img src="../../images/emotes/checkingthenews.gif"
+                  width="32" height="32" alt="checkingthenews"></div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">3.</span> <a name="c2622"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=2900">jimmy</a></span><span
+                  class="right">Modified: Aug 22nd, 2007 - 3:20:54 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I don't have source yet but it seems to me that you get hammer(4.0?) and the source
+                tools(bsp, vis, rad) from the source SDK on steam. If I'm wrong please correct me. I can't wait to build
+                for HL2.<br>
+                <img src="../../images/emotes/happy.gif" width="32" height="32" alt="happy"><img
+                  src="../../images/emotes/happy.gif" width="32" height="32" alt="happy"><img
+                  src="../../images/emotes/happy.gif" width="32" height="32" alt="happy"><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">4.</span> <a name="c2623"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Aug 23rd, 2007 - 12:35:50 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">That's correct. <img src="../../images/emotes/apple.gif" width="32" height="32"
+                  alt="apple"></div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">5.</span> <a name="c2702"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=1142">timmo</a></span><span
+                  class="right">Modified: Nov 11th, 2007 - 11:05:36 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hi Nem, a long time since I have used the compiler for mapping. I am mapping for HL
+                2" now but although I thought I had setup the compiler ok I get this message when I compile.<br>
+                <br>
+                Extra App Id set to 211, but no SteamAppId<br>
+                <br>
+                As the log is generated with the map details I am guessing this is a path error is it?<br>
+                <br>
+                Aprreciate any advice as usual, thanks</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">6.</span> <a name="c2779"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=3119">Sgt-Mess</a></span><span
+                  class="right">Posted: Jan 8th, 2008 - 6:49:03 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Shouldn't you update this tut for the orange box release. The orange box games use
+                different directories.<br>
+                <br>
+                And also this tool is great. I used to use command promt and do every thing separately.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">7.</span> <a name="c2953"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=3364">Frederic</a></span><span
+                  class="right">Posted: Jul 21st, 2008 - 1:59:28 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hello.I'm wondering how to get this to work with ep2/Orangebox games.I tried many
+                ways to make it work but it always seems to be missing all the materials/models in the map and it
+                crashes on Building Physics collision data.<br>
+                <br>
+                Help?</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">8.</span> <a name="c2998"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=3455">knifeinthesnow</a></span><span
+                  class="right">Posted: Oct 1st, 2008 - 3:26:41 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><img src="../../images/emotes/yeahbaby.gif" width="32" height="32"
+                  alt="yeahbaby"><span style="color: red;">you did a great job on all your tools
+                  keep up the good work! also i was confuse what to do with the path files</span></div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">9.</span> <a name="c3002"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Oct 10th, 2008 - 10:02:56 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Are you still confused? I'm not sure if you're asking a question... If not, thanks.
+                <img src="../../images/emotes/happy.gif" width="32" height="32" alt="happy">
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">10.</span> <a name="c3005"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=3476">Seemon</a></span><span
+                  class="right">Posted: Oct 18th, 2008 - 6:40:50 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">At the part where you set up Batch Compiler stage paths, I get lost. I'm not sure
+                what I'm supposed to do.<br><br>Could you maybe provide a full screenshot of the <b>stage paths</b>
+                listed? And likewise for the <b>variables</b>?<br>
+                <br>
+                Other than that, I seem to be fine.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">11.</span> <a name="c3145"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=3198">captain
+                    terror</a></span><span class="right">Posted: Mar 10th, 2009 - 4:58:10 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I can't compile orange box maps... I'm running as administrator, i'm pretty sure all
+                my paths are right, and here is my compile log:<br>
+                <br>
+                http://files.filefront.com/rooms+captainterror2log/;13444575</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">12.</span> <a name="c3152"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=3682">Waffleguy388</a></span><span
+                  class="right">Posted: Mar 22nd, 2009 - 4:38:42 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">it FAIL, heres the compile log:<br>
+                <br>
+                materialPath: E:\steam\steamapps\wardino389\half-life 2 deathmatch\hl2mp\materials<br>
+                Loading C:\Users\Wardino388\Desktop\faben's project\gm_Fabens_Buildv3.vmf<br>
+                fixing up env_cubemap materials on brush sides...<br>
+                0...1...2...3...4...5...6...7...8...9...10**** leaked ****<br>
+                Entity info_teleport_destination (-3142.00 -6008.00 -9419.00) leaked!<br>
+                Processing areas...done (0)<br>
+                Building Faces...done (0)<br>
+                FixTjuncs...<br>
+                PruneNodes...<br>
+                WriteBSP...<br>
+                done (0)<br>
+                Creating default cubemaps for env_cubemap using skybox materials:<br>
+                skybox/sky_day01_08*.vmt<br>
+                Run buildcubemaps in the engine to get the correct cube maps.<br>
+                <br>
+                No such variable "$hdrbasetexture" for material "skybox/sky_day01_08rt"<br>
+                Can't load skybox file skybox/sky_day01_08 to build the default cubemap!<br>
+                Finding displacement neighbors...<br>
+                Finding lightmap sample positions...<br>
+                Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10<br>
+                Building Physics collision data...<br>
+                done (0) (47093 bytes)<br>
+                Placing detail props : 0...1...2...3...4...5...6...7...8...9...10<br>
+                Water found with no water_lod_control entity, creating a default one.<br>
+                Compacting texture/material tables...<br>
+                Reduced 261 texinfos to 135<br>
+                Reduced 25 texdatas to 22 (706 bytes to 554)<br>
+                Writing C:\Users\Wardino388\Desktop\faben's project\gm_Fabens_Buildv3.bsp<br>
+                3 seconds elapsed<br>
+                <br>
+                <br>
+                <br>
+                2 threads<br>
+                reading c:\users\wardino388\desktop\faben's project\gm_Fabens_Buildv3.bsp<br>
+                reading c:\users\wardino388\desktop\faben's project\gm_Fabens_Buildv3.prt<br>
+                LoadPortals: couldn't read c:\users\wardino388\desktop\faben's project\gm_Fabens_Buildv3.prt<br>
+                <br>
+                <br>
+                <br>
+                materialPath: E:\steam\steamapps\wardino389\half-life 2 deathmatch\hl2mp\materials<br>
+                Loading C:\Users\Wardino388\Desktop\faben's project\gm_Fabens_Buildv3.vmf<br>
+                fixing up env_cubemap materials on brush sides...<br>
+                0...1...2...3...4...5...6...7...8...9...10**** leaked ****<br>
+                Entity info_teleport_destination (-3142.00 -6008.00 -9419.00) leaked!<br>
+                Processing areas...done (0)<br>
+                Building Faces...done (0)<br>
+                FixTjuncs...<br>
+                PruneNodes...<br>
+                WriteBSP...<br>
+                done (1)<br>
+                Creating default cubemaps for env_cubemap using skybox materials:<br>
+                skybox/sky_day01_08*.vmt<br>
+                Run buildcubemaps in the engine to get the correct cube maps.<br>
+                <br>
+                No such variable "$hdrbasetexture" for material "skybox/sky_day01_08rt"<br>
+                Can't load skybox file skybox/sky_day01_08 to build the default cubemap!<br>
+                Finding displacement neighbors...<br>
+                Finding lightmap sample positions...<br>
+                Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10<br>
+                Building Physics collision data...<br>
+                done (0) (47093 bytes)<br>
+                Placing detail props : 0...1...2...3...4...5...6...7...8...9...10<br>
+                Water found with no water_lod_control entity, creating a default one.<br>
+                Compacting texture/material tables...<br>
+                Reduced 261 texinfos to 135<br>
+                Reduced 25 texdatas to 22 (706 bytes to 554)<br>
+                Writing C:\Users\Wardino388\Desktop\faben's project\gm_Fabens_Buildv3.bsp<br>
+                4 seconds elapsed<br>
+                <br>
+                <br>
+                <br>
+                2 threads<br>
+                reading c:\users\wardino388\desktop\faben's project\gm_Fabens_Buildv3.bsp<br>
+                reading c:\users\wardino388\desktop\faben's project\gm_Fabens_Buildv3.prt<br>
+                LoadPortals: couldn't read c:\users\wardino388\desktop\faben's project\gm_Fabens_Buildv3.prt<br>
+                <br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">13.</span> <a name="c3454"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=4108">-=GRW=-
+                    [GMRC] Kaos</a></span><span class="right">Posted: Aug 2nd, 2010 - 6:20:09 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><a
+                  href="https://web.archive.org/web/20170915144730/http://www.filefront.com/thankyou.php?f=17167937">
+                  http://www.filefront.com/thankyou.php?f=17167937</a><br>
+                <br>
+                Hey guys, I added Garry's Mod to the base settings for the Steam tab. You can now select it in the
+                drop-down game menu. This is the "Steam.BCI" file that goes in "Specifications" in your Batch Compiler
+                folder.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">14.</span> <a name="c3767"
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=7433">Zoso</a></span><span
+                  class="right">Posted: Dec 9th, 2012 - 2:30:00 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">How would i do a Full compile? would it be just changing the option from fast to
+                normal if using the "fast" preset tutorial? is there any other options i need to select </div>
+            </div><br>
+            <div class="info center">You must be logged in to post a comment.<br>New users can register <a
+                href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=141&amp;o=0&amp;action=addauthor">here</a>.
+            </div>
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">Batch Compiler</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?p=2">About</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?p=3">Download</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?p=5">Revision
+                    History</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?p=4">Specification
+                    Files</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?p=7">FAQ</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?p=6">Tutorials</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=141&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=141&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=141&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4040">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=13286">saqi55</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=13303">blank</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915144730/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 » 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>

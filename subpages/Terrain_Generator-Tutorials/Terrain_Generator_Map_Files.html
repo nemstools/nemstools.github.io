@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nem's Tools [Home - News]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://google.com'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p56"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=56#p56">Terrain
+                    Generator Map Files</a> - <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Jul 1st, 2003 - 3:38:42 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><b>Data Types:</b><br><br>
+
+                <center>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td class="title">
+                          <center>Type</center>
+                        </td>
+                        <td class="title">
+                          <center>Description</center>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="argument" valign="top">
+                          int
+                        </td>
+                        <td class="value1" valign="top">
+                          32 Bit Integer
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="argument" valign="top">
+                          float
+                        </td>
+                        <td class="value1" valign="top">
+                          32 Bit IEEE Floating Point Number
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="argument" valign="top">
+                          bool
+                        </td>
+                        <td class="value1" valign="top">
+                          8 Bit Boolean
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="argument" valign="top">
+                          string
+                        </td>
+                        <td class="value1" valign="top">
+                          Variable Length String. (An int followed by an ASCII char array, no null terminator.)
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </center>
+
+                <br><br>
+                <b>Structures:</b><br>
+
+                <p>Header:</p>
+                <div class="vbcode">
+                  typedef struct Header300
+                  {
+                  int XSize; // Number of vertices on the X axis.
+                  int YSize; // Number of vertices on the Y axis.
+                  float QuadSize; // Length of each quad.
+                  } Header300;
+                </div>
+
+                <p>Vertex3f:</p>
+                <div class="vbcode">
+                  typedef struct Vertex3f
+                  {
+                  float X;
+                  float Y;
+                  float Z;
+                  } Vertex3f;
+                </div>
+
+                <p>Vertex2f:</p>
+                <div class="vbcode">
+                  typedef struct Vertex2f
+                  {
+                  float U;
+                  float V;
+                  } Vertex2f;
+                </div>
+
+                <p>TG Vertex:</p>
+                <div class="vbcode">
+                  typedef struct TGVertex
+                  {
+                  Vertex3f Vertex; // X,Y,Z coordinates of vertex.
+                  bool Locked; // Vertex locked.
+                  } TGVertex;
+                </div>
+
+                <p>TG Face:</p>
+                <div class="vbcode">
+                  typedef struct TGFace
+                  {
+                  string Texture; // Texture name.
+                  Vertex2f Shift; // Texture shift.
+                  Vertex2f Scale; // Texture Scale.
+                  float Rotation; // Texture rotation in degrees.
+                  } TGFace;
+                </div>
+
+                <br><br>
+                <b>File Layout:</b><br>
+
+                <p>TGM File:</p>
+                <div class="vbcode">
+                  {
+                  string Version; // TGM Version ('TGM300').
+                  Header300 Header; // Header information.
+                  TGVertex Vertices[]; // Array of Vertices.
+                  TGFace Faces[]; // Array of Faces.
+                  }
+                </div>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left">Modified: Jul 1st, 2003 - 3:55:46 pm</span><span
+                  class="right">[ 26548 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+            <div class="offsets">[ 1 <a
+                href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=56&amp;o=15#p56">2</a>
+              ]</div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c2554"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=2854">tonf</a></span><span
+                  class="right">Posted: Jul 18th, 2007 - 1:26:51 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">hi nem,<br>how do implement your string type? Is it in a library or #include
+                somewhere already?<br>I did typedef char* string; and my prog compiled but I suspect that isn't how it
+                is supposed to be done. <br>When you say "An int followed by an ASCII char array, no null terminator."
+                do you mean the int stores the length of the char array, maybe like:<br>struct string<br>{<br> int
+                length;<br> char[] txt;<br>
+                };<br>
+                <br>
+                Thx for your help</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">2.</span> <a name="c2555"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Jul 18th, 2007 - 2:12:12 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">They'd appear as the struct you declared in the file, but they're variable length, so
+                you can't read them directly as a struct. This should work:<br><br>
+                <div class="vbtitle">Code:</div>
+                <div class="vbcode">int iLength = 0;<br>fread(&amp;iLength, sizeof(int), 1, pFile);<br>char *lpString =
+                  new char[iLength + 1];<br>fread(lpString, sizeof(char), iLength, pFile);<br>lpString[iLength] = '\0';
+                </div>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">3.</span> <a name="c2561"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=2854">tonf</a></span><span
+                  class="right">Posted: Jul 19th, 2007 - 1:36:41 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">hey nem, thanks for the info. <br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">4.</span> <a name="c2563"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=2854">tonf</a></span><span
+                  class="right">Posted: Jul 19th, 2007 - 5:40:55 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">hey nem, i got another question:<br>
+                i was reading the texture area of a file and there seems to be a lot more TGFace items than i thought. I
+                was assuming that there were 2 TGFace items in the array for every square created by the grid of points.
+                I kept reading more and more than that trying to find the end of the file and there was way more than I
+                expected. Thanks for your help.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">5.</span> <a name="c2564"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Jul 19th, 2007 - 6:47:18 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Not sure if you're asking a question, but to clarify, there are Header300.XSize *
+                Header300.YSize vertices and (Header300.XSize - 1) * (Header300.YSize - 1) faces. If you only want the
+                height data, then you only need to read the first vertex section, if you want the texture data, you have
+                to read the second face section. To interpret the second section, think of the terrain consisting of
+                strips of quads; there is one face per quad.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">6.</span> <a name="c2565"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=2854">tonf</a></span><span
+                  class="right">Posted: Jul 19th, 2007 - 7:33:47 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">here's the code when i assumed the faces were triangles, 2 per quad, which is twice
+                as many as what you are saying:<br><br>[code]<br> int numtriangles = 2 * (m_Header-&gt;XSize-1) *
+                (m_Header-&gt;YSize-1);<br> m_Faces = new TGFace[numtriangles];<br> for (i=0; i &lt; numtriangles;
+                i++)<br> {<br> fread(&amp;iStrLength, sizeof(int), 1, pFile);<br> m_Faces[i].Texture.length =
+                iStrLength;<br> m_Faces[i].Texture.txt = new char[iStrLength];<br> fread(&amp;m_Faces[i].Texture.txt,
+                sizeof(char), iStrLength, pFile);<br> //m_Faces[i].Texture.txt[iStrLength+1] = "\0";<br>
+                fread(&amp;m_Faces[i].Shift, sizeof(Vertex2f), 1, pFile);<br> fread(&amp;m_Faces[i].Scale,
+                sizeof(Vertex2f), 1, pFile);<br> fread(&amp;m_Faces[i].Rotation, sizeof(float), 1, pFile);<br> printf
+                ("%f %f\n",m_Faces[i].Rotation,m_Faces[i].Rotation);<br> printf ("%s\n",m_Faces[i].Texture.txt);<br>
+                }<br> printf ("%d %d",numverts, i);<br>[/code]<br>
+                I'm testing with a 121 point (11 x 11) file, and the value of "i" at the end prints 200.<br>
+                <br>
+                I should have definitely faulted or reached EOF, but it doesn't. I even went higher than numtriangles
+                iterations, and it still didn't fault. <br>
+                <br>
+                This code is from right after reading the vertex info which i verified was read correctly and
+                completely. <br>
+                The values printed by the printf for Shift,Scale, and Rotation are all zero's (as opposed to random
+                garbage). <br>
+                The texture printf prints a blank.<br>
+                <br>
+                Also, i never assigned a texture to my test file (or even loaded a wad)., which may have something to do
+                with it.<br>
+                <br>
+                I'm basically confused how come the file seems to be so much bigger than it should be.<br>
+                <br>
+                thanks</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">7.</span> <a name="c2569"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=2854">tonf</a></span><span
+                  class="right">Posted: Jul 20th, 2007 - 1:55:33 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">sorry for the hassle, i just discovered that you can read past the end of the file
+                and not throw an exception. Very un c/c++ like. Twas like you said of course. <br>
+                <br>
+                This may have been discussed elsewhere on the site, but does TG have the ability to increase/decrease
+                number of points while keeping height info intact? And also, can TG clip parts of a terrain (and/or
+                paste or save them somewhere)?<br>
+                <br>
+                I played with TG a little, but not completely and i didn't see anything like this.<br>
+                <br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">8.</span> <a name="c2575"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Jul 21st, 2007 - 8:09:58 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Each quad (pair of triangles) has one face, so you're reading in twice as many faces
+                as you need to.<br>
+                <br>
+                You cannot adjust the number of vertices per axis after you've created your terrain in TG. I'm not sure
+                what you mean by clipping the terrain.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">9.</span> <a name="c2581"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=2854">tonf</a></span><span
+                  class="right">Modified: Aug 13th, 2007 - 6:51:51 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">i wrote a console program which does things to the terrain files. Here's the README.
+                Let me know if you want it posted here and/or if you want the code posted here. The repointing part
+                isn't perfect, but it's not bad.<br><br>here's the readme:<br>
+                <div class="vbtitle">readme:</div>
+                <div class="vbquote"><br>This program splits, scales, and/or adds/subtracts points from files created by
+                  Nem's excellent terrain generator.<br><br>You should back up any files you don't want modified/lost
+                  and/or read this whole thing before you use this.<br><br>This program is written in c++ and currently
+                  only runs properly on linux, bsd, etc but not on windows, I believe because of different
+                  implementations of "strtok". It builds on windows, and is so close to running, but alas I got fed up
+                  with it, and it dogged me. It needs to run on windows bad because that is where the actual terrain
+                  generator made by Nem runs. If anybody can fix this and get it to run on windows, that would be so
+                  freaking awesome. It should be simple for anybody familiar with processing strings in c++ (which I
+                  ain't). The bug is in main.cpp in the function LoadConfigFile where the config file is being read to
+                  load the commands.<br><br>Also, this program isn't super user-friendly, as in if you specify the wrong
+                  file on the command line or don't pass in the correct number or type of parameters in the config file,
+                  it will simply crash without telling you anything in most cases (sometimes writing a giant core dump
+                  file, if you have core dumps turned on). So if that happens, you need to go back and scrutinize all
+                  your spelling, number of parameters, etc.<br><br>This program is run on the command line
+                  like:<br>tgmanip filename<br>or<br>tgmanip filename &lt;configfile&gt;<br><br>"filename" is the name
+                  of your terrain file, and &lt;configfile&gt; is the name of the file that tells the program what to
+                  do.<br>If the program is run without specifying a config file, the program will look for a file in the
+                  same directory as the terrain file with the same name but with a .cfg extension instead. If it can't
+                  find a config file to use, it won't run.<br>If your paths have spaces in them, use quotes.<br><br>The
+                  commands in the config file are:<br>split &lt;numbercolumns&gt; [&lt;numberrows&gt;]<br>scale
+                  [sections] &lt;factor&gt; [&lt;scaleZ&gt;]<br>repoint [sections] &lt;factor&gt;<br>scroll
+                  &lt;xfactor&gt; &lt;yfactor&gt;<br>rotate &lt;number of quarter turns in counterclockwise
+                  direction&gt;<br>join &lt;filename1&gt; &lt;filename2&gt; &lt;vertically&gt;<br><br>Note the special
+                  word: sections.<br><br>"split" will split the terrain into &lt;numbercolumns&gt; * &lt;numberrows&gt;
+                  new files (without changing the original) which are the sections of the original. If
+                  &lt;numberrows&gt; is omitted, then it will be the same as &lt;numbercolumns&gt;.<br><br>"scale" is
+                  pretty obvious. Pass in a number. The number 1 would keep the same scale. Negative numbers will mirror
+                  it twice, which essentially just rotates it 180 degrees. If the parameter &lt;scaleZ&gt; is not 0 or
+                  omitted, then the heights will scale, otherwise they'll remain the same.<br><br>"repoint" multiplies
+                  the current number of quads along the x axis times &lt;factor&gt; to come up with the new number of
+                  quads along the x axis while maintaining the same size terrain. So again, giving it 1 will keep it the
+                  same. Specifying a number less than 1 will subtract information from the terrain. Working with
+                  rectangular (as opposed to perfectly square) grids can possibly result in a loss of information (a
+                  strip across the top of the grid) if the resulting new quad size doesn't divide perfectly into the
+                  overall height (y axis) of the grid.<br>The algorithm for figuring out the z values of the new points
+                  isn't very sophisticated (ie doesn't use calculus) or psychic (not sure if calculus would help), it
+                  only looks good if you repoint by a factor of 2 at a time. See below for good workaround. If somebody
+                  can figure this out, that would be awesome.<br><br>"scroll" will scroll the terrain by &lt;xfactor&gt;
+                  along the x axis and by &lt;yfactor&gt; along the y axis. A factor of 1 makes it scroll all the way
+                  around and end up where it began, essentially doing nothing, which is what should be done (instead of
+                  specifying 0) if you don't want it scrolled any in that particular direction.<br><br>"rotate" will
+                  rotate the terrain by 90 degrees in the counterclockwise direction for every quarter turn
+                  specified.<br><br>"join" takes 2 terrain files and joins them together into 1 terrain file. If
+                  &lt;vertically&gt; is 0, the terrains will be joined side by side, otherwise they will be one above
+                  the other (along the y axis). The resulting file does not have to exist beforehand and will be named
+                  the same as the config file except with a .tgm extension. See below.<br><br><br>If you put the word
+                  "sections" after a command, it does the command to all the sections (without modifying the original).
+                  Otherwise it will modify the original.<br>There must already be a "split" command before specifying
+                  "sections" in any commands. Also, the program doesn't support recursively splitting sections (unless
+                  you manually run it again).<br></div><br>Examples for a config file:<br>
+                <div class="vbtitle">Code:</div>
+                <div class="vbcode"><br># pound sign is for comments in the config file<br><br># simply add more detail
+                  to the original -<br># Doing a repoint to add more detail with any value other than 2 makes it look
+                  wacked,<br># so if you want more detail than twice as much (like 4 times as much), simply call<br>#
+                  "repoint 2" twice<br>repoint 2<br>repoint 2<br><br># split the file into 16 new files, scale them all
+                  out to be bigger without scaling the height, add lots more detail to all of them<br>split 4 4<br>scale
+                  sections 2 0<br>repoint sections 2<br>repoint sections 2<br>repoint sections 2<br><br># split a
+                  terrain across the center horizontally into 2 pieces<br>split 1 2<br><br># scroll a terrain 30% to the
+                  right, but not at all up and down<br>scroll .3 1<br><br># scroll all the newly made sections 50% in
+                  both axes (don't know why you would want this)<br>scroll sections .5 .5<br><br># rotate a terrain 270
+                  degrees (3 quarter turns to the left)<br>rotate 3<br><br># join 2 files side by side<br>join
+                  foothills.tgm bigassmountain.tgm 0<br><br># or vertically<br>join foothills.tgm bigassmountain.tgm
+                  1<br><br># the resulting terrain file will be named the same as the config file (with a .tgm
+                  extension) that<br># the join command is in even if the terrain file doesn't exist yet. So you would
+                  make for example a config<br># file named "joined.cfg" and on the command line say:<br># tgmanip
+                  joined.tgm<br># even though the file "joined.tgm" doesn't exist yet.<br></div>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">10.</span> <a name="c2582"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=2854">tonf</a></span><span
+                  class="right">Posted: Jul 25th, 2007 - 8:26:47 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">lol i totally borked the page</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">11.</span> <a name="c2583"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=2854">tonf</a></span><span
+                  class="right">Posted: Jul 26th, 2007 - 12:43:42 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">thx for fixing my ignorant formatting. I'll try to find a place to post this program
+                for download if you don't want to host it. If you do, that would be great, but i can probably find a
+                place in a few days or so. If you want some of the code to incorporate into TG lemme know and i'll
+                post/send it. I'm probably going to add some more functions like scrolling and concatenating soon
+                too.<br>
+                BTW im doing all this so i can more easily make a planet, in case you're wondering why any of this is
+                useful.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">12.</span> <a name="c2588"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Aug 1st, 2007 - 12:28:48 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">If you can post a link to the download, I'll put it in a more prominent spot.<br>
+                <br>
+                The current version of TG is quite inefficient, I've meant to rewrite it for well over a year, but I
+                haven't had much of a chance.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">13.</span> <a name="c2600"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=2854">tonf</a></span><span
+                  class="right">Posted: Aug 6th, 2007 - 4:51:38 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Yeah i know how the "haven't had much of a chance" thing goes. I'm surprised I
+                managed to get as far as I did. <br>
+                <br>
+                There is a problem with my program. I developed it on linux, where it works fine, but the part that
+                parses the config file for instructions is broken on the windows build due to (I strongly suspect)
+                different implementations of the function "strtok" between the windows version of c++ and the linux
+                version. String manipulating/parsing in c++ for me is a frustrating bitch. <br>
+                <br>
+                I tried to tweak it so it wouldn't seg fault on the windows build, but I started pulling my hair out
+                real soon so i said "fuggit". I'll probably retry soon though because I'm kind of getting tired of
+                transferring giant files all the time.<br>
+                <br>
+                I've added scrolling, but got sidetracked from adding concatenating and rotating, so here's what I might
+                can do:<br>
+                I can post everything I have somewhere, work on rotating and concatenating, and maybe some helpful soul
+                in the meantime will fix the string parsing thing on windows.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">14.</span> <a name="c2603"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=2854">tonf</a></span><span
+                  class="right">Posted: Aug 6th, 2007 - 11:24:53 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">It's at:<br><a
+                  href="https://web.archive.org/web/20170915115049/http://planet.insteadofwork.com/">http://planet.insteadofwork.com</a><br>
+                <br>
+                Feel free to use whatever code you want if you find it useful.<br>
+                <br>
+                I'm adding concatenating files and rotating soon.<br>
+                <br>
+                BTW the archives contain the source code, linux binary, and a visual studio .vcproj file and a README
+                file.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">15.</span> <a name="c2605"
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=2854">tonf</a></span><span
+                  class="right">Posted: Aug 7th, 2007 - 11:59:54 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">yo hang on making that more public yet. Textures were broken, but now they're fixed,
+                and all I've got left now is rotate</div>
+            </div><br>
+            <div class="offsets">[ 1 <a
+                href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=56&amp;o=15#p56">2</a>
+              ]</div><br>
+            <div class="info center">You must be logged in to post a comment.<br>New users can register <a
+                href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=56&amp;o=0&amp;action=addauthor">here</a>.
+            </div>
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">Terrain Generator</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?p=8">About</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?p=9">Download</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?p=11">Revision
+                    History</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?p=10">Requirements</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?p=13">FAQ</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?p=12">Tutorials</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?p=14">User
+                    Created Maps</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=56&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=56&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=56&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4040">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=13286">saqi55</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=13303">blank</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915115049/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 » 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>

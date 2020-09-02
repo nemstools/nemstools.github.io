@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nem's Tools [Home - News]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://google.com'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p36"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=36#p36">Making
+                    A Cave</a> - <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: May 26th, 2003 - 11:03:17 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">
+                <p>In this sample tutorial I will describe one of the best ways to create a cave in Terrain Generator.
+                  This tutorial also shows the general use of the Raise/Lower and Touch-Up tools as well as the
+                  smoothing pass.</p>
+
+                <p>First off we need to generate our starting terrain. Because this is only a small cave I chose 12 * 12
+                  dimensions with the Length set to 128 units. Don't use any of the other generation options for this
+                  step.</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/cave1.jpg" width="542" height="425"
+                    alt=""></center>
+
+                <p>Once you've got the terrain ready select the 'Touch-Up' tool. With it lock all the vertecies that you
+                  don't want to use for your cave, ie outline the shape of your cave by locking all the vertecies
+                  outside of it. To lock a vertex simply press the 'L' key when you have it highlighted. You can cycle
+                  through the selected vertex in a square by rolling your mouse wheel. Also locking lots of vertecies
+                  tends to slow the program down, to fix this you can choose not to highlight locked vertecies in the
+                  'View--&gt;Highlight' menu. Your final outline should look something like this:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/cave2.jpg" width="544" height="505"
+                    alt=""></center>
+
+                <p>Next alter the heights of the vertecies on the border of the outline with the 'Touch-Up' tool so that
+                  they form a uneven outline. Note you can use the 'Page Up' and 'Page Down' keys for greator control:
+                </p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/cave3.jpg" width="544" height="505"
+                    alt=""></center>
+
+                <p>Now were going to make the bottom half of our cave. With the Raise/Lower tool make a rough outline of
+                  the shape of the caves base. Next run it through a smoothing pass (in the 'Map' menu) this will give
+                  you a good smooth general shape to work off of. Finally add some roughness back into the terrain with
+                  the 'Raise/Lower', 'Noise', or 'Touch-Up' tool (up to you). Your result may look something like this:
+                </p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/cave4.jpg" width="544" height="505"
+                    alt=""></center>
+
+                <p>Now that the bottom of our cave is complete were ready to export it. In the 'File--&gt;Export' menu
+                  select the 'Exportation Options'. I'd recommend you use the 'Best Fit' style and uncheck the 'Hints'
+                  and 'Sky Brushes'. Also make sure for the 'Direction' you have 'Flatten Bottom' selected. Now that
+                  your ready export it using the 'Export to .MAP File' command:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/cave5.jpg" width="287" height="258"
+                    alt=""></center>
+
+                <p>Next were going to take the terrain we made for the bottom of the cave and reuse it for the top.
+                  Simply take the 'Raise/Lower' tool and following the steps used before do the same thing only make it
+                  a hill instead of a valley. Your finished result may look something like:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/cave6.jpg" width="544" height="505"
+                    alt=""></center>
+
+                <p>Again were going to export the terrain only this time were going to set the 'Direction' to 'Flatten
+                  Top'. Once you've done that export the terrain again (only to a different file):</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/cave7.jpg" width="287" height="258"
+                    alt=""></center>
+
+                <p>For this next step I'm going to be using the QuArK editor. However, this step does not require any
+                  special features and simply reading what I write should be enough for you WorldCraft users to follow.
+                  Start a new map in your editor and copy and paste the cave bottom and cave top into it. Then simply
+                  align the two together (because we locked the outer vertecies it'll be a perfect fit)! It should look
+                  something like this when your done:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/cave8.jpg" width="506" height="518"
+                    alt=""></center>
+
+                <p>Next we can clean it up a bit by deleting any unused triangles:</p>
+
+                <center><img src="../../images/subpages/Terrain_Generator-Tutorials/cave9.jpg" width="506" height="518"
+                    alt=""></center>
+
+                <p>And last but not least we'll add some funky lighting, a walkway, and stick a little hole in the roof
+                  for looks. This is what my finished terrain looked like in Half-Life. Not bad eh?</p>
+
+                <center>
+                  <a href="../../images/subpages/Terrain_Generator-Tutorials/cave10.jpg"><img
+                      src="../../images/subpages/Terrain_Generator-Tutorials/cave10.jpg" width="320" height="240"
+                      border="0" alt=""></a><br><br>
+                  <a href="../../images/subpages/Terrain_Generator-Tutorials/cave11.jpg"><img
+                      src="../../images/subpages/Terrain_Generator-Tutorials/cave11.jpg" width="320" height="240"
+                      border="0" alt=""></a><br><br>
+                  <a href="../../images/subpages/Terrain_Generator-Tutorials/cave12.jpg"><img
+                      src="../../images/subpages/Terrain_Generator-Tutorials/cave12.jpg" width="320" height="240"
+                      border="0" alt=""></a>
+                </center>
+
+                <p>I've uploaded my finished map so you can take a look at it. Unfortunately the map is phrased in QuArK
+                  which means WorldCraft users will lose some texture alignment data when they view it. You can get it
+                  <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/files/files/samplecave.zip">here</a>
+                  (23kb zipped).</p>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left">Modified: Jul 2nd, 2003 - 11:32:38 am</span><span
+                  class="right">[ 39946 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+            <div class="offsets">[ 1 <a
+                href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=36&amp;o=15#p36">2</a>
+              ]</div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c163"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=194">hugo786</a></span><span
+                  class="right">Posted: Aug 8th, 2003 - 12:18:19 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                I just found tg and am reading your tutorials, and just thought i'd say that this is an old version of
+                tg in this tutorial and is a lot different from the new version. I guess it really isn't important, i
+                just thought i'd point it out.<br>
+                Just thought i'd also say tg is a great tool. Thx!<img src="../../images/emotes/happy.gif" width="32"
+                  height="32" alt="happy"><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">2.</span> <a name="c165"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Aug 8th, 2003 - 10:34:51 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                It was v2.3.0 Beta, I've been meaning to update it but it still should get the job done as is.<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">3.</span> <a name="c201"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=228">Xenocide</a></span><span
+                  class="right">Posted: Aug 30th, 2003 - 12:57:31 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                Although this is a good tutorial, i dont understand the "Exportation" part towards the end<img
+                  src="../../images/emotes/sad.gif" width="32" height="32" alt="sad"> ,
+                but apart from that TG is a really useful program <img src="../../images/emotes/happy.gif" width="32"
+                  height="32" alt="happy">Thank. Also how can i play these maps on CS, im new..<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">4.</span> <a name="c203"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Modified: Aug 6th, 2006 - 6:58:29 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Basically you are exporting two terrains, one is the top half of your cave, and the
+                other is the bottom half. In TG v3.0.0 Beta <i>Top</i> is equivalent to <i>Flatten Bottom</i> and
+                [i]Bottom[.i] is equivalent to <i>Flatten Top</i>.<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">5.</span> <a name="c260"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=295">zoltan</a></span><span
+                  class="right">Posted: Oct 24th, 2003 - 10:35:50 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                Hey nem,<br>
+                <img src="../../images/emotes/folder.gif" width="32" height="32" alt="folder"><br>
+                <br>
+                Since you are apparently well versed in the ways of map making, I was wondering what you considered as
+                the pros and cons of the various map making tools (Hammer vs. Worldcraft vs. QuArK)<br>
+                <br>
+                I currently am trying to learn Hammer, but when I export your files to hammer .rmf format, they lose all
+                their textures and the water disappears.<br>
+                <br>
+                Also, is it easier for half-life to run a map made with a room cut out of a series of large triangles
+                (as exported by your terrain editor) or as a set of walls?<br>
+                <br>
+                any kind of general tips would be meditated upon daily.<br>
+                <br>
+                Thanks in advance, Zoltan (n00b local chapter 133)<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">6.</span> <a name="c261"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Modified: Aug 6th, 2006 - 6:59:05 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I'm not going to go into the pros and cons of the various editors because in the end
+                they are all capable of the same thing; it's just a matter of preference.<br>
+                <br>
+                You shouldn't be losing your texture information when you open the .rmf files TG creates in Hammer. You
+                do however need the same .wad files you use in TG to be open in Hammer.<br>
+                <br>
+                TG exports triangles because it simplifies the whole process (triangles must be planar). Do not go
+                splitting your walls up into triangles, it will produce more polygons then necessary and confuse
+                CSG.<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">7.</span> <a name="c584"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=580">Griffin</a></span><span
+                  class="right">Posted: Apr 28th, 2004 - 6:21:20 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                how do i hollow out the cave once i have the two halves put together?<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">8.</span> <a name="c586"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Apr 29th, 2004 - 7:28:51 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                The cave should be hollow if you set the exportation options correctly. TG 3.0.0 supports the same
+                options.<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">9.</span> <a name="c1555"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=1600">rt</a></span><span
+                  class="right">Posted: May 29th, 2005 - 7:34:19 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">where do you get the quark editor and can you export in .xml<br>
+                <img src="../../images/emotes/where.gif" width="32" height="32" alt="where"> </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">10.</span> <a name="c1558"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: May 30th, 2005 - 12:35:17 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">You can find it <a
+                  href="https://web.archive.org/web/20170915131025/http://dynamic.gamespy.com/~quark/">here</a>. And no,
+                it doesn't export .xml files...</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">11.</span> <a name="c1902"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=2023">nems_tools</a></span><span
+                  class="right">Posted: Feb 26th, 2006 - 9:43:47 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">i was wondering how you can get both bottem half file and top half file onto one
+                project. thanks.<br>
+                <br>
+                <br>
+                <br>
+                <br>
+                P.S: this program is great</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">12.</span> <a name="c1905"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Feb 27th, 2006 - 12:40:39 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">It depends on the editor you are using, but usually if you open both in separate
+                windows, you can copy from one window to the other.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">13.</span> <a name="c2005"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=2178">Eagle
+                    1</a></span><span class="right">Posted: May 25th, 2006 - 6:51:30 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">hay, I have been using TG for a while now and i was wondering if you where going to
+                make another version or up date the current... if so could i recomend putting in a "invers terrain" that
+                works in the same way as the "invers locked points" <br>
+                <br>
+                BTW TG is freaking awsome</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">14.</span> <a name="c2007"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: May 26th, 2006 - 9:48:55 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I've been meaning to rewrite it using Crafty's engine, however, it will have to wait
+                until Crafty is done. I don't mean to abandon TG, I just have so many other projects that it's hard to
+                keep them all alive at the same time.<br>
+                <br>
+                Just an idea, but if you have a section of terrain that you'd like to invert, you could lock the rest of
+                the terrain, then scale that section by -1.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">15.</span> <a name="c2655"
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=2935">[]v[]</a></span><span
+                  class="right">Posted: Sep 26th, 2007 - 4:50:39 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I used this to create my cave in Castle Attack. cheers.</div>
+            </div><br>
+            <div class="offsets">[ 1 <a
+                href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=36&amp;o=15#p36">2</a>
+              ]</div><br>
+            <div class="info center">You must be logged in to post a comment.<br>New users can register <a
+                href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=36&amp;o=0&amp;action=addauthor">here</a>.
+            </div>
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">Terrain Generator</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?p=8">About</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?p=9">Download</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?p=11">Revision
+                    History</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?p=10">Requirements</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?p=13">FAQ</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?p=12">Tutorials</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?p=14">User
+                    Created Maps</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=36&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=36&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=36&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4040">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=13286">saqi55</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=13303">blank</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915131025/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 » 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>

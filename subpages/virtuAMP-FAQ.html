@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nem's Tools [Home - News]</title>
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://google.com'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../index.html" class="menuitem">Home</a>
+        <a href="../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p235"
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=235#p235">virtuAMP
+                    FAQ</a> - <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Jul 4th, 2007 - 3:13:10 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">
+                <center>
+                  <table width="100%" class="emptytable">
+
+                    <tbody>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>How do I connect my guitar to my computer?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>There are two cheap solutions to this question:</p>
+                          <ol>
+                            <li>Obtain a 1/4" (6.35 mm) mono to 1/8" (3.5 mm) mono adapter. Such adapters are available
+                              at most good audio/video stores. A stereo adapter should also do the job. You should then
+                              be able to connect a standard 1/4" guitar cable into the 1/8" line-in or microphone input
+                              on your computer. Play as usual using either headphones or speakers.</li>
+                            <li>Obtain a microphone and a set of headphones, connect your microphone to your computer's
+                              microphone input and your headphones to your computer's headphone output. Play into your
+                              microphone.</li>
+                          </ol>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2"> </td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Why do my speakers pop when I play my guitar through virtuAMP?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Your computer isn't able to process audio buffers fast enough before receiving the next
+                            audio buffer. This is usually caused by a slow CPU or cheap sound card. You can mitigate the
+                            effect by trying any combination of the following three settings:</p>
+                          <ol>
+                            <li>Audio Driver: Try switching between the Windows Multimedia and DirectSound audio
+                              drivers. The DirectSound audio driver should provide better priority for audio processing,
+                              but requires Windows XP and up.</li>
+                            <li>Audio Buffer Denominator: Try increasing the delay between audio buffer capture and
+                              playback by decreasing the audio buffer denominator setting one step at a time. Allow a
+                              few seconds to determine effectiveness.</li>
+                            <li>Audio Buffer FPS: Try decreasing the display frame rate by decreasing the audio buffer
+                              FPS setting. This will provide more CPU time for audio processing.</li>
+                          </ol>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2"> </td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>How do I connect foot pedals to virtuAMP?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>virtuAMP does not support foot pedals, but you can use your keyboard to toggle effects on
+                            and off. To add a shortcut:</p>
+                          <ol>
+                            <li>Select an effect.</li>
+                            <li>While holding the shift key, press the button you wish to use to toggle the effect (you
+                              can assign the same key to multiple effects).</li>
+                            <li>The name of the key you selected should appear in the status bar at the bottom of your
+                              screen.</li>
+                            <li>Repeat 1-3 for each effect you with to add a shortcut to.</li>
+                          </ol>
+                          <p>To remove a shortcut:</p>
+                          <ol>
+                            <li>Select an effect.</li>
+                            <li>While holding the shift key, press delete.</li>
+                            <li>Repeat 1-2 for each effect you with to remove a shortcut from.</li>
+                          </ol>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2"> </td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Why can't the Player/Recorder effect play my .wav file?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>virtuAMP only supports 8 or 16 bit PCM, and 32 bit or 64 bit IEEE floating point .wav files
+                            sampled at 44100 Hz.</p>
+                          <p>You may use <a
+                              href="https://web.archive.org/web/20171117230443/http://audacity.sourceforge.net/">Audacity</a>
+                            to convert your .wav files to an accepted format.</p>
+                          <p>You may also encounter problems if the .wav file is opened in another program, or by
+                            virtuAMP for recording. Check the log.txt file in your installation folder for detailed
+                            error messages.</p>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2"> </td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>How do I improve my sound quality?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>virtuAMP is not meant to be a replacement for real guitar amplifiers or professional studio
+                            equipment. Having said that, there are many factors that will affect the quality of sound
+                            virtuAMP can produce. Your audio card and speakers are probably the most important factors
+                            (most computers come with a cheap on-board sound card), and a slow CPU can lead to audible
+                            popping as audio buffers aren't processed before they are needed. Upgrading any of these
+                            things <i>may</i> lead to a better overall sound.</p>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <p>Ask a question...</p>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left">Modified: Sep 4th, 2007 - 8:15:19 pm</span><span
+                  class="right">[ <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=235#p235">22
+                    Comments</a> ]</span>
+                <div class="space"></div>
+              </div>
+            </div>
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">virtuAMP</span></div>
+              <div class="content"><span class="title">» <a href="../pages/virtuAMP.html">About</a></span><br>
+                <span class="title">» <a href="../pages/virtuAMP-Download.html">Download</a></span><br>
+                <span class="title">» <a href="virtuAMP-Revision History.html">Revision
+                    History</a></span><br>
+                <span class="title">» <a href="virtuAMP-Requirements.html">Requirements</a></span><br>
+                <span class="title">» <a href="virtuAMP-FAQ.html">FAQ</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?p=55">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?p=55&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?p=55&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=178&amp;o=105#c4044">VTFEdit
+                    v1.2.5 Full</a> (<a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=13322">iipa</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=13330">Nishan1</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171117230443/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 » 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>
