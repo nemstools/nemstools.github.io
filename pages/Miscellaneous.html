@@ -40,13 +40,13 @@
             <div class="group">
               <div class="heading1">
                 <div class="space"></div><span class="left"><a name="p108"
-                    href="https://web.archive.org/web/20171114194253/http://nemesis.thewavelength.net/index.php?c=108#p108">HLLib</a>
-                  - <a
-                    href="https://web.archive.org/web/20171114194253/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
-                  class="right">Posted: May 23rd, 2005 - 6:32:20 pm</span>
-                <div class="space"></div>
+                    href="https://web.archive.org/web/20171114194253/http://nemesis.thewavelength.net/index.php?c=108#p108">Miscellaneous</a>
+
+                  <div class="space"></div>
               </div>
-              <div class="content"><b>About:</b>
+              <div class="content">
+
+                <b><a href="Miscellaneous-HLLib.html">HLLib</a></b>
 
                 <p>HLLib is a package library for Half-Life that abstracts several package formats and provides a simple
                   interface for all of them. HLLib is written in native C++ but exposes both a C and C++ interface which
@@ -54,428 +54,62 @@
                   imports). HLLib works natively in both Windows (x86 and x64) and Linux. BSP, GCF, NCF, PAK, VPK, WAD,
                   XZP and uncompressed ZIP package formats are supported.</p>
 
-                <p>HLLib is an open source library licensed under the LGPL. It comes with the source code and binaries
-                  necessary to use it. An example application called HLExtract, which is licensed under the GPL, is also
-                  included. HLExtract is a command line utility written in C that can load all HLLib supported packages
-                  and extract multiple items from them while maintaining their directory structure. Also included is a
-                  C# HLExtract port called HLExtract.Net.</p>
-
-                <b>Download from Web Archive:</b>
-
-                <ul>
-                  <li><a
-                      href="https://web.archive.org/web/20171114194253/http://nemesis.thewavelength.net/files/files/hllib246.zip">HLLib
-                      v2.4.6 Archive (411 KB)</a></li>
-                  <li><a
-                      href="https://web.archive.org/web/20171114194253/http://nemesis.thewavelength.net/files/files/hllib118.zip">HLLib
-                      v1.1.8 Archive (186 KB)</a></li>
-                </ul>
-
-
-                <b>Download from unofficial Github mirror:</b>
-
-                <ul>
-                  <li><a href="http://nemstools.github.io/files/hllib246.zip">HLLib
-                      v2.4.6 Archive (411 KB)</a></li>
-                  <li><a href="http://nemstools.github.io/files/hllib118.zip">HLLib
-                      v1.1.8 Archive (186 KB)</a></li>
-                </ul>
-
-                <b>GridMount:</b>
-
-                <p>A <a href="http://code.google.com/p/macfuse/">MacFUSE</a>
-                  file system handler called <a
-                    href="https://macdownload.informer.com/gridmount/download/">GridMount</a>
-                  is available for those looking to run HLLib on a Mac.</p>
-
-                <b>Java Wrapper:</b>
-
-                <p>A Java wrapper is available for those looking to use HLLib in Java. It can be found on <a
-                    href="http://sourceforge.net/projects/jhllib/">SourceForge</a>.
-                </p>
-
-                <b>Revision History:</b>
-
-                <br><br>
-
-                v2.4.6
-                <ul>
-                  <li>Modified VPF file support to handle the removal of a null terminator from the end of the
-                    directory.</li>
-                </ul>
-
-                v2.4.5
-                <ul>
-                  <li>Added support for new SGA file format (v6).</li>
-                  <li>Added support for new SGA file format (v7).</li>
-                </ul>
-
-                v2.4.4
-                <ul>
-                  <li>Fixed support for VPK file format (v1).</li>
-                </ul>
-
-                v2.4.3
-
-                <ul>
-                  <li>Added support for new VPK file format (v2).
-                  </li>
-                  <li>Added SGA file support.
-                  </li>
-                  <li>Added ZIP deflate support.
-                  </li>
-                </ul>
-
-                v2.4.2
-
-                <ul>
-                  <li>Fixed crash when opening VBSP files with no pak file lump.
-                  </li>
-                </ul>
-
-
-                v2.4.1
-
-                <ul>
-                  <li>Fixed crash in CProcStream.
-                  </li>
-                  <li>Fixed VPK signature check.
-                  </li>
-                  <li>Workaround for crash in .Net wrapper.
-                  </li>
-                </ul>
-
-                v2.4.0
-
-                <ul>
-                  <li>Added support for GCF files larger than 4 GB.
-                  </li>
-                </ul>
-
-                v2.3.0
-
-                <ul>
-                  <li>Added support for x64.
-                  </li>
-                  <li>Added Visual Studio 2010 solution.
-                  </li>
-                  <li>Added Visual Studio 2008 solution..
-                  </li>
-                  <li>Removed Visual Studio 2003 solution.
-                  </li>
-                </ul>
-
-                v2.2.0
-
-                <ul>
-                  <li>Added support for packages larger than 4 GB.
-                  </li>
-                </ul>
-
-                v2.1.2
-
-                <ul>
-                  <li>Added support for new VBSP file format.
-                  </li>
-                </ul>
-
-                v2.1.1
-
-                <ul>
-                  <li>Added support for new VPK file format.
-                  </li>
-                  <li>Added VPK file validation.
-                  </li>
-                  <li>Fixed crash when closing VPK files.
-                  </li>
-                </ul>
-
-                v2.1.0
-
-                <ul>
-                  <li>Added VPK file support.
-                  </li>
-                </ul>
-
-                v2.0.11
-
-                <ul>
-                  <li>Added VBSP .lmp support.
-                  </li>
-                  <li>Fixed support for files over 2 GB.
-                  </li>
-                </ul>
-
-                v2.0.10
-
-                <ul>
-                  <li>Added Last Version Played attribute to NCF file.
-                  </li>
-                  <li>Fixed change to directory entry folder terminator.
-                  </li>
-                </ul>
-
-                v2.0.9
-
-                <ul>
-                  <li>Added Last Version Played attribute to GCF file.
-                  </li>
-                </ul>
-
-                v2.0.8
-
-                <ul>
-                  <li>Improved GCF version check.
-                  </li>
-                  <li>Fixed fragmentation header checksum after defragment.
-                  </li>
-                </ul>
-
-                v2.0.7
-
-                <ul>
-                  <li>Added different search string comparisons.
-                  </li>
-                  <li>Added Visual Studio 2005 solution.
-                  </li>
-                  <li>Improved package type tests.
-                  </li>
-                </ul>
-
-                v2.0.6
-
-                <ul>
-                  <li>Added generic write support to mapping interface.
-                  </li>
-                  <li>Added no recurse option to FindFirst()/FindNext().
-                  </li>
-                  <li>Improved package item attribute consistency.
-                  </li>
-                  <li>Fixed GCC visibility support.
-                  </li>
-                  <li>Fixed unnecessary GCF bounds check.
-                  </li>
-                  <li>Fixed BSP unused lump check.</li>
-                </ul>
-
-                v2.0.5
-
-                <ul>
-                  <li>Added Linux support.
-                  </li>
-                  <li>Fixed near infinite find next recursion.
-                  </li>
-                </ul>
-
-                v2.0.4
-
-                <ul>
-                  <li>Fixed bug in GCF file defragmentation progress.
-                  </li>
-                </ul>
-
-                v2.0.3
-
-                <ul>
-                  <li>Added NCF file support.
-                  </li>
-                </ul>
-
-                v2.0.2
-
-                <ul>
-                  <li>Added GCF file defragmentation.
-                  </li>
-                  <li>Added fragmentation property to GCF files.
-                  </li>
-                  <li>Added Dark Messiah VBSP support.
-                  </li>
-                  <li>Fixed hlPackageCreateStream() bug.
-                  </li>
-                  <li>Fixed CMapping::GetTotalMemoryUsed() calculation.
-                  </li>
-                  <li>Fixed PAK file path parsing.
-                  </li>
-                  <li>Improved error messages.
-                  </li>
-                  <li>Improved file mapping performance.
-                  </li>
-                </ul>
-
-                v2.0.1
-
-                <ul>
-                  <li>Added memory tracking.
-                  </li>
-                  <li>Improved view management.
-                  </li>
-                  <li>Fixed memory mapping bug.
-                  </li>
-                  <li>Fixed user data bug in proc reader.
-                  </li>
-                  <li>Fixed WAD file GetImageData() bug.
-                  </li>
-                  <li>Fixed default mapping stream view size.
-                  </li>
-                  <li>Fixed a minor memory leak.
-                  </li>
-                </ul>
-
-                v2.0.0
-
-                <ul>
-                  <li>Rewrote entire library.</li>
-                  <li>Open packages from anywhere (files, memory, abstract streams).</li>
-                  <li>Get package and item attributes.</li>
-                  <li>Stream package data.</li>
-                  <li>Validate package data.</li>
-                  <li>Added a C wrapper.</li>
-                  <li>Improved and optimized package loading code.</li>
-                  <li>Improved package detection.</li>
-                </ul>
-
-                v1.1.8
-
-                <ul>
-                  <li>Added XZP file support.</li>
-                </ul>
-
-                v1.1.7
-
-                <ul>
-                  <li>Added Source engine BSP support.</li>
-                </ul>
-
-                v1.1.6
-
-                <ul>
-                  <li>Added mipmap level option to CWADFile.</li>
-                </ul>
-
-                v1.1.5
-
-                <ul>
-                  <li>Improved WAD file support.</li>
-                </ul>
-
-                v1.1.4
-
-                <ul>
-                  <li>Improved detection of corrupt packages.</li>
-                </ul>
-
-                v1.1.3
-
-                <ul>
-                  <li>Extended CGCFFile.</li>
-                  <li>Extended CFileMapping and CPrimitiveFileMapping to allow for volatile access.</li>
-                  <li>Fixed CPackageUtility::Extract() bug caused by illegal characters.</li>
-                  <li>Files of size 0 B are now treated as valid files.</li>
-                </ul>
-
-                v1.1.2
-
-                <ul>
-                  <li>Extended CPackage.</li>
-                  <li>Extended CMappedPackage.</li>
-                  <li>Improved error messages for system calls.</li>
-                </ul>
-
-                v1.1.1
-
-                <ul>
-                  <li>Fixed last error not being set in CMappedPackage::Open().</li>
-                </ul>
-
-                v1.1.0
-
-                <ul>
-                  <li>Rewrote mapping code to be more flexible.</li>
-                  <li>Packages located on disk or in memory can now be loaded.</li>
-                  <li>Optimized file mapping.</li>
-                  <li>Fixed CPackage::Root bug.</li>
-                  <li>Fixed CGCFFile::GetFileSizeOnDisk() bug.</li>
-                </ul>
-
-                v1.0.4
-
-                <ul>
-                  <li>Fixed CPackage memory leak.</li>
-                  <li>Fixed CMappedPackage initialization bug.</li>
-                  <li>Fixed CMappedPackage deinitialization bug.</li>
-                  <li>Changed CDirectoryItem::Parent to a CDirectoryFolder.</li>
-                  <li>Extended CWADFile.</li>
-                  <li>Added CBSPFile which acts like CWADFile on a BSP's textures.</li>
-                </ul>
-
-                v1.0.3
-
-                <ul>
-                  <li>Extended CWADFile.</li>
-                  <li>Changed GetFileSizeEx() to GetFileSize() (Not all versions of Windows supported the former).</li>
-                </ul>
-
-                v1.0.2
-
-                <ul>
-                  <li>Extended CPackage.</li>
-                  <li>Extended CGCFFile.</li>
-                  <li>Converted from bool to BOOL.</li>
-                  <li>HLLib now used by GCFScape.</li>
-                </ul>
-
-                v1.0.1
-
-                <ul>
-                  <li>Added callback functionality to CPackageUtility::Extract().</li>
-                  <li>Extended CGCFFile.</li>
-                  <li>Minor bug fixes.</li>
-                </ul>
-
-                v1.0.0
-
-                <ul>
-                  <li>Original build.</li>
-                </ul>
+
+
+                <b><a href="Miscellaneous-PS_VTF_Plug-In.html">VTF Plug-In for Photoshop</a></b>
+
+                <p>VTF Plug-In is an Adobe Photoshop 6.0 and up file format plug-in for the .vtf file format. It is a
+                  simple plug-in that supports single-frame/single-face, 3 or 4 channel .vtf files in any format. It is
+                  designed for typical .vtf creation and viewing and does not contain the advanced features found in
+                  VTFEdit. Nonetheless, it can be a useful tool for creating simple .vtf files. The plug-in does not
+                  support 64 bit versions of Photoshop.</p>
+
+
+
+                <b><a href="Miscellaneous-PDN_VTF_Plug-In.html">VTF Plug-In for Paint.NET</a></b>
+
+                <p>VTF Plug-In is a 32 bit/64 bit Paint.NET file format plug-in for the .vtf file format. It is a simple
+                  plug-in that supports single-frame/multiple-frame, 3 or 4 channel .vtf files in any format. It is
+                  designed for typical .vtf creation and viewing and does not contain the advanced features found in
+                  VTFEdit. Nonetheless, it can be a useful tool for creating simple .vtf files.</p>
+
+
+                <b><a href="Miscellaneous-Open_Now.html">Open Now!</a></b>
+
+                <p>Open Now! is a Visual Studio 2005, 2008 and 2010 add-in which allows you to quickly search for files
+                  by name and open them in Visual Studio. Open Now! is an open source add-in licensed under the GPL.</p>
+
+
+                <b><a href="Miscellaneous-wad2bmp.html">wad2bmp</a></b>
+
+                <p>This simple command line program takes a Half-Life WAD or BSP file and extracts the highest
+                  resolution mipmap of each texture as a bitmap.</p>
+
+
+                <b><a href="Miscellaneous-Auto_Seamer.html">Auto Seamer</a></b>
+
+                <p>Very simple program I made for a friend and my own personal use. It turned out to be soo good at what
+                  it did that I decided to throw it up here. The program takes an ordinary texture (it loads and saves
+                  bitmaps, or you can just copy and paste the textures in which is easier) and provides you with three
+                  little algorithms to seam it. It has a weighted averaging system which works well with pretty much any
+                  texture, an offset algorithm which works really well with some textures and not with others, and a
+                  speckle algorithm which is like a logical noise algorithm to help add some randomness back into the
+                  seam. The program is NOT optimized in any way. It works fine with small textures (like 256 * 256) but
+                  starts to slow down significantly when you get up to around 512 * 512 (which you really shouldn't have
+                  in a Half-Life map...) Thats it. Hope you find it useful.</p>
+
+
+                <b><a href="Miscellaneous-BSP_View.html">BSP View</a></b>
+
+                <p>This is a modified version of BSP_view by Botman. The update was aimed to fix various bugs and add
+                  more functionality to the program. This program has since been replaced with BSP Viewer.</p>
+
               </div>
               <div class="heading1">
-                <div class="space"></div><span class="left">Modified: Jan 22nd, 2017 - 6:09:30 pm</span><span
-                  class="right">[ <a
-                    href="https://web.archive.org/web/20171114194253/http://nemesis.thewavelength.net/index.php?c=108#p108">39
-                    Comments</a> ]</span>
+
                 <div class="space"></div>
               </div>
             </div><br>
-            <div class="group">
-              <div class="heading1">
-                <div class="space"></div><span class="left"><a name="p157"
-                    href="https://web.archive.org/web/20171114194253/http://nemesis.thewavelength.net/index.php?c=157#p157">libhl</a>
-                  - <a
-                    href="https://web.archive.org/web/20171114194253/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
-                  class="right">Posted: May 23rd, 2005 - 6:30:02 pm</span>
-                <div class="space"></div>
-              </div>
-              <div class="content"><b>About:</b>
-
-                <p>SavannahLion of HLPD has ported my HLLib library to Linux. The port has been dubbed libhl and
-                  contains a HLExtract clone Slatch.</p>
-
-                <b>Download:</b>
-
-                <ul>
-                  <li><a
-                      href="https://web.archive.org/web/20171114194253/http://half-lifepd.planethalflife.gamespy.com/modules.php?name=Downloads&amp;cid=1">HLPD</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="heading1">
-                <div class="space"></div><span class="left">Modified: Jun 17th, 2006 - 4:30:24 pm</span><span
-                  class="right">[ <a
-                    href="https://web.archive.org/web/20171114194253/http://nemesis.thewavelength.net/index.php?c=157#p157">14
-                    Comments</a> ]</span>
-                <div class="space"></div>
-              </div>
-            </div>
           </div>
           <div class="main_sidebar">
             <div class="group">
