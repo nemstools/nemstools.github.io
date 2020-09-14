@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nem's Tools [Miscellaneous - HLLib - libhl]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://nemstools.github.io/'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to this unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p157" href="#p157">libhl</a>
+                  - <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: May 23rd, 2005 - 6:30:02 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><b>About:</b>
+
+                <p>SavannahLion of HLPD has ported my HLLib library to Linux. The port has been dubbed libhl and
+                  contains a HLExtract clone Slatch.</p>
+
+                <b>Download:</b>
+
+                <ul>
+                  <li><a
+                      href="https://web.archive.org/web/20171116085231/http://half-lifepd.planethalflife.gamespy.com/modules.php?name=Downloads&amp;cid=1">HLPD</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left">Modified: Jun 17th, 2006 - 4:30:24 pm</span><span
+                  class="right">[ 21595 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c2030"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=795">Da_FileServer</a></span><span
+                  class="right">Posted: Jun 17th, 2006 - 4:23:46 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">The link appears to be dead; the website says it's still there... but it redirects to
+                a page that doesn't exist.<br>
+                <br>
+                <img src="../../images/emotes/sad.gif" width="32" height="32" alt="sad"></div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">2.</span> <a name="c3587"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=4311">panzi</a></span><span
+                  class="right">Posted: May 26th, 2011 - 7:19:16 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I wrote a small cmake build system for the Linux port (who knows, maybe it works also
+                under other operating systems):<br>
+                http://twoday.tuwien.ac.at/pub/files/hllib-cmake<br>
+                <br>
+                Usage:<br>
+                unzip hllib242.zip<br>
+                unzip hllib-cmake.zip<br>
+                mkdir HLLib-build<br>
+                cd HLLib-build<br>
+                cmake -DCMAKE_INSTALL_PREFIX=/usr ../HLLib<br>
+                make -j2 &amp;&amp; sudo make install<br>
+                sudo ldconfig # &lt;- don't know if this is really needed<br>
+                mkdir HLExtract-build<br>
+                cmake -DCMAKE_INSTALL_PREFIX=/usr ../HLExtract<br>
+                make -j2 &amp;&amp; sudo make install<br>
+                <br>
+                If you install HLLib somewhere else than /usr also pass -DCMAKE_MODULE_PATH=$PREFIX/cmake/modules to the
+                second cmake call.<br>
+                <br>
+                This installs following files into your $CMAKE_INSTALL_PATH:<br>
+                lib/libhllib.so<br>
+                lib/libhllib.so.2.3.0<br>
+                include/hllib/hl.h<br>
+                bin/hlextract<br>
+                <br>
+                Note: There are many warnings when compiling HLLib. Some of them seem to me potentially serious (using
+                uninitialized variables, crazy casts and such). Maybe someone should take a look at that. Maybe they
+                aren't really serious.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">3.</span> <a name="c3602"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=4365">acidking</a></span><span
+                  class="right">Modified: Aug 16th, 2011 - 8:06:23 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Thanks Panzi. <br><br>When I ran 'make -j2 &amp;&amp; sudo make install' I got the
+                error:<br><br><i> CMake Error at cmake_install.cmake:56 (FILE):<br> file INSTALL cannot find
+                  "/Users/acidking/HLLib/../lib/HLLib.h</i><br><br>So I tried to edit 'HLLib-build/cmake_install.cmake',
+                to correct the path:<br><br><i>HLLib/../lib/HLLib.h</i><br>to<br><i>HLLib/HLLib.h</i><br><br>It worked,
+                and then when I ran 'cmake -DCMAKE_INSTALL_PREFIX=/usr ../HLExtract', I got this error:<br><br><i>CMake
+                  Error: The source "/Users/acidking/HLExtract/CMakeLists.txt" does not match the source
+                  "/Users/acidking/HLLib/CMakeLists.txt" used to generate cache. Re-run cmake with a different source
+                  directory.</i><br>
+                <br>
+                What could be the problem?<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">4.</span> <a name="c3740"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=2393">edman747</a></span><span
+                  class="right">Posted: Sep 11th, 2012 - 6:54:36 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hello,<br>
+                We are currently using hlextract to get bsp's from both the<br>
+                half-life.gcf and the opposing force.gcf<br>
+                hlextract is called from two batch files in the svencoop folder<br>
+                Install_HLSP_Support.bat<br>
+                Install_OpFor_Support<br>
+                <br>
+                We released a beta Linux server for svencoop 4.6<br>
+                Would like to write a shell script that will help server operators install HLSP and OpFor support in
+                Linux<br>
+                <br>
+                HLExtract using HLLib v2.3.0<br>
+                Is there a newer version?<br>
+                Is there a Linux version of HLExtract?<br>
+                <br>
+                Thank You,</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">5.</span> <a name="c3793"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=12610">Ravu
+                    al Hemio</a></span><span class="right">Posted: May 7th, 2013 - 2:13:11 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I've been working on an improved Linux version of HLLib and HLExtract; it is
+                available on <a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/RavuAlHemio/hllib">my github
+                  page</a>. I'll try to keep it in sync with the upstream version of HLLib; if I don't, open an issue
+                there.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">6.</span> <a name="c3892"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=4311">panzi</a></span><span
+                  class="right">Modified: Mar 14th, 2014 - 5:02:53 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hi.<br><br>I made a git mirror here and started fixing compile errors you get when
+                you compile with -Wall -Wextra -pedantic -Werror:<br><a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib">https://github.com/panzi/HLLib</a><br><br>Summary
+                of my fixes so far:<br>lpOffsets[i] cannot be -1, did you want to compare to the maximum value (i.e.
+                (hlULongLong)-1)?:<br><a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/BSPFile.cpp#L111">https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/BSPFile.cpp#L111</a><br><br>uiLength
+                cannot be less than 0:<br><a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/Error.cpp#L142">https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/Error.cpp#L142</a><br><br>iMode
+                might be used uninitialized:<br><a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/FileMapping.cpp#L152">https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/FileMapping.cpp#L152</a><br><a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/FileStream.cpp#L102">https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/FileStream.cpp#L102</a><br><br>there
+                is no long long type in standard C++ (I changed it to int64_t):<br><a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/stdafx.h#L43">https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/stdafx.h#L43</a><br><br>'SGAHeader'
+                was not declared in this scope:<br><a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/SGAFile.cpp#L304">https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/SGAFile.cpp#L304</a><br>Should
+                it be CSGASpecializedDirectory::SGAHeader or TSGAHeader?<br><br>standard C++ can't cast between data and
+                function pointers, but there is a trick how to do it anyway:<br><a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/HLLib.cpp#L432">https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/HLLib.cpp#L432</a><br>
+                <br>
+                Also I added "default: break;" to every switch statement that does not enumerate all enum values (or
+                else it won't compile with the given flags).<br>
+                <br>
+                The flags also disallow unused parameters. I explicitly silenced those by adding "(void)param;" (creates
+                no extra binary code).<br>
+                <br>
+                <br>
+                The error about SGAHeader is a bit concerning and kinda stops me from fixing more errors. What was meant
+                here?</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">7.</span> <a name="c3893"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=4311">panzi</a></span><span
+                  class="right">Modified: Mar 15th, 2014 - 4:51:34 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">One more thing:<br><br>dereferencing type-punned pointer will break strict-aliasing
+                rules:<br><a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/VBSPFile.cpp#L444">https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/VBSPFile.cpp#L444</a><br><br>Also
+                I think it's not endian-safe. So I do this instead:<br><br>
+                <div class="vbtitle">Code:</div>
+                <div class="vbcode"><br>#define HL_FOURCC_TO_UINT(FOURCC) (hlUInt)(FOURCC[0] | FOURCC[1] &lt;&lt; 8 |
+                  FOURCC[2] &lt;&lt; 16 | FOURCC[3] &lt;&lt; 24)<br><br>const hlChar *lpFourCC =
+                  this-&gt;pHeader-&gt;lpLumps[uiID].lpFourCC;<br>hlAttributeSetUnsignedInteger(&amp;Attribute,
+                  this-&gt;lpItemAttributeNames[eAttribute], HL_FOURCC_TO_UINT(lpFourCC), hlTrue);<br></div>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">8.</span> <a name="c3894"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=4311">panzi</a></span><span
+                  class="right">Posted: Mar 15th, 2014 - 6:08:02 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hmm, I think I'm going to change all usages of strcpy, strcat, strncpy and strncat to
+                <a
+                  href="https://web.archive.org/web/20171116085231/http://www.freebsd.org/cgi/man.cgi?query=strlcat&amp;sektion=3">strlcpy
+                  and strlcat</a> (copying the BSD implementation of those and compiling it if the functions aren't
+                available). This should make the code simpler (where strncpy/strncat was used before) <i>and</i> more
+                safe (in any case). These functions ensure nil termination(!) and the size parameter is the size of the
+                buffer (including nil), not the number of characters to copy.<br>
+                <br>
+                I also do a similar thing for sprintf =&gt; snprintf.</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">9.</span> <a name="c3895"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=4311">panzi</a></span><span
+                  class="right">Modified: Mar 15th, 2014 - 6:51:07 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Also I see you use hlUInt (which is 32bit, even on a 64bit system) at a lot of places
+                even when you handle values that might need 64bits. E.g. st_size as used in HLLib::GetFileSize is
+                actually a signed 64bit value on 64bit Linux and also on 32bit Linux if you compile using
+                -D_FILE_OFFSET_BITS=64 (which you should).<br>
+                <br>
+                I could change it to some hlSSize type that has the appropriate size on all platforms (hlULong would not
+                be fine on 32bit Linux plus -D_FILE_OFFSET_BITS=64). Shall I? It would break binary (and I guess also
+                source) compatibility with existing Linux code using HLLib (I wouldn't change it for Windows because I
+                can't test it under Windows).</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">10.</span> <a name="c3896"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=4311">panzi</a></span><span
+                  class="right">Modified: Mar 15th, 2014 - 10:31:24 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Is it correct, that when a file has no parent, then it's path won't get lpRootPath
+                prepended? See:<br><a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/NCFFile.cpp#L582">https://github.com/panzi/HLLib/blob/ba88548a1d3b0b32a89370e7e477eeb4ca245530/HLLib/NCFFile.cpp#L582</a>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">11.</span> <a name="c3897"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=4311">panzi</a></span><span
+                  class="right">Posted: Mar 16th, 2014 - 4:15:23 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I added these static methods with which one can open any supported package where the
+                CPackage subtype is automatically determined by the data:<br><br>
+                <div class="vbtitle">Code:</div>
+                <div class="vbcode"><br>static CPackage *CPackage::AutoOpen(Streams::IStream &amp;Stream, hlUInt
+                  uiMode);<br>static CPackage *CPackage::AutoOpen(Mapping::CMapping &amp;Mapping, hlUInt
+                  uiMode);<br>static CPackage *CPackage::AutoOpen(const hlChar *lpFileName, hlUInt uiMode);<br>static
+                  CPackage *CPackage::AutoOpen(hlVoid *lpData, hlUInt uiBufferSize, hlUInt uiMode);<br>static CPackage
+                  *CPackage::AutoOpen(hlVoid *pUserData, hlUInt uiMode);<br></div><br><br>Don't know about the
+                name.<br><br>diff:<br><a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib/commit/755dc105ce5d0a28b353590671e9077141d5d3bc">https://github.com/panzi/HLLib/commit/755dc105ce5d0a28b353590671e9077141d5d3bc</a>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">12.</span> <a name="c3898"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=4311">panzi</a></span><span
+                  class="right">Posted: Mar 17th, 2014 - 4:08:09 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Ah I also added these static methods:<br><br>
+                <div class="vbtitle">Code:</div>
+                <div class="vbcode"><br>static CPackage *CPackage::Open(Streams::IStream &amp;Stream, hlUInt uiMode,
+                  HLPackageType ePackageType);<br>static CPackage *CPackage::Open(Mapping::CMapping &amp;Mapping, hlUInt
+                  uiMode, HLPackageType ePackageType);<br>static CPackage *CPackage::Open(const hlChar *lpFileName,
+                  hlUInt uiMode, HLPackageType ePackageType);<br>static CPackage *CPackage::Open(hlVoid *lpData, hlUInt
+                  uiBufferSize, hlUInt uiMode, HLPackageType ePackageType);<br>static CPackage *CPackage::Open(hlVoid
+                  *pUserData, hlUInt uiMode, HLPackageType ePackageType);<br></div><br><br>I use one of them in <a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/hlfs">hlfs</a>, a fuse file
+                system that uses HLLib. :)
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">13.</span> <a name="c3902"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=12748">Snowie</a></span><span
+                  class="right">Posted: Mar 30th, 2014 - 1:12:09 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hi all,<br><br>Tried to build HLLib on my Ubuntu box, but gcc or g++ compiler thingy
+                or whatever... (just to give you an idea of how well I understand C and derivatives) complains about one
+                of the files&gt; SGAFile.h<br><br>So I run the following from /opt/HLLibTools where extracted and I
+                get:<br><br>
+                <div class="vbtitle">Code:</div>
+                <div class="vbcode"><br>$ sudo make -C HLLib Makefile install<br>make: Entering directory
+                  `/opt/HLLibTools/HLLib'<br>make: Nothing to be done for `Makefile'.<br>g++ -c -O2 -g -fpic
+                  -funroll-loops -fvisibility=hidden -o Wrapper.o Wrapper.cpp<br>In file included from
+                  Packages.h:17:0,<br> from Wrapper.cpp:16:<br>SGAFile.h:279:3: error: a class-key must be used when
+                  declaring a friend<br>SGAFile.h:279:3: error: friend declaration does not name a class or
+                  function<br>SGAFile.h:280:3: error: a class-key must be used when declaring a
+                  friend<br>SGAFile.h:280:3: error: friend declaration does not name a class or
+                  function<br>SGAFile.h:281:3: error: a class-key must be used when declaring a
+                  friend<br>SGAFile.h:281:3: error: friend declaration does not name a class or
+                  function<br>SGAFile.h:282:3: error: a class-key must be used when declaring a
+                  friend<br>SGAFile.h:282:3: error: friend declaration does not name a class or function<br>make: ***
+                  [Wrapper.o] Error 1<br>make: Leaving directory `/opt/HLLibTools/HLLib'<br>$ <br></div><br><br>Some
+                reading suggests that while this will get by most C++ compilers, GCC or G++ or whatever will not allow
+                it and requires class to be declared, but if I add the line <div class="vbtitle">Code:</div>
+                <div class="vbcode"> friend class CSGADirectory* </div> for each line, I get even more and more errors
+                complaining about the lines above it.<br><br>Checked some other *File.h files for reference but none
+                seem to have any friends ;) pun!<br><br>I'm probably doing something wrong, but if someone could take a
+                look I would much appreciate it. Have included the culprits here:<br><br>
+                <div class="vbtitle">Code:</div>
+                <div class="vbcode"><br> typedef CSGADirectory&lt;SGAHeader4, SGADirectoryHeader4, SGASection4,
+                  SGAFolder4, SGAFile4&gt; CSGADirectory4;<br> typedef CSGADirectory&lt;SGAHeader4, SGADirectoryHeader5,
+                  SGASection5, SGAFolder5, SGAFile4&gt; CSGADirectory5;<br> typedef CSGADirectory&lt;SGAHeader6,
+                  SGADirectoryHeader5, SGASection5, SGAFolder5, SGAFile6&gt; CSGADirectory6;<br> typedef
+                  CSGADirectory&lt;SGAHeader6, SGADirectoryHeader7, SGASection5, SGAFolder5, SGAFile7&gt;
+                  CSGADirectory7;<br><br> friend CSGADirectory4;<br> friend CSGADirectory5;<br> friend
+                  CSGADirectory6;<br> friend CSGADirectory7;<br><br></div><br>
+                <br>
+                cheers guys, I'm of to bed.
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">14.</span> <a name="c3907"
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=4311">panzi</a></span><span
+                  class="right">Modified: Apr 23rd, 2014 - 9:03:28 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">@Snowie I had the same problem. Seems like some standard strictness. I simply pasted
+                the type to which the typedef refers into the friend declarations. This and more changes you can find
+                here: <a
+                  href="https://web.archive.org/web/20171116085231/https://github.com/panzi/HLLib">https://github.com/panzi/HLLib</a><br>
+                My version compiles with very strict compiler flags without warnings (last time I checked). I hoped my
+                changes would be merged some day, but I didn't get an answer.</div>
+            </div><br>
+
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">Miscellaneous</span></div>
+              <div class="content"><span class="title">» <a
+                    href="../../pages/Miscellaneous-HLLib.html">HLLib</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-PS_VTF_Plug-In.html">PS
+                    VTF Plug-In</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-PDN_VTF_Plug-In.html">PDN
+                    VTF Plug-In</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-Open_Now.html">Open
+                    Now!</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-wad2bmp.html">wad2bmp</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-Auto_Seamer.html">Auto
+                    Seamer</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-BSP_View.html">BSP
+                    View</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=157&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=157&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=157&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=178&amp;o=105#c4044">VTFEdit
+                    v1.2.5 Full</a> (<a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=13322">iipa</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=13329">Bootsjr</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20171116085231/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 © 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>

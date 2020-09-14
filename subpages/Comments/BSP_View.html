@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nem's Tools [Miscellaneous - BSP View - BSP View]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://nemstools.github.io/'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to this unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p24" href="#p24">BSP
+                    View</a> - <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: May 26th, 2003 - 6:14:33 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><b>About:</b>
+                <p>This is a modified version of BSP_view by <a
+                    href="https://web.archive.org/web/20171008191451/http://www.planethalflife.com/botman/">Botman</a>.
+                  The update was aimed to fix various bugs and add more functionality to the program. This program has
+                  since been replaced with <a href="BSP_Viewer.html">BSP
+                    Viewer</a>.</p>
+
+                <b>Screenshots:</b>
+                <div style="text-align: center">
+                  <br>
+                  <img src="../../images/pages/bspview1.jpg" width="497" height="398" alt="BSP View" title="BSP View">
+                  <br><br>
+                  <img src="../../images/pages/bspview2.jpg" width="497" height="398" alt="BSP View" title="BSP View">
+                  <br><br>
+                  <img src="../../images/pages/bspview3.jpg" width="497" height="398" alt="BSP View" title="BSP View">
+                  <br><br>
+                </div>
+
+                <b>Download from Web Archive:</b>
+                <ul>
+                  <li><a
+                      href="https://web.archive.org/web/20171008191451/http://nemesis.thewavelength.net:80/files/files/bspview110.zip">BSP
+                      View v1.1.0</a></li>
+                  <li><a
+                      href="https://web.archive.org/web/20171008191451/http://nemesis.thewavelength.net:80/files/files/bsptool110source.zip">BSP
+                      View v1.1.0 Source</a></li>
+                </ul>
+
+                <b>Download from unofficial Github mirror:</b>
+                <ul>
+                  <li><a href="http://nemstools.github.io/files/bspview110.zip">BSP
+                      View v1.1.0</a></li>
+                  <li><a href="http://nemstools.github.io/files/bsptool110source.zip">BSP
+                      View v1.1.0 Source</a></li>
+                </ul>
+
+                <b>Revision History:</b>
+
+                <br><br>
+
+                v1.1.0
+
+                <ul>
+                  <li>EVS (Entity Visibility Set) calculated for each map off its VIS.</li>
+                  <li>Use of EVS allows for more accurate e_poly representation.</li>
+                  <li>The whole world is drawn when you are outside it.</li>
+                  <li>BSP Load progress displayed.</li>
+                  <li>Increased some of the limits (they were based in qtool limits).</li>
+                  <li>Memory leak fixed.</li>
+                </ul>
+
+                v1.0.0
+
+                <ul>
+                  <li>Fixed frustum problems.</li>
+                  <li>Hacked fix for texture problems caused by maps with textures larger then 512 pixels (it'll work up
+                    to 1024 now).</li>
+                  <li>Resize problem on start fixed (the black bar).</li>
+                  <li>Crosshair stays in middle of screen on resize.</li>
+                  <li>"Camera position out of range." error removed (your just repositioned at 0, 0, 0).</li>
+                  <li>GUI added (menu).</li>
+                  <li>Various additional options that previously were only changed in the config file added to GUI (not
+                    all though).</li>
+                  <li>Optimized wireframe mesh.</li>
+                  <li>Added a bunch more 'modes' to the edge option (press e or look in menu).</li>
+                  <li>Keyboard can take multiple keys (ie. you can strafe and walk at the same time).</li>
+                  <li>Frustum culling added for entity models.</li>
+                  <li>You can view your entity poly counts now (they probably aren't culled the same way as in HL
+                    though).</li>
+                  <li>Option to view scene info &amp; crosshair.</li>
+                  <li>Option to render models or not.</li>
+                  <li>Option to render the skybox or not.</li>
+                  <li>Solid and textured render modes.</li>
+                  <li>Right click and drag to move camera's look at position.</li>
+                  <li>'Z' key puts you into the old mode of 'looking' (like in WC).</li>
+                  <li>Ability to load a new level without restarting the app.</li>
+                  <li>WASD can be used to move (R &amp; F for up and down respectively).</li>
+                  <li>Minor additional optimizations.</li>
+                  <li>Gave it an icon.</li>
+                </ul>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left">Modified: Mar 26th, 2006 - 5:40:37 pm</span><span
+                  class="right">[ 26029 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c375"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=406">Anarchy</a></span><span
+                  class="right">Posted: Dec 31st, 2003 - 11:47:29 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                Unfortunately I cannot get BSPview to work with steam. Any tips?<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">2.</span> <a name="c446"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=461">champzilla</a></span><span
+                  class="right">Posted: Feb 11th, 2004 - 8:24:24 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                RGR I am having troubles getting it to work also.<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">3.</span> <a name="c448"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Feb 12th, 2004 - 5:11:03 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                It is a legacy application and does not support Steam (more specifically the Steam file system).<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">4.</span> <a name="c449"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=461">champzilla</a></span><span
+                  class="right">Posted: Feb 12th, 2004 - 5:28:21 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                Is it correct to assume there will be no further updates to this in which it will support the stupid
+                steam file system?<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">5.</span> <a name="c450"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Feb 12th, 2004 - 6:06:44 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                The program is a mess if you look at it and it would probably take much more effort to modify it to
+                work
+                with Steam then it would to rewrite it completely (which I don't have time for at the moment.) So yes,
+                that would be the correct assumption.<br>
+                <br>
+                <img src="../../images/emotes/capoera.gif" width="32" height="32" alt="capoera"><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">6.</span> <a name="c452"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=461">champzilla</a></span><span
+                  class="right">Posted: Feb 12th, 2004 - 8:18:53 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                I see, well did it have the abbillity to export a map so it could be edited, thats all I'm really
+                after.
+                I just want to make a modifcation of cs_office with out having to redo the whole map. Perhaps you know
+                of a program that can do this, and DOES work with steam?<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">7.</span> <a name="c1189"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=1148">Stino</a></span><span
+                  class="right">Posted: Nov 4th, 2004 - 1:12:46 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                Can't you add a function to view models!<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">8.</span> <a name="c1190"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><span
+                  class="right">Posted: Nov 4th, 2004 - 12:20:37 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>'BSP View' is a modified version of BSP_view by Botman. The update was aimed to
+                fix various bugs and add more functionality to the program. This program has since been replaced with
+                '<a
+                  href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?p=30">BSP
+                  Viewer'</a>.<br>
+                <br>
+                why don't you check out the *NEW* program.<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">9.</span> <a name="c1191"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Nov 4th, 2004 - 5:10:38 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br>
+                I'm assuming by models you mean .mdl files. BSP_View actually can render these for WON installations
+                (providing they are set up right) but I really have to recommend BSP Viewer as it is far more advanced
+                and bug free then BSP_View.<br>
+                <br>
+                On a side note, what you have requested is on BSP Viewer's todo list; I just haven't got around to it
+                yet.<br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">10.</span> <a name="c1802"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=1824">the-copy</a></span><span
+                  class="right">Posted: Jan 4th, 2006 - 12:25:35 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I can't compile it with MSVC++! It gives me<br><br>7 overloads have similar
+                conversions<br>at<br> f = (float)pow((palette[i]+1)/256.0, gamma);<br><br>and the same at<br> f =
+                (float)pow((data[i]+1)/256.0, light_adjust);<br>
+                <br>
+                Any suggestions?</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">11.</span> <a name="c1804"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Jan 4th, 2006 - 3:07:04 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Duuno, MS isn't exactly known for following standards, they like to change things
+                up
+                with every release of VS. Maybe try casting everything within pow() to a double (and check that pow()
+                takes a double).</div>
+            </div><br>
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">12.</span> <a name="c4010"
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=13159">navmesh</a></span><span
+                  class="right">Posted: Oct 5th, 2016 - 5:30:42 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hi, thank you for the tool<br>
+                couild you please add support to open bsp file through parameter as filepath, like this ( cmd command)
+                <br>
+                start "" "E:\Games\CS16\tool\bspview\BSP View.exe" "E:\D\cstrike\maps\ak47_m4a1_dust.bsp"<br>
+                ("E:\D\cstrike\maps\ak47_m4a1_dust.bsp" is filepath accept as parameter )<br>
+                Thank you so much</div>
+            </div><br>
+
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">Miscellaneous</span></div>
+              <div class="content"><span class="title">» <a
+                    href="../../pages/Miscellaneous-HLLib.html">HLLib</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-PS_VTF_Plug-In.html">PS
+                    VTF Plug-In</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-PDN_VTF_Plug-In.html">PDN
+                    VTF Plug-In</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-Open_Now.html">Open
+                    Now!</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-wad2bmp.html">wad2bmp</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-Auto_Seamer.html">Auto
+                    Seamer</a></span><br>
+                <span class="title">» <a href="../../pages/Miscellaneous-BSP_View.html">BSP
+                    View</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=24&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=24&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=24&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4040">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=13286">saqi55</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=13303">blank</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915124956/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 © 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>
