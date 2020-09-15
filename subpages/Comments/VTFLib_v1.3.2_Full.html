@@ -82,9 +82,8 @@
                 <div class="space"></div>
               </div>
             </div><br>
-            <div class="offsets">[ 1 <a
-                href="https://web.archive.org/web/20190508141002/http://nemesis.thewavelength.net/index.php?c=177&amp;o=15#p177">2</a>
-              ]</div><br>
+
+
             <div class="group">
               <div class="heading2">
                 <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c1982"
@@ -337,9 +336,110 @@
               </div>
               <div class="content">Nem, can you upload your version of nvDTX?</div>
             </div><br>
-            <div class="offsets">[ 1 <a
-                href="https://web.archive.org/web/20190508141002/http://nemesis.thewavelength.net/index.php?c=177&amp;o=15#p177">2</a>
-              ]</div><br>
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">16.</span> <a name="c3451"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Aug 1st, 2010 - 6:21:09 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">The version I am using is available <a
+                  href="https://web.archive.org/web/20160321152846/http://developer.nvidia.com/object/dds_utilities_legacy.html">here</a>.
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">17.</span> <a name="c3551"
+                    href="index.php?a=4272">ScarT</a></span><span class="right">Posted: Apr 4th, 2011 - 12:12:34
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Is there really no way to build VTFLib under VS2010?</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">18.</span> <a name="c3552"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Apr 4th, 2011 - 9:30:35 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I don't offer official support because I rely on features of nvDXT that were removed
+                when nVidia rewrote the library.<br /><br />That said, you have a few options:<ol>
+                  <li>Disable write support (#define USE_NVDXT 0) to remove all nvDXT dependencies and convert the
+                    solution to 2010. You will still be able to read .vtf files.</li>
+                  <li>Convert the solution to 2010 and compile anyway. The lib files should be binary compatible. Your
+                    embedded manifest will probably be wrong but you can either hand edit it or override it.</li>
+                  <li>Convert the solution to 2010 and use the &quot;Platform Toolset&quot; option to compile against
+                    v80. You will need to <a
+                      href="https://web.archive.org/web/20160321152846/http://nanlee.wordpress.com/2010/11/06/building-against-msvc2005-toolset-using-msvc2010/">add
+                      this option</a>.</li>
+                </ol>
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">19.</span> <a name="c3555"
+                    href="index.php?a=4276">JoeShmoe</a></span><span class="right">Posted: Apr 9th, 2011 - 2:52:28
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I'm not going to try to hide the fact that I've always been lost when it comes to
+                software licenses. I'm writing a program that needs to convert vtf to bmp. Under the GPL and LGPL, what
+                do I need to include if I wish to package VTFCmd with my program when I distribute it?<br />
+                <br />
+                Great library, btw.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">20.</span> <a name="c3558"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Apr 10th, 2011 - 3:10:29 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">VTFLib is LGPL, so you can link against it and use it in your code without any
+                requirements on the licensing of your code or the resulting binary. That is you can do whatever you
+                want, you just have to make any changes to the library itself available upon request.<br />
+                <br />
+                If you want to include VTFCmd and launch it from your application's binary to do the conversion, the
+                same constraints apply, only changes to the code in VTFCmd need to be available upon request.<br />
+                <br />
+                Keeping intact the VTFLib (LGPL) or VTFCmd (GPL) license is the only other requirement. This can be
+                fulfilled by copying the appropriate license file to the folder you install the binaries to (e.g. rename
+                &quot;LGPL.txt&quot; to &quot;VTFLib License.txt&quot; and place that file in the same location of
+                VTFLib.dll.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">21.</span> <a name="c3689"
+                    href="index.php?a=4486">Typhox</a></span><span class="right">Modified: Feb 18th, 2012 - 3:58:41
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Sad, I can't use it in my Project because it doesn't support mingw and due to
+                licensing issues I can't modify the files to be usable with Qt :(<br />
+                <br />
+                Anyway, I'm going to use VTFCmd then...</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">22.</span> <a name="c3703"
+                    href="index.php?a=4515">jack5500</a></span><span class="right">Posted: Apr 13th, 2012 - 5:59:40
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Why does my input texture have to in the power of 2 when i use VTFCMD, but not when I
+                use VTFEDIT? <br />
+                That really bugs me :)</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">23.</span> <a name="c3899"
+                    href="index.php?a=12744">maple</a></span><span class="right">Posted: Mar 25th, 2014 - 3:14:41
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">great&amp;#65281;<br />
+                to jack5500&amp;#65306;if u want to use vtfcmd, u need ro add &quot;-resize&quot; option.</div>
+            </div><br />
+
 
           </div>
           <div class="main_sidebar">

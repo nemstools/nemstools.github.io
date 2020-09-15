@@ -443,11 +443,8 @@
                 <div class="space"></div>
               </div>
             </div><br>
-            <div class="offsets">[ 1 <a
-                href="https://web.archive.org/web/20171108021509/http://nemesis.thewavelength.net/index.php?c=108&amp;o=15#p108">2</a>
-              <a
-                href="https://web.archive.org/web/20171108021509/http://nemesis.thewavelength.net/index.php?c=108&amp;o=30#p108">3</a>
-              ]</div><br>
+
+
             <div class="group">
               <div class="heading2">
                 <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c961"
@@ -661,11 +658,403 @@
                 errors about functions like "strlen", etc. I had to include &lt;string.h&gt; in 2 or 3 files in HLLib to
                 be able to compile it.</div>
             </div><br>
-            <div class="offsets">[ 1 <a
-                href="https://web.archive.org/web/20171108021509/http://nemesis.thewavelength.net/index.php?c=108&amp;o=15#p108">2</a>
-              <a
-                href="https://web.archive.org/web/20171108021509/http://nemesis.thewavelength.net/index.php?c=108&amp;o=30#p108">3</a>
-              ]</div><br>
+
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">16.</span> <a name="c3404"
+                    href="index.php?a=4074">jwheare</a></span><span class="right">Modified: Jun 13th, 2010 - 4:03:07
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I turned this into a homebrew package for Mac OS X<br /><br /><a
+                  href="https://web.archive.org/web/20170915125509/http://github.com/mxcl/homebrew/blob/master/Library/Formula/hllib.rb">http://github.com/mxcl/homebrew/blob/master/Library/Formula/hllib.rb</a><br />
+                <br />
+                It only required a few minor tweaks to the Makefile and HLExtract source, mainly to replace the .so
+                extensions with .dylib and fixing the limits.h include. Would be good if these changes could make it
+                back to your package via some IFDEFS.<br />
+                <br />
+                Cheers, hlextract is a great tool.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">17.</span> <a name="c3408"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jun 14th, 2010 - 1:42:26 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Do you have a diff for your code changes? I'd be happy to integrate them in.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">18.</span> <a name="c3409"
+                    href="index.php?a=4075">Crowley22g</a></span><span class="right">Modified: Jun 14th, 2010 - 4:10:32
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Great tools been using for years <img
+                  src="../../images/emotes/love.gif" width="32"
+                  height="32" alt="love" /><br />
+                <br />
+                Wrote a script a while back to extract all the required files to build a Synergy Server :-)<br />
+                <br />
+                This worked great until Valve did the updates for Apple Mac<br />
+                <br />
+                Now Hlextract will not extract the NEW updated files some of which are maps :-(<br />
+                <br />
+                d1_eli_01.bsp<br />
+                d1_town_05.bsp<br />
+                d2_coast_01.bsp<br />
+                <br />
+                Thats only a few from Half-life 2<br />
+                <br />
+                Hope it's something simple. I'm sure there are other Synergy server admins saying OMG what have they
+                done LOL<br />
+                <br />
+                Thanks in advance<br />
+                <br />
+                Crowley<br />
+                <br />
+                PS file will extract using GCFScape 1.8.0 (On Win 7 x64)<br />
+                The server is Win2003 R2</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">19.</span> <a name="c3415"
+                    href="index.php?a=4075">Crowley22g</a></span><span class="right">Posted: Jun 20th, 2010 - 5:52:35
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Done a bit more digging.<br />
+                <br />
+                d1_eli_01.bsp is grey and will not extract on Server 2003 R2<br />
+                <br />
+                d1_eli_01.bsp is fine and will extract OK on my Win 7 x64 PC<br />
+                <br />
+                Also tried the HLExtract and the .net version on 2003 R2 and they get the same error message about the
+                file not being complete<br />
+                <br />
+                Hope you can help. If not I'll have to upload all the files from my Win 7 PC<br />
+                <br />
+                Cheers<br />
+                <br />
+                Crowley</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">20.</span> <a name="c3438"
+                    href="index.php?a=4100">neico</a></span><span class="right">Modified: Jul 25th, 2010 - 3:28:33
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">could you consider to include the .pdb files for the HLLib.dll and the hlextract.exe
+                in the next release? it would help people that don't build them and just use what comes with the
+                download ;)<br />
+                <br />
+                and to the thing about the new bsp files etc. I think I've come across the same problem, I guess the lib
+                needs a little update for those... (using the Lib together with wxWidgets to write an GUI based
+                extractor for just extracting content that doesn't come with hldsupdatetool but is required for mods
+                like Synergy or Obsidian Conflict)<br />
+                <br />
+                It also seems that CDirectoryFolder-&gt;FindFirst and FindNext don't work as they should when using only
+                HL_FIND_FOLDER, it doesn't search all folders, only those inside that folder, it only works if I also
+                add the flag HL_FIND_FILES</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">21.</span> <a name="c3443"
+                    href="index.php?a=4075">Crowley22g</a></span><span class="right">Posted: Jul 26th, 2010 - 5:41:07
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">The files extracted on Win7 x64 when placed on the Synergy server still give a
+                message &quot;Server version differs&quot;. Whatever they did in the Mac update has broken some but not
+                all files from being extracted correctly.<br />
+                <br />
+                For the time being i've had to remove 15 maps from the mapcycle to prevent getting an empty server
+                because no one can join.<br />
+                <br />
+                Thanks in advance</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">22.</span> <a name="c3456"
+                    href="index.php?a=4075">Crowley22g</a></span><span class="right">Posted: Aug 7th, 2010 - 5:36:09
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Problem solved thanks to a reply on GCFScape<br />
+                <br />
+                Missing file with the NEW updated maps etc... are now located in :<br />
+                <br />
+                half-life 2 2007 base content.gcf<br />
+                <br />
+                Now loaded on our server an working again :-)</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">23.</span> <a name="c3574"
+                    href="index.php?a=4290">Ariman</a></span><span class="right">Posted: May 2nd, 2011 - 5:34:18
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hi. I've encountered a small issues with HLLib.<br />
+                In lpPackageTests array (which is used for hlGetPackageTypeFromMemory function) signature for VPK files
+                defined as { 0x34, 0x12, 0x55, 0xaa }, but in Portal 2 pak01_dir.vpk has signature { 0x34, 0x12, 0xaa,
+                0x55 }.<br />
+                And it can be opened with no problems. Is it an error in signature definition or both versions are
+                valid?</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">24.</span> <a name="c3575"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: May 2nd, 2011 - 10:39:52 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Good catch, the signature check should be against { 0x34, 0x12, 0xaa, 0x55 }.<br />
+                <br />
+                <img src="../../images/emotes/apple.gif" width="32"
+                  height="32" alt="apple" /></div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">25.</span> <a name="c3576"
+                    href="index.php?a=4290">Ariman</a></span><span class="right">Posted: May 3rd, 2011 - 4:03:12
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Got it. Thanks.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">26.</span> <a name="c3578"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: May 11th, 2011 - 1:45:59 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Version 2.4.1 has been released with a fixed signature check and a few other minor
+                fixes.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">27.</span> <a name="c3579"
+                    href="index.php?a=2692">King2500</a></span><span class="right">Posted: May 12th, 2011 - 6:40:00
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hello Nem,<br />
+                <br />
+                With Version 2.4.1 of HLLib I have the problem that I get a crash when mounting a AlienSwarm or Portal 2
+                BSP and calling GetRoot()<br />
+                <br />
+                Same problem (similar error) applies to GCFScape in latest version.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">28.</span> <a name="c3601"
+                    href="index.php?a=4100">neico</a></span><span class="right">Modified: Aug 5th, 2011 - 3:03:31
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Just wanted to say that it would a good thing to add GetExtractable() to the Extract
+                function since it's pretty obvious that the lib shouldn't try to extract if it's not
+                extractable...<br />
+                <br />
+                Also, could you provide a way to give out only the file / folder count that's been downloaded (and in
+                fact is extractable), a simple GetFileCount( hlBool OnlyCompleted = false ) should be enough I
+                guess~<br />
+                else I really would need to add some extra looping just to archive that :S<br />
+                <br />
+                I've also got an report from an tester that when I use Extract on an entire folder that it extracts
+                files which show up in GCFScape as gray ( not downloaded ) too, but those are then 0 byte big, maybe
+                this is related to the extract function not checking if it's extractable D:<br />
+                <br />
+                I've also noticed that the Callbacks are only available in C Code, so I can't really use them to call
+                Class Members (hlSetVoid would need an extra parameter to allow passing this for static functions at
+                least~).<br />
+                So making C Code features ( like the Callbacks ) usable with C++ Code would be cool :D<br />
+                <br />
+                I would suggest making a class HLLib that has members like: RegisterCallback( hlOption Callback,
+                hlCallback, hlVoid* EventHandler );<br />
+                and the same for Unregister and stuff like that, you know what I mean~</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">29.</span> <a name="c3771"
+                    href="index.php?a=12558">kevincox</a></span><span class="right">Posted: Jan 30th, 2013 - 3:21:19
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hi. I am trying to build these packages on linux (I'm actually trying to get them
+                into the AUR (Arch User Repository) but I am running into problems building HLExtract.<br />
+                <br />
+                HLLib appears to build and install fine using the Makefile but when I try to compile HLExtract using the
+                following command I get the following error.<br />
+                <br />
+                cc -o 'hlextract' -I &quot;$headerdir&quot; -L &quot;$libdir&quot; 'Main.c' -lhl<br />
+                /data/Desktop/dassault-systemes-draftsight/pkg/usr/lib//libhl.so: undefined reference to
+                `HLLib::CSGAFile::CSGAFile()'<br />
+                collect2: error: ld returned 1 exit status<br />
+                <br />
+                I might be doing something silly and would appreciate any help.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">30.</span> <a name="c3772"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jan 31st, 2013 - 6:01:30 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Don't really maintain the Linux support, but it shouldn't be hard to get going
+                again.<br />
+                <br />
+                Add SGAFile.cpp to the makefile?<br />
+                <br />
+                If you get it working send me your changes and I'll make sure they get in to the next release.</div>
+            </div><br />
+
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">31.</span> <a name="c3775"
+                    href="index.php?a=12558">kevincox</a></span><span class="right">Modified: Feb 14th, 2013 - 10:05:20
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Thanks, all that was missing was that file. I'm not too familiar with make but there
+                is a way to pattern match all of your source files so you don't forget to add any in the
+                future.<br /><br />Here are my results:<br /> - Here is my final Makefile (just added that file) <a
+                  href="https://web.archive.org/web/20170915145026/http://pastebin.com/bFQcbMaj">http://pastebin.com/bFQcbMaj</a><br />
+                - Here is a patch for the Makefile <a
+                  href="https://web.archive.org/web/20170915145026/http://pastebin.com/Fb6RAzzs">http://pastebin.com/Fb6RAzzs</a><br />
+                - Here is the AUR package, it's PKGBUILD is essentially a shell script that can be used as a reference
+                on how to build it. <a
+                  href="https://web.archive.org/web/20170915145026/https://aur.archlinux.org/packages/hllib/">https://aur.archlinux.org/packages/hllib/</a><br />
+                <br />
+                Thanks again for the help. HLExtract worked perfectly.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">32.</span> <a name="c3776"
+                    href="index.php?a=12573">sl1pkn07</a></span><span class="right">Posted: Feb 14th, 2013 - 11:32:35
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">ive upload hllib(named hlextract) in AUR [1] since 2010, i use the patchset from
+                OpenSuse Game repository [2](before from etamPL repository [3])<br /><br />the
+                patchet:<br /><br />http://paste.ubuntu.com/1654243<br />http://paste.ubuntu.com/1654244<br />http://paste.ubuntu.com/1654245<br /><br />and
+                little fix to change Win to unix EOL (end of line) to apply the patchset<br /><br />find -type f -exec
+                perl -pi -e 's/\r\n?/\n/g' &quot;{}&quot; \;<br /><br />only have a little trouble with certain
+                warning<br /><br />http://paste.ubuntu.com/1654270<br /><br />(sorry, im not
+                coder)<br /><br />greetings<br /><br />[1] https://aur.archlinux.org/packages/hlextract/<br />[2]
+                http://download.opensuse.org/repositories/games/openSUSE_12.2/src/libhl2-2.4.3-1.1.src.rpm<br />[3]
+                http://nemesis.thewavelength.net/index.php?c=108&amp;o=0#c3261</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">33.</span> <a name="c3841"
+                    href="index.php?a=12573">sl1pkn07</a></span><span class="right">Posted: Nov 4th, 2013 - 12:48:50
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">hi<br />
+                <br />
+                Nem, can you update the linux makefililes?<br />
+                <br />
+                missing SGAFile.cpp into hllib/Makefile<br />
+                <br />
+                but with add the make fail:<br />
+                <br />
+                http://sl1pkn07.no-ip.com/paste/view/b620763b<br />
+                <br />
+                and still have this warnings:<br />
+                <br />
+                http://sl1pkn07.no-ip.com/paste/view/456cd2af<br />
+                <br />
+                greetings</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">34.</span> <a name="c3842"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Nov 6th, 2013 - 5:40:12 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Try going to SGAfile.h and adding typename to the template parameter typedefs.
+                E.g.:<br />
+                <br />
+                Change:<br />
+                typedef TSGAHeader SGAHeader;<br />
+                To:<br />
+                typedef typename TSGAHeader SGAHeader;<br />
+                <br />
+                Except for the SGAFile typedefs that don't use a template parameter.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">35.</span> <a name="c3843"
+                    href="index.php?a=12573">sl1pkn07</a></span><span class="right">Posted: Nov 9th, 2013 - 11:21:36
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hi<br />
+                <br />
+                what change need exactly? im not coder :S<br />
+                <br />
+                greetings</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">36.</span> <a name="c3846"
+                    href="index.php?a=12610">Ravu al Hemio</a></span><span class="right">Posted: Nov 22nd, 2013 -
+                  1:09:46 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hi,<br /><br />I have a HLLib version that successfully compiles under Linux on <a
+                  href="https://web.archive.org/web/20170915145026/https://github.com/RavuAlHemio/hllib">Github</a>. I
+                try to keep it in sync with HLLib releases. (If I miss a release, open an issue there!)<br />
+                <br />
+                Cheers.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">37.</span> <a name="c3847"
+                    href="index.php?a=12573">sl1pkn07</a></span><span class="right">Posted: Nov 27th, 2013 - 10:30:12
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">@Ravu al Hemio<br />
+                <br />
+                THANKS!!!<br />
+                <br />
+                greetings</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">38.</span> <a name="c3930"
+                    href="index.php?a=12573">sl1pkn07</a></span><span class="right">Posted: Sep 28th, 2014 - 3:42:54
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hi. you change any in the zip?<br />
+                <br />
+                stop build with the @Ravu al Hemio patchset for linux<br />
+                <br />
+                greetings</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">39.</span> <a name="c3971"
+                    href="index.php?a=12993">tgnottingham</a></span><span class="right">Modified: Sep 21st, 2015 -
+                  8:59:40 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I've created a Python binding for HLLib, available at <a
+                  href="https://web.archive.org/web/20170915145026/https://github.com/tgnottingham/hllib.py">https://github.com/tgnottingham/hllib.py</a>.<br />
+                <br />
+                Features:<br />
+                - The Python binding as a module, hllib.py.<br />
+                - A Python version of HLExtract, hlextract.py.<br />
+                - A modest amount of documentation.<br />
+                - Works under Linux and Windows.</div>
+            </div><br />
+
 
           </div>
           <div class="main_sidebar">
