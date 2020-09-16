@@ -230,8 +230,7 @@
                 <div class="space"></div>
               </div>
               <div class="content">Hmm, I think I'm going to change all usages of strcpy, strcat, strncpy and strncat to
-                <a
-                  href="https://web.archive.org/web/20171116085231/http://www.freebsd.org/cgi/man.cgi?query=strlcat&amp;sektion=3">strlcpy
+                <a href="http://www.freebsd.org/cgi/man.cgi?query=strlcat&sektion=3">strlcpy
                   and strlcat</a> (copying the BSD implementation of those and compiling it if the functions aren't
                 available). This should make the code simpler (where strncpy/strncat was used before) <i>and</i> more
                 safe (in any case). These functions ensure nil termination(!) and the size parameter is the size of the
