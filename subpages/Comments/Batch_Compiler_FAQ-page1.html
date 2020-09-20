@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nem's Tools [Batch Compiler - FAQ - Batch Compiler FAQ]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://nemstools.github.io/'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to this unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p41" href="#p41">Batch
+                    Compiler FAQ</a> - <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: May 26th, 2003 - 11:35:22 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">
+                <center>
+                  <table width="100%" class="emptytable">
+
+                    <tbody>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>When I launch Batch Compiler I get the following error message:<br><i>"The application
+                              failed to initialize properly (0xc0000135). Click ok to terminate the application."</i>
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Batch Compiler is written in C# .NET and such as requires the .NET runtimes to run. See the
+                            <a href="../../pages/Batch_Compiler-Download.html">downloads</a>
+                            page for more information.</p>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>When I launch Batch Compiler I get the following error message:<br><i>"A required .DLL
+                              file, MSCOREE.DLL, was not found."</i></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Batch Compiler is written in C# .NET and such as requires the .NET runtimes to run. See the
+                            <a href="../../pages/Batch_Compiler-Download.html">downloads</a>
+                            page for more information.</p>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>When I open an old preset file I get the following error message:<br><i>"Error: The data at
+                              the root level is invalid. Line 1, position 1."</i></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Batch Compiler v3.X.X is not backwards compatible with Batch Compiler v2.X.X. This means
+                            that old preset files will not work and you will have to recreate them.</p>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>How can I convert a preset I've saved using one specification file to a preset of another
+                            specification file?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>This can be accomplished by importing the preset. To do this:</p>
+                          <ol>
+                            <li>From the 'Specifications' menu select the specification file you would like to convert
+                              the preset to.</li>
+                            <li>From the 'File' menu select 'Import Preset'.</li>
+                            <li>Browse to and open the preset you would like to convert from.</li>
+                          </ol>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <p>Ask a question...</p>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left">Modified: Aug 5th, 2004 - 10:16:43 am</span><span
+                  class="right">[ 86718 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+
+            <div class="offsets">[ 1
+              <a href="Batch_Compiler_FAQ-page2.html#p41">2</a>
+              ]</div><br>
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c19"
+                    href="index.php?a=37">FirestormTerraX</a></span><span class="right">Posted: Jun 2nd, 2003 - 4:02:28
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                I compiled my map and it works just fine, but when i get into counter-strike there isn't any text, like
+                when you select your team, there are only boxes. Same with the weapons, there are only boxes, no
+                pictures or descriptions. How can this be fixed?<img src="../../images/emotes/alarmed.gif" width="32"
+                  height="32" alt="alarmed" /><br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">2.</span> <a name="c20"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jun 4th, 2003 - 10:53:46 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />Hum, I haven't mapped for CS for so long it's hard to say. Are you <i>sure</i>
+                your 1) in CS and 2) have all the required entities (info_player_start, info_player_deathmatch
+                etc.)<br />
+                <br />
+                <img src="../../images/emotes/sad.gif" width="32" height="32" alt="sad" /><br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">3.</span> <a name="c21"
+                    href="index.php?a=37">FirestormTerraX</a></span><span class="right">Modified: Jun 4th, 2003 -
+                  8:31:37 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                I have those entities, i'm not sure why it does that, but the more i've compiled, i've noticed that
+                sometimes it does have the text, so I don't know, o well, I don't need it because i have the things
+                memorized anyway. Thanks anyway. While i'm asking questions, do you have any idea why suddenly in
+                worldcraft it would stop allowing me to save as a .map file? Whenever i try to save as .map, it comes up
+                with &quot;worldcraft has encountered an error and must close... blah blah blah&quot;. This is making me
+                a little angry, because it was working fine, and now all the sudden it starts this crap up, can you
+                help? or is there another way to save my map as a .map file using a different program?<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">4.</span> <a name="c22"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jun 5th, 2003 - 2:24:10 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />I'm not sure about that either (I'm a QuArK user myself); however, if you look
+                in the <a href="index.php?p=4">Spec File</a> section you will notice a spec file that contains HLFix.
+                This is a utility designed to convert .rmf files to .map files and runs on the command line (it is also
+                capable of fixing some problems with Hammer's exporting code). To use this you basically check the HLFix
+                stage and select a .rmf file instead of a .map file (what could be easier).<br /><br />You can find the
+                program <a href="https://web.archive.org/web/20170915122706/http://extension.ws/hlfix/">here</a>.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">5.</span> <a name="c38"
+                    href="index.php?a=54">ChaosMixed</a></span><span class="right">Posted: Jun 8th, 2003 - 10:25:10
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                HI, <br />
+                Everytime i hit the &quot;Run&quot; button in the Batch Compiler i getting the following error <br />
+                <br />
+                &quot; <br />
+                Map change Failed; 'cs_militia' not found on server <br />
+                execing config.cfg&quot; <br />
+                then nothing happen.. is my config.cfg messed up or do a have the wrong path or something <br />
+                <br />
+                i run this though CS as i dont have HL <br />
+                <br />
+                <br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">6.</span> <a name="c41"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jun 9th, 2003 - 11:01:37 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />This error comes when HL launches right? <i>After</i> your map has
+                compiled.<br />
+                <br />
+                I don't know much about starting Counter-Strike retail from the console, but if you have the correct
+                'File Destination Path' set in the Options -&gt; Setup -&gt; Paths section and you're telling BC to
+                'Copy .BSP After Compile' under the Batch tab and you have the correct options under the HL tab then
+                everything should be fine.<br />
+                <br />
+                <img src="../../images/emotes/shrug.gif" width="32" height="32" alt="shrug" /><br />
+                <br />
+                Other then that my best guess is that there was an error in your map so the compiling process stopped
+                and a .bsp file was never created to copy to you File Destination Path.<br />
+                <br />
+                In BC (assuming you have the latest version) click 'View &lt;mapname&gt;.log' in the File menu and check
+                it for error messages.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">7.</span> <a name="c42"
+                    href="index.php?a=54">ChaosMixed</a></span><span class="right">Posted: Jun 9th, 2003 - 1:17:41
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                The error occur in the console of CS. The ms-dos window pops up fine. Here are my paths<br />
+                <br />
+                HL Path:<br />
+                C:\Sierra\Counter-Strike\cstrike.exe<br />
+                Half-Life Path:<br />
+                C:\Sierra\Counter-Strike<br />
+                File Destination Path:<br />
+                C:\Sierra\Counter-Strike\cstrike\maps<br />
+                <br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">8.</span> <a name="c43"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jun 9th, 2003 - 2:20:24 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                <img src="../../images/emotes/exhausted.gif" width="32" height="32" alt="exhausted" /><br />
+                <br />
+                What options are you using in the HL tab?<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">9.</span> <a name="c44"
+                    href="index.php?a=54">ChaosMixed</a></span><span class="right">Modified: Jun 9th, 2003 - 3:30:32
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                Run Half-Life with Map<br />
+                Enable Console<br />
+                Developer<br />
+                Minuim Memory<br />
+                game<br />
+                <br />
+                Mostly Everything is set to the tutorial<br />
+                <br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">10.</span> <a name="c45"
+                    href="index.php?a=1">Nem</a></span><span class="right">Modified: Jun 9th, 2003 - 5:58:26 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />Hum, don't know what to say, assuming 'Game' is set to 'cstrike' it should
+                work. Are you <b>sure</b> that the .bsp file is located in your cstrike\maps directory and that your map
+                contains an info_player_start entity?<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">11.</span> <a name="c46"
+                    href="index.php?a=54">ChaosMixed</a></span><span class="right">Posted: Jun 9th, 2003 - 10:24:44
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                i dont think my map cotain a info_player_start entity so what is that and how do i get one.. also i
+                thing after i hit run i've been realizing that the map are getting deleted so i un check all the boxes
+                That delete the files. And yet the map are still getting delete..i'll be happy to take a screen shot of
+                anyhting you need<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">12.</span> <a name="c47"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jun 9th, 2003 - 10:36:54 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                For Half-Life to recognize a level it needs to contain an info_player_start (which tells Half-Life where
+                players should spawn). I'd recommend searching for a beginners mapping tutorial for whatever editor you
+                use.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">13.</span> <a name="c56"
+                    href="index.php?a=79">Naigel</a></span><span class="right">Posted: Jun 16th, 2003 - 10:34:27
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                I'm mapping for a mod called Natural Selection, everything is fine except that the compiler can't find
+                the wad from that game... So, I did that wad-include thingy. That worked! But the huge minor thing is:
+                my map has grown 1 mb of size because of the .wad! Now, I want to know... what to do if you don't want
+                to add the .wad from the mod INTO the map but just use it to compile. If you don't understand this
+                exactly mail me at nicky_pelupessy@hotmail.com for screenies and more explanation.<br />
+                <br />
+                <img src="../../images/emotes/bleeh.gif" width="32" height="32" alt="bleeh" /><br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">14.</span> <a name="c57"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jun 16th, 2003 - 12:16:13 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                If you have your 'Half-Life Path' setup correctly on the Options-&gt;Setup form under the 'Paths' tab
+                then it should work. Zoners tries to find used .wad files by looking for .wad files specified in a
+                location relative to this path.<br />
+                <br />
+                It may also be a problem with your editor. If other .wad files are working fine, the string that holds
+                the relative location of the .wad file may be too long and as a result the path may not be complete, try
+                removing some .wad files from your editor’s setup.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">15.</span> <a name="c249"
+                    href="index.php?a=281">pebe</a></span><span class="right">Posted: Oct 17th, 2003 - 6:57:17 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                Hey, could you please write a tutorial on how to get the fastest possible compile?<br />
+              </div>
+            </div><br />
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">16.</span> <a name="c256"
+                    href="index.php?a=37">FirestormTerraX</a></span><span class="right">Modified: Oct 24th, 2003 -
+                  5:40:07 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                I used Batch Compiler a few times to compile my counter-strike maps, and it worked fine at first. After
+                3 or 4 compiles, it stopped compiling the new .map file, and only runs the old one, like if i make
+                changes, save it as a .map, and try to compile it, it compiles it as the last save, so none of my new
+                additions show up in the game. Is there any way to fix this problem? I've tried reinstalling and
+                different configurations, but nothing works. Any advice will be appreciated. <br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">17.</span> <a name="c259"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Oct 24th, 2003 - 6:24:39 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                You don't, per chance, have any errors in the changes you made to your .map fille do you?<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">18.</span> <a name="c393"
+                    href="index.php?a=423">TorQueMoD</a></span><span class="right">Modified: Jan 9th, 2004 - 1:01:54
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                I'm getting a really weird error when I try to compile my map that says &quot;no game dir&quot; in
+                mymapname.map<br />
+                <br />
+                What the heck does this mean?<br />
+                <br />
+                I'm trying to use the compiler to compile a Q2 map.<br />
+                <br />
+                Also I noticed that when setting up the paths, you have a specific file name already entered into the
+                browse category so you can't specify a different exe. <br />
+                I got around this problem by clicking on the drop down list which happened to have my tools directory in
+                it and I manually entered the proper .exe file name.<br />
+                <br />
+                Is there a special way I'm supposed to set up the compiler for use with Q2 maps?<br />
+                <br />
+                I also just realized that to make things worse, you also made a naming error for the bsp exe file.
+                You've got the program set to look for qbps.exe instead of qbsp.exe<br />
+                <br />
+                Thanks!<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">19.</span> <a name="c395"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jan 9th, 2004 - 9:11:29 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                Never compiled for Quake 2 so I'm not sure how to (shouldn't be too much different then compiling for
+                any other engine though.) Is the &quot;no game dir&quot; error from BC or QTools? As for the qbps.exe,
+                my mistake; if you open the file named 'qtools.bcs' and search and replace 'qbps.exe' with 'qbsp.exe'
+                you should be able to fix the problem.<br />
+                <br />
+                Nem<br />
+                <br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">20.</span> <a name="c400"
+                    href="index.php?a=427">moonshine</a></span><span class="right">Posted: Jan 12th, 2004 - 11:05:31
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                ok i have been map making ever since my freshman year in college,4 years ago...and well i took some time
+                off because of school...well now im back in the swing of things, but i seem to have one, and only one
+                problem and i desperately need some advice...im using the BC, and when i hit &quot;run&quot; everything
+                compiles fine..by that i mean no errors or anything and my compile window shows everything working
+                fine...but the map never compiles..and all i get is a &quot;press any button to continue&quot;
+                sentence...am i not waiting long enough, ive only made a simple box with all the requiried
+                &quot;cs&quot;enities in it..please help..........<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">21.</span> <a name="c405"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jan 13th, 2004 - 6:08:54 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />Have you selected the stages you want to run on the right?<br /><br />Is 'Press
+                any button to continue...' the <b>only</b> thing that shows up?<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">22.</span> <a name="c407"
+                    href="index.php?a=427">moonshine</a></span><span class="right">Modified: Jan 14th, 2004 - 5:30:31
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />Yes, i have the stages i want to run selected..and no, the ' press any button
+                to continue' is not the only thing that shows up.....So i decided to send you my log...I for the life of
+                me, cant figure out whats going on..maybe you have can spot this better than i can..hopefully so!..ill
+                be waiting egarly for your next response!...P.S sorry for the long comment, but had to let you
+                see<br /><br /><br /><br /><br />hlcsg v2.5.3 rel (May 2 2001)<br />Based on Valve's version, modified
+                with permission.<br />Submit detailed bug reports to (zoner@gearboxsoftware.com)<br />----- BEGIN hlcsg
+                -----<br />Command line: D:\WorldCraft\hlcsg.exe -chart D:\WorldCraft\maps\work.map<br /><br />-=
+                Current hlcsg Settings =-<br />Name | Setting |
+                Default<br />---------------------|-----------|-------------------------<br />threads [ 1 ] [ Varies
+                ]<br />verbose [ off ] [ off ]<br />log [ on ] [ on ]<br />developer [ 0 ] [ 0 ]<br />chart [ on ] [ off
+                ]<br />estimate [ off ] [ off ]<br />max texture memory [ 4194304 ] [ 4194304 ]<br />priority [ Normal ]
+                [ Normal ]<br /><br />noclip [ off ] [ off ]<br />onlyents [ off ] [ off ]<br />wadtextures [ on ] [ on
+                ]<br />skyclip [ on ] [ on ]<br />hullfile [ None ] [ None ]<br />min surface area [ 0.500 ] [ 0.500
+                ]<br />brush union threshold [ 0.000 ] [ 0.000 ]<br /><br />Wadinclude list
+                :<br />[zhlt.wad]<br /><br /><br />entering D:\WorldCraft\maps\work.map<br />CreateBrush:<br />50%...
+                (0.00 seconds)<br />SetModelCenters:<br />50%... (0.00 seconds)<br />CSGBrush:<br />50%... (0.00
+                seconds)<br /><br />Object names Objects/Maxobjs Memory / Maxmem Fullness<br />------------
+                --------------- --------------- --------<br />models 0/400 0/25600 ( 0.0)<br />planes 132/32767
+                2640/655340 ( 0.4)<br />vertexes 0/65535 0/786420 ( 0.0)<br />nodes 0/32767 0/786408 (
+                0.0)<br />texinfos 3/32767 120/1310680 ( 0.0)<br />faces 0/65535 0/1310700 ( 0.0)<br />clipnodes 0/32767
+                0/262136 ( 0.0)<br />leaves 0/8192 0/229376 ( 0.0)<br />marksurfaces 0/65535 0/131070 (
+                0.0)<br />surfedges 0/512000 0/2048000 ( 0.0)<br />edges 0/256000 0/1024000 ( 0.0)<br />texdata
+                [variable] 0/4194304 ( 0.0)<br />lightdata [variable] 0/4194304 ( 0.0)<br />visdata [variable] 0/2097152
+                ( 0.0)<br />entdata [variable] 0/524288 ( 0.0)<br />0 textures referenced<br />=== Total BSP file data
+                space used: 2760 bytes ===<br />Using WAD File: \sierra\half-life\valve\liquids.wad<br />Embedding
+                textures from WAD File [\worldcraft\zhlt.wad] into BSP<br />Using WAD File:
+                \worldcraft\zeditor.wad<br />Texture usage is at 0.00 mb (of 4.00 mb MAX)<br />0.03 seconds
+                elapsed<br /><br />----- END hlcsg -----<br /><br /><br /><br />hlbsp v2.5.3 rel (May 2 2001)<br />Based
+                on Valve's version, modified with permission.<br />Submit detailed bug reports to
+                (zoner@gearboxsoftware.com)<br />----- BEGIN hlbsp -----<br />Command line: D:\WorldCraft\hlbsp.exe
+                -chart D:\WorldCraft\maps\work.map<br /><br />-= Current hlbsp Settings =-<br />Name | Setting |
+                Default<br />-------------------|-----------|-------------------------<br />threads [ 1 ] [ Varies
+                ]<br />verbose [ off ] [ off ]<br />log [ on ] [ on ]<br />developer [ 0 ] [ 0 ]<br />chart [ on ] [ off
+                ]<br />estimate [ off ] [ off ]<br />max texture memory [ 4194304 ] [ 4194304 ]<br />priority [ Normal ]
+                [ Normal ]<br /><br />noclip [ off ] [ off ]<br />nofill [ off ] [ off ]<br />notjunc [ off ] [ off
+                ]<br />subdivide size [ 240 ] [ 240 ] (Min 64) (Max 240)<br />max node size [ 1024 ] [ 1024 ] (Min 64)
+                (Max 4096)<br /><br /><br />BSP generation successful, writing portal file
+                'D:\WorldCraft\maps\work.prt'<br /><br />Object names Objects/Maxobjs Memory / Maxmem
+                Fullness<br />------------ --------------- --------------- --------<br />models 3/400 192/25600 (
+                0.8)<br />planes 132/32767 2640/655340 ( 0.4)<br />vertexes 24/65535 288/786420 ( 0.0)<br />nodes
+                18/32767 432/786408 ( 0.1)<br />texinfos 3/32767 120/1310680 ( 0.0)<br />faces 18/65535 360/1310700 (
+                0.0)<br />clipnodes 54/32767 432/262136 ( 0.2)<br />leaves 14/8192 392/229376 ( 0.2)<br />marksurfaces
+                18/65535 36/131070 ( 0.0)<br />surfedges 72/512000 288/2048000 ( 0.0)<br />edges 37/256000 148/1024000 (
+                0.0)<br />texdata [variable] 48/4194304 ( 0.0)<br />lightdata [variable] 0/4194304 ( 0.0)<br />visdata
+                [variable] 0/2097152 ( 0.0)<br />entdata [variable] 487/524288 ( 0.1)<br />1 textures
+                referenced<br />=== Total BSP file data space used: 5863 bytes ===<br />0.14 seconds
+                elapsed<br /><br />----- END hlbsp -----<br /><br /><br /><br />g_fastvis = true<br />hlvis v2.5.3 rel
+                (May 2 2001)<br />Based on Valve's version, modified with permission.<br />Submit detailed bug reports
+                to (zoner@gearboxsoftware.com)<br />----- BEGIN hlvis -----<br />Command line: D:\WorldCraft\hlvis.exe
+                -fast -chart D:\WorldCraft\maps\work.map<br /><br />-= Current hlvis Settings =-<br />Name | Setting |
+                Default<br />-------------------|-----------|-------------------------<br />threads [ 1 ] [ Varies
+                ]<br />verbose [ off ] [ off ]<br />log [ on ] [ on ]<br />developer [ 0 ] [ 0 ]<br />chart [ on ] [ off
+                ]<br />estimate [ off ] [ off ]<br />max texture memory [ 4194304 ] [ 4194304 ]<br />priority [ Normal ]
+                [ Normal ]<br /><br />fast vis [ on ] [ off ]<br />full vis [ off ] [ off ]<br /><br /><br /> 1
+                portalleafs<br /> 0 numportals<br />BasePortalVis:<br /> (0.00 seconds)<br />average leafs visible:
+                1<br />g_visdatasize:3 compressed from 1<br /><br />Object names Objects/Maxobjs Memory / Maxmem
+                Fullness<br />------------ --------------- --------------- --------<br />models 3/400 192/25600 (
+                0.8)<br />planes 132/32767 2640/655340 ( 0.4)<br />vertexes 24/65535 288/786420 ( 0.0)<br />nodes
+                18/32767 432/786408 ( 0.1)<br />texinfos 3/32767 120/1310680 ( 0.0)<br />faces 18/65535 360/1310700 (
+                0.0)<br />clipnodes 54/32767 432/262136 ( 0.2)<br />leaves 14/8192 392/229376 ( 0.2)<br />marksurfaces
+                18/65535 36/131070 ( 0.0)<br />surfedges 72/512000 288/2048000 ( 0.0)<br />edges 37/256000 148/1024000 (
+                0.0)<br />texdata [variable] 48/4194304 ( 0.0)<br />lightdata [variable] 0/4194304 ( 0.0)<br />visdata
+                [variable] 3/2097152 ( 0.0)<br />entdata [variable] 487/524288 ( 0.1)<br />1 textures
+                referenced<br />=== Total BSP file data space used: 5866 bytes ===<br />0.00 seconds
+                elapsed<br /><br />----- END hlvis -----<br /><br /><br /><br />hlrad v2.5.3 rel (May 2 2001)<br />Based
+                on Valve's version, modified with permission.<br />Submit detailed bug reports to
+                (zoner@gearboxsoftware.com)<br />----- BEGIN hlrad -----<br />Command line: D:\wc\hlrad.exe -sparse
+                -nopaque -bounce 8 -chart D:\WorldCraft\ma<br />ps\work.map<br /><br />-= Current hlrad Settings
+                =-<br />Name | Setting |
+                Default<br />--------------------|---------------------|-------------------------<br />threads [ 1 ] [
+                Varies ]<br />verbose [ off ] [ off ]<br />log [ on ] [ on ]<br />developer [ 0 ] [ 0 ]<br />chart [ on
+                ] [ off ]<br />estimate [ off ] [ off ]<br />max texture memory [ 4194304 ] [ 4194304 ]<br />priority [
+                Normal ] [ Normal ]<br /><br />vismatrix algorithm [ Sparse ] [ Original ]<br />oversampling (-extra)[
+                off ] [ off ]<br />bounces [ 8 ] [ 1 ]<br />ambient light [ 0.000 0.000 0.000 ] [ 0.000 0.000 0.000
+                ]<br />maximum light [ 256.000 ] [ 256.000 ]<br />circus mode [ off ] [ off ]<br /><br />smoothing
+                threshold [ 50.000 ] [ 50.000 ]<br />direct threshold [ 25.000 ] [ 25.000 ]<br />direct light scale [
+                2.000 ] [ 2.000 ]<br />coring threshold [ 1.000 ] [ 1.000 ]<br />patch interpolation [ on ] [ on
+                ]<br /><br />texscale [ on ] [ on ]<br />patch subdividing [ on ] [ on ]<br />chop value [ 64.000 ] [
+                64.000 ]<br />texchop value [ 32.000 ] [ 32.000 ]<br /><br />global fade [ 1.000 ] [ 1.000 ]<br />global
+                falloff [ 2 ] [ 2 ]<br />global light scale [ 1.000 ] [ 1.000 ]<br />global gamma amount [ 0.500 ] [
+                0.500 ]<br />global sky diffusion [ 1.000 ] [ 1.000 ]<br /><br />opaque entities [ off ] [ on ]<br />sky
+                lighting fix [ on ] [ on ]<br />incremental [ off ] [ off ]<br />dump [ off ] [ off
+                ]<br /><br /><br />18 faces<br />Create Patches : 0 base patches<br />0 opaque faces<br />0 square feet
+                [0.00 square inches]<br />1 direct lights<br /><br />BuildFacelights:<br />50%... (0.00
+                seconds)<br />Warning: Attempting to allocate 0 bytes<br />BuildVisLeafs:<br />30%... (0.00
+                seconds)<br />visibility matrix : 0.0 megs<br />MakeScales:<br /> (0.00
+                seconds)<br />SwapTransfers:<br /> (0.00 seconds)<br />Transfer Lists : 0 transfers<br /> Indices : 0
+                bytes<br /> Data : 0 bytes<br />Bounce 1 GatherLight:<br /> (0.00 seconds)<br />Bounce 2
+                GatherLight:<br /> (0.00 seconds)<br />Bounce 3 GatherLight:<br /> (0.00 seconds)<br />Bounce 4
+                GatherLight:<br /> (0.00 seconds)<br />Bounce 5 GatherLight:<br /> (0.00 seconds)<br />Bounce 6
+                GatherLight:<br /> (0.00 seconds)<br />Bounce 7 GatherLight:<br /> (0.00 seconds)<br />Bounce 8
+                GatherLight:<br /> (0.00 seconds)<br />FinalLightFace:<br />50%... (0.00 seconds)<br /><br />Object
+                names Objects/Maxobjs Memory / Maxmem Fullness<br />------------ --------------- ---------------
+                --------<br />models 3/400 192/25600 ( 0.8)<br />planes 132/32767 2640/655340 ( 0.4)<br />vertexes
+                24/65535 288/786420 ( 0.0)<br />nodes 18/32767 432/786408 ( 0.1)<br />texinfos 3/32767 120/1310680 (
+                0.0)<br />faces 18/65535 360/1310700 ( 0.0)<br />clipnodes 54/32767 432/262136 ( 0.2)<br />leaves
+                14/8192 392/229376 ( 0.2)<br />marksurfaces 18/65535 36/131070 ( 0.0)<br />surfedges 72/512000
+                288/2048000 ( 0.0)<br />edges 37/256000 148/1024000 ( 0.0)<br />texdata [variable] 48/4194304 (
+                0.0)<br />lightdata [variable] 0/4194304 ( 0.0)<br />visdata [variable] 3/2097152 ( 0.0)<br />entdata
+                [variable] 487/524288 ( 0.1)<br />
+                1 textures referenced<br />
+                === Total BSP file data space used: 5866 bytes ===<br />
+                0.11 seconds elapsed<br />
+                <br />
+                ----- END hlrad -----<br />
+                <br />
+                <br />
+                <br />
+                D:\WorldCraft\maps\work.wic deleted.<br />
+                D:\WorldCraft\maps\work.lin deleted.<br />
+                D:\WorldCraft\maps\work.p0 deleted.<br />
+                D:\WorldCraft\maps\work.p1 deleted.<br />
+                D:\WorldCraft\maps\work.p2 deleted.<br />
+                D:\WorldCraft\maps\work.p3 deleted.<br />
+                D:\WorldCraft\maps\work.prt deleted.<br />
+                1 file(s) copied.<br />
+                work.bsp copied to D:\SIERRA\Half-Life\cstrike\maps<br />
+                1 file(s) copied.<br />
+                work.pts copied to D:\SIERRA\Half-Life\cstrike\maps<br />
+                <br />
+                Press any key to continue . . .<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">23.</span> <a name="c408"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jan 15th, 2004 - 3:41:06 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />I don't know what to say. You <b>must</b> have a BSP somewhere because HLVIS
+                and HLRAD wouldn't run if you didn't.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">24.</span> <a name="c409"
+                    href="index.php?a=427">moonshine</a></span><span class="right">Posted: Jan 15th, 2004 - 9:28:02
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                so, a question, is this the normal or correct compile log that one would normaly see if they did
+                everything right?..like one would see right before they would actually &quot;compile&quot; the
+                map??..and if so, would having steam on my system have anything to do with it?..or the fact that i used
+                &quot;worldcraft&quot; have anything to do with anything at all???...it just doesnt make sense to me..oh
+                and by the way, i waited 3 hours for my simple &quot;cs&quot; map to load so i know that im giving it
+                enough time, given the fact that im running it on a 2.6 gf200 <br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">25.</span> <a name="c410"
+                    href="index.php?a=427">moonshine</a></span><span class="right">Posted: Jan 16th, 2004 - 11:05:38
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                So if i have my .bsp &quot;somewhere&quot; then shouldnt it be compiling?...and as far as the stages on
+                the right, i have the ones you have selected in your bc tutorial, i am kinda curious about one of the
+                stages that i dont have checked...the&quot;hl&quot; one...im not thinking this should be selected,
+                should it be&gt;?...and isnt there someway to narrow this problem down?..i mean half the people on here
+                are having problems becuase they didnt set up the bc right..Well ive done that , and i think my compile
+                log shows that ive done it right...what do i do to solve this..nem you are my last hope!!!!!..i do have
+                my drive partishend but i made sure all my &quot;half-life&quot; junk was all in the same directory,
+                including all my subfolders needed ....<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">26.</span> <a name="c412"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jan 17th, 2004 - 10:01:35 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                As far as I can tell the compiler is set up right and your map is compiling fine. I'm a little confused
+                as to what the problem is though. Is it that you can't find the map in the maps list when you start a
+                game? Is it that you can find the map but it won't load?<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">27.</span> <a name="c413"
+                    href="index.php?a=427">moonshine</a></span><span class="right">Posted: Jan 18th, 2004 - 11:39:59
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                ok wait sec, once my map is done compiling wont it automatically load?..i thought that was the way it
+                worked...do i i actaully have to find the &quot;.bsp&quot; and load it manually?..if so i feel pretty
+                dumb..ill go check just in case<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">28.</span> <a name="c414"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jan 18th, 2004 - 2:07:35 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                If you want the level to automatically load you have to tell it to with the Half-Life tab. The is for
+                regular versions of Half-Life though, not Steam.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">29.</span> <a name="c426"
+                    href="index.php?a=445">bryce_boi</a></span><span class="right">Posted: Jan 31st, 2004 - 4:49:29
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                hi, i've only just started using zoners tools and i've encounted a problem i cant seem to
+                explain...<br />
+                <br />
+                when ever i place any kind of brush entity near a flickering light the whole brush mimics the light
+                along with every other brush entity with the same attributes no matter were they are placed in the map,
+                the result is flashing doors and func_walls throughout the map.<br />
+                <br />
+                is there a parameter im over looking or maybe just somthing i can do with the map to prevent this, i
+                never had this problem with valves QRAD but it doesn't create as nice lighting so i dont want to have to
+                go back.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">30.</span> <a name="c428"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Feb 1st, 2004 - 9:52:13 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                This is not a problem with Batch Compiler. Please ask questions concerning Zoners in an appropriate
+                forum.<br />
+                <br />
+                <img src="../../images/emotes/watermelon.gif" width="32" height="32" alt="watermelon" /><br />
+                <br />
+                Nem<br />
+              </div>
+            </div><br />
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">31.</span> <a name="c554"
+                    href="index.php?a=557">RaGe</a></span><span class="right">Posted: Apr 18th, 2004 - 10:58:20
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                I have a problem, is there any special setting for steam applications??::<br />
+                <br />
+                I browse all the CSG, BSP, VIS, RAD (Zoner Tools) <br />
+                then i browse HL path:<br />
+                C:\Program Files\Steam\SteamApps\myemail@myemail.com\half-life\hl.exe<br />
+                <br />
+                then half-life path:<br />
+                C:\Program Files\Steam\SteamApps\myemail@myemail.com\half-life<br />
+                <br />
+                and file path:<br />
+                c:\maps<br />
+                <br />
+                so i open my map (Test.map) and i run then there is a problem:<br />
+                ---------------------------<br />
+                Fatal Error<br />
+                Could not find filesystem dll to lead<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">32.</span> <a name="c604"
+                    href="index.php?a=595">link1991</a></span><span class="right">Posted: May 8th, 2004 - 7:03:01
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                I think u shouldnt run the game when u compile, just compile and make sure u have a bsp file in ur map
+                folder. Then after u compiled start game and chose the map u compiled when u create game.<img
+                  src="../../images/emotes/cool.gif" width="32" height="32" alt="cool" /><br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">33.</span> <a name="c722"
+                    href="index.php?a=718">HellCLeric</a></span><span class="right">Posted: Jun 28th, 2004 - 12:48:37
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                i was wondering how to get the batch compiler to work. when i open the program there is no way for me to
+                import a .map file. how do i do this?<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">34.</span> <a name="c723"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jun 28th, 2004 - 2:09:38 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />See <a href="index.php?c=33">Creating a Preset</a>.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">35.</span> <a name="c877"
+                    href="index.php?a=910">jab391</a></span><span class="right">Posted: Aug 23rd, 2004 - 2:07:31
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                ok i downloaded batch compiler and got everything set. i got the map i wanted and when i clicked run
+                there was this error:<br />
+                Error writing batch file:<br />
+                C:\PROGRAM FILES\BATCH COMPILER\compiler.bat<br />
+                Error: OutputPATH path is not set or invalid.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">36.</span> <a name="c878"
+                    href="index.php?a=376">Bluefang</a></span><span class="right">Modified: Aug 23rd, 2004 - 2:26:23
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />jab391:<br />In the Paths tab in the settings, make sure that your 'output'
+                path is correct. this is your game map folder (i.e. half-life/valve/maps).<br /><br />RaGe:<br />don't
+                use the Half-Life tab. just completely ignor that. that is for backwords
+                compatibility.<br /><br />Because you are using Steam, you should be using the <b>Steam</b> tab (huh? I
+                wonder why?).<br />
+                make sure that you set up the Steam path.<br />
+                <br />
+                Naigel:<br />
+                make sure that your WAD file is in the Half-Life/nsp folder.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">37.</span> <a name="c1105"
+                    href="index.php?a=1084">Kimball</a></span><span class="right">Posted: Oct 3rd, 2004 - 1:58:55
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                I have been mapping for dod succesfully, am making on for my unit and got Nem's tools because I want
+                better ones the zhlt or hammer. I followed tutorial to the word and when i load the . map file and press
+                run a MS-DOS window blincks for a millisecond but doesn't launch game. I check in the New Game tab in
+                DoD and search for my map but nothing.....I am confused by the specifications tab and am unsure if i
+                have the right zoner's tools.... P.S. i have all of my directorys set properly. so if ne one has any
+                idea......!!!!!<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">38.</span> <a name="c1108"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Oct 3rd, 2004 - 9:53:40 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                Sounds like something is wrong with the batch file BC is generating, to confirm this you could run the
+                compile.bat file BC generates from your command prompt (this way it won't disappear). BTW, what version
+                of Zoners are you using?<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">39.</span> <a name="c1112"
+                    href="index.php?a=1084">Kimball</a></span><span class="right">Posted: Oct 4th, 2004 - 4:01:49
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                Zoner's Half-Life Compilation Tools 2.5.3, CUSTOM BUILD 1.7 <br />
+                <br />
+                copied from zhlt readme...i am following tutorial settings on Normal. P.S. i ran the compile.bat in the
+                batch compiler folder and it runs and comes up with a notepad window, i read it and see no errors,
+                however in .bat window it says &quot;there was an error compiling, check 'mapname.log' i check it and
+                see nothing, bsp complete all of that.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">40.</span> <a name="c1113"
+                    href="index.php?a=708">NoBody</a></span><span class="right">Posted: Oct 4th, 2004 - 4:20:11
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                what is the 10 last lines befor it telles you that thers a error. (go to the cornor logo and then
+                eidt-&gt;mark to copy the text)<br />
+                <br />
+                the spec file is ment for zhlt253 c17 p15 so you might be giving it a comand that is only in the
+                p15<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">41.</span> <a name="c1116"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Oct 4th, 2004 - 6:26:08 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                The Clip Type switch is part of ZHLT v2.5.3 c1.7 p15 but not ZHLT v2.5.3 c1.7, you should remove
+                it.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">42.</span> <a name="c1117"
+                    href="index.php?a=708">NoBody</a></span><span class="right">Posted: Oct 4th, 2004 - 11:13:32
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                or you could get a install that sets it self up and includes the latest stabil compiler here.<br />
+                http://rollinit.com/sparky/half-life/packages/HL-Compile.html<br />
+                <br />
+                <br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">43.</span> <a name="c1119"
+                    href="index.php?a=1084">Kimball</a></span><span class="right">Posted: Oct 5th, 2004 - 1:29:42
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />###################################################<br /># Batch Compiler
+                #<br />###################################################<br />###################################################<br />#
+                Please report bugs to: ryansgregg@hotmail.com
+                #<br />###################################################<br /><br />Written At: 10/5/2004 1:27
+                PM<br />BC Version: 3.0.0.0<br /><br />hlfix v0.81b by Jedediah Smith -
+                http://extension.ws/hlfix/<br />Using epsilon 0.004<br />Reading input file
+                C:\mapping\rmf\dod_grass.rmf... done<br />Reading wad list file
+                C:\mapping\compiler\HL-Compiled\Tools\HLFix\wad.<br />done<br />Snapping vertices<br />Tesselating
+                non-planar faces<br />Decomposing non-convex solids<br />Uniting coplanar faces<br />Writing output file
+                C:\mapping\rmf\dod_grass.map... done<br />hlcsg v2.5.3 rel Custom Build 1.7p15 (Jun 3 2004)<br />Zoner's
+                Half-Life Compilation Tools -- Custom Build<br />Based on code modifications by Sean 'Zoner'
+                Cavanaugh<br />Based on Valve's version, modified with permission.<br />Submit detailed bug reports to
+                (webmaster@xp-cagey.com)<br />----- BEGIN hlcsg -----<br />Command line:
+                C:\mapping\compiler\HL-Compiled\Tools\CHLT\hlcsg.exe -wa<br />t C:\mapping\rmf\dod_grass<br />Entering
+                C:\mapping\rmf\dod_grass.map<br /><br />Current hlcsg Settings<br />Name | Setting |
+                Default<br />---------------------|-----------|-------------------------<br />threads [ 1 ] [ Varies
+                ]<br />verbose [ off ] [ off ]<br />log [ on ] [ on ]<br />developer [ 0 ] [ 0 ]<br />chart [ off ] [
+                off ]<br />estimate [ off ] [ off ]<br />max texture memory [ 4194304 ] [ 4194304 ]<br />max lighting
+                memory [ 6291456 ] [ 6291456 ]<br />priority [ Normal ] [ Normal ]<br /><br />noclip [ off ] [ off
+                ]<br />null texture stripping[ on ] [ on ]<br />clipnode economy mode [ on ] [ on ]<br />clip hull type
+                [ legacy ] [ legacy ]<br />onlyents [ off ] [ off ]<br />wadtextures [ on ] [ on ]<br />skyclip [ on ] [
+                on ]<br />hullfile [ None ] [ None ]<br />nullfile [ None ] [ None ]<br />min surface area [ 0.500 ] [
+                0.500 ]<br />brush union threshold [ 0.000 ] [ 0.000 ]<br /><br />Using mapfile wad
+                configuration<br />Wadfiles not in use by the map will be excluded<br />Wadinclude list
+                :<br />[zhlt.wad]<br /><br />0 brushes (totalling 0 sides) discarded from clipping
+                hulls<br />CreateBrush:<br />10%...20%...30%...40%...50%...60%...70%...80%...90%... (0.14
+                seconds)<br />SetModelCenters:<br /> (0.00
+                seconds)<br />CSGBrush:<br />10%...20%...30%...40%...50%...60%...70%...80%...90%... (0.95
+                seconds)<br /><br />Using Wadfile: c:\mapping\dod\dod_anzio.wad<br /> - Contains 4 used textures, 57.14
+                percent of map (133 textures in wad<br />Using Wadfile: c:\mapping\dod\dod_forest.wad<br /> - Contains 2
+                used textures, 28.57 percent of map (71 textures in wad)<br />Using Wadfile:
+                c:\mapping\dod\dod_sturm.wad<br /> - Contains 1 used texture, 14.29 percent of map (60 textures in
+                wad)<br /><br />Texture usage is at 0.26 mb (of 4.00 mb MAX)<br />1.53 seconds elapsed<br /><br />-----
+                END hlcsg -----<br /><br /><br /><br />hlbsp v2.5.3 rel c1.7p16 prerelease (Aug 26 2004)<br />Zoner's
+                Half-Life Compilation Tools -- Custom Build<br />Based on code modifications by Sean 'Zoner'
+                Cavanaugh<br />Based on Valve's version, modified with permission.<br />Submit detailed bug reports to
+                (fuck@os.dk)<br />----- BEGIN hlbsp -----<br />Command line:
+                C:\mapping\compiler\HL-Compiled\Tools\CHLT\hlbsp.exe C:\<br />f\dod_grass<br /><br />Current hlbsp
+                Settings<br />Name | Setting |
+                Default<br />-------------------|-----------|-------------------------<br />threads [ 1 ] [ Varies
+                ]<br />verbose [ off ] [ off ]<br />log [ on ] [ on ]<br />developer [ 0 ] [ 0 ]<br />chart [ off ] [
+                off ]<br />estimate [ off ] [ off ]<br />max texture memory [ 4194304 ] [ 4194304 ]<br />priority [
+                Normal ] [ Normal ]<br /><br />noclip [ off ] [ off ]<br />nofill [ off ] [ off ]<br />noopt [ off ] [
+                off ]<br />null tex. stripping [ on ] [ on ]<br />notjunc [ off ] [ off ]<br />subdivide size [ 240 ] [
+                240 ] (Min 64) (Max 512)<br />max node size [ 1024 ] [ 1024 ] (Min 64) (Max
+                8192)<br /><br /><br />SolidBSP [hull 0] 499 (0.05 seconds)<br />Warning: No entities exist in hull 0,
+                no filling performed for this hu<br />SolidBSP [hull 1] 500...874 (0.11 seconds)<br />Warning: No
+                entities exist in hull 1, no filling performed for this hu<br />SolidBSP [hull 2] 500...879 (0.11
+                seconds)<br />Warning: No entities exist in hull 2, no filling performed for this hu<br />SolidBSP [hull
+                3] 500...886 (0.11 seconds)<br />
+                Warning: No entities exist in hull 3, no filling performed for this hu<br />
+                0.97 seconds elapsed<br />
+                <br />
+                ----- END hlbsp -----<br />
+                <br />
+                <br />
+                <br />
+                hlvis v2.5.3 rel Custom Build 1.7p15 (Jun 3 2004)<br />
+                Zoner's Half-Life Compilation Tools -- Custom Build<br />
+                Based on code modifications by Sean 'Zoner' Cavanaugh<br />
+                Based on Valve's version, modified with permission.<br />
+                Submit detailed bug reports to (webmaster@xp-cagey.com)<br />
+                ----- BEGIN hlvis -----<br />
+                Command line: C:\mapping\compiler\HL-Compiled\Tools\CHLT\hlvis.exe -fu<br />
+                ing\rmf\dod_grass<br />
+                Error: Portal file 'C:\mapping\rmf\dod_grass.prt' does not exist, cann<br />
+                map<br />
+                <br />
+                <br />
+                ----- END hlvis -----<br />
+                <br />
+                <br />
+                <br />
+                <br />
+                There was a problem compiling your map, check your dod_grass.log file<br />
+                .<br />
+                <br />
+                Press any key to continue . . .<br />
+                <br />
+                I installed it and it gave me this...<br />
+                <br />
+                <br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">44.</span> <a name="c1120"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Oct 5th, 2004 - 1:33:00 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                Maybe something to do with:<br />
+                <br />
+                Warning: No entities exist in hull 0, no filling performed for this hull.<br />
+                <br />
+                You need an entity in your map, please don't post mapping related errors here, only BC related
+                errors.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">45.</span> <a name="c1122"
+                    href="index.php?a=1084">Kimball</a></span><span class="right">Posted: Oct 5th, 2004 - 3:53:57
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content"><br />
+                THANK YOU! NEM AND NOBODY PROBLEMO SOLVED, NOW MY UNIT MAP WILL GO ON UNABIDED! USING TERRAIN GENERATOR
+                FOR OTHER MAPS AS WELL&gt;...TY TY TY<img src="../../images/emotes/exploding.gif" width="32" height="32"
+                  alt="exploding" /><img src="../../images/emotes/theforce.gif" width="32" height="32"
+                  alt="theforce" /><img src="../../images/emotes/free.gif" width="32" height="32" alt="free" /><br />
+              </div>
+            </div><br />
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">46.</span> <a name="c1464"
+                    href="index.php?a=1495">Mr.Killjoy</a></span><span class="right">Posted: Mar 28th, 2005 - 6:27:02
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hey, very useful tool :D<br />
+                Just one suggestion though, in the HL2 BSP config panel, the &quot;Light If Missing&quot;<br />
+                option, when checked, causes the map to crash right after it's loaded (in most cases, or i'm jinxed?)...
+                I got hard time figuring it out after 2 days tweaking&amp;compiling my map thinking the cause was in it
+                :(<br />
+                <br />
+                So, here is the suggestion:<br />
+                In the tips text case at the bottom, add a line that says &quot;Beware, it can f*ck up your map!&quot;
+                ... FYI, it took 8hours to compile VIS each time and 1 hour for RAD, and it's a small map :p<br />
+                <br />
+                Thx, now I know where it came from but if it can help anyone else, you might just add such a tip ;)
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">47.</span> <a name="c1510"
+                    href="index.php?a=1553">Dimitri</a></span><span class="right">Posted: Apr 27th, 2005 - 11:19:29
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hey Nem, I am havin a problem with compiling, where when i try to compile in reg
+                valve hammer editor the whole program just disappears. When i try to compile any map it does the same
+                thing. When i tried it in batch compiler, the ms-dos window was not up long enough for me to even read
+                an error. Can u help me out man? I'm stumped...<img src="../../images/emotes/what.gif" width="32"
+                  height="32" alt="what" /></div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">48.</span> <a name="c1511"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Apr 27th, 2005 - 11:35:06 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Open a command prompt, browse to your BC folder, and run the compile.bat file. This
+                should allow you to read the error.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">49.</span> <a name="c1512"
+                    href="index.php?a=1553">Dimitri</a></span><span class="right">Modified: Apr 27th, 2005 - 12:32:38
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Got it, thnx Nem, but now it says that the error is &quot;Error: Portal file
+                'C:\Program Files\Valve\Steam\SteamApps\wolfman5891\condition zero\aim_houses.prt' does not exist,
+                cannot vis the map&quot; What can i do to create a prt file since my valve hammer editor program keeps
+                screwin up?<img src="../../images/emotes/sad.gif" width="32" height="32" alt="sad" /></div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">50.</span> <a name="c1518"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Apr 27th, 2005 - 1:42:39 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">You probably have a leak. Look in your log for an error message. Also, please direct
+                mapping questions to the appropriate <a
+                  href="https://web.archive.org/web/20071020140732/http://www.chatbear.com/board.plm?b=390">forums</a>.
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">51.</span> <a name="c1597"
+                    href="index.php?a=1664">meazum</a></span><span class="right">Posted: Jul 6th, 2005 - 7:29:07
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">i dont get it .. the name of my rad and such is the ones from hamer and they are NOT
+                hlrad hlvis and such.. they have the names qrad qbsp and so on</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">52.</span> <a name="c1599"
+                    href="index.php?a=708">NoBody</a></span><span class="right">Posted: Jul 7th, 2005 - 9:05:22
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">delete them download the latest form http://zhlt.tk</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">53.</span> <a name="c1718"
+                    href="index.php?a=1834">Diesel</a></span><span class="right">Posted: Nov 1st, 2005 - 12:33:08
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hi...Im having bit of a problem. When I compile my map it does it just fine. But when
+                it goes to load through Steam it says Warning: couldn't open xxxxwad.wad. What do I do to fix
+                this?<br />
+                Thanks<br />
+                -Diesel</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">54.</span> <a name="c1719"
+                    href="index.php?a=376">Bluefang</a></span><span class="right">Posted: Nov 1st, 2005 - 3:10:34
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">MAke sure that your WADs are atcually located in the game content folder.<br />
+                <br />
+                Steam/SteamApps/&lt;uername&gt;/&lt;game name&gt;/&lt;mod name&gt;/<br />
+                <br />
+                For example, Half-Life is:<br />
+                <br />
+                Steam/SteamApps/&lt;uername&gt;/half-life/valve/</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">55.</span> <a name="c1721"
+                    href="index.php?a=1834">Diesel</a></span><span class="right">Posted: Nov 1st, 2005 - 3:36:23
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Thanks a lot...that did it.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">56.</span> <a name="c1819"
+                    href="index.php?a=1957">over_score</a></span><span class="right">Posted: Jan 9th, 2006 - 6:23:07
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">----- BEGIN hlvis -----<br />
+                Command line: &quot;H:\Program Files\Zoners Compile Tools\2.5.3\hlvis.exe&quot;-full &quot;H:\\basic
+                room&quot;<br />
+                Error: Portal file 'H:\\basic room.prt' does not exist, cannot vis the map<br />
+                <br />
+                <br />
+                ----- END hlvis -----<br />
+                <br />
+                Definately no leaks, it is a basic room. I do not know if it is actually a problem with Zoners or the
+                Batch Compiler. Any help or a redirection appreciated, thanks for all your hard work Nem,<br />
+                <br />
+                over_score</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">57.</span> <a name="c1820"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jan 9th, 2006 - 3:15:34 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Perhaps you didn't have any entities in your map?<br /><br />A beter place to ask
+                would be the <a
+                  href="https://web.archive.org/web/20071020140732/http://forums.thewavelength.net/">wavelength
+                  forums</a>.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">58.</span> <a name="c1852"
+                    href="index.php?a=1986">Bossman</a></span><span class="right">Posted: Jan 24th, 2006 - 5:58:24
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I am a NEW user to batch compiler and so far think its great. I have custom wads
+                included in my map as well as using the original half life.<br />
+                <br />
+                Is it possible to have the wad include ONLY include that particular wad when compiling rather than
+                incude both?<br />
+                <br />
+                Also does wad incude imbed EVERYTING tht is inside the particular wad, or does it only use what has been
+                used for the map itself?<br />
+                <br />
+                I have looked for these answers but probably missed them. If so, my appologies.<br />
+                <br />
+                Thank You<br />
+                Bossman</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">59.</span> <a name="c1853"
+                    href="index.php?a=1986">Bossman</a></span><span class="right">Posted: Jan 24th, 2006 - 10:19:47
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">over_score<br />
+                <br />
+                ----- BEGIN hlvis ----- <br />
+                Command line: &quot;H:\Program Files\Zoners Compile Tools\2.5.3\hlvis.exe&quot;-full &quot;H:\\basic
+                room&quot; <br />
+                Error: Portal file 'H:\\basic room.prt' does not exist, cannot vis the map <br />
+                <br />
+                I Hope i am not over stepping any bounds. my appologies if i am.<br />
+                <br />
+                over-score<br />
+                <br />
+                I had exact same problem when i first tried to compile my latest map, I went back and tried a compile
+                with hammer and still same error.<br />
+                <br />
+                After 4.5 hours i found 1 custom .wad that was named PoolTtable_1a.<br />
+                <br />
+                I ernamed that wad to poolTable_1, replaced the old texture with new named texture and quala, it
+                compiled with BC.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">60.</span> <a name="c1854"
+                    href="index.php?a=1">Nem</a></span><span class="right">Modified: Jan 25th, 2006 - 3:08:12 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">To answer your first question, -wadinclude only includes the used textures in the
+                specified .wad file into the .bsp (it even says that in the description). If you have any problems, you
+                really should refer to <a href="http://www.slackiller.com/tommy14/errors.htm">this
+                  site</a>. You'll get faster more complete answers.</div>
+            </div><br />
+
+
+            <div class="offsets">[ 1
+              <a href="Batch_Compiler_FAQ-page2.html#p41">2</a>
+              ]</div><br>
+
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">Batch Compiler</span></div>
+              <div class="content"><span class="title">» <a href="../../pages/Batch_Compiler.html">About</a></span><br>
+                <span class="title">» <a href="../../pages/Batch_Compiler-Download.html">Download</a></span><br>
+                <span class="title">» <a href="../Batch_Compiler-Revision_History.html">Revision
+                    History</a></span><br>
+                <span class="title">» <a href="../Batch_Compiler-Specification_Files.html">Specification
+                    Files</a></span><br>
+                <span class="title">» <a href="../Batch_Compiler-FAQ.html">FAQ</a></span><br>
+                <span class="title">» <a href="../Batch_Compiler-Tutorials.html">Tutorials</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=41&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=41&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=41&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4040">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13286">saqi55</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13303">blank</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 © 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>

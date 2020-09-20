@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nem's Tools [Batch Compiler - FAQ - Batch Compiler FAQ]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://nemstools.github.io/'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to this unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p41" href="#p41">Batch
+                    Compiler FAQ</a> - <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: May 26th, 2003 - 11:35:22 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">
+                <center>
+                  <table width="100%" class="emptytable">
+
+                    <tbody>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>When I launch Batch Compiler I get the following error message:<br><i>"The application
+                              failed to initialize properly (0xc0000135). Click ok to terminate the application."</i>
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Batch Compiler is written in C# .NET and such as requires the .NET runtimes to run. See the
+                            <a href="../../pages/Batch_Compiler-Download.html">downloads</a>
+                            page for more information.</p>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>When I launch Batch Compiler I get the following error message:<br><i>"A required .DLL
+                              file, MSCOREE.DLL, was not found."</i></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Batch Compiler is written in C# .NET and such as requires the .NET runtimes to run. See the
+                            <a href="../../pages/Batch_Compiler-Download.html">downloads</a>
+                            page for more information.</p>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>When I open an old preset file I get the following error message:<br><i>"Error: The data at
+                              the root level is invalid. Line 1, position 1."</i></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Batch Compiler v3.X.X is not backwards compatible with Batch Compiler v2.X.X. This means
+                            that old preset files will not work and you will have to recreate them.</p>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>How can I convert a preset I've saved using one specification file to a preset of another
+                            specification file?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>This can be accomplished by importing the preset. To do this:</p>
+                          <ol>
+                            <li>From the 'Specifications' menu select the specification file you would like to convert
+                              the preset to.</li>
+                            <li>From the 'File' menu select 'Import Preset'.</li>
+                            <li>Browse to and open the preset you would like to convert from.</li>
+                          </ol>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <p>Ask a question...</p>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left">Modified: Aug 5th, 2004 - 10:16:43 am</span><span
+                  class="right">[ 86718 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+
+            <div class="offsets">[
+              <a href="Batch_Compiler_FAQ-page1.html#p41">1</a>
+              2
+              ]</div><br>
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">61.</span> <a name="c1856"
+                    href="index.php?a=1986">Bossman</a></span><span class="right">Posted: Jan 26th, 2006 - 11:16:05
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">My Appologies, i believe i mis worded my question.<br />
+                <br />
+                I am using 2 wads halflife wad and a cusom wad.<br />
+                <br />
+                Seems how everyone that plays half life already has the first, i only need to include whats been used in
+                the second.<br />
+                <br />
+                Is that possible?<br />
+                <br />
+                Thank You</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">62.</span> <a name="c1857"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jan 26th, 2006 - 11:36:50 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Yes, just select your custom .wad in one of the <i>WAD File</i> fields in the
+                <i>CSG</i> tab. Do <b>not</b> select <i>No WAD Textures</i>.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">63.</span> <a name="c1858"
+                    href="index.php?a=1986">Bossman</a></span><span class="right">Posted: Jan 27th, 2006 - 1:10:52
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Thank You, Greatly appreciated.<br />
+                <br />
+                I have been extremely pleased with BC since I have started using it a few days ago.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">64.</span> <a name="c1912"
+                    href="index.php?a=2027">Evil</a></span><span class="right">Posted: Mar 1st, 2006 - 9:49:53 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">i have a map that i try to compile and it wont work cause of i have something called
+                max switchable light enteties?????????<br /><br />im trying to make the map so you switch sides every
+                round. it works fine when i compile it in valvehammer and it all works.<br /><br />but when i use
+                batch.. it wont compile at all <br /><br />heres the log:<br /><br /><br /><br />hlcsg v2.5.3 rel Custom
+                Build 1.7 (Dec 9 2002)<br />Zoner's Half-Life Compilation Tools -- Custom Build<br />Based on code
+                modifications by Sean 'Zoner' Cavanaugh<br />Based on Valve's version, modified with
+                permission.<br />Submit detailed bug reports to (merlinis@bigpond.net.au)<br />----- BEGIN hlcsg
+                -----<br />Command line: &quot;C:\Documents and Settings\Mats\Skrivbord\allt Andreas\Ny
+                mapp\hlcsg.exe&quot;-noskyclip -wadinclude tractor.wad -wadinclude czcs_militia.wad -wadinclude
+                halflife.wad -wadinclude czde_dust.wad -wadinclude torntextures.wad -wadinclude czcs_office.wad
+                &quot;C:\Documents and Settings\Mats\Skrivbord\dw_d-day\dw_d-day.map&quot;<br />Entering C:\Documents
+                and Settings\Mats\Skrivbord\dw_d-day\dw_d-day.map<br /><br />Current hlcsg Settings<br />Name | Setting
+                | Default<br />---------------------|-----------|-------------------------<br />threads [ 1 ] [ Varies
+                ]<br />verbose [ off ] [ off ]<br />log [ on ] [ on ]<br />developer [ 0 ] [ 0 ]<br />chart [ off ] [
+                off ]<br />estimate [ off ] [ off ]<br />max texture memory [ 4194304 ] [ 4194304 ]<br />priority [
+                Normal ] [ Normal ]<br /><br />noclip [ off ] [ off ]<br />null texture stripping[ on ] [ on
+                ]<br />clipnode economy mode [ on ] [ on ]<br />onlyents [ off ] [ off ]<br />wadtextures [ on ] [ on
+                ]<br />skyclip [ off ] [ on ]<br />hullfile [ None ] [ None ]<br />min surface area [ 0.500 ] [ 0.500
+                ]<br />brush union threshold [ 0.000 ] [ 0.000 ]<br /><br />Using mapfile wad
+                configuration<br />Wadinclude list
+                :<br />[zhlt.wad]<br />[tractor.wad]<br />[czcs_militia.wad]<br />[halflife.wad]<br />[czde_dust.wad]<br />[torntextures.wad]<br />[czcs_office.wad]<br />
+                <br />
+                54 brushes (totalling 324 sides) discarded from clipping hulls<br />
+                CreateBrush:<br />
+                (37.95 seconds)<br />
+                SetModelCenters:<br />
+                (0.12 seconds)<br />
+                CSGBrush:<br />
+                (10.89 seconds)<br />
+                Error: Exceeded MAX_SWITCHED_LIGHTS<br />
+                Description: The maximum number of switchable light entities has been reached<br />
+                Howto Fix: self explanitory<br />
+                <br />
+                <br />
+                ----- END hlcsg -----<br />
+                <br />
+                <br />
+                <br />
+                hlbsp v2.5.3 rel Custom Build 1.7 (Dec 9 2002)<br />
+                Zoner's Half-Life Compilation Tools -- Custom Build<br />
+                Based on code modifications by Sean 'Zoner' Cavanaugh<br />
+                Based on Valve's version, modified with permission.<br />
+                Submit detailed bug reports to (merlinis@bigpond.net.au)<br />
+                ----- BEGIN hlbsp -----<br />
+                Command line: &quot;C:\Documents and Settings\Mats\Skrivbord\allt Andreas\Ny
+                mapp\hlbsp.exe&quot;&quot;C:\Documents and Settings\Mats\Skrivbord\dw_d-day\dw_d-day.map&quot;<br />
+                &gt;&gt; There was a problem compiling the map.<br />
+                &gt;&gt; Check the file C:\Documents and Settings\Mats\Skrivbord\dw_d-day\dw_d-day.log for the
+                cause.<br />
+                <br />
+                ----- END hlbsp -----<br />
+                <br />
+                <br />
+                <br />
+                hlvis v2.5.3 rel Custom Build 1.7 (Dec 9 2002)<br />
+                Zoner's Half-Life Compilation Tools -- Custom Build<br />
+                Based on code modifications by Sean 'Zoner' Cavanaugh<br />
+                Based on Valve's version, modified with permission.<br />
+                Submit detailed bug reports to (merlinis@bigpond.net.au)<br />
+                ----- BEGIN hlvis -----<br />
+                Command line: &quot;C:\Documents and Settings\Mats\Skrivbord\allt Andreas\Ny mapp\hlvis.exe&quot;-full
+                &quot;C:\Documents and Settings\Mats\Skrivbord\dw_d-day\dw_d-day.map&quot;<br />
+                &gt;&gt; There was a problem compiling the map.<br />
+                &gt;&gt; Check the file C:\Documents and Settings\Mats\Skrivbord\dw_d-day\dw_d-day.log for the
+                cause.<br />
+                <br />
+                ----- END hlvis -----<br />
+                <br />
+                <br />
+                <br />
+                hlrad v2.5.3 rel Custom Build 1.7 (Dec 9 2002)<br />
+                Zoner's Half-Life Compilation Tools -- Custom Build<br />
+                Based on code modifications by Sean 'Zoner' Cavanaugh<br />
+                Based on Valve's version, modified with permission.<br />
+                Submit detailed bug reports to (merlinis@bigpond.net.au)<br />
+                ----- BEGIN hlrad -----<br />
+                Command line: &quot;C:\Documents and Settings\Mats\Skrivbord\allt Andreas\Ny mapp\hlrad.exe&quot;-lights
+                &quot;C:\Documents and Settings\Mats\Skrivbord\mappar\Ny mapp\andreas.rad&quot;&quot;C:\Documents and
+                Settings\Mats\Skrivbord\dw_d-day\dw_d-day.map&quot;<br />
+                &gt;&gt; There was a problem compiling the map.<br />
+                &gt;&gt; Check the file C:\Documents and Settings\Mats\Skrivbord\dw_d-day\dw_d-day.log for the
+                cause.<br />
+                <br />
+                ----- END hlrad -----<br />
+                <br />
+                <br />
+                <br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">65.</span> <a name="c1913"
+                    href="index.php?a=376">Bluefang</a></span><span class="right">Modified: Mar 1st, 2006 - 10:20:43
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">First of all, you are not using the most recent compile tools.<br />get them
+                here:<br /><br /><a
+                  href="https://web.archive.org/web/20071020140714/http://www.ammahls.com/forum/viewtopic.php?t=81">http://www.ammahls.com/forum/viewtopic.php?t=81</a><br /><br />Second,
+                you are wadincludeing wads that should not be included. do not include the halflife.wad or any other
+                standard WAD that comes included with the mod you are mapping for.<br /><br />Third, the error means
+                that you have too many switchable light entitys shining on any given face. Theese can be light entitys
+                are are triggered by a switch or switchable texture lights. I seem to recall te maximum allowed was 4
+                shining on any individual face.<br /><br />Basicaly, you have too many lights that illuminate a
+                particilar part of the map that can be individually switched on and off. If you want to have many lights
+                turn on and off at once, make them all have the same properties (target name, style ect... the color can
+                be difrent).<br /><br /><br />And just FYI, this really isn't the place to be posting compile errors.
+                first check out:<br /><a
+                  href="http://www.slackiller.com/tommy14/errors.htm">http://www.slackiller.com/tommy14/errors.htm</a><br />and
+                if all else fails, these are the forums to look at:<br /><a
+                  href="https://web.archive.org/web/20071020140714/http://www.chatbear.com/board.plm?b=390">http://www.chatbear.com/board.plm?b=390</a>
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">66.</span> <a name="c1918"
+                    href="index.php?a=2042">evil squirrel</a></span><span class="right">Posted: Mar 11th, 2006 - 1:18:29
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Question...about a very annoying thingeh<br />
+                <br />
+                Heres how it goes, I open Batch Compiler (which i just downloaded), set all the presets as I assume they
+                should be, put the location of the VMF file I'm trying to compile in the bar (with remember file and
+                run), and hit Run.<br />
+                <br />
+                Error creating batch script.<br />
+                <br />
+                Error: Output path is not set or is invalid.<br />
+                <br />
+                <br />
+                And when i try to compile it with hammer, it just says it could not locate the file (after telling me
+                exactly where the file is).</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">67.</span> <a name="c1919"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Mar 11th, 2006 - 1:21:45 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Did you read the appropriate <a href="index.php?p=6">setup tutorial</a>?</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">68.</span> <a name="c2034"
+                    href="index.php?a=2217">atxaaron</a></span><span class="right">Posted: Jun 19th, 2006 - 11:23:57
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Nem, I have done everything your tutorial told me to do but I get this error,
+                &quot;error executing batch file&quot;. A few months back I had this tool on a different computer and it
+                worked, so I am firmiliar with the program.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">69.</span> <a name="c2035"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jun 20th, 2006 - 8:35:01 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">The error occurs when the system is unable to execute the batch file. Make sure you
+                have your .bat files correctly associated and set up to run in the Windows shell.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">70.</span> <a name="c2038"
+                    href="index.php?a=2217">atxaaron</a></span><span class="right">Posted: Jun 21st, 2006 - 5:20:01
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Sorry nem, I dont understand, what do I need to do? windows shell?<br />
+                Before I posted her i tried reinstalling it a few times. </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">71.</span> <a name="c2042"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jun 21st, 2006 - 11:27:00 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">When you double click a .bat file (or any other file) the Windows shell determines
+                which program should be used to run that file. When you run a batch from Batch Compiler, Batch Compiler
+                generates a .bat file and asks the Windows shell to run it. The error you are receiving occurs when
+                Windows doesn't know what to do with the .bat file, likely because something has changed in your
+                settings.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">72.</span> <a name="c2044"
+                    href="index.php?a=1772">LightningBoy</a></span><span class="right">Posted: Jun 22nd, 2006 - 7:11:59
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">On the &quot;Variable&quot; stage of the setup for BC, I have set this to point to
+                the location of the game folder that contains the gameinfo.txt file for that game. In this instance, -
+                DOD:Source.<br />
+                Everything else is setup just fine.<br />
+                When I attempt to compile, I get a vbsp error &quot;Entrypoint teir0&quot; or something very similar. I
+                click ok several times before the dialogue box dissapears, and am left with a message in the compile
+                log<br />
+                &quot;Can't load materialsystem&quot;<br />
+                <br />
+                When I have the variable stage pointing to the Gameinfo.txt file in the HL2 folder, It compiles
+                normally, except the necessary DOD materials aren't available,....cause it's not look'n in the DOD:S
+                dir.<br />
+                &quot;can't load &lt;material name&gt;&quot;,........etc.<br />
+                <br />
+                I also tried running animahls customtools,....but I get a different error when combined with either the
+                dod variable, or the HL2 setting<br />
+                &quot;Extra App set to 211, but no SteamApp ID&quot;<br />
+                <br />
+                Seen this before?<br />
+                <br />
+                I guess I could just put the materials I want to use in the appropriate HL2 Materials folders, ...but
+                shouldn't it work by looking for the proper Gameinfo.txt file for DOD? <img
+                  src="../../images/emotes/where.gif" width="32" height="32" alt="where" /><br />
+                <br />
+                LB</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">73.</span> <a name="c2045"
+                    href="index.php?a=2221">DysPatch</a></span><span class="right">Posted: Jun 23rd, 2006 - 8:15:17
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Yeah, i am getting the same thing for Counter-Strike Source.<br />
+                <br />
+                I think it has something to do with the new Source update.<br />
+                <br />
+                Someone please figure this out, because the in Hammer compiler sucks. It keeps freezing on me at the end
+                of portal flow. PLEASE HELP.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">74.</span> <a name="c2048"
+                    href="index.php?a=2217">atxaaron</a></span><span class="right">Posted: Jun 28th, 2006 - 2:50:08
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Nem, im still stuck, I need like steps on how to fix this, im a complete newb at what
+                your trying to tell me to do. ahhh!?!?!=( the hammer compiler sucks!</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">75.</span> <a name="c2050"
+                    href="index.php?a=1772">LightningBoy</a></span><span class="right">Posted: Jun 28th, 2006 - 5:46:42
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I'm guessing no one else has had this problem besides DysPatch and myself?<br />
+                Anyone have a cure?,...suggestion?<br />
+                I haven't had a successful compile yet because of this.</div>
+            </div><br />
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">76.</span> <a name="c2053"
+                    href="index.php?a=2218">GoatFetus</a></span><span class="right">Posted: Jun 30th, 2006 - 2:40:14
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Yea im gettin the same thing too, where it wont compile and it says something like
+                Cant load materialsystem, and the pop up window with something about tier 0 command line or whatever, i
+                just reinstalled the BC or i just wait for a while, and it worked again, but it is VERY annoying</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">77.</span> <a name="c2054"
+                    href="index.php?a=376">Bluefang</a></span><span class="right">Posted: Jun 30th, 2006 - 12:09:27
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Unfortunately I don't have much experience with the Source engine, and I don't have
+                any of the games or SDK fully downloaded so I can't do any experimenting. However, I suppose there are a
+                few basic things you can try:<br /><br />-Make sure Steam us running when you compile<br /><br />-If you
+                are using CST (amckern's tools), make sure that they are in the SourceSDK's BIN folder (where the valve
+                compile tools are)<br /><br />-For the Extra App ID, try commenting out the 'ToolsAppId 211' line in the
+                gameinfo.txt by adding '//' to the beginning of the line. I think you only have to do this to the one in
+                the mod's folder. For more info, you can look here:<br /><a
+                  href="http://developer.valvesoftware.com/wiki/Talk:Source_SDK_Bugs">http://developer.valvesoftware.com/wiki/Talk:Source_SDK_Bugs</a>
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">78.</span> <a name="c2062"
+                    href="index.php?a=2218">GoatFetus</a></span><span class="right">Posted: Jul 13th, 2006 - 1:57:18
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Im having a problem with the compiler, my map compiles fine and everything, but when
+                it gets into Steam, when the game screen comes up, it'll start loading fine, then it will say Problem
+                verifying SteamID user ticket, or something close to that. But when I compile through Hammer(taking a
+                million years), it goes just fine, and i can play the map. Oh and this is for CS Source. Anybody know
+                why this could be happening? </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">79.</span> <a name="c2063"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jul 18th, 2006 - 10:30:08 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">The error is a result of something Valve changed in it's user validation code. I know
+                this because it has been bugging the hell out of me for months and is so bad on my computer that I, like
+                <a
+                  href="https://web.archive.org/web/20071015054904/http://forums.steampowered.com/forums/showthread.php?threadid=443464">many
+                  others</a>, can hardly play CS or DOD.<br /><br />The difference between Hammer and BC may be that
+                Hammer starts your game in networking mode. You may be able to make BC do this by adding <i>+sv_lan
+                  1</i> to the <i>Additional Parameters</i> field under the <i>Steam</i> tab.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">80.</span> <a name="c2064"
+                    href="index.php?a=2248">punk rabbit</a></span><span class="right">Modified: Jul 21st, 2006 - 9:22:50
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hi Nem, <br />
+                <br />
+                i got trouble compiling my.vmf with your batch compiler, it says:<br />
+                <br />
+                &quot;SteamStartup() failed: SteamStartup(0xf,0x0012E938) failed with error 1: The registry is in use by
+                another process.&quot;<br />
+                <br />
+                Other websites tell me to restart Steam, but that doesn't help a bit. <br />
+                <br />
+                Can you help me?<br />
+                <br />
+                <br />
+                /e<br />
+                <br />
+                HL2CG does work. </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">81.</span> <a name="c2168"
+                    href="index.php?a=2365">Solokiller</a></span><span class="right">Posted: Sep 20th, 2006 - 9:33:57
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I'm having the same problem, i think its a bug with a steam update (figures).</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">82.</span> <a name="c2171"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Sep 20th, 2006 - 12:03:25 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">What's your problem? Have you tried refreshing the SDK content (<i>Refresh SDK
+                  Content</i> button in the <i>Source SDK</i> window) or is it an error with the parameters in the
+                compile tools?<br /><br />You can run an automatic update from within Batch Compiler (<i>Help</i> menu)
+                to get the latest specifications for the new tools.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">83.</span> <a name="c2174"
+                    href="index.php?a=2365">Solokiller</a></span><span class="right">Posted: Sep 22nd, 2006 - 12:30:58
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">It seems to me as this is another one of these Steam update bugs, since it appears
+                that batch compiler can't run because Steam uses the registry if it runs, and if it doesn't runs, i
+                can't run the compile tools, because a recent Steam update made it so you need to have Steam running to
+                run any tools.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">84.</span> <a name="c2175"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Sep 22nd, 2006 - 4:15:18 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I don't know what to say. I've double checked and confirmed that all my SDK files are
+                up to date and I can compile without any problems. For as long as I can remember Steam has always been
+                required to be running for the compile tools work.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">85.</span> <a name="c2177"
+                    href="index.php?a=2365">Solokiller</a></span><span class="right">Posted: Sep 23rd, 2006 - 3:03:44
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I found out that steam.dll (which is in the Steam/ folder) wasn't in the source sdk
+                bin directory, but now i have another problem: the dos window lists an error that it can't find the
+                steam app user info.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">86.</span> <a name="c2179"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Sep 23rd, 2006 - 5:30:46 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">What is the exact error message? Do you have your <i>ValveProject</i> path set (in
+                Batch Compiler's settings)? Is there a gameinfo.txt file in that path?</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">87.</span> <a name="c2182"
+                    href="index.php?a=2365">Solokiller</a></span><span class="right">Posted: Sep 27th, 2006 - 2:15:07
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Can't find steam app user info. is the error listed.<br />
+                And i did set up the Valveproject directory to a position with a gameinfo.txt file, its the hl2
+                directory.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">88.</span> <a name="c2183"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Sep 27th, 2006 - 6:55:32 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Did you try the advice in the <a
+                  href="http://developer.valvesoftware.com/wiki/Can't_find_steam_app_user_info">Source
+                  SDK Docs</a>?</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">89.</span> <a name="c2189"
+                    href="index.php?a=2365">Solokiller</a></span><span class="right">Posted: Sep 28th, 2006 - 7:29:51
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I've been able to fix all the errors by doing what you said, the only other thing was
+                that i needed to change toolsappid to appid in the gameinfo.txt of the game i was mapping for(hl2).
+                Thanks.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">90.</span> <a name="c2191"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Sep 28th, 2006 - 9:08:37 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Glad to hear it works. It sounds like your SDK install may have been messed up by a
+                recent SDK update.</div>
+            </div><br />
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">91.</span> <a name="c2247"
+                    href="index.php?a=2436">frank</a></span><span class="right">Modified: Nov 6th, 2006 - 2:26:59
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I have been trying my best to compile the map and I keep receiving this error
+                message.<br />
+                <br />
+                * Could not execute the command:<br />
+                Copy File &quot;C:\Valve\Condition Zero\czero\maps\Trial map&quot;<br />
+                * Windows gave the error message:<br />
+                &quot;Access is denied.&quot;<br />
+                <br />
+                Can u provide me with a solution<img src="../../images/emotes/sad.gif" width="32" height="32"
+                  alt="sad" /><img src="../../images/emotes/sad.gif" width="32" height="32" alt="sad" /><br />
+                <br />
+                frank</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">92.</span> <a name="c2288"
+                    href="index.php?a=2485">Sig</a></span><span class="right">Posted: Dec 6th, 2006 - 7:08:14 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I get this error right of way. Dont have any idea how to fix<br />
+                Please Help!!!<br />
+                I have NET 2.0<br />
+                <br />
+                @echo off<br />
+                echo ###################################################<br />
+                echo # Batch Compiler #<br />
+                echo ###################################################<br />
+                echo ###################################################<br />
+                echo # Please report bugs to: ryansgregg@hotmail.com #<br />
+                echo ###################################################<br />
+                echo.<br />
+                echo Written At: 12/6/2006 5:48 PM<br />
+                echo BC Version: 3.1.2.0<br />
+                echo.<br />
+                &quot;D:\Program Files\Valve Hammer Editor3\hlcsg.exe&quot; -wadautodetect -estimate &quot;D:\Documents
+                and Settings\Administrator\Desktop\Maps\pillars\pillars&quot;<br />
+                if ERRORLEVEL 1 goto failed<br />
+                &quot;D:\Program Files\Valve Hammer Editor3\hlbsp.exe&quot; -estimate &quot;D:\Documents and
+                Settings\Administrator\Desktop\Maps\pillars\pillars&quot;<br />
+                if ERRORLEVEL 1 goto failed<br />
+                &quot;D:\Program Files\Valve Hammer Editor3\hlvis.exe&quot; -full -estimate &quot;D:\Documents and
+                Settings\Administrator\Desktop\Maps\pillars\pillars&quot;<br />
+                if ERRORLEVEL 1 goto failed<br />
+                &quot;D:\Program Files\Valve Hammer Editor3\hlrad.exe&quot; -extra -bounce 1 -sky 0.5 -smooth 80.0
+                -sparse -estimate &quot;D:\Documents and Settings\Administrator\Desktop\Maps\pillars\pillars&quot;<br />
+                if ERRORLEVEL 1 goto failed<br />
+                if ERRORLEVEL 1 goto failed<br />
+                goto succeeded<br />
+                :failed<br />
+                echo.<br />
+                echo There was a problem compiling your map, check your pillars.log file for errors.<br />
+                :succeeded<br />
+                echo.<br />
+                if exist &quot;D:\Documents and Settings\Administrator\Desktop\Maps\pillars\pillars.log&quot;
+                &quot;D:\WINNT\SYSTEM32\notepad.exe&quot; &quot;D:\Documents and
+                Settings\Administrator\Desktop\Maps\pillars\pillars.log&quot;</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">93.</span> <a name="c2290"
+                    href="index.php?a=2488">wrexnfex</a></span><span class="right">Posted: Dec 7th, 2006 - 3:21:39
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">when I try to compile my map i get an error <br />
+                <br />
+                hlbsp: Error: Cant open as_wrex.po<br />
+                <br />
+                how do i fix<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">94.</span> <a name="c2294"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Dec 10th, 2006 - 4:28:43 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">
+                <div class="vbtitle">Sig:</div>
+                <div class="vbquote">I get this error right of way. Dont have any idea how to fix</div><br />What you've
+                posted is your batch file, not your error log.<br /><br />
+                <div class="vbtitle">wrexnfex:</div>
+                <div class="vbquote">when I try to compile my map i get an error <br /><br />hlbsp: Error: Cant open
+                  as_wrex.po<br /><br />how do i fix</div><br />Sounds like there was an error in
+                hlcsg.<br /><br />However, neither of these errors are bugs in Batch Compiler, I recommend that both of
+                you try the <a
+                  href="https://web.archive.org/web/20170918124607/http://www.chatbear.com/board.plm?b=390&amp;v=flatold&amp;g=14">VERC
+                  forums</a> for general mapping problems where you'll get a faster more appropriate response.
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">95.</span> <a name="c2306"
+                    href="index.php?a=2485">Sig</a></span><span class="right">Posted: Dec 13th, 2006 - 3:53:40 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I dont get an error log I have looked for it everywhere. So what I posted is all I
+                get. </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">96.</span> <a name="c2550"
+                    href="index.php?a=2852">atelierz</a></span><span class="right">Modified: Jul 17th, 2007 - 1:08:16
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">i have just installed batch compiler on my new machine, which is running on
+                vista.<br />
+                <br />
+                i haven't gotten to the point of compiling just yet, so i can't speak to its stability, but i have
+                noticed that in the source tools advanced and source tools normal specifications, there is no tick box
+                for ldr/hdr. <br />
+                <br />
+                i have used your tool pretty extensively in the past on my xp machine, and while i've never compiled
+                under hdr, the option was always there.<br />
+                <br />
+                this is the only option i am really concerned with, but i notice, in comparing what i have up right now
+                with the tutorial you provide, that there are some other options missing, as well...<br />
+                <br />
+                as far as i can see, under RAD, they are:<br />
+                <br />
+                soft sun, chop, and max chop.<br />
+                <br />
+                i hope in the end that i can run compiles from your tool in vista, but for now, do you have any idea why
+                these options wouldn't be appearing.<br />
+                <br />
+                btw, i have gone back several times and followed the tutorial in case i had missed a step.<br />
+                <br />
+                thanks in advance, and thanks for the tool...hope i can continue using it.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">97.</span> <a name="c2551"
+                    href="index.php?a=376">Bluefang</a></span><span class="right">Posted: Jul 17th, 2007 - 11:18:46
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I haven't been keeping up with everything very well, but I do know that Nem changed
+                the spec files recently, so the options <i>may</i> have been renamed or moved.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">98.</span> <a name="c2552"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jul 18th, 2007 - 3:18:38 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Do you have the most up-to-date specifications? (Select <i>Check For Updates</i> from
+                the <i>Help</i> menu.) I haven't updated the installer in ages (I'll try to do this soon).<br />
+                <br />
+                The options haven't changed too much since I wrote the tutorial. All the options you listed are present
+                in the current specifications.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">99.</span> <a name="c2553"
+                    href="index.php?a=2852">atelierz</a></span><span class="right">Modified: Jul 18th, 2007 - 1:05:46
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">i had downloaded straight from the site thinking everything was up to date, but i
+                took your advice, and the options reappeared. hooray.<br />
+                <br />
+                <br />
+                however, when i tried to compile, i got this error:<br />
+                error wirting batch file: c:\prgram files\batch compiler\compile.bat<br />
+                <br />
+                i went back through the setup again, and everything is as it should be, except that when i press the
+                associate with BCP files button, i get this error message:<br />
+                an unhandled exception has occured in your application. if you click continue, the application will
+                ignore this error and attempt to continue. if you click quit, the application will shut down
+                immediately. access to the registry key is denied.<br />
+                <br />
+                <br />
+                and then here are the details of that:<br />
+                <br />
+                <br />
+                <br />
+                ************** Exception Text **************<br />
+                System.UnauthorizedAccessException: Access to the registry key is denied.<br />
+                at Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)<br />
+                at Microsoft.Win32.RegistryKey.SetValue(String name, Object value)<br />
+                at BC.Core.GUI.COptions.AssociateFileType(String sFileType, String sExtension, String sApplicationPath,
+                String sIconPath, Int32 iIconIndex)<br />
+                at BC.Core.GUI.COptions.AssociateFileType(String sFileType, String sExtension, String
+                sApplicationPath)<br />
+                at BC.Core.GUI.COptions.btnAssociateWithBCPFiles_Click(Object sender, EventArgs e)<br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                i'm sure that the chances are just as good that i'm being an idiot with this, but i am just so
+                frustrated with vista's backward compatibility at this point that i have very little patience.<img
+                  src="../../images/emotes/exhausted.gif" width="32" height="32" alt="exhausted" /><br />
+                <br />
+                <br />
+                thanks</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">100.</span> <a name="c2556"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jul 18th, 2007 - 2:23:04 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I don't actually own Vista, but I would assume that the errors are occurring because
+                writing to the registry and the program's own directory is not allowed with user privileges in Vista. I
+                wonder if you can elevate the program's privileges (the executable's properties perhaps)? I don't want
+                to recommend that you give your user account administrative privileges, but that also should work.<br />
+                <br />
+                <img src="../../images/emotes/capoera.gif" width="32" height="32" alt="capoera" /></div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">101.</span> <a name="c2558"
+                    href="index.php?a=2852">atelierz</a></span><span class="right">Modified: Jul 18th, 2007 - 5:18:06
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">i've run into this administrative privileges thing before, and upon checking my
+                account on this computer, it says i have administrative privileges.<br />
+                <br />
+                why wouldn't you recommend admin on my own machine? i thought vista sorted out the drive by problems
+                that xp had with admin accounts.<br />
+                <br />
+                <br />
+                thanks for your quick responses. i know this is more a vista problem and a me problem than your problem,
+                but you've been gracious about it, anyway.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">102.</span> <a name="c2559"
+                    href="index.php?a=2852">atelierz</a></span><span class="right">Posted: Jul 18th, 2007 - 5:17:23
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">okay, i figured it out.<br />
+                <br />
+                even though i'm logged on as admin, it apparently doesn't allow me access to the registry by default. i
+                right clicked on the file and selected &quot;run as administrator&quot; and i'm no longer having any
+                issues. <br />
+                <br />
+                the map is compiling now. hopefully you won't have to hear from me about vista again.<br />
+                <br />
+                thanks again for the tool and your time. it's a huge help.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">103.</span> <a name="c2712"
+                    href="index.php?a=3030">magraggae</a></span><span class="right">Modified: Nov 14th, 2007 - 6:01:56
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">This is my first time trying to get BC to work, set it up under Zoners' Tools
+                Advanced Specification, as I am using VHE, and got an rmf and not an map file. Except for that I used
+                the exact same setup as you described in your tutorial. When I compile my map using VHE, it completes
+                without problems.<br />
+                <br />
+                When I compile it with BC I get:<br />
+                Warning: Illegal Brush (edge without opposite face): Entity 134, Brush 1<br />
+                <br />
+                <br />
+                The specified brush is an func_illusionary What is exactly wrong with the brush, what does this specific
+                error mean?<br />
+                <br />
+                Besides that, I also get a leak if I compile with BC, trying to track it down atm.<br />
+                EDIT: Basically, the leak is unfindable. I have tried boxing the map and tracking it down with
+                successive smaller boxes, but every time I track one down, another one pops up, and besides, the one
+                tracked down in a 32x32x32 box has no discernible leak, everything lines up.<br />
+                I copied a part of my map to a new file, and the specified brush stopped being illegal, and another
+                brush, a func button started being illegal for another reason....What am I doing wrong with BC, as VHE
+                says everything is fine but then everyone knows vhe a shit compiler, but what explains the differences?
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">104.</span> <a name="c2717"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Nov 15th, 2007 - 1:29:30 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">There are a few good references for compile errors out there such as <a
+                  href="http://www.slackiller.com/tommy14/errors.htm">this
+                  one</a>. You'll probably get a more direct answer from these references seeing as I use them
+                myself.<br />
+                <br />
+                A great many of us have been stumped by leaks in the past, but they always turn out to be tangible. Have
+                you tried tracing the pointfile yet? As for discrepancies between Hammer and Zoners Tools, Hammer can
+                only find certain simple errors, so your map may still have errors even if Hammer reports that
+                everything is fine.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">105.</span> <a name="c2719"
+                    href="index.php?a=3030">magraggae</a></span><span class="right">Modified: Nov 15th, 2007 - 6:55:19
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Yeah I checked those resources myself already, however this error is not listed
+                there. As far as I can see, there is nothing wrong with the brush. Its a simple cubic brush, clipped on
+                one end so it meets at 45 degree angle with another one, also clipped, to together form a
+                func_illusionary, to create a fence, through which can still be shot. No vertex manipulation was done on
+                it, so I am unsure what could be illegal about it.<br />
+                <br />
+                Well about the leak, still have not found it, I copied the corridor to a new rmf, and trying to find it,
+                but I still am unable to find it. I loaded the pointfile, the line goes straight through a brush, which
+                is not an entity. Besides that, the other lines are outside. I tried boxing my lvl and putting a very
+                bright light inside, but it appears the light just goes right through cause it was the same brightness
+                inside or outside my hallway.<br />
+                <br />
+                &quot;To begin with, hlfix outputs floating point coordinates to .map files as opposed to VHE which
+                rounds all coordinates to integers. This alone solves a number of typical mapping problems. hlfix also
+                performs three phases of geometry corrections&quot;<br />
+                Guess it must be related to this, probably some where on my design, I got something offgrid, and VHE
+                just rounds it to an integer, making it snap to the grid, while hlfix keeps it offgrid.<br />
+                Think is, I am pretty sure I already exported it through vhe and skipped the hlfix stage once.</div>
+            </div><br />
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">106.</span> <a name="c2725"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Nov 18th, 2007 - 3:01:55 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Sometimes it's better to just redo the problem brushes. It usually doesn't take to
+                long and it can fix non-obvious geometry problems.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">107.</span> <a name="c2767"
+                    href="index.php?a=3103">Walter</a></span><span class="right">Posted: Dec 30th, 2007 - 5:12:35
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hey I have an error that comes up when starting the map in CS 1.6<br />
+                <br />
+                It compiles fine, but as soon as I load the map, it gets 2 bars in the loading bar and then crashes with
+                the error:<br />
+                &quot;File Read Error&quot;.<br />
+                <br />
+                Ive tried tweaking a few options, but nothing.<br />
+                <br />
+                Any ideas?</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">108.</span> <a name="c2770"
+                    href="index.php?a=3108">kangoeroe</a></span><span class="right">Posted: Jan 4th, 2008 - 9:19:31
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">if i want to start the compile it says that the output path is invalid<br />
+                how do i fix this</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">109.</span> <a name="c2771"
+                    href="index.php?a=3108">kangoeroe</a></span><span class="right">Posted: Jan 4th, 2008 - 9:26:49
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">cant you just make a tut of BC so there arent all these questions</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">110.</span> <a name="c2772"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Jan 4th, 2008 - 12:53:16 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">There already <a href="index.php?c=141">is one</a>.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">111.</span> <a name="c2866"
+                    href="index.php?a=3279">Kode</a></span><span class="right">Posted: May 25th, 2008 - 6:27:41
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">The first time I install Batch Compiler, it runs fine, compiles my maps perfectly,
+                and does so until I close it. <br />
+                When I come to compile a map again I firstly get an error:<br />
+                Error Writing Batch File:<br />
+                C:\Program Files\Batch Compiler\compile.bat<br />
+                <br />
+                I went into Options&gt;Setup to see if anything was wrong, and after clicking on BCP Files I get an
+                error telling me about JIT Debugging - I have searched the internet to find nothing to help me solve
+                this!<img src="../../images/emotes/shrug.gif" width="32" height="32" alt="shrug" /></div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">112.</span> <a name="c2871"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: May 28th, 2008 - 1:03:25 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">What happens if you delete <i>C:\Program Files\Batch Compiler\compile.bat</i> before
+                compiling your map?</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">113.</span> <a name="c2936"
+                    href="index.php?a=3348">Yenian</a></span><span class="right">Posted: Jul 9th, 2008 - 10:53:54
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Same Error as Kode:<br />
+                <br />
+                Batch Compiler Core<br />
+                <br />
+                Error writing batch file:<br />
+                C:\Program Files (x86)\Batch Compiler\compile.bat<br />
+                <br />
+                I'm running Vista Business x64. I would speculate this is a Vista problem, since apps aren't supposed to
+                write to the program files directory. I have not confirmed, but SP1 was supposed to remove the file
+                virtualization directory.<br />
+                <br />
+                Running Batch Compiler As Administrator seems to fix this problem, since it gives it elevation to do
+                whatever it needs to do.<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">114.</span> <a name="c3128"
+                    href="index.php?a=3654">alphabravo</a></span><span class="right">Posted: Feb 17th, 2009 - 1:10:23
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">ive tried everything i could to solve this stupid mess!!<br />
+                compiler (whichever i use) always comes up with an error that wad file cannot be opened.<br />
+                ive used multiple compilers and tried different wads!<br />
+                *as there are no wads there are no textures in my maps*<br />
+                here is one log&gt;&gt;<br />
+                <br />
+                <br />
+                ** Executing...<br />
+                ** Command: Change Directory<br />
+                ** Parameters: <br />
+                <br />
+                <br />
+                ** Executing...<br />
+                ** Command: Copy File<br />
+                ** Parameters: &quot;E:\Counter-Strike\cstrike\test.map&quot;
+                &quot;E:\Counter-Strike\cstrike\maps\test.map&quot;<br />
+                <br />
+                <br />
+                ** Executing...<br />
+                ** Command: D:\VALVEH~1\tools\qcsg.exe<br />
+                ** Parameters: &quot;E:\Counter-Strike\cstrike\maps\test&quot;<br />
+                <br />
+                qcsg.exe v2.8 (Jan 31 2000)<br />
+                ---- qcsg ----<br />
+                entering E:\Counter-Strike\cstrike\maps\test.map<br />
+                CreateBrush: 0...1...2...3...4...5...6...7...8...9... (0)<br />
+                CSGBrush: 0...1...2...3...4...5...6...7...8...9... (0)<br />
+                WARNING: couldn't open \documents and settings\maj sarwar\desktop\zhlt253-17\zhlt.wad<br />
+                0 seconds elapsed<br />
+                <br />
+                ** Executing...<br />
+                ** Command: D:\VALVEH~1\tools\qbsp2.exe<br />
+                ** Parameters: &quot;E:\Counter-Strike\cstrike\maps\test&quot;<br />
+                <br />
+                qbsp2.exe v2.2 (Dec 28 1998)<br />
+                ---- qbsp2 ----<br />
+                writing E:\Counter-Strike\cstrike\maps\test.prt<br />
+                0 seconds elapsed<br />
+                <br />
+                ** Executing...<br />
+                ** Command: D:\VALVEH~1\tools\vis.exe<br />
+                ** Parameters: &quot;E:\Counter-Strike\cstrike\maps\test&quot;<br />
+                <br />
+                <br />
+                ** Executing...<br />
+                ** Command: D:\VALVEH~1\tools\qrad.exe<br />
+                ** Parameters: &quot;E:\Counter-Strike\cstrike\maps\test&quot;<br />
+                <br />
+                <br />
+                ** Executing...<br />
+                ** Command: D:\VALVEH~1\tools\qrad.exe<br />
+                ** Parameters: +map &quot;test&quot;<br />
+                <br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">115.</span> <a name="c3133"
+                    href="index.php?a=663">richei</a></span><span class="right">Posted: Feb 22nd, 2009 - 2:58:25
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">you shouldn't have ur compile tools on your desktop anyways. move the folder to
+                whatever drive you want. before i moved away from hl1 mapping, i had my wads folder at c:\wads, then
+                used an include file to specify which wads to embed in the bsp. bc never was able to handle spaces in
+                the folder name.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">116.</span> <a name="c3134"
+                    href="index.php?a=663">richei</a></span><span class="right">Posted: Feb 22nd, 2009 - 3:16:12
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Seems to have a problem loading any of valve's textures. all i get is:<br />
+                <br />
+                material &quot;tools/toolsnodraw&quot; not found.<br />
+                Material not found!: TOOLS/TOOLSNODRAW<br />
+                material &quot;metal/metalwall032f&quot; not found.<br />
+                Material not found!: METAL/METALWALL032F<br />
+                material &quot;concrete/concretefloor031a&quot; not found.<br />
+                Material not found!: CONCRETE/CONCRETEFLOOR031A<br />
+                <br />
+                maybe it has to do with the new format or something, who knows.<br />
+                <br />
+                its also looking for the filesystem.dll file in the wrong place. its not in bin/orangebox/bin. seemed to
+                work fine once i copied into that folder though, well with the exception of the missing textures.</div>
+            </div><br />
+
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">121.</span> <a name="c3380"
+                    href="index.php?a=3741">Stojke</a></span><span class="right">Posted: May 9th, 2010 - 8:17:05
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Hey, Nem, i have some problems...<br /><br />Every time i try to compile a map (i
+                never have ever gotten this error before) i get this:<br /><br />Submit detailed bug reports to
+                (amckern@yahoo.com)<br />----- BEGIN hlcsg -----<br />Command line: &quot;D:\Back up 22\Valve Hammer
+                Editor\zhlt34x86final\hlcsg.exe&quot;-nowadtextures -wadinclude decals.wad -wadinclude halflife.wad
+                -wadinclude liquids.wad -wadinclude zm_snowbs02.wad &quot;C:\Documents and
+                Settings\Stojke\Desktop\zm_snowbase_cla&quot;<br />Entering C:\Documents and
+                Settings\Stojke\Desktop\zm_snowbase_cla.map<br /><br />Current hlcsg Settings<br />Name | Setting |
+                Default<br />---------------------|-----------|-------------------------<br />threads [ 1 ] [ Varies
+                ]<br />verbose [ off ] [ off ]<br />log [ on ] [ on ]<br />developer [ 0 ] [ 0 ]<br />chart [ off ] [
+                off ]<br />estimate [ off ] [ off ]<br />max texture memory [ 4194304 ] [ 4194304 ]<br />max lighting
+                memory [ 6291456 ] [ 6291456 ]<br />priority [ Normal ] [ Normal ]<br /><br />noclip [ off ] [ off
+                ]<br />null texture stripping[ on ] [ on ]<br />clipnode economy mode [ on ] [ on ]<br />clip hull type
+                [ legacy ] [ legacy ]<br />onlyents [ off ] [ off ]<br />wadtextures [ off ] [ on ]<br />skyclip [ on ]
+                [ on ]<br />hullfile [ None ] [ None ]<br />nullfile [ None ] [ None ]<br />min surface area [ 0.500 ] [
+                0.500 ]<br />brush union threshold [ 0.000 ] [ 0.000 ]<br /><br />Using mapfile wad
+                configuration<br />Wadinclude list
+                :<br />[zhlt.wad]<br />[decals.wad]<br />[halflife.wad]<br />[liquids.wad]<br />[zm_snowbs02.wad]<br />
+                <br />
+                2 brushes (totalling 12 sides) discarded from clipping hulls<br />
+                CreateBrush:<br />
+                (0.33 seconds)<br />
+                SetModelCenters:<br />
+                (0.02 seconds)<br />
+                CSGBrush:<br />
+                (1.19 seconds)<br />
+                <br />
+                Warning: Wad file '\decals.wad' not found<br />
+                Warning: Wad file '\halflife.wad' not found<br />
+                Warning: Wad file '\liquids.wad' not found<br />
+                Warning: Wad file '\zm_snowbs02.wad' not found<br />
+                Error: Could not open wad file \decals.wad<br />
+                Error: Could not find WAD file<br />
+                Description: The compile tools could not locate a wad file that the map was referencing.<br />
+                Howto Fix: Make sure the wad's listed in the level editor actually all exist<br />
+                <br />
+                Error: Could not open wad file \halflife.wad<br />
+                Error: Could not open wad file \liquids.wad<br />
+                Error: Could not open wad file \zm_snowbs02.wad<br />
+                <br />
+                <br />
+                I have tried moving the wads, and everything. All the wads exist, and are on the right path. But the
+                compiler tools tell me they can not find them... <img src="../../images/emotes/bored.gif" width="32"
+                  height="32" alt="bored" /></div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">122.</span> <a name="c3381"
+                    href="index.php?a=3741">Stojke</a></span><span class="right">Posted: May 9th, 2010 - 8:27:30
+                  am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Never mind! I forgot to include zhlt.wad in hammer &gt;_&lt;<br />
+                <br />
+                <br />
+                Sorry for my mistake <img src="../../images/emotes/lazy.gif" width="32" height="32" alt="lazy" /></div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">123.</span> <a name="c4419"
+                    href="index.php?a=13806">Plague</a></span><span class="right">Posted: Jul 3rd, 2019 - 7:40:33
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">When I try to convert a batch file to an exe, I have this error at the end:<br />
+                <br />
+                Injecting Icon...<br />
+                Cannot Make EXE!<br />
+                Bad file name or number<br />
+                Please make sure ENGLISH is your primary language for &quot;non-unicode programs&quot; on your Windows
+                Language bar or control panel.<br />
+                <br />
+                I don't understand, my computer is in english and all seems good.. I tried all the available update but
+                nothing works</div>
+            </div><br />
+
+            <div class="offsets">[
+              <a href="Batch_Compiler_FAQ-page1.html#p41">1</a>
+              2
+              ]</div><br>
+
+
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">Batch Compiler</span></div>
+              <div class="content"><span class="title">» <a href="../../pages/Batch_Compiler.html">About</a></span><br>
+                <span class="title">» <a href="../../pages/Batch_Compiler-Download.html">Download</a></span><br>
+                <span class="title">» <a href="../Batch_Compiler-Revision_History.html">Revision
+                    History</a></span><br>
+                <span class="title">» <a href="../Batch_Compiler-Specification_Files.html">Specification
+                    Files</a></span><br>
+                <span class="title">» <a href="../Batch_Compiler-FAQ.html">FAQ</a></span><br>
+                <span class="title">» <a href="../Batch_Compiler-Tutorials.html">Tutorials</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=41&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=41&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=41&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4040">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13286">saqi55</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=13303">blank</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915122706/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 © 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>

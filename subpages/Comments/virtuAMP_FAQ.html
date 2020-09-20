@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nem's Tools [virtuAMP - FAQ - virtuAMP FAQ]</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/default.css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="author" content="Ryan Gregg">
+  <meta name="description" content="Nem&#39;s Half-Life and Half-Life 2 editing tools.">
+</head>
+
+<body>
+  <div class="banner" onclick="location.href='https://nemstools.github.io/'"> </div>
+  <div class="archived">This is archived copy of currently unavailable <a href="http://nemesis.thewavelength.net">Nem's
+      Tools website</a>, restored from <a
+      href="https://web.archive.org/web/20191202151405/http://www.nemesis.thewavelength.net/">Web Archive</a>. <br>
+    Download section now provides links to both Web Archive and to this unofficial Github mirror.
+  </div>
+  <div class="main">
+    <div class="group">
+      <div class="separator"></div>
+      <div class="heading2 menu">
+        <a href="../../index.html" class="menuitem">Home</a>
+        <a href="../../pages/GCFScape.html" class="menuitem">GCFScape</a>
+        <a href="../../pages/Crafty.html" class="menuitem">Crafty</a>
+        <a href="../../pages/VTFLib.html" class="menuitem">VTFLib</a>
+        <a href="../../pages/Batch_Compiler.html" class="menuitem">Batch Compiler</a>
+        <a href="../../pages/Terrain_Generator.html" class="menuitem">Terrain Generator</a>
+        <a href="../../pages/BSP_Viewer.html" class="menuitem">BSP Viewer</a>
+        <a href="../../pages/MAP_Viewer.html" class="menuitem">MAP Viewer</a>
+        <a href="../../pages/virtuAMP.html" class="menuitem">virtuAMP</a>
+        <a href="../../pages/Miscellaneous.html" class="menuitem">Miscellaneous</a>
+      </div>
+      <div class="separator"></div>
+      <div class="content">
+        <div class="main_area">
+          <div class="space"></div>
+          <div class="main_content">
+            <div class="group">
+              <div class="heading1">
+                <div class="space"></div><span class="left"><a name="p235" href="#p235">virtuAMP
+                    FAQ</a> - <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><span
+                  class="right">Posted: Jul 4th, 2007 - 3:13:10 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">
+                <center>
+                  <table width="100%" class="emptytable">
+
+                    <tbody>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>How do I connect my guitar to my computer?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>There are two cheap solutions to this question:</p>
+                          <ol>
+                            <li>Obtain a 1/4" (6.35 mm) mono to 1/8" (3.5 mm) mono adapter. Such adapters are available
+                              at most good audio/video stores. A stereo adapter should also do the job. You should then
+                              be able to connect a standard 1/4" guitar cable into the 1/8" line-in or microphone input
+                              on your computer. Play as usual using either headphones or speakers.</li>
+                            <li>Obtain a microphone and a set of headphones, connect your microphone to your computer's
+                              microphone input and your headphones to your computer's headphone output. Play into your
+                              microphone.</li>
+                          </ol>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2"> </td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Why do my speakers pop when I play my guitar through virtuAMP?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Your computer isn't able to process audio buffers fast enough before receiving the next
+                            audio buffer. This is usually caused by a slow CPU or cheap sound card. You can mitigate the
+                            effect by trying any combination of the following three settings:</p>
+                          <ol>
+                            <li>Audio Driver: Try switching between the Windows Multimedia and DirectSound audio
+                              drivers. The DirectSound audio driver should provide better priority for audio processing,
+                              but requires Windows XP and up.</li>
+                            <li>Audio Buffer Denominator: Try increasing the delay between audio buffer capture and
+                              playback by decreasing the audio buffer denominator setting one step at a time. Allow a
+                              few seconds to determine effectiveness.</li>
+                            <li>Audio Buffer FPS: Try decreasing the display frame rate by decreasing the audio buffer
+                              FPS setting. This will provide more CPU time for audio processing.</li>
+                          </ol>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2"> </td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>How do I connect foot pedals to virtuAMP?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>virtuAMP does not support foot pedals, but you can use your keyboard to toggle effects on
+                            and off. To add a shortcut:</p>
+                          <ol>
+                            <li>Select an effect.</li>
+                            <li>While holding the shift key, press the button you wish to use to toggle the effect (you
+                              can assign the same key to multiple effects).</li>
+                            <li>The name of the key you selected should appear in the status bar at the bottom of your
+                              screen.</li>
+                            <li>Repeat 1-3 for each effect you with to add a shortcut to.</li>
+                          </ol>
+                          <p>To remove a shortcut:</p>
+                          <ol>
+                            <li>Select an effect.</li>
+                            <li>While holding the shift key, press delete.</li>
+                            <li>Repeat 1-2 for each effect you with to remove a shortcut from.</li>
+                          </ol>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2"> </td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>Why can't the Player/Recorder effect play my .wav file?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>virtuAMP only supports 8 or 16 bit PCM, and 32 bit or 64 bit IEEE floating point .wav files
+                            sampled at 44100 Hz.</p>
+                          <p>You may use <a href="http://audacity.sourceforge.net/">Audacity</a>
+                            to convert your .wav files to an accepted format.</p>
+                          <p>You may also encounter problems if the .wav file is opened in another program, or by
+                            virtuAMP for recording. Check the log.txt file in your installation folder for detailed
+                            error messages.</p>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2"> </td>
+                      </tr>
+
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>Q.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>How do I improve my sound quality?</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="top">
+                          <center><b>A.</b></center>
+                        </td>
+                        <td valign="top">
+                          <p>virtuAMP is not meant to be a replacement for real guitar amplifiers or professional studio
+                            equipment. Having said that, there are many factors that will affect the quality of sound
+                            virtuAMP can produce. Your audio card and speakers are probably the most important factors
+                            (most computers come with a cheap on-board sound card), and a slow CPU can lead to audible
+                            popping as audio buffers aren't processed before they are needed. Upgrading any of these
+                            things <i>may</i> lead to a better overall sound.</p>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </center>
+
+                <p>Ask a question...</p>
+              </div>
+              <div class="heading1">
+                <div class="space"></div><span class="left">Modified: Sep 4th, 2007 - 8:15:19 pm</span><span
+                  class="right">[ 18667 Views ]</span>
+                <div class="space"></div>
+              </div>
+            </div><br>
+
+
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">1.</span> <a name="c2608"
+                    href="index.php?a=2891">Sheepdog</a></span><span class="right">Posted: Aug 10th, 2007 - 6:49:52
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Does this support Vista (32-bit) fully?<br />
+                <br />
+                I have it installed and I have my guitar set up right, but what next? Does it just automatically alter
+                your sound? Because nothing happens and when I try to use the &quot;Mute&quot; button it stops
+                responding. Did I miss something?</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">2.</span> <a name="c2611"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Aug 10th, 2007 - 9:41:37 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">If the application is working, you should just hear sound. I haven't tested virtuAmp
+                in Vista, but by the sounds of it, it may not work. I'll try to fix this soon (I'm in the middle of my
+                final exams at the moment).</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">3.</span> <a name="c2612"
+                    href="index.php?a=2891">Sheepdog</a></span><span class="right">Posted: Aug 11th, 2007 - 8:35:29
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Alright thanks. And what I have seen of the program it looks great. If it sounds as
+                good as it looks, then I'm sure you've made a damn good program ;)<br />
+                <br />
+                And good luck with the exams...</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">4.</span> <a name="c2618"
+                    href="index.php?a=2897">leezanoni</a></span><span class="right">Posted: Aug 16th, 2007 - 2:24:01
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I downloaded the program but it will not produce any sound i can hear the pedals
+                buzzing but no sound<br />
+                <br />
+                when i use my recording software it will pick up the guitar but i really want to be able to use all
+                those pedals.<br />
+                <br />
+                i dont no what i am doing wrong i tried the buffer setting fom 1 to 18 and it makes no difference <br />
+                <br />
+                please help<br />
+                <br />
+                thank you<br />
+                <br />
+                lee</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">5.</span> <a name="c2619"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Aug 16th, 2007 - 3:40:36 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">What OS are you on? Can you post the contents of <i>log.txt</i> (found in your
+                virtuAMP folder)? You may also try checking your microphone volume using the Windows Volume Control
+                utility.<br />
+                <br />
+                Other than that, I'm not too sure. I'll hopefully be releasing a new version in the next week or so with
+                better audio support through DirectX. I'll also be taking a look at the current audio driver, which is
+                based on the Windows Multimedia API, as it may have problems with Vista.<br />
+                <br />
+                <img src="../../images/emotes/lazy.gif" width="32"
+                  height="32" alt="lazy" /></div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">6.</span> <a name="c2620"
+                    href="index.php?a=2897">leezanoni</a></span><span class="right">Posted: Aug 16th, 2007 - 4:01:51
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">this is what my log says<br />
+                <br />
+                <br />
+                Initializing engine...<br />
+                Engine initialized.<br />
+                Creating new pedalboard...<br />
+                Pedalboard cleared.<br />
+                Loading C:\Documents and Settings\Admin\Local
+                Settings\Temp\virtuamp100\virtuAMP\units/preamp.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/preamp.png loaded
+                (256x256 @ 4 BPP).<br />
+                Loading C:\Documents and Settings\Admin\Local
+                Settings\Temp\virtuamp100\virtuAMP\units/power.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/power.png loaded (8x8 @ 4
+                BPP).<br />
+                Loading C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/knob.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/knob.png loaded (32x32 @
+                4 BPP).<br />
+                Loading C:\Documents and Settings\Admin\Local
+                Settings\Temp\virtuamp100\virtuAMP\units/output.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/output.png loaded (64x32
+                @ 4 BPP).<br />
+                Loading C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/noise
+                gate.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/noise gate.png loaded
+                (256x256 @ 4 BPP).<br />
+                Loading C:\Documents and Settings\Admin\Local
+                Settings\Temp\virtuamp100\virtuAMP\units/input.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/input.png loaded (64x32 @
+                4 BPP).<br />
+                Loading C:\Documents and Settings\Admin\Local
+                Settings\Temp\virtuamp100\virtuAMP\units/equalizer.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/equalizer.png loaded
+                (256x256 @ 4 BPP).<br />
+                Loading C:\Documents and Settings\Admin\Local
+                Settings\Temp\virtuamp100\virtuAMP\units/slider.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/slider.png loaded (8x8 @
+                4 BPP).<br />
+                Loading C:\Documents and Settings\Admin\Local
+                Settings\Temp\virtuamp100\virtuAMP\units/oscilloscope.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/oscilloscope.png loaded
+                (256x256 @ 4 BPP).<br />
+                Loading C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/speaker
+                cabinet.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/speaker cabinet.png
+                loaded (256x256 @ 4 BPP).<br />
+                Loading C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/cable
+                head.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/cable head.png loaded
+                (32x32 @ 4 BPP).<br />
+                Loading C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/cable
+                shell.png...<br />
+                C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\units/cable shell.png loaded
+                (32x32 @ 4 BPP).<br />
+                New pedalboard created.<br />
+                Destroying engine...<br />
+                Pedalboard cleared.<br />
+                Engine destroyed.<br />
+                Saving C:\Documents and Settings\Admin\Local Settings\Temp\virtuamp100\virtuAMP\virtuAMP.ini...<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">7.</span> <a name="c2621"
+                    href="index.php?a=2897">leezanoni</a></span><span class="right">Posted: Aug 16th, 2007 - 4:20:29
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">my os is win xp<br />
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">8.</span> <a name="c2624"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: Aug 27th, 2007 - 4:40:04 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Just an update for those interested: I've got virtuAMP working under Vista now, and
+                I've added new Flanger and Feedback Loop effects. Once I finish up DirectSound support and a new Fuzz
+                pedal I'll upload the next release. I expect this to be within a week.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">9.</span> <a name="c2625"
+                    href="index.php?a=1704">maban</a></span><span class="right">Posted: Aug 27th, 2007 - 11:06:55
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Cool!</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">10.</span> <a name="c2636"
+                    href="index.php?a=2912">Zzzyax</a></span><span class="right">Posted: Sep 4th, 2007 - 1:46:53
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">...I should have read this before i made the question on the About page, oh well... i
+                know now...</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">11.</span> <a name="c2858"
+                    href="index.php?a=3271">MisFit4Me</a></span><span class="right">Posted: May 20th, 2008 - 4:36:26
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Is there a way to play through VituaAMP but record in Audacity? I record music mostly
+                in Audacity and it'd be cool if there were a way for me to play using virtua amp and it record what came
+                out into Audacity. Let me know if there's an easy way to do this.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">12.</span> <a name="c2859"
+                    href="index.php?a=1">Nem</a></span><span class="right">Posted: May 20th, 2008 - 6:21:12 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Usually you can set your recording input to be the stereo mix, but because you need
+                your recording input to be your mic or line in for virtuAMP, I can't think of any way to do this.<br />
+                <br />
+                <img src="../../images/emotes/capoera.gif"
+                  width="32" height="32" alt="capoera" /><br />
+                <br />
+                You can, however, use virtuAMP's Recorder pedal to record what you play to a .wav file, then open the
+                .wav file in Audacity.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">13.</span> <a name="c2860"
+                    href="index.php?a=3271">MisFit4Me</a></span><span class="right">Posted: May 21st, 2008 - 5:31:00
+                  pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">I was trying to do that but I couldn't seem to get it to work. How does the recorder
+                pedal work exactly? It seemed that when I used it, the &quot;power&quot; light wasn't on.</div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">14.</span> <a name="c2861"
+                    href="index.php?a=1">Nem</a></span><span class="right">Modified: May 21st, 2008 - 6:19:12 pm</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">Works fine with Audacity (I've used the two several times). To use it:<ol>
+                  <li>Place the pedal wherever you want to record (usually before the speaker cabinet).</li>
+                  <li>Press the save button and select a file to record to.</li>
+                  <li>Engage the pedal to record to the file (each time you engage the pedal it overwrites the file's
+                    contents).</li>
+                  <li>Play your guitar.</li>
+                  <li>Disengage the pedal to stop recording.</li>
+                </ol>
+              </div>
+            </div><br />
+            <div class="group">
+              <div class="heading2">
+                <div class="space"></div><span class="left"><span class="title">15.</span> <a name="c3106"
+                    href="index.php?a=3631">philipearlwilliams</a></span><span class="right">Posted: Feb 4th, 2009 -
+                  3:55:40 am</span>
+                <div class="space"></div>
+              </div>
+              <div class="content">i am using windows vista 32 bit....the program works but there is a delay between the
+                note played and the sound output to the speakers ? is this something that you are working on or will
+                work on. this is going to be a great program once this little glitch is fixed. thank you for taking the
+                time to build this app. good luck !</div>
+            </div><br />
+
+
+
+          </div>
+          <div class="main_sidebar">
+            <div class="group">
+              <div class="heading1"><span class="title">virtuAMP</span></div>
+              <div class="content"><span class="title">» <a href="../../pages/virtuAMP.html">About</a></span><br>
+                <span class="title">» <a href="../../pages/virtuAMP-Download.html">Download</a></span><br>
+                <span class="title">» <a href="../virtuAMP-Revision History.html">Revision
+                    History</a></span><br>
+                <span class="title">» <a href="../virtuAMP-Requirements.html">Requirements</a></span><br>
+                <span class="title">» <a href="../virtuAMP-FAQ.html">FAQ</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Login</span></div>
+              <div class="content">
+                <form name="loginform" method="post"
+                  action="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=235&amp;o=0">
+                  <div class="label">Username:</div>
+                  <div><input type="text" name="username" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label">Password:</div>
+                  <div><input type="password" name="password" class="textbox" autocomplete="off"
+                      style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;">
+                  </div>
+                  <div class="label"><input type="checkbox" name="storepassword" class="checkbox"
+                      checked="checked">Store Password</div>
+                  <div><input name="login" type="submit" value="Login" class="button"></div>
+                </form>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">New Users</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?action=directory">Directory</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=235&amp;o=0&amp;action=addauthor">Register</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=235&amp;o=0&amp;action=retrievepassword">Retrieve
+                    Password</a></span><br>
+              </div>
+            </div>
+
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Comments</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4040">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=13286">saqi55</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=213&amp;o=45#c4039">Crafty
+                    FAQ</a> (<a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=13268">steve0503</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=277&amp;o=0#c4038">GCFScape
+                    v1.8.6</a> (<a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=13282">imgsrc17</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=205&amp;o=210#c4037">About
+                    Crafty</a> (<a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=13231">Paynamia</a>)</span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=169&amp;o=90#c4036">GCFScape
+                    v1.8.6 Full</a> (<a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=13277">liaoyia</a>)</span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Latest Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=277#p277">GCFScape
+                    v1.8.6</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=276#p276">GCFScape
+                    v1.8.5</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=275#p275">GCFScape
+                    v1.8.4</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=274#p274">GCFScape
+                    v1.8.3</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=273#p273">VTFLib
+                    v1.3.2</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Most Popular Articles</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=178#p178">VTFEdit
+                    v1.2.5 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=76#p76">GCFScape
+                    v1.3.1 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=238#p238">VTFEdit
+                    v1.3.3 Full</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=154#p154">VTF
+                    Plug-In for Photoshop</a></span><br><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?c=169#p169">GCFScape
+                    v1.8.6 Full</a></span><br></div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Newest Member</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=13303">blank</a></span><br>
+              </div>
+            </div><br>
+            <div class="group">
+              <div class="heading1"><span class="title">Elite Spammers</span></div>
+              <div class="content"><span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=1">Nem</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=376">Bluefang</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=708">NoBody</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=7">Slackiller</a></span><br><span
+                  class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/index.php?a=385">Keloran</a></span><br>
+              </div>
+            </div>
+            <br>
+            <div class="group">
+              <div class="heading1"><span class="title">Feeds</span></div>
+              <div class="content">
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/rss/?page=1">RSS
+                    2.0 (News)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/rss/">RSS 2.0
+                    (Entire Site)</a></span><br>
+                <span class="title">» <a
+                    href="https://web.archive.org/web/20170915150036/http://nemesis.thewavelength.net/rss/?comments&amp;limit=15">RSS
+                    2.0 (Comments)</a></span><br>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="heading2 center"><span class="note">Nem's Tools v2.0 © 2006 <a
+            href="mailto:ryansgregg@hotmail.com">Ryan Gregg</a>.<br>Execution
+          time: 0.07963s; Queries: 14.<br>
+        </span></div>
+    </div>
+  </div>
+</body>
+
+</html>
